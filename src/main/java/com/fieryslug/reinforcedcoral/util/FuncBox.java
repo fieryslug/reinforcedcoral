@@ -6,8 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Locale;
 
 public class FuncBox {
 
@@ -71,6 +73,27 @@ public class FuncBox {
 
         return bimage.getScaledInstance((int)(scale * width), (int)(scale * height), Image.SCALE_SMOOTH);
 
+    }
+
+    public static File fileFromPath(String path) {
+
+        try {
+            return new File(FuncBox.class.getResource(path).toURI());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void listAllFonts() {
+        GraphicsEnvironment ge = GraphicsEnvironment
+                .getLocalGraphicsEnvironment();
+
+        Font[] allFonts = ge.getAllFonts();
+
+        for (Font font : allFonts) {
+            System.out.println(font.getFontName(Locale.US));
+        }
     }
 
 

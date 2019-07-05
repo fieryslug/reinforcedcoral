@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.panel;
 
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
@@ -119,7 +120,7 @@ public class PanelGame extends PanelPrime {
             JLabel label = new JLabel("", SwingConstants.CENTER);
 
             label.setText(category.name);
-            label.setFont(Reference.JHENGHEI30);
+            label.setFont(FontRef.JHENGHEI30);
             label.setForeground(Reference.AQUA);
             label.setBorder(Reference.BEVEL2);
             this.categoryLabels.add(label);
@@ -132,7 +133,7 @@ public class PanelGame extends PanelPrime {
                 button.setImageDisabledSelected(MediaRef.PROBLEM_DISABLED_SELECTED);
                 button.setLayout(new BorderLayout(5, 5));
                 JLabel label2 = new JLabel("", SwingConstants.CENTER);
-                label2.setFont(Reference.JHENGHEI30);
+                label2.setFont(FontRef.JHENGHEI30);
                 label2.setForeground(Reference.WHITE);
                 label2.setText("<html><div style='text-align: center;'>" + problem.name + "</div></html>");
                 button.add(label2);

@@ -4,16 +4,22 @@ import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
 import com.sun.net.httpserver.HttpServer;
 import org.json.JSONObject;
 
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.IOException;
 import java.net.InetSocketAddress;
 
 public class Main {
 
     public static void main(String[] args) {
+
 
         System.out.println("fieryslug is back");
 
@@ -34,6 +40,8 @@ public class Main {
             }
         });
         serverthread.start();
+
+
 
 
 

@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel;
 
 import com.fieryslug.reinforcedcoral.core.Team;
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 
@@ -27,7 +28,7 @@ public class PanelTeam extends JPanel {
         this.setBackground(Reference.BLACK);
 
         this.labelName = new JLabel();
-        this.labelName.setFont(Reference.JHENGHEI30);
+        this.labelName.setFont(FontRef.TAIPEI30);
         this.labelName.setForeground(Reference.BLAZE);
         this.labelName.setText("第" + this.team.getId() + "小隊    ");
 

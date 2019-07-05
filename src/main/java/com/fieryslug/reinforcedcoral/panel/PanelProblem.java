@@ -1,16 +1,19 @@
 package com.fieryslug.reinforcedcoral.panel;
 
 import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.core.page.Widget;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
-import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
-import com.fieryslug.reinforcedcoral.widget.LabelCoral;
+
 import layout.TableLayout;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PanelProblem extends JPanel {
 
@@ -23,6 +26,8 @@ public class PanelProblem extends JPanel {
     private Page page;
     private TableLayout layout;
     private double[][] layoutSize;
+
+    public Map<Widget, JComponent> widgetInstanceMap;
 
     public PanelProblem(FrameCoral parent) {
 
@@ -38,7 +43,7 @@ public class PanelProblem extends JPanel {
         setLayout(this.layout);
 
         this.areaDescription = new JTextArea();
-        this.areaDescription.setFont(Reference.JHENGHEI30);
+        this.areaDescription.setFont(FontRef.TAIPEI30);
         this.areaDescription.setBackground(Reference.BLACK);
         this.areaDescription.setForeground(Reference.WHITE);
         this.areaDescription.setLineWrap(true);
@@ -46,14 +51,14 @@ public class PanelProblem extends JPanel {
         this.setBackground(Reference.BLACK);
 
         this.labelTitle = new JLabel();
-        this.labelTitle.setFont(Reference.JHENGHEI40BOLD);
+        this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
         this.labelTitle.setBackground(Reference.BLACK);
         this.labelTitle.setForeground(Reference.WHITE);
 
         this.labelImage = new JLabel();
         this.labelImage.setBackground(Reference.BLACK);
 
-        //setBorder(Reference.BEVELGREEN);
+        //setBorder(FontRef.BEVELGREEN);
 
 
 
@@ -84,7 +89,7 @@ public class PanelProblem extends JPanel {
         this.height = (int)this.getPreferredSize().getHeight();
         this.width = (int)this.getPreferredSize().getWidth();
         this.page = page;
-
+        this.widgetInstanceMap = new HashMap<>();
         //answer
         if(page.type == -1) {
 
@@ -151,11 +156,10 @@ public class PanelProblem extends JPanel {
         }
 
         if(page.type == Reference.MAGIC_PRIME) {
-
-
+            for (Widget widget : page.widgets) {
+                addAndConfigWidget(widget);
+            }
         }
-
-
     }
 
     private void clearThings() {
@@ -171,6 +175,30 @@ public class PanelProblem extends JPanel {
     }
 
     public void enter() {
+    }
+
+    private void addAndConfigWidget(Widget widget) {
+
+
+        if(widget.widgetType == Widget.EnumWidget.JLABEL) {
+            JLabel label = new JLabel();
+            label.setText(widget.content);
+            label.setForeground(widget.getTextColor());
+            label.setBackground(Reference.BLACK);
+            if(widget.getCenter())
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+            this.widgetInstanceMap.put(widget, label);
+
+            add(label, widget.constraints);
+
+        }
+        if(widget.widgetType == Widget.EnumWidget.JTEXTAREA) {
+            JTextArea area = new JTextArea();
+
+        }
+        if(widget.widgetType == Widget.EnumWidget.IMAGE) {
+            JLabel label = new JLabel();
+        }
 
 
     }
@@ -179,45 +207,66 @@ public class PanelProblem extends JPanel {
 
         if (isFullScreen) {
             if(this.page.type == 0) {
-                this.labelTitle.setFont(Reference.JHENGHEI60BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI45);
+                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI45);
             }
             if(this.page.type == 1) {
-                this.labelTitle.setFont(Reference.JHENGHEI120BOLD);
+                this.labelTitle.setFont(FontRef.TAIPEI120);
             }
             if(this.page.type == 2) {
-                this.labelTitle.setFont(Reference.JHENGHEI60BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI45);
+                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI45);
             }
             if(this.page.type == -1) {
-                this.labelTitle.setFont(Reference.JHENGHEI60BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI45);
+                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI45);
             }
             if(this.page.type == 4) {
-                this.labelTitle.setFont(Reference.JHENGHEI60BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI45);
+                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI45);
+            }
+            if(this.page.type == Reference.MAGIC_PRIME) {
+
+                for(Widget widget : this.page.widgets) {
+                    JComponent component = this.widgetInstanceMap.get(widget);
+                    if(widget.getBold())
+                        component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSizeFull()));
+                    else
+                        component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSizeFull()));
+                }
+
             }
         }
         else {
             if(this.page.type == 0) {
-                this.labelTitle.setFont(Reference.JHENGHEI40BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI30);
+                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI30);
             }
             if(this.page.type == 1) {
-                this.labelTitle.setFont(Reference.JHENGHEI80BOLD);
+                this.labelTitle.setFont(FontRef.TAIPEI80);
             }
             if(this.page.type == 2) {
-                this.labelTitle.setFont(Reference.JHENGHEI40BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI30);
+                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI30);
             }
             if(this.page.type == -1) {
-                System.out.println("eeeeee");
-                this.labelTitle.setFont(Reference.JHENGHEI40BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI30);
+                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI30);
             }
             if (this.page.type == 4) {
-                this.labelTitle.setFont(Reference.JHENGHEI40BOLD);
-                this.areaDescription.setFont(Reference.JHENGHEI30);
+                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.areaDescription.setFont(FontRef.TAIPEI30);
+            }
+            if(this.page.type == Reference.MAGIC_PRIME) {
+
+                for(Widget widget : this.page.widgets) {
+                    JComponent component = this.widgetInstanceMap.get(widget);
+                    if(widget.getBold())
+                        component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSize()));
+                    else
+                        component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSize()));
+                }
+
             }
 
         }

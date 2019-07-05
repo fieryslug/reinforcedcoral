@@ -8,55 +8,40 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" line="49" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" line="433" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" line="434" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5744e42-52ec-43c1-a278-3847ae3c44a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20180130.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcedCoral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcedCoral.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/ControlKey$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/ControlKey$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/ControlKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/ControlKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Page.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Page.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Widget$EnumWidget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Widget$EnumWidget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Widget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Widget.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelTeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelTeam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/ActionFullScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/ActionFullScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/FuncBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/FuncBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/MediaRef.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/MediaRef.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/Reference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/socio/2.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/socio/2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ControlKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ControlKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Page.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/ActionFullScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/ActionFullScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,62 +50,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1125122342">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="2" />
-          <entry key="html" value="2" />
-          <entry key="java" value="58" />
-          <entry key="json" value="45" />
-          <entry key="png" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="2" />
-          <entry key="HTML" value="2" />
-          <entry key="Image" value="1" />
-          <entry key="JAVA" value="58" />
-          <entry key="JSON" value="45" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="201" />
-          <entry key="java" value="17619" />
-          <entry key="json" value="3510" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="201" />
-          <entry key="JAVA" value="17619" />
-          <entry key="JSON" value="3510" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+            <state relative-caret-position="442">
+              <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="471">
+              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -128,8 +77,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
+            <state relative-caret-position="340">
+              <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -137,20 +95,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-              <folding>
-                <element signature="method#getGame#0;class#WorkTable#0" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+            <state relative-caret-position="476">
+              <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,10 +123,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2.json">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="322">
+              <caret line="188" column="66" selection-start-line="188" selection-start-column="66" selection-end-line="188" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#clearThings#0;class#PanelProblem#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,15 +168,23 @@
       <find>changefont</find>
       <find>changef</find>
       <find>state</find>
+      <find>fonts l</find>
+      <find>taipei</find>
+      <find>JHENGhei</find>
+      <find>Reference</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="fieryslug" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/com/fieryslug/reinforcedcoral/Main.java" />
         <option value="$PROJECT_DIR$/src/com/fieryslug/reinforcedcoral/util/Reference.java" />
         <option value="$PROJECT_DIR$/src/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" />
@@ -216,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/widget/ButtonProblem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Page.java" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/ActionFullScreen.java" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1-1.json" />
@@ -224,36 +211,33 @@
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1-3.json" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1-0.json" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2-0.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ControlKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTeam.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1.json" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/1.json" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/2.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTeam.java" />
         <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/WidgetProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="952" />
@@ -265,157 +249,105 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="fieryslug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="fieryslug" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
               <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="fieryslug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="fieryslug" type="462c0819:PsiDirectoryNode" />
               <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="fieryslug" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
               <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
-              <item name="panel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="fieryslug" type="462c0819:PsiDirectoryNode" />
               <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="problems" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
               <item name="problems" type="462c0819:PsiDirectoryNode" />
-              <item name="1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
               <item name="problems" type="462c0819:PsiDirectoryNode" />
               <item name="1" type="462c0819:PsiDirectoryNode" />
-              <item name="chembio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -425,28 +357,30 @@
               <item name="physmath" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ReinforcedCoral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReinforcedCoral" type="462c0819:PsiDirectoryNode" />
+              <item name="reinforcedcoral" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reinforcedcoral" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="sound" type="462c0819:PsiDirectoryNode" />
+              <item name="problems" type="462c0819:PsiDirectoryNode" />
+              <item name="1" type="462c0819:PsiDirectoryNode" />
+              <item name="socio" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/michael/Programming/jav/ReinforcedCoral/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562317385593" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/json-20180130.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -474,7 +408,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
+    <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -495,12 +429,14 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -508,11 +444,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -549,34 +485,46 @@
       <workItem from="1562289029912" duration="2371000" />
       <workItem from="1562292872137" duration="7586000" />
       <workItem from="1562300551437" duration="11022000" />
+      <workItem from="1562332984278" duration="10061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118721000" />
+    <option name="totallyTimeSpent" value="128782000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="41" width="1920" height="1039" extended-state="6" />
+    <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32451403" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32816824" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946004" weight="0.64788735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8396328" weight="0.25938967" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946004" weight="0.64776444" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8396328" weight="0.29989094" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8488121" weight="0.072769955" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.16036718" side_tool="true" weight="0.16901408" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.049295776" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.850432" weight="0.09389672" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49298057" weight="0.10446009" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.061068702" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.850432" weight="0.14503817" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49298057" weight="0.10359869" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -620,9 +568,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
@@ -731,20 +676,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1-1.json" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1-2.json" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1-3.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/AbstractList.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171">
@@ -763,27 +694,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2-0.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTeam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Team.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -797,13 +711,6 @@
             <element signature="e#3507#3508#0" expanded="true" />
             <element signature="e#3571#3572#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -828,38 +735,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -870,22 +749,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="440" column="17" lean-forward="true" selection-start-line="440" selection-start-column="17" selection-end-line="440" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1192">
+          <caret line="94" column="50" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1562307381726" expanded="false" signature="14703:15791" ph="{...}" />
-            <marker date="1562307381726" expanded="true" signature="15822:17195" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/socio/2.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+        <state relative-caret-position="85">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="40" column="75" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/WidgetProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTeam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -894,39 +858,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/4.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="374">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="323">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
-            <element signature="method#getGame#0;class#WorkTable#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+        <state relative-caret-position="322">
+          <caret line="188" column="66" selection-start-line="188" selection-start-column="66" selection-end-line="188" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#clearThings#0;class#PanelProblem#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
         </state>
       </provider>
     </entry>

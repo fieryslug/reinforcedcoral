@@ -8,6 +8,8 @@ import org.json.JSONObject;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Page {
 
@@ -47,14 +49,20 @@ public class Page {
             this.widgets = new ArrayList<>();
             for (int i = 0; i < elements.length(); ++i) {
                 JSONObject objectWidget = elements.getJSONObject(i);
-                String name = objectWidget.getString("name");
+                String name = objectWidget.getString("widget");
                 String content = objectWidget.getString("content");
-                String constraint = objectWidget.getString("constraint");
-                this.widgets.add(new Widget(name, content, constraint));
+                String constraints = objectWidget.getString("constraints");
+                JSONObject properties = objectWidget.getJSONObject("properties");
+
+                Map<String, String> p = new HashMap<>();
+                for(String s : properties.keySet()) {
+                    p.put(s, properties.getString(s));
+                }
+
+                this.widgets.add(new Widget(name, content, constraints, p));
             }
 
         }
-
         else {
             JSONArray array = object.getJSONArray("res");
 
