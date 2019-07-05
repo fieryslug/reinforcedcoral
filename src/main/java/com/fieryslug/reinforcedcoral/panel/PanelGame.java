@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.panel;
 
+import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
 import com.fieryslug.reinforcedcoral.widget.Direction;
@@ -10,8 +11,11 @@ import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import layout.TableLayout;
+import sun.audio.AudioPlayer;
 
+import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,12 +37,16 @@ public class PanelGame extends PanelPrime {
     int paneHeight;
 
     public int state;
+    public int prevState;
     public Problem currentProblem;
     public int currentPageNumber = 0;
 
     ArrayList<PanelTeam> panelBoxes;
     public JPanel panelInteriorMenu;
     public PanelProblem panelInteriorPage;
+    public ButtonCoral buttonNext;
+    public ButtonCoral buttonPrev;
+    public ButtonCoral buttonConfirm;
 
     public ArrayList<JLabel> categoryLabels;
 
@@ -46,12 +54,21 @@ public class PanelGame extends PanelPrime {
     public Map<ButtonProblem, Problem> buttonProblemMap;
     public ButtonProblem[][] positionButtonMap;
     public ButtonProblem buttonSelected = null;
+    public Map<Team, Integer> teamIndexMap;
+    public Map<Team, PanelTeam> teamPanelMap;
 
+    public Map<Team, ArrayList<ControlKey>> teamKeys;
+    public Map<Team, Boolean> teamLockedMap;
+    public Map<Team, Integer> teamTempScoreMap;
+
+    private double[][] layoutSize;
 
     public PanelGame(FrameCoral frame) {
 
         super(frame);
-        this.state = 0;
+        this.state = 0; //0: menu, 1: problem, 2: answer, 3: post-answer
+        this.prevState = 0;
+        this.layoutSize = new double[][]{{0.166, 0.166, 0.166, 0.166, 0.166, 0.166}, {0.2, 0.2, 0.2, 0.1, 0.1, 0.2}};
 
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
@@ -62,12 +79,18 @@ public class PanelGame extends PanelPrime {
 
     @Override
     public void initialize() {
+        setLayout(new TableLayout(this.layoutSize));
 
         this.panelBoxes = new ArrayList<>();
         this.buttonProblemMap = new HashMap<>();
         this.problemButtonMap = new HashMap<>();
         this.positionButtonMap = new ButtonProblem[4][6];
         this.categoryLabels = new ArrayList<>();
+        this.teamIndexMap = new HashMap<>();
+        this.teamKeys = new HashMap<>();
+        this.teamPanelMap = new HashMap<>();
+        this.teamLockedMap = new HashMap<>();
+        this.teamTempScoreMap = new HashMap<>();
 
         double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15}};
         this.panelInteriorMenu = new JPanel();
@@ -78,16 +101,21 @@ public class PanelGame extends PanelPrime {
 
         this.panelInteriorPage = new PanelProblem(this.parent);
 
-        for(int i=0; i<4; ++i) {
-            Team team = this.parent.game.teams.get(i);
-            PanelTeam panel = new PanelTeam(team);
-            panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
-            this.panelBoxes.add(panel);
+        this.buttonNext = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
+        this.buttonPrev = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
+        this.buttonConfirm = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
 
+        for (int i = 0; i < 4; ++i) {
+            Team team = this.parent.game.teams.get(i);
+            teamIndexMap.put(team, i);
+            PanelTeam panel = new PanelTeam(team);
+            //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
+            this.panelBoxes.add(panel);
+            this.teamPanelMap.put(team, panel);
         }
 
-        int i=0, j=0;
-        for(Category category : this.parent.game.categories) {
+        int i = 0, j = 0;
+        for (Category category : this.parent.game.categories) {
             JLabel label = new JLabel("", SwingConstants.CENTER);
 
             label.setText(category.name);
@@ -97,7 +125,7 @@ public class PanelGame extends PanelPrime {
             this.categoryLabels.add(label);
 
 
-            for(Problem problem : category.problems) {
+            for (Problem problem : category.problems) {
                 ButtonProblem button = new ButtonProblem(MediaRef.PROBLEM, MediaRef.PROBLEM_HOVER, MediaRef.PROBLEM_PRESS);
                 button.setImageDisabled(MediaRef.PROBLEM_DISABLED);
                 button.setImageSelected(MediaRef.PROBLEM_SELECTED);
@@ -119,17 +147,17 @@ public class PanelGame extends PanelPrime {
             j = 0;
         }
 
-        for(int i1=0; i1<4; ++i1) {
-            for(int j1=0; j1<6; ++j1) {
+        for (int i1 = 0; i1 < 4; ++i1) {
+            for (int j1 = 0; j1 < 6; ++j1) {
 
-                if(j1 != 0)
-                    this.positionButtonMap[i1][j1].setNeighbor(Direction.UP, this.positionButtonMap[i1][j1-1]);
-                if(j1 != 5)
-                    this.positionButtonMap[i1][j1].setNeighbor(Direction.DOWN, this.positionButtonMap[i1][j1+1]);
-                if(i1 != 0)
-                    this.positionButtonMap[i1][j1].setNeighbor(Direction.LEFT, this.positionButtonMap[i1-1][j1]);
-                if(i1 != 3)
-                    this.positionButtonMap[i1][j1].setNeighbor(Direction.RIGHT, this.positionButtonMap[i1+1][j1]);
+                if (j1 != 0)
+                    this.positionButtonMap[i1][j1].setNeighbor(Direction.UP, this.positionButtonMap[i1][j1 - 1]);
+                if (j1 != 5)
+                    this.positionButtonMap[i1][j1].setNeighbor(Direction.DOWN, this.positionButtonMap[i1][j1 + 1]);
+                if (i1 != 0)
+                    this.positionButtonMap[i1][j1].setNeighbor(Direction.LEFT, this.positionButtonMap[i1 - 1][j1]);
+                if (i1 != 3)
+                    this.positionButtonMap[i1][j1].setNeighbor(Direction.RIGHT, this.positionButtonMap[i1 + 1][j1]);
 
             }
 
@@ -139,7 +167,60 @@ public class PanelGame extends PanelPrime {
 
     private void linkButtons() {
 
-        for(Category category : this.parent.game.categories) {
+        this.buttonNext.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (PanelGame.this.state == 1) {
+
+                    if (currentPageNumber + 1 < currentProblem.pages.size()) {
+                        int nextpage = PanelGame.this.currentPageNumber + 1;
+                        if (PanelGame.this.currentProblem.pages.get(nextpage).type == -1) {
+                            PanelGame.this.setState(2);
+                        }
+                        PanelGame.this.currentPageNumber = nextpage;
+                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+
+                    }
+                }
+            }
+        });
+
+        this.buttonPrev.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                if (PanelGame.this.state == 1) {
+
+                    if (currentPageNumber == 0) {
+                        System.out.println("switched");
+                        PanelGame.this.setState(0);
+                        PanelGame.this.currentProblem = null;
+                        PanelGame.this.currentPageNumber = 0;
+                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+                    } else {
+                        PanelGame.this.currentPageNumber--;
+                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+                    }
+
+                }
+
+            }
+        });
+
+        this.buttonConfirm.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                for (Team team : PanelGame.this.parent.game.teams) {
+                    System.out.println(teamKeys.get(team));
+                    int points = currentProblem.getPoints(teamKeys.get(team));
+                    team.addPoints(points);
+                }
+                PanelGame.this.setState(3);
+                parent.switchPanel(PanelGame.this, PanelGame.this);
+            }
+        });
+
+        for (Category category : this.parent.game.categories) {
 
             for (Problem problem : category.problems) {
 
@@ -147,18 +228,15 @@ public class PanelGame extends PanelPrime {
                 button.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        button.setButtonEnabled(false);
-                        button.setEnabled(false);
+                        //button.setButtonEnabled(false);
+                        //button.setEnabled(false);
 
                         PanelGame.this.currentProblem = problem;
-                        PanelGame.this.state = 1;
+                        PanelGame.this.setState(1);
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
 
                     }
                 });
-
-
-
             }
         }
     }
@@ -169,78 +247,149 @@ public class PanelGame extends PanelPrime {
         this.frameWidth = this.parent.getContentPane().getWidth();
         this.frameHeight = this.parent.getContentPane().getHeight();
 
+        if (this.state != this.prevState) reset();
+
+        this.teamKeys.clear();
+        for (int i = 0; i < 4; ++i) {
+            Team team = this.parent.game.teams.get(i);
+            PanelTeam panelTeam = this.panelBoxes.get(i);
+            this.teamKeys.put(team, new ArrayList<>());
+            this.teamLockedMap.put(team, false);
+            panelTeam.setForeground(Reference.WHITE);
+
+            panelTeam.labelScore.setText(String.valueOf(team.getScore()));
+            panelTeam.enter(this.parent.isFullScreen);
+
+
+            System.out.println(team.getId() + ": " + team.getScore());
+
+        }
+
         this.boxWidth = this.frameWidth / 2 - 10;
         this.boxHeight = this.frameHeight / 5 - 5;
         this.paneWidth = this.frameWidth - 10;
         this.paneHeight = this.frameHeight * 3 / 5 - 5;
+
         for (int i = 0; i < 4; ++i) {
             PanelTeam panel = this.panelBoxes.get(i);
             Team team = this.parent.game.teams.get(i);
-            if(team.hasPrivilege) {
+            if (team.hasPrivilege) {
                 panel.setBackground(Reference.DARKBLUE);
-            }
-            else {
+            } else {
                 panel.setBackground(Reference.BLACK);
             }
-            panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
+            //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
         }
 
-        if(this.state == 0) {
+        if (this.state == 0) {
             this.currentPageNumber = 0;
             double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15}};
             this.panelInteriorMenu.removeAll();
             this.panelInteriorMenu.setLayout(new TableLayout(size));
-            this.panelInteriorMenu.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
+            //this.panelInteriorMenu.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
 
-            int i=0, j=1;
+            int i = 0, j = 1;
 
-            for(Category category : this.parent.game.categories) {
+            for (Category category : this.parent.game.categories) {
 
                 String pos = String.valueOf(i) + ", " + String.valueOf(0);
                 this.panelInteriorMenu.add(this.categoryLabels.get(i), pos);
 
-                for(Problem problem : category.problems) {
+                for (Problem problem : category.problems) {
                     ButtonCoral button = this.problemButtonMap.get(problem);
                     this.panelInteriorMenu.add(button, String.valueOf(i) + ", " + String.valueOf(j));
-                    button.resizeImageForIcons((int)(this.paneWidth*0.25), (int)(this.paneHeight*0.15));
+                    button.resizeImageForIcons((int) (this.paneWidth * 0.25), (int) (this.paneHeight * 0.15));
 
                     j += 1;
                 }
                 i += 1;
                 j = 1;
-
             }
 
-            add(this.panelBoxes.get(0));
-            add(this.panelBoxes.get(1));
-            add(this.panelInteriorMenu);
-            add(this.panelBoxes.get(2));
-            add(this.panelBoxes.get(3));
+            add(this.panelBoxes.get(0), "0, 0, 2, 0");
+            add(this.panelBoxes.get(1), "3, 0, 5, 0");
+            add(this.panelInteriorMenu, "0, 1, 5, 4");
+            add(this.panelBoxes.get(2), "0, 5, 2, 5");
+            add(this.panelBoxes.get(3), "3, 5, 5, 5");
+        }
+        int buttonX = this.paneHeight / 8, buttonY = this.paneHeight / 8;
+        if (this.state == 1) {
+
+            this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight * 5 / 6));
+            this.buttonNext.setPreferredSize(new Dimension(buttonX, buttonY));
+            this.buttonNext.resizeImageForIcons(buttonX, buttonY);
+            this.buttonPrev.setPreferredSize(new Dimension(buttonX, buttonY));
+            this.buttonPrev.resizeImageForIcons(buttonX, buttonY);
+
+            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+
+            add(this.panelBoxes.get(0), "0, 0, 2, 0");
+            add(this.panelBoxes.get(1), "3, 0, 5, 0");
+            //add(FuncBox.blankLabel(2000, 2), "0, 1, 1, 3");
+            add(this.panelInteriorPage, "0, 1, 5, 3");
+            add(this.buttonPrev, "0, 4");
+            add(this.buttonNext, "5, 4");
+            //add(FuncBox.blankLabel(2000, 2));
+            add(this.panelBoxes.get(2), "0, 5, 2, 5");
+            add(this.panelBoxes.get(3), "3, 5, 5, 5");
+
         }
 
-        if(this.state == 1) {
-            this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
+        if (this.state == 2) {
 
-            this.panelInteriorPage.inflate(this.currentProblem.pages.get(this.currentPageNumber));
+            for (Team team : this.parent.game.teams) {
+                this.teamLockedMap.put(team, false);
+            }
+            this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
+            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
 
-            add(this.panelBoxes.get(0));
-            add(this.panelBoxes.get(1));
-            add(this.panelInteriorPage);
-            add(this.panelBoxes.get(2));
-            add(this.panelBoxes.get(3));
+            add(this.panelBoxes.get(0), "0, 0, 2, 0");
+            add(this.panelBoxes.get(1), "3, 0, 5, 0");
+            //add(FuncBox.blankLabel(2000, 2));
+            add(this.panelInteriorPage, "0, 1, 5, 3");
+            add(this.buttonConfirm, "4, 4");
+            //add(FuncBox.blankLabel(2000, 2));
+            add(this.panelBoxes.get(2), "0, 5, 2, 5");
+            add(this.panelBoxes.get(3), "3, 5, 5, 5");
+
+
         }
     }
+
+    private void reset() {
+
+        for (int i = 0; i < 4; ++i) {
+            Team team = this.parent.game.teams.get(i);
+            PanelTeam panelTeam = this.panelBoxes.get(i);
+            this.teamKeys.put(team, new ArrayList<>());
+            this.teamLockedMap.put(team, false);
+            this.teamTempScoreMap.put(team, 0);
+
+            panelTeam.setForeground(Reference.WHITE);
+
+            panelTeam.labelScore.setText(String.valueOf(team.getScore()));
+            panelTeam.enter(this.parent.isFullScreen);
+
+
+            System.out.println(team.getId() + ": " + team.getScore());
+
+        }
+
+    }
+
 
     @Override
     public void react(Team team, ControlKey key) {
 
-        if(this.state == 0) {
+        if (this.state == 0) {
 
             System.out.println("team: " + team.getId());
             System.out.println("button: " + key);
             Direction direction = key.toDirection();
 
-            if(team.hasPrivilege) {
+            if (team.hasPrivilege) {
 
                 if (direction != null) {
 
@@ -259,12 +408,50 @@ public class PanelGame extends PanelPrime {
 
                 }
 
-                if(key == ControlKey.ENTER) {
+                if (key == ControlKey.ENTER) {
 
                     this.buttonSelected.doClick();
 
                 }
             }
         }
+
+        if (this.state == 2) {
+            if (!(this.teamLockedMap.get(team))) {
+                ArrayList<ControlKey> keys = this.teamKeys.get(team);
+                if (key.equals(ControlKey.ENTER)) {
+                    boolean flag = true;
+                    if(keys.isEmpty()) flag = false;
+                    for (int i = 0; i < 4; ++i) {
+                        Team team1 = this.parent.game.teams.get(i);
+                        if (this.teamLockedMap.get(team1) && !team1.equals(team)) {
+                            if (this.teamKeys.get(team1).equals(this.teamKeys.get(team))) {
+                                flag = false;
+                            }
+                        }
+                    }
+                    if (flag) {
+                        MediaRef.playWav(MediaRef.SUPERCELL);
+                        this.teamLockedMap.put(team, true);
+                        this.teamPanelMap.get(team).labelState.setForeground(Reference.AQUA);
+                    }
+                }
+                else if (key.equals(ControlKey.DEL)) {
+                    keys.remove(keys.size() - 1);
+                }
+                else if (this.teamKeys.get(team).size() < 16) {
+                        keys.add(key);
+                }
+                    String s = ControlKey.stringRepresentation(keys);
+                    this.teamPanelMap.get(team).labelState.setText(s);
+            }
+        }
+    }
+
+    private void setState(int newState) {
+
+        this.prevState = this.state;
+        this.state = newState;
+
     }
 }

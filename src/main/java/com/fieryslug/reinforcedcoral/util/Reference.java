@@ -7,6 +7,9 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
+    //public static final String
+
+    public static final int MAGIC_PRIME = 62;
 
     public static final Color WHITE = new Color(255, 255, 255);
     public static final Color AQUA = new Color(85, 221, 209);
@@ -28,6 +31,13 @@ public class Reference {
     public static final Font MONOSPACED60BOLD = new Font("Monospaced", Font.BOLD, 60);
 
     public static final Font JHENGHEI30 = new Font("Microsoft JhengHei", Font.PLAIN, 30);
+    public static final Font JHENGHEI40BOLD = new Font("Microsoft JhengHei", Font.BOLD, 40);
+    public static final Font JHENGHEI45 = new Font("Microsoft JhengHei", Font.PLAIN, 45);
+    public static final Font JHENGHEI60BOLD = new Font("Microsoft JhengHei", Font.BOLD, 60);
+    public static final Font JHENGHEI80BOLD = new Font("Microsoft JhengHei", Font.BOLD, 80);
+    public static final Font JHENGHEI120BOLD = new Font("Microsoft JhengHei", Font.BOLD, 120);
+
+
 
     public static final Border BEVEL1 = BorderFactory.createBevelBorder(0, AQUA, WHITE);
     public static final Border BEVEL2 = BorderFactory.createBevelBorder(1, BLAZE, ORANGE);

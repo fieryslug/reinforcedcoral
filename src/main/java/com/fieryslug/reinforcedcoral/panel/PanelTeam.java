@@ -37,14 +37,25 @@ public class PanelTeam extends JPanel {
         this.labelScore.setText(String.valueOf(this.team.getScore()));
 
         this.labelState = new JLabel();
-        this.labelState.setFont(Reference.JHENGHEI30);
+        this.labelState.setFont(Reference.JHENGHEI40BOLD);
         this.labelState.setForeground(Reference.WHITE);
-        this.labelState.setText("AABBA");
+        this.labelState.setText("");
 
         add(this.labelName);
         add(this.labelScore);
         add(FuncBox.blankLabel(2000, 10));
         add(this.labelState);
+
+    }
+
+    public void enter(boolean isFullScreen) {
+
+        if(isFullScreen) {
+            this.labelState.setFont(Reference.JHENGHEI60BOLD);
+        }
+        else {
+            this.labelState.setFont(Reference.JHENGHEI40BOLD);
+        }
 
     }
 

@@ -1,7 +1,6 @@
 package com.fieryslug.reinforcedcoral.util;
 
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
-import oracle.jrockit.jfr.JFR;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,10 +26,12 @@ public class ActionFullScreen extends AbstractAction {
         if(frame.isUndecorated()) {
             device.setFullScreenWindow(null);
             frame.setUndecorated(false);
+            frame.isFullScreen = false;
         }
         else {
             frame.setUndecorated(true);
             device.setFullScreenWindow(frame);
+            frame.isFullScreen = true;
         }
 
         frame.setVisible(true);

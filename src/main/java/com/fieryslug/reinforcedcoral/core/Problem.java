@@ -1,9 +1,12 @@
 package com.fieryslug.reinforcedcoral.core;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.util.FuncBox;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Problem {
 
@@ -13,23 +16,50 @@ public class Problem {
     private ArrayList<ControlKey> answer;
     public ArrayList<Page> pages;
 
+    public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
+    public ArrayList<Problem> dependences;
+
+    @Deprecated
     public Problem(String name, int points) {
 
         this.name = name;
         this.points = points;
         this.pages = new ArrayList<>();
         this.answer = new ArrayList<>();
+        this.keysPointsMap = new HashMap<>();
 
     }
 
-    public int getPoints() {
-        return this.points;
-    }
+    public Problem(String path) {
 
-    public void addPages(Page... pages) {
+        this.points = points;
+        //this.answer = new ArrayList<>();
+        this.pages = new ArrayList<>();
+        this.keysPointsMap = new HashMap<>();
+        this.dependences = new ArrayList<>();
 
-        this.pages.addAll(Arrays.asList(pages));
+        final String PATH = "/res/problems/";
+        JSONObject jsonObject = new JSONObject(FuncBox.readFile(PATH + path));
 
+        this.name = jsonObject.getString("name");
+        this.fuzzy = jsonObject.getBoolean("fuzzy");
+        String answerString = jsonObject.getString("answer");
+        this.answer = ControlKey.stringToArray(answerString);
+
+        JSONObject pointsObj = jsonObject.getJSONObject("points");
+        Set<String> pointsKeys = pointsObj.keySet();
+        for(String s : pointsKeys) {
+            int points = pointsObj.getInt(s);
+            ArrayList<ControlKey> tempKeys = ControlKey.stringToArray(s);
+            this.keysPointsMap.put(tempKeys, points);
+        }
+
+
+        JSONArray arrayPages = jsonObject.getJSONArray("pages");
+        for(int i=0; i<arrayPages.length(); ++i) {
+            JSONObject objectPage = arrayPages.getJSONObject(i);
+            this.pages.add(new Page(objectPage));
+        }
     }
 
     public boolean checkAnswer(ArrayList<ControlKey> answer) {
@@ -50,6 +80,38 @@ public class Problem {
 
         }
     }
+
+    public int getPoints(ArrayList<ControlKey> teamAnswer) {
+
+        int points1 = 0;
+        if(this.fuzzy) {
+            ArrayList<ControlKey> list1 = (ArrayList<ControlKey>)teamAnswer.clone();
+            Collections.sort(list1);
+            for(ArrayList<ControlKey> candidate : this.keysPointsMap.keySet()) {
+
+                ArrayList<ControlKey> list0 = (ArrayList<ControlKey>)candidate.clone();
+                Collections.sort(list0);
+                if(list0.equals(list1)) {
+                    points1 = Integer.max(points1, this.keysPointsMap.get(candidate));
+                }
+            }
+        }
+        else {
+            for(ArrayList<ControlKey> candidate : this.keysPointsMap.keySet()) {
+
+                if(teamAnswer.equals(candidate)) {
+                    points1 = Integer.max(points1, this.keysPointsMap.get(candidate));
+                }
+            }
+        }
+        //System.out.println("POINTS: " + points1);
+        return points1;
+    }
+
+    public void addDependence(Problem... problems) {
+        this.dependences.addAll(Arrays.asList(problems));
+    }
+
 
 
 }

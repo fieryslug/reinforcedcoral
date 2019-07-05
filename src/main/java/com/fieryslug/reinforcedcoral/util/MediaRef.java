@@ -30,10 +30,11 @@ public class MediaRef {
     public static final Image PROBLEM_DISABLED_SELECTED = getImage("/res/button/problem_disabled_selected.png");
 
     public static final String APPLE1 = "/res/sound/apple1.wav";
+    public static final String SUPERCELL = "/res/sound/supercell.wav";
 
 
 
-    private static Image getImage(String path) {
+    public static Image getImage(String path) {
 
         Image image = null;
         try {

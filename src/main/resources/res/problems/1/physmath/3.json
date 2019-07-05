@@ -1,0 +1,31 @@
+{
+  "name": "<html> S<sup>5</sup> </html>",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 30
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "<html>Short Shark Swallows<br/>Snake Snack  (30pt)</html>"
+      ]
+    },
+    {
+      "type": 4,
+      "res": [
+        "Short Shark Swallows Snake Snack (30pt)",
+        "鯊魚瑞克餓了! 如果要讓寬1公尺的瑞克覺得自己可以吞下100公尺的蛇，請問蛇和瑞克的相對速度至少需要是多少?",
+        "/res/images/shark_eel.png"
+      ]
+    },
+    {
+      "type": -1,
+      "res": [
+        "Short Shark Swallows Snake Snack (30pt)",
+        "(A) 0.64c \t\t(B) 0.99995c\n(C) 0.9995c\t\t(D) 0.995c,o"
+      ]
+    }
+  ]
+}

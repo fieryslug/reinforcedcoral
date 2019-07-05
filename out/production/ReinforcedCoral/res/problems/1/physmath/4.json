@@ -1,0 +1,23 @@
+{
+  "name": "方程式與環保塑膠",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 30
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "方程式與環保塑膠 (30pt)"
+      ]
+    },
+    {
+      "type": -1,
+      "res": [
+        "方程式與環保塑膠 (30pt)",
+        "A+3B-2C=0\t\tB=4D\n5D-B+A=2\t\tA+B+C+D=E\n2A-B+C+10D+E=2\n\nE=?\n(A) 0\t\t(B) 1\n(C) 2\t\t(D) 3"
+      ]
+    }
+  ]
+}

@@ -24,6 +24,8 @@ public class FrameCoral extends JFrame {
 
     public PanelPrime currentPanel;
 
+    public boolean isFullScreen = false;
+
     public Game game;
 
     public FrameCoral(Game game) {
