@@ -34,6 +34,7 @@ public class FontRef {
     public static final Font JHENGHEI120BOLD = new Font("Microsoft JhengHei", Font.BOLD, 120);
 
     public static final Font TAIPEI30 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 30);
+    public static final Font TAIPEI35 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 35);
     public static final Font TAIPEI40 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 40);
     public static final Font TAIPEI40BOLD = new Font("Taipei Sans TC Beta Bold", Font.PLAIN, 40);
     public static final Font TAIPEI45 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 45);

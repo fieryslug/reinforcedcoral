@@ -17,6 +17,7 @@ public class Page {
     public String htmlText;
 
     public int type = 0;
+    private boolean isFinal;
     public ArrayList<String> res;
 
     public ArrayList<Widget> widgets;
@@ -43,8 +44,11 @@ public class Page {
         this.res = new ArrayList<>();
         this.type = object.getInt("type");
         this.widgets = null;
+        this.isFinal = this.type==-1;
 
         if(this.type == Reference.MAGIC_PRIME) {
+            boolean b = object.getBoolean("final");
+            this.isFinal = b;
             JSONArray elements = object.getJSONArray("elements");
             this.widgets = new ArrayList<>();
             for (int i = 0; i < elements.length(); ++i) {
@@ -73,6 +77,10 @@ public class Page {
             }
         }
 
+    }
+
+    public boolean isFinal() {
+        return this.isFinal;
     }
 
 

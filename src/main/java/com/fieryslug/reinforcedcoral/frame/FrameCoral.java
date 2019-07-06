@@ -84,7 +84,7 @@ public class FrameCoral extends JFrame {
 
     public void refresh() {
 
-        this.panelGame.enter();
+        this.currentPanel.enter();
 
     }
 

@@ -32,33 +32,38 @@ public class Problem {
 
     public Problem(String path) {
 
-        this.points = points;
-        //this.answer = new ArrayList<>();
-        this.pages = new ArrayList<>();
-        this.keysPointsMap = new HashMap<>();
-        this.dependences = new ArrayList<>();
+        try {
+            //this.answer = new ArrayList<>();
+            this.pages = new ArrayList<>();
+            this.keysPointsMap = new HashMap<>();
+            this.dependences = new ArrayList<>();
 
-        final String PATH = "/res/problems/";
-        JSONObject jsonObject = new JSONObject(FuncBox.readFile(PATH + path));
+            final String PATH = "/res/problems/";
+            JSONObject jsonObject = new JSONObject(FuncBox.readFile(PATH + path));
 
-        this.name = jsonObject.getString("name");
-        this.fuzzy = jsonObject.getBoolean("fuzzy");
-        String answerString = jsonObject.getString("answer");
-        this.answer = ControlKey.stringToArray(answerString);
+            this.name = jsonObject.getString("name");
+            this.fuzzy = jsonObject.getBoolean("fuzzy");
+            String answerString = jsonObject.getString("answer");
+            this.answer = ControlKey.stringToArray(answerString);
 
-        JSONObject pointsObj = jsonObject.getJSONObject("points");
-        Set<String> pointsKeys = pointsObj.keySet();
-        for(String s : pointsKeys) {
-            int points = pointsObj.getInt(s);
-            ArrayList<ControlKey> tempKeys = ControlKey.stringToArray(s);
-            this.keysPointsMap.put(tempKeys, points);
+            JSONObject pointsObj = jsonObject.getJSONObject("points");
+            Set<String> pointsKeys = pointsObj.keySet();
+            for (String s : pointsKeys) {
+                int points = pointsObj.getInt(s);
+                ArrayList<ControlKey> tempKeys = ControlKey.stringToArray(s);
+                this.keysPointsMap.put(tempKeys, points);
+            }
+
+
+            JSONArray arrayPages = jsonObject.getJSONArray("pages");
+            for (int i = 0; i < arrayPages.length(); ++i) {
+                JSONObject objectPage = arrayPages.getJSONObject(i);
+                this.pages.add(new Page(objectPage));
+            }
         }
-
-
-        JSONArray arrayPages = jsonObject.getJSONArray("pages");
-        for(int i=0; i<arrayPages.length(); ++i) {
-            JSONObject objectPage = arrayPages.getJSONObject(i);
-            this.pages.add(new Page(objectPage));
+        catch (Exception e) {
+            System.out.println("Error occurred while loading " + path + ":");
+            e.printStackTrace();
         }
     }
 

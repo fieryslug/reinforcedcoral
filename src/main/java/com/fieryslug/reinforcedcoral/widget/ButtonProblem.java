@@ -14,6 +14,8 @@ public class ButtonProblem extends ButtonCoral {
     private ImageIcon iconSelected;
     private ImageIcon iconDisabledSelected;
 
+    public JLabel label;
+
     public ButtonProblem(Image imageDefault, Image imageHover, Image imagePress) {
 
         super(imageDefault, imageHover, imagePress);

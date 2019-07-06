@@ -14,6 +14,7 @@
     },
     {
       "type": 62,
+      "final": false,
       "elements": [
         {
           "widget": "jlabel",
