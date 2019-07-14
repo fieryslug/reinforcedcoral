@@ -15,6 +15,7 @@ public class Problem {
     public String name;
     private ArrayList<ControlKey> answer;
     public ArrayList<Page> pages;
+    public Page pageSolution;
 
     public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
     public ArrayList<Problem> dependences;
@@ -27,16 +28,18 @@ public class Problem {
         this.pages = new ArrayList<>();
         this.answer = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
+        this.dependences = new ArrayList<>();
 
     }
 
     public Problem(String path) {
 
+        this.pages = new ArrayList<>();
+        this.keysPointsMap = new HashMap<>();
+        this.dependences = new ArrayList<>();
         try {
             //this.answer = new ArrayList<>();
-            this.pages = new ArrayList<>();
-            this.keysPointsMap = new HashMap<>();
-            this.dependences = new ArrayList<>();
+
 
             final String PATH = "/res/problems/";
             JSONObject jsonObject = new JSONObject(FuncBox.readFile(PATH + path));
@@ -54,12 +57,13 @@ public class Problem {
                 this.keysPointsMap.put(tempKeys, points);
             }
 
-
             JSONArray arrayPages = jsonObject.getJSONArray("pages");
             for (int i = 0; i < arrayPages.length(); ++i) {
                 JSONObject objectPage = arrayPages.getJSONObject(i);
                 this.pages.add(new Page(objectPage));
             }
+
+            this.pageSolution = new Page(jsonObject.getJSONObject("solution"));
         }
         catch (Exception e) {
             System.out.println("Error occurred while loading " + path + ":");

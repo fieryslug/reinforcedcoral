@@ -26,4 +26,17 @@ public class Game {
 
     }
 
+    public void setPrivilegeTeam(Team team) {
+
+        if (this.teams.contains(team)) {
+
+            for(Team team1 : this.teams)
+                team1.hasPrivilege = false;
+
+
+            team.hasPrivilege = true;
+        }
+
+    }
+
 }

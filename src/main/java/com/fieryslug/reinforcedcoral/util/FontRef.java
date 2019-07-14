@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class FontRef {
 
+
+
     static {
         try {
             GraphicsEnvironment ge =
@@ -24,6 +26,7 @@ public class FontRef {
     public static final Font MONOSPACED30 = new Font("Monospaced", Font.PLAIN, 30);
     public static final Font MONOSPACED30BOLD = new Font("Monospaced", Font.BOLD, 30);
     public static final Font MONOSPACED45 = new Font("Monospaced", Font.PLAIN, 45);
+    public static final Font MONOSPACED45BOLD = new Font("Monospaced", Font.BOLD, 45);
     public static final Font MONOSPACED60BOLD = new Font("Monospaced", Font.BOLD, 60);
 
     public static final Font JHENGHEI30 = new Font("Microsoft JhengHei", Font.PLAIN, 30);

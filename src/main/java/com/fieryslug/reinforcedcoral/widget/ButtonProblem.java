@@ -2,17 +2,23 @@ package com.fieryslug.reinforcedcoral.widget;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class ButtonProblem extends ButtonCoral {
 
     private boolean enabled;
+    public int state; //0:normal, 1:deactivated, -1:to be activated
     private boolean selected;
     public Image imageDisabled;
     public Image imageSelected;
     public Image imageDisabledSelected;
-    private ImageIcon iconDisabled;
+    public Image imagePreenabled;
+    public Image imagePreenabledSelected;
+    public ImageIcon iconDisabled;
     private ImageIcon iconSelected;
     private ImageIcon iconDisabledSelected;
+    private ImageIcon iconPreeanbled;
+    private ImageIcon iconPreenabledSelected;
 
     public JLabel label;
 
@@ -20,6 +26,7 @@ public class ButtonProblem extends ButtonCoral {
 
         super(imageDefault, imageHover, imagePress);
         this.enabled = true;
+        this.state = 0;
 
     }
 
@@ -42,22 +49,33 @@ public class ButtonProblem extends ButtonCoral {
         this.iconDisabledSelected = new ImageIcon(this.imageDisabledSelected);
     }
 
-    public void setButtonEnabled(boolean b) {
+    public void setImagePreenabled(Image image) {
+        this.imagePreenabled = image;
+        this.iconPreeanbled = new ImageIcon(this.imagePreenabled);
+    }
 
-        this.enabled = b;
-        refreshState(true);
+    public void setImagePreenabledSelected(Image image) {
+        this.imagePreenabledSelected = image;
+        this.iconPreenabledSelected = new ImageIcon(this.imagePreenabledSelected);
+    }
+
+    public void setState(int state) {
+
+        this.state = state;
+        refreshState();
 
     }
     public void setButtonSelected(boolean b) {
 
         this.selected = b;
-        refreshState(false);
+        refreshState();
     }
 
-    private void refreshState(boolean alterMouseListener) {
+    private void refreshState() {
 
-        if(this.enabled) {
-            if(alterMouseListener)
+        if(this.state == 0) {
+            setEnabled(true);
+            if(!Arrays.asList(getMouseListeners()).contains(this.mouseListener))
                 addMouseListener(this.mouseListener);
             if(this.selected) {
                 setIcon(this.iconSelected);
@@ -67,14 +85,26 @@ public class ButtonProblem extends ButtonCoral {
             }
 
         }
-        else {
-            if(alterMouseListener)
+        if(this.state == 1) {
+            setEnabled(false);
+            if(Arrays.asList(getMouseListeners()).contains(this.mouseListener))
                 removeMouseListener(this.mouseListener);
             if(this.selected) {
-                setIcon(this.iconDisabledSelected);
+                setDisabledIcon(this.iconDisabledSelected);
             }
             else {
-                setIcon(this.iconDisabled);
+                setDisabledIcon(this.iconDisabled);
+            }
+        }
+        if(this.state == -1) {
+            setEnabled(false);
+            if(Arrays.asList(getMouseListeners()).contains(this.mouseListener))
+                removeMouseListener(this.mouseListener);
+            if(this.selected) {
+                setDisabledIcon(this.iconPreenabledSelected);
+            }
+            else {
+                setDisabledIcon(this.iconPreeanbled);
             }
 
         }
@@ -88,8 +118,9 @@ public class ButtonProblem extends ButtonCoral {
         this.iconDisabled = ButtonCoral.resizeImage(this.imageDisabled, x, y);
         this.iconSelected = ButtonCoral.resizeImage(this.imageSelected, x, y);
         this.iconDisabledSelected = ButtonCoral.resizeImage(this.imageDisabledSelected, x, y);
+        this.iconPreeanbled = ButtonCoral.resizeImage(this.imagePreenabled, x, y);
+        this.iconPreenabledSelected = ButtonCoral.resizeImage(this.imagePreenabledSelected, x, y);
 
-
-        refreshState(false);
+        refreshState();
     }
 }

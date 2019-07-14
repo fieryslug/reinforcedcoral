@@ -48,5 +48,31 @@
         "善良的你能幫詹姆士找到正確的萬有旋力公式嗎？\n\n(A) M=9\n(B) M = (π^2 / g) c^2 ωm\n(C) M = (π^2 / g) cωm\n(D) M = cωm"
       ]
     }
-  ]
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "飛機的原理1 (30pt)",
+        "properties": {"textsize": "40", "textsizefull": "60", "textbold": "true", "center": "true"}
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 12, 19",
+        "content": "善良的你能幫詹姆士找到正確的萬有旋力公式嗎？\n\n(A) M=9\n(B) M = (π^2 / g) c^2 ωm\n(C) M = (π^2 / g) cωm\n(D) M = cωm",
+        "properties": {"textsize": "30", "textsizefull": "45"}
+
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "13, 5, 19, 19",
+        "content": "<html><font color=lime>C</font></html>",
+        "properties": {"textsize": "45", "textsizefull": "68"}
+      }
+    ]
+  }
 }

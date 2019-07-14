@@ -23,6 +23,8 @@ public class WorkTable {
         Problem prb05 = new Problem("place holder", 20);
         Problem prb06 = new Problem("place holder", 20);
 
+        prbFlight2.addDependence(prbFlight1);
+
         Problem prbFlight = new Problem("1/chembio/1.json");
         Problem prbSnakeEel = new Problem("1/chembio/2.json");
         Problem prb13 = new Problem("place holder", 20);

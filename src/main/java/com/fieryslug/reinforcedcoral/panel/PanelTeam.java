@@ -33,12 +33,12 @@ public class PanelTeam extends JPanel {
         this.labelName.setText("第" + this.team.getId() + "小隊    ");
 
         this.labelScore = new JLabel();
-        this.labelScore.setFont(Reference.MONOSPACED30BOLD);
-        this.labelScore.setForeground(Reference.LIME);
+        this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
+        this.labelScore.setForeground(Reference.BLAZE);
         this.labelScore.setText(String.valueOf(this.team.getScore()));
 
         this.labelState = new JLabel();
-        this.labelState.setFont(Reference.JHENGHEI40BOLD);
+        this.labelState.setFont(FontRef.TAIPEI40BOLD);
         this.labelState.setForeground(Reference.WHITE);
         this.labelState.setText("");
 
@@ -49,6 +49,7 @@ public class PanelTeam extends JPanel {
 
     }
 
+    @Deprecated
     public void enter(boolean isFullScreen) {
 
         if(isFullScreen) {
@@ -58,6 +59,18 @@ public class PanelTeam extends JPanel {
             this.labelState.setFont(Reference.JHENGHEI40BOLD);
         }
 
+    }
+
+    public void refreshFontSize(boolean isFullScreen) {
+        if (isFullScreen) {
+            this.labelState.setFont(FontRef.TAIPEI60BOLD);
+            this.labelScore.setFont(FontRef.MONOSPACED45BOLD);
+            this.labelName.setFont(FontRef.TAIPEI45);
+        } else {
+            this.labelState.setFont(FontRef.TAIPEI40BOLD);
+            this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
+            this.labelName.setFont(FontRef.TAIPEI30);
+        }
     }
 
 }

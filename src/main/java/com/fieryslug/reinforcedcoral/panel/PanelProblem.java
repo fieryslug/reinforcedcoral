@@ -88,6 +88,8 @@ public class PanelProblem extends JPanel {
 
         this.height = (int)this.getPreferredSize().getHeight();
         this.width = (int)this.getPreferredSize().getWidth();
+        System.out.println("width" + this.width);
+
         this.page = page;
         this.widgetInstanceMap = new HashMap<>();
         //answer
@@ -194,7 +196,14 @@ public class PanelProblem extends JPanel {
         }
         if(widget.widgetType == Widget.EnumWidget.JTEXTAREA) {
             JTextArea area = new JTextArea();
-
+            area.setText(widget.content);
+            area.setForeground(widget.getTextColor());
+            area.setBackground(Reference.BLACK);
+            if (widget.getCenter()) {
+                area.setAlignmentX(CENTER_ALIGNMENT);
+            }
+            this.widgetInstanceMap.put(widget, area);
+            add(area, widget.constraints);
         }
         if(widget.widgetType == Widget.EnumWidget.IMAGE) {
             JLabel label = new JLabel();

@@ -28,6 +28,8 @@ public class MediaRef {
     public static final Image PROBLEM_DISABLED = getImage("/res/button/problem_disabled.png");
     public static final Image PROBLEM_SELECTED = getImage("/res/button/problem_selected.png");
     public static final Image PROBLEM_DISABLED_SELECTED = getImage("/res/button/problem_disabled_selected.png");
+    public static final Image PROBLEM_PREENABLED = getImage("/res/button/problem_preenabled.png");
+    public static final Image PROBLEM_PREENABLED_SELECTED = getImage("/res/button/problem_preenabled_selected.png");
 
     public static final String APPLE1 = "/res/sound/apple1.wav";
     public static final String SUPERCELL = "/res/sound/supercell.wav";

@@ -32,6 +32,11 @@ public abstract class PanelPrime extends JPanel {
 
     }
 
+
+    public void refresh() {
+
+    }
+
     public void react(Team team, ControlKey key) {
 
     }

@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.widget;
 
 import com.fieryslug.reinforcedcoral.util.MediaRef;
+import com.fieryslug.reinforcedcoral.util.Pair;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,6 +23,8 @@ public class ButtonCoral extends JButton {
     private ImageIcon iconHover;
     private ImageIcon iconPress;
     protected MouseListener mouseListener;
+
+    public static Map<Pair<Image, Dimension>, ImageIcon> iconCache = new HashMap<>();
 
     private Map<Direction, ButtonCoral> neighbors;
 
@@ -53,7 +56,7 @@ public class ButtonCoral extends JButton {
 
             @Override
             public void mouseReleased(MouseEvent mouseEvent) {
-                if(ButtonCoral.this.isMouseInside)
+                if (ButtonCoral.this.isMouseInside)
                     setIcon(ButtonCoral.this.iconHover);
                 else
                     setIcon(ButtonCoral.this.iconDefault);
@@ -86,10 +89,17 @@ public class ButtonCoral extends JButton {
     }
 
     public static ImageIcon resizeImage(Image image, int x, int y) {
+        Pair<Image, Dimension> key = new Pair<Image, Dimension>(image, new Dimension(x, y));
+
+        ImageIcon icon = iconCache.get(key);
+
+        if(icon != null) return icon;
 
         BufferedImage bimage = MediaRef.toBufferedImage(image);
         Image dimg = bimage.getScaledInstance(x, y, Image.SCALE_SMOOTH);
-        return new ImageIcon(dimg);
+        ImageIcon imageIcon = new ImageIcon(dimg);
+        iconCache.put(key, imageIcon);
+        return imageIcon;
 
     }
 
