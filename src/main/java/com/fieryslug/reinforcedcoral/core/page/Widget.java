@@ -1,7 +1,9 @@
 package com.fieryslug.reinforcedcoral.core.page;
 
-import java.awt.Color;
-import java.awt.Font;
+import com.sun.org.apache.regexp.internal.RECompiler;
+import layout.TableLayoutConstraints;
+
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +43,7 @@ public class Widget {
 
     public boolean getBold() {
         String s = properties.get(KEY_TEXT_BOLD);
+        System.out.println("BOLD: " + s);
         if(s == null) return false;
         return Boolean.valueOf(s);
     }
@@ -54,9 +57,13 @@ public class Widget {
     public Color getTextColor() {
         String s = properties.get(KEY_TEXT_COLOR);
         if(s == null) return new Color(255, 255, 255);
-
-        return new Color(Integer.valueOf(s));
+        return new Color(Integer.valueOf(s, 16));
     }
+
+    public TableLayoutConstraints getConstraints() {
+        return new TableLayoutConstraints(this.constraints);
+    }
+
 
 
     public enum EnumWidget {

@@ -3,19 +3,19 @@
   "fuzzy": false,
   "answer": "B",
   "points": {
-    "B": 30
+    "B": 20
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "<html>Short Shark Swallows<br/>Snake Snack  (30pt)</html>"
+        "<html>Short Shark Swallows<br/>Snake Snack  (20pt)</html>"
       ]
     },
     {
       "type": 4,
       "res": [
-        "Short Shark Swallows Snake Snack (30pt)",
+        "Short Shark Swallows Snake Snack (20pt)",
         "鯊魚瑞克餓了! 如果要讓寬1公尺的瑞克覺得自己可以吞下100公尺的蛇，請問蛇和瑞克的相對速度至少需要是多少?",
         "/res/images/shark_eel.png"
       ]
@@ -23,9 +23,47 @@
     {
       "type": -1,
       "res": [
-        "Short Shark Swallows Snake Snack (30pt)",
-        "(A) 0.64c \t\t(B) 0.99995c\n(C) 0.9995c\t\t(D) 0.995c"
+        "Short Shark Swallows Snake Snack (20pt)",
+        "\n(A) 0.64c \t\t(B) 0.99995c\n(C) 0.9995c\t\t(D) 0.995c"
       ]
     }
-  ]
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "Short Shark Swallows Snake Snack (20pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 18, 10",
+        "content": "\n(A) 0.64c \t\t(B) 0.99995c\n(C) 0.9995c\t\t(D) 0.995c",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 11, 19, 19",
+        "content": "B",
+        "properties": {
+          "textsize": "60",
+          "textsizefull": "90",
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
+  }
 }

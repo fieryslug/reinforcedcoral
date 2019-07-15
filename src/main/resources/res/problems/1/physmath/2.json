@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "C",
   "points": {
-    "C": 30
+    "C": 10
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "飛機的原理2 (30pt)"
+        "飛機的原理2 (10pt)"
       ]
     },
     {
@@ -19,29 +19,188 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "飛機的原理2 (30pt)",
-          "properties": {"textsize": "40", "textsizefull": "60", "textbold": "true", "center": "true"}
+          "content": "飛機的原理2 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
         },
         {
           "widget": "jlabel",
           "constraints": "0, 5, 19, 10",
           "content": "Fundamental Theorem of Engineering (FTE)",
-          "properties": {"textsize": "30", "textsizefull": "45", "center": "true"}
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45",
+            "center": "true"
+          }
         },
         {
           "widget": "jlabel",
           "constraints": "0, 11, 19, 19",
           "content": "<html><font color=orange>π<sup>2</sup> = e<sup>2</sup> = g = 10</font></html>",
-          "properties": {"textsize": "30", "textsizefull": "45", "center": "true"}
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45",
+            "center": "true"
+          }
         }
       ]
     },
     {
-      "type": -1,
-      "res": [
-        "飛機的原理2 (30pt)",
-        "Mg=π^2 cωm \n假設今天有一台波音747質量為800g(含螺旋槳)\n其螺旋槳有8隻質量皆為100g\n試問螺旋槳轉速最小應為多少可使飛機飛起來?\n(A)3 * 10^8\t\t(B)3 * 10*9\n(C)3.3 * 10^-9\t\t(D)3.3 * 10^-8\ns^-1"
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "飛機的原理2 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 7",
+          "content": "<html>Mg=π<sup>2</sup>cωm<html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 8, 18, 13",
+          "content": "假設今天有一台波音747質量為800g(含螺旋槳)\n其螺旋槳有8隻質量皆為100g\n試問螺旋槳轉速最小應為多少可使飛機飛起來?",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 14, 6, 16",
+          "content": "<html>(A)3\u00d710<sup>8</sup></html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "7, 14, 12, 16",
+          "content": "<html>(B)3\u00d710<sup>9</sup></html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 17, 6, 19",
+          "content": "<html>(C)3.3\u00d710<sup>-9</sup></html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "7, 17, 12, 19",
+          "content": "<html>(D)3.3\u00d710<sup>-8</sup>   (s<sup>-1</sup>)</html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
       ]
     }
-  ]
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "飛機的原理2 (10pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 5, 18, 7",
+        "content": "<html>Mg=π<sup>2</sup>cωm<html>",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 8, 18, 13",
+        "content": "假設今天有一台波音747質量為800g(含螺旋槳)\n其螺旋槳有8隻質量皆為100g\n試問螺旋槳轉速最小應為多少可使飛機飛起來?",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 14, 6, 16",
+        "content": "<html> (A)3\u00d710<sup>8</sup> <html>",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "7, 14, 12, 16",
+        "content": "<html>(B)3\u00d710<sup>9</sup></html>",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 17, 6, 19",
+        "content": "<html>(C)3.3\u00d710<sup>-9</sup></html>",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "7, 17, 12, 19",
+        "content": "<html>(D)3.3\u00d710<sup>-8</sup>   (s<sup>-1</sup>)</html>",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "13, 14, 19, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "60",
+          "textsizefull": "90",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
+  }
 }

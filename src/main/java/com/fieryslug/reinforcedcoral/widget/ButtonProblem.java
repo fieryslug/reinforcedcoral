@@ -1,8 +1,13 @@
 package com.fieryslug.reinforcedcoral.widget;
 
+import com.fieryslug.reinforcedcoral.util.MediaRef;
+
+import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ButtonProblem extends ButtonCoral {
 
@@ -20,6 +25,10 @@ public class ButtonProblem extends ButtonCoral {
     private ImageIcon iconPreeanbled;
     private ImageIcon iconPreenabledSelected;
 
+    private Timer timerAnimation;
+    private TimerTask taskAnimation;
+    private int animationNumber;
+
     public JLabel label;
 
     public ButtonProblem(Image imageDefault, Image imageHover, Image imagePress) {
@@ -27,6 +36,21 @@ public class ButtonProblem extends ButtonCoral {
         super(imageDefault, imageHover, imagePress);
         this.enabled = true;
         this.state = 0;
+        this.taskAnimation = new TimerTask() {
+            @Override
+            public void run() {
+                if (animationNumber < 9) {
+                    if (animationNumber % 2 == 0) {
+                        setIcon(iconDefault);
+                    } else {
+                        setIcon(iconPreeanbled);
+                    }
+                    animationNumber += 1;
+                }
+                else
+                    timerAnimation.purge();
+            }
+        };
 
     }
 
@@ -110,7 +134,6 @@ public class ButtonProblem extends ButtonCoral {
         }
     }
 
-
     @Override
     public void resizeImageForIcons(int x, int y) {
 
@@ -123,4 +146,11 @@ public class ButtonProblem extends ButtonCoral {
 
         refreshState();
     }
+
+    public void playAnimation() {
+        this.animationNumber = 0;
+        this.timerAnimation = new Timer();
+        this.timerAnimation.scheduleAtFixedRate(this.taskAnimation, 500, 500);
+    }
+
 }

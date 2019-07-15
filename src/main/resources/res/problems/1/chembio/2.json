@@ -19,5 +19,37 @@
         "我們不應該把蛇和鰻魚搞混，請問蛇跟鰻魚差在哪裡?\n\nA.蛇就是鰻魚，鰻魚是水蛇，蛇是陸鰻魚\nB.蛇不是鰻魚，水蛇才是鰻魚\nC.蛇不是鰻魚，因為蛇會飛彈鰻魚不會\nD.蛇不是鰻魚，牠們差了90度"
       ]
     }
-  ]
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "鰻魚或蛇 (20pt)",
+        "properties": {"textsize": "40", "textsizefull": "60", "textbold": "true", "center": "true"}
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 12, 19",
+        "content": "我們不應該把蛇和鰻魚搞混，請問蛇跟鰻魚差在哪裡?\n\nA.蛇就是鰻魚，鰻魚是水蛇，蛇是陸鰻魚\nB.蛇不是鰻魚，水蛇才是鰻魚\nC.蛇不是鰻魚，因為蛇會飛彈鰻魚不會\nD.蛇不是鰻魚，牠們差了90度",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45",
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "13, 5, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "240",
+          "textsizefull": "360",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
+  }
 }

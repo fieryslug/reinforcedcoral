@@ -9,6 +9,7 @@ import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
 
 import layout.TableLayout;
+import layout.TableLayoutConstraints;
 
 import javax.swing.*;
 import java.awt.*;
@@ -88,7 +89,6 @@ public class PanelProblem extends JPanel {
 
         this.height = (int)this.getPreferredSize().getHeight();
         this.width = (int)this.getPreferredSize().getWidth();
-        System.out.println("width" + this.width);
 
         this.page = page;
         this.widgetInstanceMap = new HashMap<>();
@@ -143,7 +143,7 @@ public class PanelProblem extends JPanel {
             this.labelImage.setIcon(new ImageIcon(image));
 
         }
-        //title + top text image bottom
+        //title + top text bottom image
         if (page.type == 4) {
             this.labelTitle.setText(page.res.get(0));
             this.areaDescription.setText(page.res.get(1));
@@ -187,10 +187,12 @@ public class PanelProblem extends JPanel {
             label.setText(widget.content);
             label.setForeground(widget.getTextColor());
             label.setBackground(Reference.BLACK);
+            label.setBackground(Reference.TRANSPARENT);
             if(widget.getCenter())
                 label.setHorizontalAlignment(SwingConstants.CENTER);
-            this.widgetInstanceMap.put(widget, label);
 
+
+            this.widgetInstanceMap.put(widget, label);
             add(label, widget.constraints);
 
         }
@@ -198,7 +200,8 @@ public class PanelProblem extends JPanel {
             JTextArea area = new JTextArea();
             area.setText(widget.content);
             area.setForeground(widget.getTextColor());
-            area.setBackground(Reference.BLACK);
+            area.setBackground(Reference.TRANSPARENT);
+            area.setLineWrap(true);
             if (widget.getCenter()) {
                 area.setAlignmentX(CENTER_ALIGNMENT);
             }
@@ -207,6 +210,17 @@ public class PanelProblem extends JPanel {
         }
         if(widget.widgetType == Widget.EnumWidget.IMAGE) {
             JLabel label = new JLabel();
+            label.setHorizontalAlignment(SwingConstants.CENTER);
+            label.setVerticalAlignment(SwingConstants.CENTER);
+            Image image = MediaRef.getImage(widget.content);
+            TableLayoutConstraints constraints = widget.getConstraints();
+            int widthBoxes = constraints.col2 - constraints.col1 + 1;
+            int heightBoxes = constraints.row2 - constraints.row1 + 1;
+            image = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
+
+            label.setIcon(new ImageIcon(image));
+            this.widgetInstanceMap.put(widget, label);
+            add(label, widget.constraints);
         }
 
 
@@ -274,6 +288,19 @@ public class PanelProblem extends JPanel {
                         component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSize()));
                     else
                         component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSize()));
+                    if (widget.widgetType == Widget.EnumWidget.IMAGE) {
+
+                        JLabel label = (JLabel) this.widgetInstanceMap.get(widget);
+                        Image image = MediaRef.getImage(widget.content);
+                        TableLayoutConstraints constraints = widget.getConstraints();
+                        int widthBoxes = constraints.col2 - constraints.col1 + 1;
+                        int heightBoxes = constraints.row2 - constraints.row1 + 1;
+                        Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
+
+                        label.setIcon(new ImageIcon(image1));
+
+                    }
+
                 }
 
             }

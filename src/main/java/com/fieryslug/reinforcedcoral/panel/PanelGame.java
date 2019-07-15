@@ -176,7 +176,6 @@ public class PanelGame extends PanelPrime {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 if (PanelGame.this.state == 1) {
-
                     if (currentPageNumber + 1 < currentProblem.pages.size()) {
                         int nextpage = PanelGame.this.currentPageNumber + 1;
                         if (PanelGame.this.currentProblem.pages.get(nextpage).isFinal()) {
@@ -270,16 +269,17 @@ public class PanelGame extends PanelPrime {
             this.teamLockedMap.put(team, false);
             panelTeam.setForeground(Reference.WHITE);
 
+            /*
             if(this.parent.isFullScreen) {
                 panelTeam.labelName.setFont(FontRef.TAIPEI40);
             }
             else {
                 panelTeam.labelName.setFont(FontRef.TAIPEI30);
             }
-
+            */
 
             panelTeam.labelScore.setText(String.valueOf(team.getScore()));
-            panelTeam.enter(this.parent.isFullScreen);
+            //panelTeam.enter(this.parent.isFullScreen);
 
             //System.out.println(team.getId() + ": " + team.getScore());
 
@@ -334,7 +334,10 @@ public class PanelGame extends PanelPrime {
                     //button.resizeImageForIcons((int) (this.paneWidth * 0.25), (int) (this.paneHeight * 0.15));
 
                     if (button.state == -1) {
-                        if(dependencesSatisfied(button)) button.setState(0);
+                        if(dependencesSatisfied(button)) {
+                            button.setState(0);
+                            button.playAnimation();
+                        }
                     }
 
                     /*
@@ -439,7 +442,10 @@ public class PanelGame extends PanelPrime {
         this.boxWidth = this.frameWidth / 2 - 10;
         this.boxHeight = this.frameHeight / 5 - 5;
         this.paneWidth = this.frameWidth - 10;
-        this.paneHeight = this.frameHeight * 3 / 5 - 5;
+        if(this.state == 0)
+            this.paneHeight = this.frameHeight * 3 / 5 - 5;
+        else
+            this.paneHeight = this.frameHeight * 3 / 6 - 5;
         int buttonX = this.paneHeight / 8, buttonY = this.paneHeight / 8;
         for (Team team : this.parent.game.teams) {
             PanelTeam panelTeam = this.teamPanelMap.get(team);

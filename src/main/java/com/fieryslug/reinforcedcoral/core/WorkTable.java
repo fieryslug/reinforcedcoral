@@ -34,7 +34,7 @@ public class WorkTable {
 
         Problem prbShark = new Problem("1/socio/1.json");
         Problem prbElect = new Problem("1/socio/2.json");
-        Problem prb23 = new Problem("place holder", 20);
+        Problem prbCrab = new Problem("1/socio/3.json");
         Problem prb24 = new Problem("place holder", 20);
         Problem prb25 = new Problem("place holder", 20);
         Problem prb26 = new Problem("place holder", 20);
@@ -42,13 +42,13 @@ public class WorkTable {
         Problem prbPoemPaint = new Problem("1/lit/1.json");
         Problem prbPoemSunset = new Problem("1/lit/2.json");
         Problem prb33 = new Problem("place holder", 20);
-        Problem prb34 = new Problem("1/lit/4.json");
+        Problem prb34 = new Problem("place holder", 20);
         Problem prb35 = new Problem("place holder", 20);
         Problem prb36 = new Problem("place holder", 20);
 
         catPhysMath.addProblem(prbFlight1, prbFlight2, prbFlight3, prbEquations, prb05, prb06);
         catChemBio.addProblem(prbFlight, prbSnakeEel, prb13, prb14, prb15, prb16);
-        catSocio.addProblem(prbShark, prbElect, prb23, prb24, prb25, prb26);
+        catSocio.addProblem(prbShark, prbElect, prbCrab, prb24, prb25, prb26);
         catLit.addProblem(prbPoemPaint, prbPoemSunset, prb33, prb34, prb35, prb36);
 
         game.addCategory(catPhysMath);

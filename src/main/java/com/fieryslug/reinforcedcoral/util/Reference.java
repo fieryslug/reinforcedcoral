@@ -25,6 +25,7 @@ public class Reference {
     public static final Color GREEN = new Color(56, 142, 52);
     public static final Color DARKGREEN = new Color(33, 83, 30);
     public static final Color DARKBLUE = new Color(39, 69, 115);
+    public static final Color TRANSPARENT = new Color(0f, 0f, 0f, 0f);
 
     public static final Font MONOSPACED30 = new Font("Monospaced", Font.PLAIN, 30);
     public static final Font MONOSPACED30BOLD = new Font("Monospaced", Font.BOLD, 30);
@@ -45,5 +46,6 @@ public class Reference {
     public static final Border BEVELGREEN = BorderFactory.createBevelBorder(0, LIME, GREEN);
     public static final Border STROKE1 = BorderFactory.createStrokeBorder(new BasicStroke(3));
     public static final Border COMPOUND1 = BorderFactory.createCompoundBorder(BEVELGREEN, STROKE1);
+
 
 }

@@ -15,8 +15,8 @@ public class FontRef {
         try {
             GraphicsEnvironment ge =
                     GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.fileFromPath("/res/fonts/TaipeiSansTCBeta-Regular.ttf")));
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.fileFromPath("/res/fonts/TaipeiSansTCBeta-Bold.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/TaipeiSansTCBeta-Regular.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/TaipeiSansTCBeta-Bold.ttf")));
             System.out.println("Fonts loaded");
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();

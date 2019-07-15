@@ -7,11 +7,16 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class FuncBox {
+
+    public static Map<Pair<Image, Dimension>, Image> imageCache = new HashMap<>();
 
     public static JLabel blankLabel(int width, int height) {
         JLabel label = new JLabel();
@@ -39,8 +44,7 @@ public class FuncBox {
             while ((i = read.readLine()) != null)
                 res = res + i + "\n";
             read.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
 
             e.printStackTrace();
 
@@ -63,6 +67,12 @@ public class FuncBox {
     }
 
     public static Image resizeImagePreservingRatio(Image image, int x, int y) {
+
+        Pair<Image, Dimension> information = new Pair<>(image, new Dimension(x, y));
+
+        Image imageNew = imageCache.get(information);
+        if(imageNew != null) return imageNew;
+
         BufferedImage bimage = MediaRef.toBufferedImage(image);
         int height = bimage.getHeight();
         int width = bimage.getWidth();
@@ -71,10 +81,13 @@ public class FuncBox {
         double scaley = (double) y / height;
         double scale = Math.min(scalex, scaley);
 
-        return bimage.getScaledInstance((int)(scale * width), (int)(scale * height), Image.SCALE_SMOOTH);
+        imageNew =  bimage.getScaledInstance((int) (scale * width), (int) (scale * height), Image.SCALE_SMOOTH);
+        if(imageNew != null) imageCache.put(new Pair<>(image, new Dimension(x, y)), imageNew);
+        return imageNew;
 
     }
 
+    @Deprecated
     public static File fileFromPath(String path) {
 
         try {
@@ -83,6 +96,10 @@ public class FuncBox {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static InputStream inputStreamFromPath(String path) {
+        return FuncBox.class.getResourceAsStream(path);
     }
 
     public static void listAllFonts() {
@@ -95,7 +112,6 @@ public class FuncBox {
             System.out.println(font.getFontName(Locale.US));
         }
     }
-
 
 
 }
