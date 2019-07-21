@@ -181,7 +181,6 @@ public class PanelProblem extends JPanel {
 
     private void addAndConfigWidget(Widget widget) {
 
-
         if(widget.widgetType == Widget.EnumWidget.JLABEL) {
             JLabel label = new JLabel();
             label.setText(widget.content);
@@ -190,7 +189,6 @@ public class PanelProblem extends JPanel {
             label.setBackground(Reference.TRANSPARENT);
             if(widget.getCenter())
                 label.setHorizontalAlignment(SwingConstants.CENTER);
-
 
             this.widgetInstanceMap.put(widget, label);
             add(label, widget.constraints);
@@ -202,6 +200,9 @@ public class PanelProblem extends JPanel {
             area.setForeground(widget.getTextColor());
             area.setBackground(Reference.TRANSPARENT);
             area.setLineWrap(true);
+            area.setEditable(false);
+            area.setSelectedTextColor(widget.getTextColor());
+            area.setSelectionColor(Reference.TRANSPARENT);
             if (widget.getCenter()) {
                 area.setAlignmentX(CENTER_ALIGNMENT);
             }
@@ -222,12 +223,12 @@ public class PanelProblem extends JPanel {
             this.widgetInstanceMap.put(widget, label);
             add(label, widget.constraints);
         }
-
-
     }
 
     public void changeFonts(boolean isFullScreen) {
-
+        this.height = (int)this.getPreferredSize().getHeight();
+        this.width = (int)this.getPreferredSize().getWidth();
+        System.out.println("height: " + this.height + ", width: " + this.width);
         if (isFullScreen) {
             if(this.page.type == 0) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
@@ -239,6 +240,9 @@ public class PanelProblem extends JPanel {
             if(this.page.type == 2) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
                 this.areaDescription.setFont(FontRef.TAIPEI45);
+                Image image = MediaRef.getImage(page.res.get(2));
+                image = FuncBox.resizeImagePreservingRatio(image, this.width * 8/20, this.height * 15/20);
+                this.labelImage.setIcon(new ImageIcon(image));
             }
             if(this.page.type == -1) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
@@ -271,6 +275,9 @@ public class PanelProblem extends JPanel {
             if(this.page.type == 2) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
                 this.areaDescription.setFont(FontRef.TAIPEI30);
+                Image image = MediaRef.getImage(page.res.get(2));
+                image = FuncBox.resizeImagePreservingRatio(image, this.width * 8/20, this.height * 15/20);
+                this.labelImage.setIcon(new ImageIcon(image));
             }
             if(this.page.type == -1) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
@@ -288,25 +295,25 @@ public class PanelProblem extends JPanel {
                         component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSize()));
                     else
                         component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSize()));
-                    if (widget.widgetType == Widget.EnumWidget.IMAGE) {
-
-                        JLabel label = (JLabel) this.widgetInstanceMap.get(widget);
-                        Image image = MediaRef.getImage(widget.content);
-                        TableLayoutConstraints constraints = widget.getConstraints();
-                        int widthBoxes = constraints.col2 - constraints.col1 + 1;
-                        int heightBoxes = constraints.row2 - constraints.row1 + 1;
-                        Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
-
-                        label.setIcon(new ImageIcon(image1));
-
-                    }
-
                 }
-
             }
-
         }
 
+        if(this.page.type == Reference.MAGIC_PRIME) {
+            for (Widget widget : this.page.widgets) {
 
+                if (widget.widgetType == Widget.EnumWidget.IMAGE) {
+                    JLabel label = (JLabel) this.widgetInstanceMap.get(widget);
+                    Image image = MediaRef.getImage(widget.content);
+                    TableLayoutConstraints constraints = widget.getConstraints();
+                    int widthBoxes = constraints.col2 - constraints.col1 + 1;
+                    int heightBoxes = constraints.row2 - constraints.row1 + 1;
+                    Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
+                    System.out.println();
+                    label.setIcon(new ImageIcon(image1));
+
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,80 @@
+{
+  "name": "樹脂-8",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 10
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "樹脂-8 (10pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "樹脂-8 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "log(-1)=\n\n(A) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(B) 2iπ\n(C) 胡桃\n(D) 0",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "樹脂-8 (10pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "log(-1)=\n\n(A) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(B) 2iπ\n(C) 胡桃\n(D) 0",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 5, 18, 19",
+        "content": "A",
+        "properties": {
+          "textsize": "70",
+          "textsizefull": "105",
+          "textbold": "true",
+          "center": "true",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
+  }
+}

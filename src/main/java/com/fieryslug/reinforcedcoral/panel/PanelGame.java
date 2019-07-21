@@ -144,12 +144,18 @@ public class PanelGame extends PanelPrime {
                 this.problemButtonMap.put(problem, button);
 
                 this.positionButtonMap[i][j] = button;
-                if(!this.dependencesSatisfied(button)) button.setState(-1);
+                //if(!this.dependencesSatisfied(button)) button.setState(-1);
                 j += 1;
 
             }
             i += 1;
             j = 0;
+        }
+        for (Category category : this.parent.game.categories) {
+            for (Problem problem : category.problems) {
+                ButtonProblem button = this.problemButtonMap.get(problem);
+                if(!this.dependencesSatisfied(button)) button.setState(-1);
+            }
         }
 
         for (int i1 = 0; i1 < 4; ++i1) {
@@ -241,10 +247,11 @@ public class PanelGame extends PanelPrime {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //button.setState(1);
-
-                        PanelGame.this.currentProblem = problem;
-                        PanelGame.this.setState(1);
-                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+                        if(!button.label.getText().equals("place holder")) {
+                            PanelGame.this.currentProblem = problem;
+                            PanelGame.this.setState(1);
+                            PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+                        }
 
                     }
                 });
@@ -501,7 +508,7 @@ public class PanelGame extends PanelPrime {
             this.teamLockedMap.put(team, false);
             //this.teamTempScoreMap.put(team, 0);
 
-            panelTeam.setForeground(Reference.WHITE);
+            panelTeam.labelState.setForeground(Reference.WHITE);
 
             panelTeam.labelScore.setText(String.valueOf(team.getScore()));
             panelTeam.enter(this.parent.isFullScreen);

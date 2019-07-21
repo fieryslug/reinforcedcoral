@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -38,8 +39,7 @@ public class FuncBox {
 
         String res = "";
         try {
-            BufferedReader read = new BufferedReader(new InputStreamReader(url.openStream()));
-
+            BufferedReader read = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
             String i;
             while ((i = read.readLine()) != null)
                 res = res + i + "\n";

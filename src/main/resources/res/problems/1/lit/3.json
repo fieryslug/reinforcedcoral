@@ -1,0 +1,61 @@
+{
+  "name": "8不是質數",
+  "fuzzy": true,
+  "answer": "C",
+  "points": {
+    "C": 30
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "8不是質數 (10pt)"
+      ]
+    },
+    {
+      "type": -1,
+      "res": [
+        "8不是質數 (10pt)",
+        "星期三的英文Wednesday和哪個神有關?\n(A) 朱比特\n(B) 阿波羅\n(C) 奧丁\n(D)土地公"
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "8不是質數 (10pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 11, 19",
+        "content": "星期三的英文Wednesday和哪個神有關?\n(A) 朱比特\n(B) 阿波羅\n(C) 奧丁\n(D)土地公",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "12, 5, 19, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "60",
+          "textsizefull": "90",
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

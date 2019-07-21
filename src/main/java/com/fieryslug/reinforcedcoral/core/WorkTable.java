@@ -18,17 +18,17 @@ public class WorkTable {
 
         Problem prbFlight1 = new Problem("1/physmath/1.json");
         Problem prbFlight2 = new Problem("1/physmath/2.json");
-        Problem prbFlight3 = new Problem("1/physmath/3.json");
+        Problem prbS5 = new Problem("1/physmath/3.json");
         Problem prbEquations = new Problem("1/physmath/4.json");
-        Problem prb05 = new Problem("place holder", 20);
-        Problem prb06 = new Problem("place holder", 20);
+        Problem prbLog = new Problem("1/physmath/5.json");
+        Problem prbCongee = new Problem("1/physmath/6.json");
 
-        prbFlight2.addDependence(prbFlight1);
+
 
         Problem prbFlight = new Problem("1/chembio/1.json");
         Problem prbSnakeEel = new Problem("1/chembio/2.json");
-        Problem prb13 = new Problem("place holder", 20);
-        Problem prb14 = new Problem("place holder", 20);
+        Problem prbRiver = new Problem("1/chembio/3.json");
+        Problem prbWalnut = new Problem("1/chembio/4.json");
         Problem prb15 = new Problem("place holder", 20);
         Problem prb16 = new Problem("place holder", 20);
 
@@ -41,15 +41,18 @@ public class WorkTable {
 
         Problem prbPoemPaint = new Problem("1/lit/1.json");
         Problem prbPoemSunset = new Problem("1/lit/2.json");
-        Problem prb33 = new Problem("place holder", 20);
-        Problem prb34 = new Problem("place holder", 20);
+        Problem prbOdin = new Problem("1/lit/3.json");
+        Problem prbBull = new Problem("1/lit/4.json");
         Problem prb35 = new Problem("place holder", 20);
         Problem prb36 = new Problem("place holder", 20);
 
-        catPhysMath.addProblem(prbFlight1, prbFlight2, prbFlight3, prbEquations, prb05, prb06);
-        catChemBio.addProblem(prbFlight, prbSnakeEel, prb13, prb14, prb15, prb16);
+        prbFlight2.addDependence(prbFlight1);
+        prbCrab.addDependence(prbOdin);
+
+        catPhysMath.addProblem(prbFlight1, prbFlight2, prbS5, prbEquations, prbLog, prbCongee);
+        catChemBio.addProblem(prbFlight, prbSnakeEel, prbRiver, prbWalnut, prb15, prb16);
         catSocio.addProblem(prbShark, prbElect, prbCrab, prb24, prb25, prb26);
-        catLit.addProblem(prbPoemPaint, prbPoemSunset, prb33, prb34, prb35, prb36);
+        catLit.addProblem(prbPoemPaint, prbPoemSunset, prbOdin, prbBull, prb35, prb36);
 
         game.addCategory(catPhysMath);
         game.addCategory(catChemBio);

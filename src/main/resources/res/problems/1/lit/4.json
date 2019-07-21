@@ -1,0 +1,39 @@
+{
+  "name": "p不發音",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 30
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "p不發音 (30pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "8不是質數 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea"
+        }
+      ]
+    }
+  ],
+  "solution": {
+
+  }
+}

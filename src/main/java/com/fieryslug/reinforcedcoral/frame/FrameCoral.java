@@ -39,7 +39,7 @@ public class FrameCoral extends JFrame {
         this.maxHeight = dimension.height;
         this.maxWidth = dimension.width;
 
-        setSize(this.maxWidth *2/3, this.maxHeight *3/4);
+        setSize(this.maxWidth *2/3, this.maxHeight *2/3);
         setLocationRelativeTo(null);
         setTitle(Reference.PROJECT_NAME);
         setIconImage(MediaRef.CORAL);

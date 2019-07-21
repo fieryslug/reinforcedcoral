@@ -1,9 +1,9 @@
 {
   "name": "市場與螃蟹",
   "fuzzy": false,
-  "answer": "D",
+  "answer": "C",
   "points": {
-    "D": "20"
+    "C": "20"
   },
   "pages": [
     {
@@ -120,7 +120,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 18, 9, 19",
-        "content": "D",
+        "content": "C",
         "properties": {
           "textsize": "50",
           "textsizefull": "75",
