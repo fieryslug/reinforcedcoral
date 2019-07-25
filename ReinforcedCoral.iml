@@ -12,5 +12,7 @@
     <orderEntry type="library" name="commons-io-2.6" level="project" />
     <orderEntry type="library" name="tablelayout" level="project" />
     <orderEntry type="library" name="json-20180130" level="project" />
+    <orderEntry type="library" name="jmf" level="project" />
+    <orderEntry type="library" name="mediaplayer" level="project" />
   </component>
 </module>

@@ -1,9 +1,9 @@
 {
   "name": "p不發音",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "D",
   "points": {
-    "B": 30
+    "D": 30
   },
   "pages": [
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "8不是質數 (10pt)",
+          "content": "p不發音 (30pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -28,12 +28,103 @@
           }
         },
         {
-          "widget": "jtextarea"
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 10",
+          "content": "Pseudo-Profound Bullshit",
+          "properties": {
+            "textsize": "50",
+            "textsizefull": "75",
+            "center": "true",
+            "textcolor": "ff0000",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 11, 18, 14",
+          "content": "Pseudo-Profound Bullshit (PPB) 是一種看似有道理，但實際目的是使人印象深刻而非提供資訊的bullshit (G Pennycook et al., 2015)。例如以下這句就可以算是PPB",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 15, 18, 19",
+          "content": "Attention and intention are the mechanics of manifestation.",
+          "properties": {
+            "textsize": "24",
+            "textsizefull": "36",
+            "textcolor": "ff00ff",
+            "center": "true",
+            "textbold": "true"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "p不發音 (30pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "請問下列何者不是PPB?\n(A) 而剎那所依屬的時間，若以剛才論空間依屬性的推演，就不能追朔至當今科學家所推演的極限--宇宙誕生的一百五十億年了。(奚松《遍在》)\n(B) 文學最大的用處就是沒有用處。(莫言)\n(C) 修行的路總是孤獨的，因為智慧必然來自孤獨。(龍應台《目送》)\n(D) 麵包!麵包!我們要麵包!(左拉《萌芽》)",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
         }
       ]
     }
   ],
   "solution": {
-
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "p不發音 (30pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 18, 17",
+        "content": "請問下列何者不是PPB?\n(A) 而剎那所依屬的時間，若以剛才論空間依屬性的推演，就不能追朔至當今科學家所推演的極限--宇宙誕生的一百五十億年了。(奚松《遍在》)\n(B) 文學最大的用處就是沒有用處。(莫言)\n(C) 修行的路總是孤獨的，因為智慧必然來自孤獨。(龍應台《目送》)\n(D) 麵包!麵包!我們要麵包!(左拉《萌芽》)",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "15, 15, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textcolor": "00ff00",
+          "textbold": "true"
+        }
+      }
+    ]
   }
 }

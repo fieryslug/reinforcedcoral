@@ -247,7 +247,7 @@ public class PanelGame extends PanelPrime {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //button.setState(1);
-                        if(!button.label.getText().equals("place holder")) {
+                        if(!problem.onClick(PanelGame.this)) {
                             PanelGame.this.currentProblem = problem;
                             PanelGame.this.setState(1);
                             PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);

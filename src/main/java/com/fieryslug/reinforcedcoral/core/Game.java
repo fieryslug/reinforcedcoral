@@ -39,4 +39,11 @@ public class Game {
 
     }
 
+    public Team getPrivelgeTeam() {
+        for(Team team1 : this.teams) {
+            if(team1.hasPrivilege) return team1;
+        }
+        return null;
+    }
+
 }

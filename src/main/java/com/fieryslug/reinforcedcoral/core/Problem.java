@@ -1,7 +1,10 @@
 package com.fieryslug.reinforcedcoral.core;
 
 import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
+import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -19,6 +22,8 @@ public class Problem {
 
     public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
     public ArrayList<Problem> dependences;
+
+    private ButtonProblem buttonProblem;
 
     @Deprecated
     public Problem(String name, int points) {
@@ -71,6 +76,15 @@ public class Problem {
         }
     }
 
+    public void bindButton(ButtonProblem button) {
+        this.buttonProblem = button;
+    }
+
+    public boolean onClick(PanelGame panelGame) {
+        return false;
+    }
+
+    @Deprecated
     public boolean checkAnswer(ArrayList<ControlKey> answer) {
 
         if (this.fuzzy) {

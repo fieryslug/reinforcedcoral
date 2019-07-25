@@ -7,30 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5744e42-52ec-43c1-a278-3847ae3c44a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jmf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mediaplayer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemMine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcedCoral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcedCoral.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ReinforcedCoral_jar/ReinforcedCoral.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ReinforcedCoral_jar/ReinforcedCoral.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/FuncBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/FuncBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,14 +79,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563159964030" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mediaplayer.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
@@ -231,6 +224,12 @@
       <workItem from="1563623708892" duration="2379000" />
       <workItem from="1563629615795" duration="1958000" />
       <workItem from="1563672710457" duration="6695000" />
+      <workItem from="1563702954338" duration="9987000" />
+      <workItem from="1563802677164" duration="734000" />
+      <workItem from="1563970479149" duration="345000" />
+      <workItem from="1564052723538" duration="20000" />
+      <workItem from="1564052753937" duration="3000" />
+      <workItem from="1564052811376" duration="3000" />
     </task>
     <servers />
   </component>
@@ -262,94 +261,5 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>ReinforcedCoral:jar</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>ReinforcedCoral</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>commons-io-2.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
