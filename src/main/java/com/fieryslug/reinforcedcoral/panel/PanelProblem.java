@@ -8,8 +8,10 @@ import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
 
-import layout.TableLayout;
-import layout.TableLayoutConstraints;
+//import layout.TableLayout;
+//import layout.TableLayoutConstraints;
+import info.clearthought.layout.TableLayout;
+import info.clearthought.layout.TableLayoutConstraints;
 
 import javax.swing.*;
 import java.awt.*;

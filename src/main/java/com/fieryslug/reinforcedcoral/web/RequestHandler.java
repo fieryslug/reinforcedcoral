@@ -3,7 +3,7 @@ package com.fieryslug.reinforcedcoral.web;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import sun.misc.Request;
+//import sun.misc.Request;
 
 import javax.swing.*;
 import java.io.IOException;

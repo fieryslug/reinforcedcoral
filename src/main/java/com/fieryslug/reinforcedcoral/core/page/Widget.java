@@ -1,7 +1,8 @@
 package com.fieryslug.reinforcedcoral.core.page;
 
-import com.sun.org.apache.regexp.internal.RECompiler;
-import layout.TableLayoutConstraints;
+//import com.sun.org.apache.regexp.internal.RECompiler;
+//import layout.TableLayoutConstraints;
+import info.clearthought.layout.TableLayoutConstraints;
 
 import java.awt.*;
 import java.util.HashMap;

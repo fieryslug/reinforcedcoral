@@ -2,27 +2,103 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ReinforcedCoral:jar" />
+      <artifact name="reinforcedcoral:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5744e42-52ec-43c1-a278-3847ae3c44a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jmf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mediaplayer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemMine.java" afterDir="false" />
+    <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ReinforcedCoral_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jmf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_20180130.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mediaplayer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/tablelayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcedCoral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcedCoral.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ReinforcedCoral_jar/ReinforcedCoral.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ReinforcedCoral_jar/ReinforcedCoral.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcedCoral.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-io-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/json-20180130.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tablelayout.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ReinforcedCoral_jar/ReinforcedCoral.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/ControlKey$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/ControlKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Problem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/Team.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/WorkTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Page.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Widget$EnumWidget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/core/page/Widget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelPrime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelTeam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelTitle$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/panel/PanelTitle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/ActionFullScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/FuncBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/MediaRef.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/util/Reference.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/web/RequestHandler$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/web/RequestHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/web/RequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/widget/ButtonCoral$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/widget/ButtonCoral.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/widget/ButtonProblem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/widget/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/widget/IHasNext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/com/fieryslug/reinforcedcoral/widget/LabelCoral.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/button/problem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/button/problem_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/button/problem_disabled_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/button/problem_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/button/problem_press.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/button/problem_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/icon/buttonadd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/icon/buttonadd_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/icon/buttonadd_press.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/icon/chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/icon/coral.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/images/eel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/images/frog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/images/plane.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/images/shark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/images/shark_eel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/chembio/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/chembio/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/lit/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/lit/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/physmath/4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/socio/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/problems/1/socio/2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/sound/apple1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/sound/buildup_sine_drip.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReinforcedCoral/res/sound/supercell.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/web/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/web/RequestHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,76 +106,81 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="reinforcedcoral" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="reinforcedcoral" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="reinforcedcoral" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="reinforcedcoral" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="reinforcedcoral" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="reinforcedcoral" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="fieryslug" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
-  </component>
-  <component name="ProjectId" id="1O2RFYiKfkBeHcqsvqv2KkJkNdb" />
+  <component name="ProjectId" id="1OVSggPIbVHLxDIikU17SBAch31" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/michael/Programming/jav/ReinforcedCoral/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563159964030" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mediaplayer.jar!/" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Programming\ReinforcedCoral\lib" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Programming\ReinforcedCoral\src\main\java" />
-      <recent name="D:\Programming\ReinforcedCoral\res\icon" />
-    </key>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle_reinforcedcoral [build]" />
+      <command value="gradle_reinforcedcoral [assemble]" />
+      <command value="gradle run" />
+      <command value="gradle jar" />
+      <command value="gradle tasks" />
+      <command value="gradle clean" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -113,17 +194,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [runJar]">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReinforcedCoralStartup" type="Application" factoryName="Application">
+    <configuration name="Reinforced Coral" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.fieryslug.reinforcedcoral.Main" />
-      <module name="ReinforcedCoral" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <module name="reinforcedcoral.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,6 +213,101 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="gradle_reinforcedcoral [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradle_reinforcedcoral [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradle_reinforcedcoral [runJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradle_reinforcedcoral [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradle_reinforcedcoral [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="tasks" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -159,88 +334,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.gradle_reinforcedcoral [runJar]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [tasks]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [jar]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [run]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [clean]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f5744e42-52ec-43c1-a278-3847ae3c44a8" name="Default" comment="" />
-      <created>1561359412297</created>
+      <changelist id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="" />
+      <created>1564061383957</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1561359412297</updated>
-      <workItem from="1561359419819" duration="1761000" />
-      <workItem from="1561376030681" duration="10941000" />
-      <workItem from="1561425230834" duration="161000" />
-      <workItem from="1561451544355" duration="9925000" />
-      <workItem from="1561472298086" duration="9976000" />
-      <workItem from="1561507642381" duration="268000" />
-      <workItem from="1561531140903" duration="961000" />
-      <workItem from="1561533948678" duration="8047000" />
-      <workItem from="1561557309024" duration="7734000" />
-      <workItem from="1561645719666" duration="1080000" />
-      <workItem from="1561987669707" duration="7290000" />
-      <workItem from="1562052595296" duration="4665000" />
-      <workItem from="1562072777215" duration="7317000" />
-      <workItem from="1562119097116" duration="4914000" />
-      <workItem from="1562129866532" duration="2134000" />
-      <workItem from="1562129861427" duration="3656000" />
-      <workItem from="1562153261407" duration="5616000" />
-      <workItem from="1562164394772" duration="11296000" />
-      <workItem from="1562289029912" duration="2371000" />
-      <workItem from="1562292872137" duration="7586000" />
-      <workItem from="1562300551437" duration="11022000" />
-      <workItem from="1562332984278" duration="10061000" />
-      <workItem from="1562381180393" duration="3464000" />
-      <workItem from="1562764093954" duration="5882000" />
-      <workItem from="1562852084748" duration="8263000" />
-      <workItem from="1563072638088" duration="5725000" />
-      <workItem from="1563095057020" duration="10557000" />
-      <workItem from="1563112377004" duration="10757000" />
-      <workItem from="1563157328127" duration="1248000" />
-      <workItem from="1563159364302" duration="6000" />
-      <workItem from="1563159594294" duration="830000" />
-      <workItem from="1563160533366" duration="21000" />
-      <workItem from="1563160613351" duration="171000" />
-      <workItem from="1563160809955" duration="90000" />
-      <workItem from="1563161012432" duration="17000" />
-      <workItem from="1563161054207" duration="18000" />
-      <workItem from="1563161100113" duration="102000" />
-      <workItem from="1563161225676" duration="88000" />
-      <workItem from="1563171284274" duration="268000" />
-      <workItem from="1563171685505" duration="29000" />
-      <workItem from="1563171876657" duration="42000" />
-      <workItem from="1563172166088" duration="9000" />
-      <workItem from="1563172539934" duration="62000" />
-      <workItem from="1563173016534" duration="6000" />
-      <workItem from="1563173117617" duration="453000" />
-      <workItem from="1563173608898" duration="44000" />
-      <workItem from="1563174745557" duration="523000" />
-      <workItem from="1563184884552" duration="4755000" />
-      <workItem from="1563256032071" duration="856000" />
-      <workItem from="1563425463944" duration="3854000" />
-      <workItem from="1563616013571" duration="1196000" />
-      <workItem from="1563623708892" duration="2379000" />
-      <workItem from="1563629615795" duration="1958000" />
-      <workItem from="1563672710457" duration="6695000" />
-      <workItem from="1563702954338" duration="9987000" />
-      <workItem from="1563802677164" duration="734000" />
-      <workItem from="1563970479149" duration="345000" />
-      <workItem from="1564052723538" duration="20000" />
-      <workItem from="1564052753937" duration="3000" />
-      <workItem from="1564052811376" duration="3000" />
+      <updated>1564061383957</updated>
+      <workItem from="1564061386819" duration="864000" />
+      <workItem from="1564063774463" duration="557000" />
+      <workItem from="1564144868994" duration="3636000" />
+      <workItem from="1564149922242" duration="39000" />
+      <workItem from="1564188997255" duration="1251000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -257,9 +377,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
 </project>

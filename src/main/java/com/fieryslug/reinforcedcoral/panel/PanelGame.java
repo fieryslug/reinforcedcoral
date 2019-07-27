@@ -11,8 +11,8 @@ import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
-import layout.TableLayout;
-
+//import layout.TableLayout;
+import info.clearthought.layout.TableLayout;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

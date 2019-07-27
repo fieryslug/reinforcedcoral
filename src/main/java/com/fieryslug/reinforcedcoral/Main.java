@@ -27,14 +27,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-import layout.TableLayout;
+//import layout.TableLayout;
+import info.clearthought.layout.TableLayout;
 
 public class Main {
 
     public static void main(String[] args) {
 
         start();
-
 
 
     }
