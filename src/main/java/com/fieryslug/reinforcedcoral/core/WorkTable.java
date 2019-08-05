@@ -26,33 +26,33 @@ public class WorkTable {
 
 
         Problem prbSlime = new Problem("1/chembio/1_1.json");
-        Problem prbSnakeEel = new Problem("1/chembio/2.json");
+        Problem prbSnakeEel = new Problem("1/chembio/2_1.json");
         Problem prbRiver = new Problem("1/chembio/3.json");
         Problem prbWalnut = new Problem("1/chembio/4.json");
-        Problem prb15 = new Problem("placeholder", 20);
-        Problem prb16 = new Problem("placeholder", 20);
+        Problem prbChemBio = new Problem("1/chembio/5.json");
+        Problem prb16 = new Problem("1/chembio/6.json");
 
         Problem prbShark = new Problem("1/socio/1.json");
         Problem prbElect = new Problem("1/socio/2.json");
         Problem prbCrab = new Problem("1/socio/3.json");
         Problem prb24 = new ProblemMine("<html><font color=red>地雷(認真的)</font></html>");
-        Problem prb25 = new Problem("placeholder", 20);
-        Problem prb26 = new Problem("placeholder", 20);
+        Problem prb25 = new Problem("1/socio/4.json");
+        Problem prb26 = new Problem("1/socio/5.json");
 
         Problem prbPoemPaint = new Problem("1/lit/1.json");
         Problem prbPoemSunset = new Problem("1/lit/2.json");
         Problem prbOdin = new Problem("1/lit/3.json");
         Problem prbBull = new Problem("1/lit/4.json");
-        Problem prb35 = new Problem("placeholder", 20);
-        Problem prb36 = new Problem("placeholder", 20);
+        Problem prb35 = new Problem("1/lit/5.json");
+        Problem prbHumble = new Problem("1/lit/6.json");
 
         prbFlight2.addDependence(prbFlight1);
         prbCrab.addDependence(prbOdin);
 
         catPhysMath.addProblem(prbFlight1, prbFlight2, prbS5, prbEquations, prbLog, prbCongee);
-        catChemBio.addProblem(prbSlime, prbSnakeEel, prbRiver, prbWalnut, prb15, prb16);
+        catChemBio.addProblem(prbSlime, prbSnakeEel, prbRiver, prbWalnut, prbChemBio, prb16);
         catSocio.addProblem(prbShark, prbElect, prbCrab, prb24, prb25, prb26);
-        catLit.addProblem(prbPoemPaint, prbPoemSunset, prbOdin, prbBull, prb35, prb36);
+        catLit.addProblem(prbPoemPaint, prbPoemSunset, prbOdin, prbBull, prb35, prbHumble);
 
         game.addCategory(catPhysMath);
         game.addCategory(catChemBio);

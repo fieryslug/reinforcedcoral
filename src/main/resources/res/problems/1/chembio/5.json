@@ -1,0 +1,132 @@
+{
+  "name": "骨折嘉年華",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": "10"
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "骨折嘉年華 (10pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "骨折嘉年華 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "骨折（英文：Bone Fracture）是指身體骨頭因為直接或間接的外力造成碎裂或變形。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "骨折嘉年華 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "人體骨骼剛形成時原本是柔軟有彈性和可塑性的，隨著年紀的增長，軟骨的成份漸少，硬骨的組成漸漸變多，骨折開始容易發生。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "骨折嘉年華 (10pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?\n(A) 河豚阿斑\n(B) 蛞蝓札克\n(C) 浣熊奧立佛\n(D) 飛鼠密歇爾",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "骨折嘉年華 (10pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 18, 19",
+        "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?\n(A) 河豚阿斑\n(B) 蛞蝓札克\n(C) 浣熊奧立佛\n(D) 飛鼠密歇爾",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "10, 10, 18, 19",
+        "content": "B",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textbold": "true",
+          "center": "true",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
+  }
+}

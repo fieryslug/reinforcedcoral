@@ -1,0 +1,132 @@
+{
+  "name": "Be Humble",
+  "fuzzy": false,
+  "answer": "C",
+  "points": {
+    "C": 20
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "Be Humble (20pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "Be Humble (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 12",
+          "content": "Humility is considered a state of being, highlighted by your behavior and \napproach to things. It’s also considered one of the virtues of the human condition, along with kindness, patience, diligence, charity, temperance and chastity.",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "Be Humble (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 13",
+          "content": "In essence, humility is not about hiding away or about becoming a ‘wallflower’, \nbut it is about the realization your abilities and actions are not better or less. \nHumility doesn’t require the ranking of things, but it calls for the understanding of the true value or worth of things.",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "Be Humble (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 19, 19",
+          "content": "Which of the following is the best way to represent one's humility?\n\n(A) Not bragging about your perfect score in yesterday's test\n(B) Replying \"No, it wasn't really me.\" when your manager said you did a great job.\n(C) Sit down.\n(D) Donate half of your salary to charity organizations.",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "Be Humble (20pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 19, 17",
+        "content": "Which of the following is the best way to represent one's humility?\n\n(A) Not bragging about your perfect score in yesterday's test\n(B) Replying \"No, it wasn't really me.\" when your manager said you did a great job.\n(C) Sit down.\n(D) Donate half of your salary to charity organizations.",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 18, 18, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textcolor": "00ff00",
+          "center": "true",
+          "textbold": "true"
+        }
+      }
+    ]
+  }
+}

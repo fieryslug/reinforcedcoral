@@ -1,15 +1,15 @@
 {
-  "name": "Vocabulary 101",
+  "name": "不要選這題!",
   "fuzzy": false,
   "answer": "D",
   "points": {
-    "D": 20
+    "D": "30"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "Vocabulary 101 (20pt)"
+        "不要選這題！ (30pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "Vocabulary 101 (20pt)",
+          "content": "不要選這題！ (30pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -30,10 +30,10 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 19",
-          "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) schamanism",
+          "content": "錯離子是由中心原子或離子（經常是過渡金屬）和數個配位基（原子或離子或離子團）以配位鍵見結成的複雜離子。下列錯離子，哪一個最不可能存在於自然界中？（或是最不穩定）\nA.[N(Si(CH3)3)2]3 1-\nB.[UO2F5]3-\nC.[ZrF7]2-\nD.[Zn(NH3)3]2+",
           "properties": {
-            "textsize": "40",
-            "textsizefull": "60"
+            "textsize": "30",
+            "textsizefull": "45"
           }
         }
       ]
@@ -41,12 +41,12 @@
   ],
   "solution": {
     "type": 62,
-    "final": false,
+    "final": true,
     "elements": [
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "Vocabulary 101 (20pt)",
+        "content": "不要選這題！ (30pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -57,10 +57,10 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 18, 19",
-        "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) schamanism",
+        "content": "錯離子是由中心原子或離子（經常是過渡金屬）和數個配位基（原子或離子或離子團）以配位鍵見結成的複雜離子。下列錯離子，哪一個最不可能存在於自然界中？（或是最不穩定）\nA.[N(Si(CH3)3)2]3 1-\nB.[UO2F5]3-\nC.[ZrF7]2-\nD.[Zn(NH3)3]2+",
         "properties": {
-          "textsize": "40",
-          "textsizefull": "60"
+          "textsize": "30",
+          "textsizefull": "45"
         }
       },
       {
@@ -68,11 +68,11 @@
         "constraints": "10, 10, 19, 19",
         "content": "D",
         "properties": {
-          "textsize": "120",
-          "textsizefull": "180",
+          "textsize": "80",
+          "textsizefull": "120",
+          "textbold": "true",
           "textcolor": "00ff00",
-          "center": "true",
-          "textbold": "true"
+          "center": "true"
         }
       }
     ]
