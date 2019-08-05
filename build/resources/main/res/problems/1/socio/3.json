@@ -1,0 +1,134 @@
+{
+  "name": "市場與螃蟹",
+  "fuzzy": false,
+  "answer": "C",
+  "points": {
+    "C": "20"
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "市場與螃蟹 (20pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "市場與螃蟹 (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 9, 19",
+          "content": "環狀螃蟹是一種棲息於日月潭附近的節肢動物，牠們只能左轉，目前已經被台灣有機山藥協會(Taiwanese Organic Yams Ass\nociation, TOYA)列為瀕危物種。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "10, 5, 19, 18",
+          "content": "/res/images/round_crab.png",
+          "properties": {}
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "11, 19, 19, 19",
+          "content": "\u25b2環狀螃蟹(示意圖)",
+          "properties": {
+            "textsize": "20",
+            "textsizefull": "30",
+            "center": "true"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "市場與螃蟹 (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 9, 19",
+          "content": "右圖是台灣的環狀螃蟹市場供需，其中S為供給，D為需求。若生產每單位環狀螃蟹所製造的廢水會對社會造成價值E元的損失，請問當政府對市場採行自由放任的政策時，經濟福祉是多少？\n(A)14\t(B)a+b\n(C)a-d\t(D)a+b+c-d",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "10, 5, 19, 19",
+          "content": "/res/images/graph1.png",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "市場與螃蟹 (20pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 9, 17",
+        "content": "右圖是台灣的環狀螃蟹市場供需，其中S為供給，D為需求。若生產每單位環狀螃蟹所製造的廢水會對社會造成價值E元的損失，請問當政府對市場採行自由放任的政策時，經濟福祉是多少？\n(A)14\t(B)a+b\n(C)a-d\t(D)a+b+c-d",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "image",
+        "constraints": "10, 5, 19, 19",
+        "content": "/res/images/graph1.png",
+        "properties": {}
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 18, 9, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "50",
+          "textsizefull": "75",
+          "textcolor": "00ff00",
+          "center": "true",
+          "textbold": "true"
+        }
+      }
+    ]
+  }
+}

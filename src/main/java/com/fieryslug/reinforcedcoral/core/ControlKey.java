@@ -28,7 +28,7 @@ public enum ControlKey {
         KEY_MAP.put("bt_d", D);
         KEY_MAP.put("bt_e", E);
         KEY_MAP.put("bt_enter", ENTER);
-        KEY_MAP.put("bt_del", DEL);
+        KEY_MAP.put("bt_delete", DEL);
 
         KEY_CHARACTER_MAP.put(UP, '↑');
         KEY_CHARACTER_MAP.put(DOWN, '↓');

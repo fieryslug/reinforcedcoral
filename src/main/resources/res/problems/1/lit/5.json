@@ -1,0 +1,20 @@
+{
+  "name": "骨折嘉年華",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 20
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        ""
+      ]
+    },
+    {
+      "type": 62,
+      "final": true
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "name": "幸福河流",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 20
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "幸福河流 (20pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "幸福河流 (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 12",
+          "content": "Piñata是一種充滿拉丁風味的節慶玩具，其內裝滿玩具與糖果，讓人用棍棒打擊，打破時玩具與糖果會掉落下來，而且百葉窗其實不會生鏽。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/pyramid.png",
+          "properties": {}
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "8, 17, 10, 18",
+          "content": "百葉窗(示意圖)\u25b6",
+          "properties": {
+            "textsize": "20",
+            "textsizefull": "30"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "幸福河流 (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 12",
+          "content": "阿丹(澳洲選手)從小就擅長扯鈴，在一次的國際大賽中他遇到了阿渠(牧師)，牧師很善良。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "幸福河流 (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 6",
+          "content": "下列六種分子",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 7, 18, 8",
+          "content": "<html>CO<sub>2</sub>  C<sub>2</sub>H<sub>4</sub>  C<sub>2</sub>H<sub>6</sub>  BH<sub>3</sub>  SO<sub>3</sub>  NH<sub>3</sub></html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 9, 18, 17",
+          "content": "有關其路易斯結構的敘述，何者正確？\n(甲)有5個分子屬於平面結構\n(乙)有3個分子具有π鍵\n(丙)有3個分子具有孤電子對（孤對電子)\n(丁)有4個分子拔腿就跑",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 18, 18, 19",
+          "content": "(A)只有甲\t(B)丙丁\t(C)甲乙\t(D)乙丙",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "幸福河流 (20pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 5, 18, 6",
+        "content": "下列六種分子",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 7, 18, 8",
+        "content": "<html>CO<sub>2</sub>  C<sub>2</sub>H<sub>4</sub>  C<sub>2</sub>H<sub>6</sub>  BH<sub>3</sub>  SO<sub>3</sub>  NH<sub>3</sub></html>",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 9, 10, 17",
+        "content": "有關其路易斯結構的敘述，何者正確？\n(甲)有5個分子屬於平面結構\n(乙)有3個分子具有pi鍵\n(丙)有3個分子具有孤電子對（孤對電子)\n(丁)有4個分子拔腿就跑",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "11, 9, 19, 17",
+        "content": "D",
+        "properties": {
+          "textsize": "50",
+          "textsizefull": "75",
+          "textbold": "true",
+          "center": "true",
+          "textcolor": "00ff00"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 18, 18, 19",
+        "content": "(A)只有甲\t(B)丙丁\t(C)甲乙\t(D)乙丙",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      }
+    ]
+  }
+}

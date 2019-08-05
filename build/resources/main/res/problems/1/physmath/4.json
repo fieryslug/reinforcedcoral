@@ -1,0 +1,62 @@
+{
+  "name": "方程式與環保塑膠",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 30
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "方程式與環保塑膠 (30pt)"
+      ]
+    },
+    {
+      "type": -1,
+      "res": [
+        "方程式與環保塑膠 (30pt)",
+        "A+3B-2C=0\t\tB=4D\n5D-B+A=2\t\tA+B+C+D=E\n2A-B+C+10D+E=2\n\nE=?\n(A) 0\t\t(B) 1\n(C) 2\t\t(D) 3"
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "方程式與環保塑膠 (30pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 12, 19",
+        "content": "A+3B-2C=0\t\tB=4D\n5D-B+A=2\t\tA+B+C+D=E\n2A-B+C+10D+E=2\n\nE=?\n(A) 0\t\t(B) 1\n(C) 2\t\t(D) 3",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "13, 5, 19, 19",
+        "content": "A",
+        "properties": {
+          "textsize": "60",
+          "textsizefull": "90",
+          "textbold": "true",
+          "center": "false",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
+
+  }
+}
