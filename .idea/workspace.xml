@@ -7,17 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/changelog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/core/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/core/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/core/WorkTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/core/WorkTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelog" beforeDir="false" afterPath="$PROJECT_DIR$/changelog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2_1.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +123,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [run]">
+  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [jar]">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -238,8 +250,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.gradle_reinforcedcoral [run]" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [jar]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [run]" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [clean]" />
         <item itemvalue="JAR Application.reinforcedcoral-1.0-SNAPSHOT.jar" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [runJar]" />
@@ -268,7 +280,7 @@
       <workItem from="1565055086905" duration="1897000" />
       <workItem from="1565059528272" duration="3829000" />
       <workItem from="1565071200227" duration="13600000" />
-      <workItem from="1565093012815" duration="4512000" />
+      <workItem from="1565093012815" duration="15938000" />
     </task>
     <servers />
   </component>

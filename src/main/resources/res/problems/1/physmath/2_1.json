@@ -1,19 +1,138 @@
 {
   "name": "<html> F<sup>7</sup> </html>",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "A",
   "points": {
-    "B": "20"
+    "A": "20"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "<html><font color=red>F</font>urious <font color=red>F</font>ire<font color=red>f</font>ighter <font color=red>F</font>inally <font color=red>F</font>lee<br><font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>"
+        "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee<br><font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true",
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 6",
+          "content": "<html><font color=red>消防隊</font>被困在一個下面口徑1公尺，上面口徑3公尺的漏斗裡面。他們想往上逃生。</html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 7, 19, 19",
+          "content": "/res/images/f7.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true",
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 10",
+          "content": "假設漏斗底部每秒每平方公分會有3個新的消防隊成員進入漏斗，請問漏斗頂部每秒每平方公分需要有幾個消防隊員出去才能維持平衡？",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true",
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "假設漏斗底部每秒每平方公分會有3個新的消防隊成員進入漏斗，請問漏斗頂部每秒每平方公分需要有幾個消防隊員出去才能維持平衡？\n(A) 0.33\n(B) 1\n(C) 3.3\n(D) 68",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
       ]
     }
   ],
   "solution": {
-
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true",
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 18, 19",
+        "content": "假設漏斗底部每秒每平方公分會有3個新的消防隊成員進入漏斗，請問漏斗頂部每秒每平方公分需要有幾個消防隊員出去才能維持平衡？\n(A) 0.33\n(B) 1\n(C) 3.3\n(D) 68",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "10, 10, 19, 19",
+        "content": "A",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
   }
 }

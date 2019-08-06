@@ -72,16 +72,10 @@ public class PanelSettings extends PanelPrime {
         buttonConfirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                parent.game.teams.clear();
-                Team team1 = new Team(Integer.parseInt(fieldTeam1.getText()));
-                Team team2 = new Team(Integer.parseInt(fieldTeam2.getText()));
-                Team team3 = new Team(Integer.parseInt(fieldTeam3.getText()));
-                Team team4 = new Team(Integer.parseInt(fieldTeam4.getText()));
-                parent.game.teams.add(team1);
-                parent.game.teams.add(team2);
-                parent.game.teams.add(team3);
-                parent.game.teams.add(team4);
-
+                parent.game.teams.get(0).setId(Integer.parseInt(fieldTeam1.getText()));
+                parent.game.teams.get(1).setId(Integer.parseInt(fieldTeam2.getText()));
+                parent.game.teams.get(2).setId(Integer.parseInt(fieldTeam3.getText()));
+                parent.game.teams.get(3).setId(Integer.parseInt(fieldTeam4.getText()));
                 parent.switchPanel(PanelSettings.this, parent.panelTitle);
             }
         });

@@ -275,6 +275,7 @@ public class PanelGame extends PanelPrime {
             this.teamKeys.put(team, new ArrayList<>());
             this.teamLockedMap.put(team, false);
             panelTeam.setForeground(Reference.WHITE);
+            panelTeam.labelName.setText("第" + team.getId() + "小隊");
 
             /*
             if(this.parent.isFullScreen) {

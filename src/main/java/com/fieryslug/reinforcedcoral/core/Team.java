@@ -32,4 +32,8 @@ public class Team {
 
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
