@@ -1,0 +1,19 @@
+{
+  "name": "<html> F<sup>7</sup> </html>",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": "20"
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "<html><font color=red>F</font>urious <font color=red>F</font>ire<font color=red>f</font>ighter <font color=red>F</font>inally <font color=red>F</font>lee<br><font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>"
+      ]
+    }
+  ],
+  "solution": {
+
+  }
+}

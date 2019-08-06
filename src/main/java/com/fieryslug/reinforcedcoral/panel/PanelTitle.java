@@ -72,7 +72,14 @@ public class PanelTitle extends PanelPrime {
                     }
                 }
         );
-
+        this.buttonSettings.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                        parent.switchPanel(PanelTitle.this, parent.panelSettings);
+                    }
+                }
+        );
     }
 
 }

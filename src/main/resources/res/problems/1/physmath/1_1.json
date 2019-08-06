@@ -1,0 +1,36 @@
+{
+  "name": "<html>W<sup>6</sup></html>",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 20
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes<br><font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (20pt)</html>"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes<font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (20pt)</html>",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+
+  }
+}

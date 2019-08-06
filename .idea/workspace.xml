@@ -7,16 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/annotation-processors.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/6_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/2_1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -27,12 +21,28 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ControlKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ControlKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/core/WorkTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/core/WorkTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelTitle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelTitle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/FontRef.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/FontRef.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/1_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/1_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/chembio/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/physmath/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/physmath/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/physmath/6.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/physmath/6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/socio/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/socio/1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTitle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/6.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/6.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/5.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +83,13 @@
   <component name="FavoritesManager">
     <favorites_list name="reinforcedcoral" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -83,7 +100,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -91,6 +108,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -268,6 +290,9 @@
       <workItem from="1564899895618" duration="1294000" />
       <workItem from="1564974083386" duration="6557000" />
       <workItem from="1564985653098" duration="838000" />
+      <workItem from="1565055086905" duration="1897000" />
+      <workItem from="1565059528272" duration="3829000" />
+      <workItem from="1565071200227" duration="13600000" />
     </task>
     <servers />
   </component>

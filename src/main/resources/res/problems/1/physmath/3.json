@@ -9,22 +9,22 @@
     {
       "type": 1,
       "res": [
-        "<html>Short Shark Swallows<br/>Snake Snack  (20pt)</html>"
+        "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<br/><font color=blue>S</font>nake <font color=blue>S</font>nack  (20pt)</html>"
       ]
     },
     {
       "type": 4,
       "res": [
-        "Short Shark Swallows Snake Snack (20pt)",
-        "鯊魚瑞克餓了! 如果要讓寬1公尺的瑞克覺得自己可以吞下100公尺的蛇，請問蛇和瑞克的相對速度至少需要是多少?",
+        "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (20pt)</html>",
+        "心急的狡詐鯊魚餓了! 寬1公尺的狡詐鯊魚覺得自己可以吞下100公尺的蛇，最可能的原因是什麼?",
         "/res/images/shark_eel.png"
       ]
     },
     {
       "type": -1,
       "res": [
-        "Short Shark Swallows Snake Snack (20pt)",
-        "\n(A) 0.64c \t\t(B) 0.99995c\n(C) 0.9995c\t\t(D) 0.995c"
+        "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (20pt)</html>",
+        "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很傲慢\t\t(D) 因為他想慢慢吃"
       ]
     }
   ],
@@ -35,7 +35,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "Short Shark Swallows Snake Snack (20pt)",
+        "content": "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (20pt)</html>",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -46,7 +46,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 18, 10",
-        "content": "\n(A) 0.64c \t\t(B) 0.99995c\n(C) 0.9995c\t\t(D) 0.995c",
+        "content": "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很傲慢\t\t(D) 因為他想慢慢吃",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

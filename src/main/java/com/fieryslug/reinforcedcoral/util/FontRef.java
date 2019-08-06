@@ -6,9 +6,12 @@ import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FontRef {
 
+    private static Map<Pair<Integer, Integer>, Font> fontCache = new HashMap<>();
 
 
     static {
@@ -21,6 +24,18 @@ public class FontRef {
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Font getTaipeiFont(int b, int s) {
+
+        Pair<Integer, Integer> pair = new Pair<>(b, s);
+        Font font = fontCache.get(pair);
+        if(font != null)
+            return font;
+        font = new Font("Taipei Sans TC Beta Regular", b, s);
+        fontCache.put(pair, font);
+        return font;
+
     }
 
     public static final Font MONOSPACED30 = new Font("Monospaced", Font.PLAIN, 30);

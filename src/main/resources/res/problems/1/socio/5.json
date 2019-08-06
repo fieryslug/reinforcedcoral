@@ -14,6 +14,32 @@
     },
     {
       "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "需要四張圖的歷史 (20pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 3, 18, 4",
+          "content": "誰是亞瑟王？",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
       "final": true,
       "elements": [
         {
@@ -39,19 +65,19 @@
         {
           "widget": "image",
           "constraints": "0, 5, 4, 19",
-          "content": "/res/images/arthur1.jpg",
+          "content": "/res/images/saber.jpg",
           "properties": {}
         },
         {
           "widget": "image",
           "constraints": "5, 5, 9, 19",
-          "content": "/res/images/arthur2.png",
+          "content": "/res/images/englishvegetable.jpg",
           "properties": {}
         },
         {
           "widget": "image",
           "constraints": "10, 5, 14, 19",
-          "content": "/res/images/arthur3.png",
+          "content": "/res/images/arthur1.jpg",
           "properties": {}
         },
         {
@@ -65,7 +91,7 @@
   ],
   "solution": {
     "type": 62,
-    "final": true,
+    "final": false,
     "elements": [
       {
         "widget": "jlabel",
@@ -90,19 +116,19 @@
       {
         "widget": "image",
         "constraints": "0, 5, 4, 19",
-        "content": "/res/images/arthur1c.jpg",
+        "content": "/res/images/saberc.jpg",
         "properties": {}
       },
       {
         "widget": "image",
         "constraints": "5, 5, 9, 19",
-        "content": "/res/images/arthur2.png",
+        "content": "/res/images/englishvegetable.jpg",
         "properties": {}
       },
       {
         "widget": "image",
         "constraints": "10, 5, 14, 19",
-        "content": "/res/images/arthur3.png",
+        "content": "/res/images/arthur1.jpg",
         "properties": {}
       },
       {

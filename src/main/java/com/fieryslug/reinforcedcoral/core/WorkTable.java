@@ -16,9 +16,9 @@ public class WorkTable {
 
         //coralcoralcoralcoralcoral-----------------------------------------------------------
 
-        Problem prbFlight1 = new Problem("1/physmath/1.json");
-        Problem prbFlight2 = new Problem("1/physmath/2.json");
         Problem prbS5 = new Problem("1/physmath/3.json");
+        Problem prbW6 = new Problem("1/physmath/1_1.json");
+        Problem prbF7 = new Problem("1/physmath/2_1.json");
         Problem prbEquations = new Problem("1/physmath/4.json");
         Problem prbLog = new Problem("1/physmath/5.json");
         Problem prbCongee = new Problem("1/physmath/6.json");
@@ -30,7 +30,7 @@ public class WorkTable {
         Problem prbRiver = new Problem("1/chembio/3.json");
         Problem prbWalnut = new Problem("1/chembio/4.json");
         Problem prbChemBio = new Problem("1/chembio/5.json");
-        Problem prb16 = new Problem("1/chembio/6.json");
+        Problem prb16 = new Problem("1/chembio/6_1.json");
 
         Problem prbShark = new Problem("1/socio/1.json");
         Problem prbElect = new Problem("1/socio/2.json");
@@ -46,10 +46,11 @@ public class WorkTable {
         Problem prb35 = new Problem("1/lit/5.json");
         Problem prbHumble = new Problem("1/lit/6.json");
 
-        prbFlight2.addDependence(prbFlight1);
+        prbW6.addDependence(prbS5);
+        prbF7.addDependence(prbW6);
         prbCrab.addDependence(prbOdin);
 
-        catPhysMath.addProblem(prbFlight1, prbFlight2, prbS5, prbEquations, prbLog, prbCongee);
+        catPhysMath.addProblem(prbS5, prbW6, prbF7, prbEquations, prbLog, prbCongee);
         catChemBio.addProblem(prbSlime, prbSnakeEel, prbRiver, prbWalnut, prbChemBio, prb16);
         catSocio.addProblem(prbShark, prbElect, prbCrab, prb24, prb25, prb26);
         catLit.addProblem(prbPoemPaint, prbPoemSunset, prbOdin, prbBull, prb35, prbHumble);

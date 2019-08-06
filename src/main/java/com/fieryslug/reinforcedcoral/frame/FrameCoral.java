@@ -5,6 +5,7 @@ import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
+import com.fieryslug.reinforcedcoral.panel.PanelSettings;
 import com.fieryslug.reinforcedcoral.panel.PanelTitle;
 import com.fieryslug.reinforcedcoral.util.ActionFullScreen;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
@@ -20,6 +21,7 @@ public class FrameCoral extends JFrame {
     public int maxHeight, maxWidth;
 
     public PanelPrime panelTitle;
+    public PanelPrime panelSettings;
     public PanelPrime panelGame;
 
     public PanelPrime currentPanel;
@@ -50,6 +52,7 @@ public class FrameCoral extends JFrame {
 
 
         this.panelTitle = new PanelTitle(this);
+        this.panelSettings = new PanelSettings(this);
         this.panelGame = new PanelGame(this);
 
         FuncBox.addKeyBinding(this.getRootPane(), "F11", new ActionFullScreen(this));

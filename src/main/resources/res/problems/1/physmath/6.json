@@ -1,9 +1,9 @@
 {
   "name": "八寶粥vs.鱷魚",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "D",
   "points": {
-    "B": 50
+    "D": 50
   },
   "pages": [
     {
@@ -109,6 +109,15 @@
             "textsize": "30",
             "textsizefull": "45"
           }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "5, 10, 12, 13",
+          "content": "一英呎鱷魚8美元\n一打八寶粥新台幣239元",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
         }
       ]
     }
@@ -141,6 +150,15 @@
         "widget": "jtextarea",
         "constraints": "1, 9, 10, 16",
         "content": "(A) 33.1\n(B) 36.0\n(C) 42.5\n(D) 51.4",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "5, 10, 12, 13",
+        "content": "一英呎鱷魚8美元\n一打八寶粥新台幣239元",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

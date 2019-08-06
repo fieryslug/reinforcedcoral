@@ -55,47 +55,6 @@
     },
     {
       "type": 62,
-      "final": false,
-      "elements": [
-        {
-          "widget": "jlabel",
-          "constraints": "0, 0, 19, 4",
-          "content": "<html>史萊姆<font color=red>(</font><font color=orange>彩</font><font color=yellow>色</font><font color=green>)</font>與遺傳學 (50pt)</html>",
-          "properties": {
-            "textsize": "40",
-            "textsizefull": "60",
-            "textbold": "true",
-            "center": "true"
-          }
-        },
-        {
-          "widget": "jlabel",
-          "constraints": "1, 5, 18, 8",
-          "content": "哈溫定律:",
-          "properties": {
-            "textsize": "60",
-            "textsizefull": "90",
-            "textbold": "true",
-            "center": "true",
-            "textcolor": "6666ff"
-          }
-        },
-        {
-          "widget": "jlabel",
-          "constraints": "1, 9, 18, 19",
-          "content": "<html>(A<+a)<sup>2</sup>=AA+2Aa+aa",
-          "properties": {
-            "textsize": "50",
-            "textsizefull": "75",
-            "textbold": "true",
-            "center": "true",
-            "textcolor": "ffff66"
-          }
-        }
-      ]
-    },
-    {
-      "type": 62,
       "final": true,
       "elements": [
         {
@@ -112,7 +71,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 10",
-          "content": "已知第ㄅ代的史萊姆有30000隻紅色、50000隻紫色、20000隻藍色，且不同世代間不會雜交，試問第ㄅ+1藍色史萊姆的比例為多少?",
+          "content": "有關史萊姆的敘述下列何者正確？\n顯性（雙），隱性（單）\nAA（紅），Aa（紫），aa（藍）",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -121,7 +80,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 12, 18, 19",
-          "content": "(A)0.25 \n(B)0.2 \n(C)0.15 \n(D)0.1",
+          "content": "(A)紅色史萊姆可能是雙胞胎也可能是單胞胎 \n(B)紫色史萊姆必為單胞胎 \n(C)藍色史萊姆必為單胞胎 \n(D)顏色與繁殖數量無關",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -148,7 +107,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 18, 10",
-        "content": "已知第ㄅ代的史萊姆有30000隻紅色、50000隻紫色、20000隻藍色，且不同世代間不會雜交，試問第ㄅ+1藍色史萊姆的比例為多少?",
+        "content": "有關史萊姆的敘述下列何者正確？\n顯性（雙），隱性（單）\nAA（紅），Aa（紫），aa（藍）",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -157,7 +116,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 12, 10, 19",
-        "content": "(A)0.25 \n(B)0.2 \n(C)0.15 \n(D)0.1",
+        "content": "(A)紅色史萊姆可能是雙胞胎也可能是單胞胎 \n(B)紫色史萊姆必為單胞胎 \n(C)藍色史萊姆必為單胞胎 \n(D)顏色與繁殖數量無關",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

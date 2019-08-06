@@ -12,32 +12,7 @@
         "Be Humble (20pt)"
       ]
     },
-    {
-      "type": 62,
-      "final": false,
-      "elements": [
-        {
-          "widget": "jlabel",
-          "constraints": "0, 0, 19, 4",
-          "content": "Be Humble (20pt)",
-          "properties": {
-            "textsize": "40",
-            "textsizefull": "60",
-            "textbold": "true",
-            "center": "true"
-          }
-        },
-        {
-          "widget": "jtextarea",
-          "constraints": "1, 5, 18, 12",
-          "content": "Humility is considered a state of being, highlighted by your behavior and \napproach to things. It’s also considered one of the virtues of the human condition, along with kindness, patience, diligence, charity, temperance and chastity.",
-          "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
-          }
-        }
-      ]
-    },
+
     {
       "type": 62,
       "final": false,
@@ -56,7 +31,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 13",
-          "content": "In essence, humility is not about hiding away or about becoming a ‘wallflower’, \nbut it is about the realization your abilities and actions are not better or less. \nHumility doesn’t require the ranking of things, but it calls for the understanding of the true value or worth of things.",
+          "content": "Which of the following is the best way to represent one's humility?",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
