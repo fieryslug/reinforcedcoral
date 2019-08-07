@@ -19,6 +19,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.sql.Ref;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -42,7 +43,11 @@ public class Main {
     public static void start() {
         System.out.println("fieryslug is back");
 
-        Game game = WorkTable.getGame();
+        Game game = null;
+        if (Reference.DEFAULT_GAME == 0)
+            game = WorkTable.getGame();
+        if (Reference.DEFAULT_GAME == 1)
+            game = WorkTable.getGame1();
         FrameCoral frame = new FrameCoral(game);
         Thread serverthread = new Thread(new Runnable() {
             @Override

@@ -23,25 +23,25 @@ public class WorkTable {
         Problem prbLog = new Problem("1/physmath/5.json");
         Problem prbCongee = new Problem("1/physmath/6.json");
 
-        Problem prbSlime = new Problem("1/chembio/1_2.json");
-        Problem prbSnakeEel = new Problem("1/chembio/2_1.json");
-        Problem prbRiver = new Problem("1/chembio/3.json");
-        Problem prbWalnut = new Problem("1/chembio/4_1.json");
-        Problem prbChemBio = new Problem("1/chembio/5.json");
-        Problem prb16 = new Problem("1/chembio/6_1.json");
+        Problem prbSunset = new Problem("1/chembio/1_2.json");
+        Problem prbFood = new Problem("1/chembio/2_1.json");
+        Problem prbSofa = new Problem("1/chembio/3.json");
+        Problem prbLongan = new Problem("1/chembio/4_1.json");
+        Problem prbBone = new Problem("1/chembio/5.json");
+        Problem prbSoda = new Problem("1/chembio/6_1.json");
 
         Problem prbShark = new Problem("1/socio/1.json");
         Problem prbElect = new Problem("1/socio/2.json");
         Problem prbCrab = new Problem("1/socio/3.json");
-        Problem prb24 = new ProblemMine("<html><font color=red>地雷(認真的)</font></html>");
-        Problem prb25 = new Problem("1/socio/4.json");
-        Problem prb26 = new Problem("1/socio/5.json");
+        Problem prbMine = new ProblemMine("<html><font color=red>地雷(認真的)</font></html>");
+        Problem prbMoney = new Problem("1/socio/4.json");
+        Problem prbArthur = new Problem("1/socio/5.json");
 
-        Problem prbPoemPaint = new Problem("1/lit/1_1.json");
+        Problem prbWilly = new Problem("1/lit/1_1.json");
         Problem prbPoemSunset = new Problem("1/lit/2.json");
         Problem prbOdin = new Problem("1/lit/3.json");
-        Problem prbBull = new Problem("1/lit/4.json");
-        Problem prb35 = new Problem("1/lit/5.json");
+        Problem prbPPB = new Problem("1/lit/4.json");
+        Problem prbVocab = new Problem("1/lit/5.json");
         Problem prbHumble = new Problem("1/lit/6.json");
 
         prbW6.addDependence(prbS5);
@@ -49,9 +49,9 @@ public class WorkTable {
         prbCrab.addDependence(prbOdin);
 
         catPhysMath.addProblem(prbS5, prbW6, prbF7, prbBear, prbLog, prbCongee);
-        catChemBio.addProblem(prbSlime, prbSnakeEel, prbRiver, prbWalnut, prbChemBio, prb16);
-        catSocio.addProblem(prbShark, prbElect, prbCrab, prb24, prb25, prb26);
-        catLit.addProblem(prbPoemPaint, prbPoemSunset, prbOdin, prbBull, prb35, prbHumble);
+        catChemBio.addProblem(prbSunset, prbFood, prbSofa, prbLongan, prbBone, prbSoda);
+        catSocio.addProblem(prbShark, prbElect, prbCrab, prbMine, prbMoney, prbArthur);
+        catLit.addProblem(prbWilly, prbPoemSunset, prbOdin, prbPPB, prbVocab, prbHumble);
 
         game.addCategory(catPhysMath);
         game.addCategory(catChemBio);
@@ -66,12 +66,12 @@ public class WorkTable {
 
         Game game = new Game(1, 2, 3, 4);
 
-        Category catNehs = new Category("實驗中學");
+        Category catNehs = new Category("實驗生活");
         Category catJinShan = new Category("金山街");
         Category catLifeHax = new Category("生活常識");
         Category catAvocado = new Category("Fiery Avocado 3");
 
-        Problem prb01 = new Problem("placeholder", 0);
+        Problem prb01 = new Problem("2/nehs/1.json");
         Problem prb02 = new Problem("placeholder", 0);
         Problem prb03 = new Problem("placeholder", 0);
         Problem prb04 = new Problem("placeholder", 0);
@@ -93,8 +93,8 @@ public class WorkTable {
         Problem prb26 = new Problem("placeholder", 0);
 
         Problem prb31 = new Problem("placeholder", 0);
-        Problem prb32 = new Problem("placeholder", 0);
-        Problem prb33 = new Problem("placeholder", 0);
+        Problem prb32 = new ProblemSnake("貪食蛇");
+        Problem prb33 = new ProblemSlipper("<html><font color=3333ff>左腳拖鞋</font></html>");
         Problem prb34 = new Problem("placeholder", 0);
         Problem prb35 = new Problem("placeholder", 0);
         Problem prb36 = new Problem("placeholder", 0);

@@ -1,0 +1,144 @@
+{
+  "name": "抽筋大作戰",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 600
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "抽筋大作戰 (600pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "抽筋大作戰 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 9",
+          "content": "小渠有個怪癖：如果一天沒有上3次GitHub，他的盲腸就會抽筋。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 10, 18, 19",
+          "content": "/res/images/github.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "抽筋大作戰 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 9",
+          "content": "今天是聖誕節，小渠晚上留在學校和同學烤肉。他正準備上第三次GitHub，但他從來沒連過學校的wifi：student。眼看小渠的盲腸就要抽筋了",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 10, 18, 19",
+          "content": "/res/images/cramp.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "抽筋大作戰 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 16",
+          "content": "善良的你能告訴小渠student的密碼嗎?\n(A) ibshnehs\n(B) nehsibsh\n(C) experimental300\n(D) 瘋狂吉姆",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "抽筋大作戰 (600pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 11, 16",
+        "content": "善良的你能告訴小渠student的密碼嗎?\n(A) ibshnehs\n(B) nehsibsh\n(C) experimental300\n(D) 瘋狂吉姆",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "12, 12, 19, 19",
+        "content": "B",
+        "properties": {
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

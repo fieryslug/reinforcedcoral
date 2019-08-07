@@ -1,3 +1,13 @@
+visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
+
+
+===gradle_3.2=== 8/7 25pm
+-temporary feature: default problem set: #2
+-added 抽筋大作戰[2/nehs/1]
+-added snake[2/avocado/?] (WIP)
+-added 左腳拖鞋[2/avocado/?] (WIP)
+
+
 ===gradle_3.1=== 8/7 21pm
 -new feature: manually manipulate scores
 -new feature: manually activate/deactivate problems
@@ -12,7 +22,7 @@
 -bug fix: 胡桃仙子的小祕密[1/chembio/3] overlapping layout
 -bug fix: 骨折嘉年華[1/chembio/5] overlapping layout
 -bug fix: F^7[1/physmath/2_1] overlapping layout
--bug fix: 過去發生的都較歷史[1/socio/4] overlapping layout
+-bug fix: 過去發生的都叫歷史[1/socio/4] overlapping layout
 -removed 史萊姆遺傳學[1/chembio/1_1]; added 夕陽產業[1/chembio/1_2]
 -removed 牙齦狂想曲[1/chembio/4]; added 龍眼[1/chembio/4_1]
 -removed 新詩共賞(1)[1/lit/1]; added 尋找威利[1/lit/1_1]
