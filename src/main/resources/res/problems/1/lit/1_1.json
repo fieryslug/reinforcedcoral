@@ -1,15 +1,15 @@
 {
-  "name": "需要四張圖的歷史",
+  "name": "尋找威利",
   "fuzzy": false,
-  "answer": "A",
+  "answer": "B",
   "points": {
-    "A": 250
+    "B": 250
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "需要四張圖的歷史 (250pt)"
+        "尋找威利 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "需要四張圖的歷史 (250pt)",
+          "content": "尋找威利 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -28,9 +28,9 @@
           }
         },
         {
-          "widget": "jtextarea",
-          "constraints": "1, 3, 18, 4",
-          "content": "誰是亞瑟王？",
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 8",
+          "content": "誰是國文？",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -45,7 +45,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "需要四張圖的歷史 (250pt)",
+          "content": "尋找威利 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -54,9 +54,9 @@
           }
         },
         {
-          "widget": "jtextarea",
-          "constraints": "1, 3, 18, 4",
-          "content": "誰是亞瑟王？",
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 8",
+          "content": "誰是國文？",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -64,26 +64,26 @@
         },
         {
           "widget": "image",
-          "constraints": "0, 5, 4, 19",
-          "content": "/res/images/saber.jpg",
+          "constraints": "0, 9, 4, 19",
+          "content": "/res/images/kuowen2.jpg",
           "properties": {}
         },
         {
           "widget": "image",
-          "constraints": "5, 5, 9, 19",
-          "content": "/res/images/englishvegetable.jpg",
+          "constraints": "5, 9, 9, 19",
+          "content": "/res/images/kuowen1.jpeg",
           "properties": {}
         },
         {
           "widget": "image",
-          "constraints": "10, 5, 14, 19",
-          "content": "/res/images/arthur1.jpg",
+          "constraints": "10, 9, 14, 19",
+          "content": "/res/images/kuowen3.jpg",
           "properties": {}
         },
         {
           "widget": "image",
-          "constraints": "15, 5, 19, 19",
-          "content": "/res/images/arthur4.jpg",
+          "constraints": "15, 9, 19, 19",
+          "content": "/res/images/kuowen4.jpg",
           "properties": {}
         }
       ]
@@ -96,7 +96,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "需要四張圖的歷史 (250pt)",
+        "content": "尋找威利 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -105,9 +105,9 @@
         }
       },
       {
-        "widget": "jtextarea",
-        "constraints": "1, 3, 18, 4",
-        "content": "誰是亞瑟王？",
+        "widget": "jlabel",
+        "constraints": "1, 5, 18, 8",
+        "content": "誰是國文？",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -115,26 +115,26 @@
       },
       {
         "widget": "image",
-        "constraints": "0, 5, 4, 19",
-        "content": "/res/images/saberc.jpg",
+        "constraints": "0, 9, 4, 19",
+        "content": "/res/images/kuowen2.jpg",
         "properties": {}
       },
       {
         "widget": "image",
-        "constraints": "5, 5, 9, 19",
-        "content": "/res/images/englishvegetable.jpg",
+        "constraints": "5, 9, 9, 19",
+        "content": "/res/images/kuowen1c.jpeg",
         "properties": {}
       },
       {
         "widget": "image",
-        "constraints": "10, 5, 14, 19",
-        "content": "/res/images/arthur1.jpg",
+        "constraints": "10, 9, 14, 19",
+        "content": "/res/images/kuowen3.jpg",
         "properties": {}
       },
       {
         "widget": "image",
-        "constraints": "15, 5, 19, 19",
-        "content": "/res/images/arthur4.jpg",
+        "constraints": "15, 9, 19, 19",
+        "content": "/res/images/kuowen4.jpg",
         "properties": {}
       }
     ]

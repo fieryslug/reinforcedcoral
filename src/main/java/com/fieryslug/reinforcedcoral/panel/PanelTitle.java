@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
+//import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 
 public class PanelTitle extends PanelPrime {
 
@@ -24,7 +24,6 @@ public class PanelTitle extends PanelPrime {
 
     public JButton buttontest;
 
-    public EmbeddedMediaPlayerComponent tempComponent;
 
     public PanelTitle(FrameCoral parent) {
 
@@ -66,7 +65,7 @@ public class PanelTitle extends PanelPrime {
         add(buttonStart);
         add(FuncBox.blankLabel(2000, 30));
         add(buttonSettings);
-        add(buttontest);
+        //add(buttontest);
 
     }
 

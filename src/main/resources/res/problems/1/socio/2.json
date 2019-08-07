@@ -3,19 +3,19 @@
   "fuzzy": false,
   "answer": "D",
   "points": {
-    "D": 10
+    "D": 150
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "民主與我 part 1 (10pt)"
+        "民主與我 part 1 (150pt)"
       ]
     },
     {
       "type": 2,
       "res": [
-        "民主與我 part 1 (10pt)",
+        "民主與我 part 1 (150pt)",
         "滑頭鮑伯作為一個善良的好公民，除了每天抓青蛙以外，投票也是公民素質的展現",
         "/res/images/frog.png"
       ]
@@ -27,7 +27,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "民主與我 part 1 (10pt)",
+          "content": "民主與我 part 1 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -54,7 +54,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "民主與我 part 1 (10pt)",
+        "content": "民主與我 part 1 (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "C",
   "points": {
-    "C": 20
+    "C": 150
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "Be Humble (20pt)"
+        "Be Humble (150pt)"
       ]
     },
 
@@ -20,7 +20,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "Be Humble (20pt)",
+          "content": "Be Humble (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -46,7 +46,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "Be Humble (20pt)",
+          "content": "Be Humble (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -73,7 +73,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "Be Humble (20pt)",
+        "content": "Be Humble (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

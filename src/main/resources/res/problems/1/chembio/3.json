@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "C",
   "points": {
-    "C": 20
+    "C": 250
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "胡桃仙子的小祕密 (20pt)"
+        "胡桃仙子的小祕密 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "胡桃仙子的小祕密 (20pt)",
+          "content": "胡桃仙子的小祕密 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,8 +29,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 10, 12",
-          "content": "胡桃仙子有一個不可告人的小祕密就是他喜歡把酸性的東西變成沙發",
+          "constraints": "1, 5, 19, 6",
+          "content": "胡桃仙子有一個不可告人的小祕密：就是他喜歡把酸性的東西用他的便宜法杖變成沙發",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -52,7 +52,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "胡桃仙子的小祕密 (20pt)",
+          "content": "胡桃仙子的小祕密 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -88,7 +88,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "胡桃仙子的小祕密 (20pt)",
+        "content": "胡桃仙子的小祕密 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -107,7 +107,7 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 9, 18, 17",
+        "constraints": "1, 9, 10, 17",
         "content": "(A)醋酸銀\n(B)碳酸鈉\n(C)氯化銨\n(D)硫酸銅",
         "properties": {
           "textsize": "30",
@@ -116,11 +116,11 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "11, 9, 19, 17",
+        "constraints": "12, 12, 19, 19",
         "content": "C",
         "properties": {
-          "textsize": "50",
-          "textsizefull": "75",
+          "textsize": "80",
+          "textsizefull": "120",
           "textbold": "true",
           "center": "true",
           "textcolor": "00ff00"

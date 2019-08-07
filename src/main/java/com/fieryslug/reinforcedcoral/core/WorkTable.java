@@ -19,16 +19,14 @@ public class WorkTable {
         Problem prbS5 = new Problem("1/physmath/3.json");
         Problem prbW6 = new Problem("1/physmath/1_1.json");
         Problem prbF7 = new Problem("1/physmath/2_1.json");
-        Problem prbEquations = new Problem("1/physmath/4.json");
+        Problem prbBear = new Problem("1/physmath/4_1.json");
         Problem prbLog = new Problem("1/physmath/5.json");
         Problem prbCongee = new Problem("1/physmath/6.json");
 
-
-
-        Problem prbSlime = new Problem("1/chembio/1_1.json");
+        Problem prbSlime = new Problem("1/chembio/1_2.json");
         Problem prbSnakeEel = new Problem("1/chembio/2_1.json");
         Problem prbRiver = new Problem("1/chembio/3.json");
-        Problem prbWalnut = new Problem("1/chembio/4.json");
+        Problem prbWalnut = new Problem("1/chembio/4_1.json");
         Problem prbChemBio = new Problem("1/chembio/5.json");
         Problem prb16 = new Problem("1/chembio/6_1.json");
 
@@ -39,7 +37,7 @@ public class WorkTable {
         Problem prb25 = new Problem("1/socio/4.json");
         Problem prb26 = new Problem("1/socio/5.json");
 
-        Problem prbPoemPaint = new Problem("1/lit/1.json");
+        Problem prbPoemPaint = new Problem("1/lit/1_1.json");
         Problem prbPoemSunset = new Problem("1/lit/2.json");
         Problem prbOdin = new Problem("1/lit/3.json");
         Problem prbBull = new Problem("1/lit/4.json");
@@ -50,7 +48,7 @@ public class WorkTable {
         prbF7.addDependence(prbW6);
         prbCrab.addDependence(prbOdin);
 
-        catPhysMath.addProblem(prbS5, prbW6, prbF7, prbEquations, prbLog, prbCongee);
+        catPhysMath.addProblem(prbS5, prbW6, prbF7, prbBear, prbLog, prbCongee);
         catChemBio.addProblem(prbSlime, prbSnakeEel, prbRiver, prbWalnut, prbChemBio, prb16);
         catSocio.addProblem(prbShark, prbElect, prbCrab, prb24, prb25, prb26);
         catLit.addProblem(prbPoemPaint, prbPoemSunset, prbOdin, prbBull, prb35, prbHumble);
@@ -66,8 +64,51 @@ public class WorkTable {
 
     public static Game getGame1() {
 
-        return null;
+        Game game = new Game(1, 2, 3, 4);
 
+        Category catNehs = new Category("實驗中學");
+        Category catJinShan = new Category("金山街");
+        Category catLifeHax = new Category("生活常識");
+        Category catAvocado = new Category("Fiery Avocado 3");
+
+        Problem prb01 = new Problem("placeholder", 0);
+        Problem prb02 = new Problem("placeholder", 0);
+        Problem prb03 = new Problem("placeholder", 0);
+        Problem prb04 = new Problem("placeholder", 0);
+        Problem prb05 = new Problem("placeholder", 0);
+        Problem prb06 = new Problem("placeholder", 0);
+
+        Problem prb11 = new Problem("placeholder", 0);
+        Problem prb12 = new Problem("placeholder", 0);
+        Problem prb13 = new Problem("placeholder", 0);
+        Problem prb14 = new Problem("placeholder", 0);
+        Problem prb15 = new Problem("placeholder", 0);
+        Problem prb16 = new Problem("placeholder", 0);
+
+        Problem prb21 = new Problem("placeholder", 0);
+        Problem prb22 = new Problem("placeholder", 0);
+        Problem prb23 = new Problem("placeholder", 0);
+        Problem prb24 = new Problem("placeholder", 0);
+        Problem prb25 = new Problem("placeholder", 0);
+        Problem prb26 = new Problem("placeholder", 0);
+
+        Problem prb31 = new Problem("placeholder", 0);
+        Problem prb32 = new Problem("placeholder", 0);
+        Problem prb33 = new Problem("placeholder", 0);
+        Problem prb34 = new Problem("placeholder", 0);
+        Problem prb35 = new Problem("placeholder", 0);
+        Problem prb36 = new Problem("placeholder", 0);
+
+        catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);
+        catJinShan.addProblem(prb11, prb12, prb13, prb14, prb15, prb16);
+        catLifeHax.addProblem(prb21, prb22, prb23, prb24, prb25, prb26);
+        catAvocado.addProblem(prb31, prb32, prb33, prb34, prb35, prb36);
+
+        game.addCategory(catNehs);
+        game.addCategory(catJinShan);
+        game.addCategory(catLifeHax);
+        game.addCategory(catAvocado);
+        return game;
     }
 
 }

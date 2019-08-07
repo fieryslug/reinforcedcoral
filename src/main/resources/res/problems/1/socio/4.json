@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "C",
   "points": {
-    "C": "30"
+    "C": "150"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "過去發生的都叫歷史 (20pt)"
+        "過去發生的都叫歷史 (150pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "過去發生的都叫歷史 (20pt)",
+          "content": "過去發生的都叫歷史 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -45,7 +45,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "過去發生的都叫歷史 (20pt)",
+          "content": "過去發生的都叫歷史 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -55,7 +55,7 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
+          "constraints": "1, 5, 12, 19",
           "content": "當時廣州的雞蛋一顆一文錢，貴州的雞蛋一顆五文錢，阿盤總共有3張五百文的交子\n請問，3張五百文的交子和下列何者等價?",
           "properties": {
             "textsize": "30",
@@ -71,7 +71,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "過去發生的都叫歷史 (20pt)",
+          "content": "過去發生的都叫歷史 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -81,8 +81,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
-          "content": "當時廣州的雞蛋一顆一文錢，貴州的雞蛋一顆五文錢，阿盤總共有3張五百文的交子\n請問，3張五百文的交子和下列何者等價?\n(A) 1500顆廣州的破雞蛋\n(B) 300顆貴州的鹹鴨蛋\n(C) 1500文錢\n(D) 3張紙",
+          "constraints": "1, 5, 12, 19",
+          "content": "當時廣州的雞蛋一顆一文錢，貴州的雞蛋一顆五文錢，阿盤總共有3張五百文的交子\n請問，3張五百文的交子和下列何者等價?\n\n(A) 1500顆廣州的破雞蛋\n(B) 300顆貴州的鹹鴨蛋\n(C) 1500文錢\n(D) 3張紙",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -98,7 +98,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "過去發生的都叫歷史 (20pt)",
+        "content": "過去發生的都叫歷史 (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -108,8 +108,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 19",
-        "content": "當時廣州的雞蛋一顆一文錢，貴州的雞蛋一顆五文錢，阿盤總共有3張五百文的交子\n請問，3張五百文的交子和下列何者等價?\n(A) 1500顆廣州的破雞蛋\n(B) 300顆貴州的鹹鴨蛋\n(C) 1500文錢\n(D) 3張紙",
+        "constraints": "1, 5, 12, 19",
+        "content": "當時廣州的雞蛋一顆一文錢，貴州的雞蛋一顆五文錢，阿盤總共有3張五百文的交子\n請問，3張五百文的交子和下列何者等價?\n\n(A) 1500顆廣州的破雞蛋\n(B) 300顆貴州的鹹鴨蛋\n(C) 1500文錢\n(D) 3張紙",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -117,7 +117,7 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "10, 10, 19, 19",
+        "constraints": "13, 10, 19, 19",
         "content": "C",
         "properties": {
           "textbold": "true",

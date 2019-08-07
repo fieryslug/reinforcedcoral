@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "D",
   "points": {
-    "D": 20
+    "D": 250
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "Vocabulary 101 (20pt)"
+        "Vocabulary 101 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "Vocabulary 101 (20pt)",
+          "content": "Vocabulary 101 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -46,7 +46,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "Vocabulary 101 (20pt)",
+        "content": "Vocabulary 101 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

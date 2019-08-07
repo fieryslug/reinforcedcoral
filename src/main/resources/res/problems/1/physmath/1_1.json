@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "A",
   "points": {
-    "A": 20
+    "A": 250
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes<br><font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (20pt)</html>"
+        "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes<br><font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (250pt)</html>"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes <font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (20pt)</html>",
+          "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes <font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (250pt)</html>",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes <font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (20pt)</html>",
+          "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes <font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (250pt)</html>",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -87,7 +87,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes <font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (20pt)</html>",
+        "content": "<html><font color=green>W</font>orried <font color=green>W</font>erewolf <font color=green>W</font>ipes <font color=green>W</font>indow <font color=green>W</font>ith <font color=green>W</font>allet (250pt)</html>",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

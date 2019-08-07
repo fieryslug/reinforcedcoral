@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "C",
   "points": {
-    "C": "20"
+    "C": "600"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "市場與螃蟹 (20pt)"
+        "市場與螃蟹 (600pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "市場與螃蟹 (20pt)",
+          "content": "市場與螃蟹 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -61,7 +61,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "市場與螃蟹 (20pt)",
+          "content": "市場與螃蟹 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -94,7 +94,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "市場與螃蟹 (20pt)",
+        "content": "市場與螃蟹 (600pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

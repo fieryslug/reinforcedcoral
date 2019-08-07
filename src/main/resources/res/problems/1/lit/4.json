@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "D",
   "points": {
-    "D": 30
+    "D": 150
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "p不發音 (30pt)"
+        "p不發音 (150pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "p不發音 (30pt)",
+          "content": "p不發音 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -69,7 +69,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "p不發音 (30pt)",
+          "content": "p不發音 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -96,7 +96,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "p不發音 (30pt)",
+        "content": "p不發音 (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

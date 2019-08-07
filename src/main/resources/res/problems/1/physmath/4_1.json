@@ -1,15 +1,15 @@
 {
-  "name": "骨折嘉年華",
+  "name": "羅伯特瘋狂大冒險",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "A",
   "points": {
-    "B": "150"
+    "A": 250
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "骨折嘉年華 (150pt)"
+        "羅伯特瘋狂大冒險 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "骨折嘉年華 (150pt)",
+          "content": "羅伯特瘋狂大冒險 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,12 +29,18 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
-          "content": "骨折（英文：Bone Fracture）是指身體骨頭因為直接或間接的外力造成碎裂或變形。人體骨骼剛形成時原本是柔軟有彈性和可塑性的，隨著年紀的增長，軟骨的成份漸少，硬骨的組成漸漸變多，骨折開始容易發生。",
+          "constraints": "1, 5, 10, 8",
+          "content": "羅伯特是一隻熊。牠依序往南、東、北走了90公里，然後發現牠回到了原本的地方。",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
           }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/map.png",
+          "properties": {}
         }
       ]
     },
@@ -45,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "骨折嘉年華 (150pt)",
+          "content": "羅伯特瘋狂大冒險 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -55,33 +61,30 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 8",
-          "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?",
+          "constraints": "1, 5, 5, 19",
+          "content": "羅伯特的皮膚是什麼顏色的？\n(A) 黑色\n(B) 白色\n (C) 咖啡色\n (D) 紅棕色",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
           }
         },
         {
-          "widget": "jtextarea",
-          "constraints": "1, 9, 9, 19",
-          "content": "(A) 阿斑\n(B) 札克\n(C) 奧立佛\n(D) 密歇爾",
-          "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
-          }
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/thinking.png",
+          "properties": {}
         }
       ]
     }
   ],
   "solution": {
     "type": 62,
-    "final": false,
+    "final": true,
     "elements": [
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "骨折嘉年華 (150pt)",
+        "content": "羅伯特瘋狂大冒險 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -91,17 +94,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 8",
-        "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?",
-        "properties": {
-          "textsize": "30",
-          "textsizefull": "45"
-        }
-      },
-      {
-        "widget": "jtextarea",
-        "constraints": "1, 9, 9, 19",
-        "content": "(A) 阿斑\n(B) 札克\n(C) 奧立佛\n(D) 密歇爾",
+        "constraints": "1, 5, 5, 19",
+        "content": "羅伯特的皮膚是什麼顏色的？\n(A) 黑色\n(B) 白色\n (C) 咖啡色\n (D) 紅棕色",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -109,16 +103,23 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "10, 10, 18, 19",
-        "content": "B",
+        "constraints": "6, 5, 10, 19",
+        "content": "A",
         "properties": {
           "textsize": "80",
           "textsizefull": "120",
           "textbold": "true",
-          "center": "true",
-          "textcolor": "00ff00"
+          "textcolor": "00ff00",
+          "center": "true"
         }
+      },
+      {
+        "widget": "image",
+        "constraints": "11, 5, 19, 19",
+        "content": "/res/images/thinking.png",
+        "properties": {}
       }
     ]
   }
+
 }

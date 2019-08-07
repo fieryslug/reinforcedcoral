@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "A",
   "points": {
-    "A": "20"
+    "A": "400"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee<br><font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>"
+        "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee<br><font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (400pt)</html>"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (400pt)</html>",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (400pt)</html>",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -61,7 +61,7 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 10",
+          "constraints": "1, 5, 10, 10",
           "content": "假設漏斗底部每秒每平方公分會有3個新的消防隊成員進入漏斗，請問漏斗頂部每秒每平方公分需要有幾個消防隊員出去才能維持平衡？",
           "properties": {
             "textsize": "30",
@@ -77,7 +77,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+          "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (400pt)</html>",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -87,7 +87,7 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
+          "constraints": "1, 5, 10, 19",
           "content": "假設漏斗底部每秒每平方公分會有3個新的消防隊成員進入漏斗，請問漏斗頂部每秒每平方公分需要有幾個消防隊員出去才能維持平衡？\n(A) 0.33\n(B) 1\n(C) 3.3\n(D) 68",
           "properties": {
             "textsize": "30",
@@ -104,7 +104,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (20pt)</html>",
+        "content": "<html><font color=red>F</font>urious <font color=red>F</font>irefighters <font color=red>F</font>inally <font color=red>F</font>lee <font color=red>F</font>rom <font color=red>F</font>unny <font color=red>F</font>unnel (400pt)</html>",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -114,7 +114,7 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 19",
+        "constraints": "1, 5, 10, 19",
         "content": "假設漏斗底部每秒每平方公分會有3個新的消防隊成員進入漏斗，請問漏斗頂部每秒每平方公分需要有幾個消防隊員出去才能維持平衡？\n(A) 0.33\n(B) 1\n(C) 3.3\n(D) 68",
         "properties": {
           "textsize": "30",
@@ -123,7 +123,7 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "10, 10, 19, 19",
+        "constraints": "11, 11, 19, 19",
         "content": "A",
         "properties": {
           "textsize": "80",

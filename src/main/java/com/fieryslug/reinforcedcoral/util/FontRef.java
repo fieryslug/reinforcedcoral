@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class FontRef {
 
+
     private static Map<Pair<Integer, Integer>, Font> taipeiFontCache = new HashMap<>();
     private static Map<Pair<String, Pair<Integer, Integer>>, Font> fontCache = new HashMap<>();
 
@@ -73,6 +74,7 @@ public class FontRef {
     public static final Font TAIPEI60 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 60);
     public static final Font TAIPEI60BOLD = new Font("Taipei Sans TC Beta Bold", Font.PLAIN, 60);
     public static final Font TAIPEI80 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 80);
+    public static final Font TAIPEI90 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 90);
     public static final Font TAIPEI80BOLD = new Font("Taipei Sans TC Beta Bold", Font.PLAIN, 80);
     public static final Font TAIPEI120 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 120);
     public static final Font TAIPEI120BOLD = new Font("Taipei Sans TC Beta Bold", Font.PLAIN, 120);

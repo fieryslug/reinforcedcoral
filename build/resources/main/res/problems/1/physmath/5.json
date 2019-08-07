@@ -1,15 +1,15 @@
 {
-  "name": "樹脂-8",
+  "name": "不會的猜C",
   "fuzzy": false,
-  "answer": "A",
+  "answer": "C",
   "points": {
-    "A": 10
+    "C": 150
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "樹脂-8 (10pt)"
+        "不會的猜C (150pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "樹脂-8 (10pt)",
+          "content": "不會的猜C (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -30,7 +30,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 19",
-          "content": "log(-1)=\n\n(A) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(B) 2iπ\n(C) 胡桃\n(D) 0",
+          "content": "log(-1)=\n\n(A) 胡桃\n(B) 2iπ\n(C) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(D) 0",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -46,7 +46,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "樹脂-8 (10pt)",
+        "content": "不會的猜C (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -57,7 +57,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 10, 19",
-        "content": "log(-1)=\n\n(A) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(B) 2iπ\n(C) 胡桃\n(D) 0",
+        "content": "log(-1)=\n\n(A) 胡桃\n(B) 2iπ\n(C) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(D) 0",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -66,7 +66,7 @@
       {
         "widget": "jlabel",
         "constraints": "11, 5, 18, 19",
-        "content": "A",
+        "content": "C",
         "properties": {
           "textsize": "70",
           "textsizefull": "105",

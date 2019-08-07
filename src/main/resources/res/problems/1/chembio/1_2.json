@@ -1,15 +1,15 @@
 {
-  "name": "骨折嘉年華",
+  "name": "夕陽產業",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "D",
   "points": {
-    "B": "150"
+    "D": "600"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "骨折嘉年華 (150pt)"
+        "夕陽產業 (600pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "骨折嘉年華 (150pt)",
+          "content": "夕陽產業(600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -28,13 +28,19 @@
           }
         },
         {
-          "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
-          "content": "骨折（英文：Bone Fracture）是指身體骨頭因為直接或間接的外力造成碎裂或變形。人體骨骼剛形成時原本是柔軟有彈性和可塑性的，隨著年紀的增長，軟骨的成份漸少，硬骨的組成漸漸變多，骨折開始容易發生。",
+          "widget": "jlabel",
+          "constraints": "1, 5, 10, 19",
+          "content": "<html>陶瓷工藝是一種低度發展的夕陽產業，已經<font color=red>快禁</font>不起時代潮流的衝擊。也因此陶瓷工藝需要趕<font color=red>快跟</font>上時代的腳步，進行全面的產業轉型。而如何同時保存傳統文化又注入創新的想法元素，一直是一大考驗，也是賴正軒的任務。</html>",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
           }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 6, 19, 19",
+          "content": "/res/images/urn.png",
+          "properties": {}
         }
       ]
     },
@@ -45,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "骨折嘉年華 (150pt)",
+          "content": "夕陽產業(600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -55,17 +61,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 8",
-          "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?",
-          "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
-          }
-        },
-        {
-          "widget": "jtextarea",
-          "constraints": "1, 9, 9, 19",
-          "content": "(A) 阿斑\n(B) 札克\n(C) 奧立佛\n(D) 密歇爾",
+          "constraints": "1, 5, 10, 19",
+          "content": "以下何種植物不擁有塊莖?\n(A) 馬鈴薯\n(B) 白頭翁\n(C) 海芋\n(D) 老鼠葛",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -76,12 +73,12 @@
   ],
   "solution": {
     "type": 62,
-    "final": false,
+    "final": true,
     "elements": [
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "骨折嘉年華 (150pt)",
+        "content": "夕陽產業(600pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -91,17 +88,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 8",
-        "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?",
-        "properties": {
-          "textsize": "30",
-          "textsizefull": "45"
-        }
-      },
-      {
-        "widget": "jtextarea",
-        "constraints": "1, 9, 9, 19",
-        "content": "(A) 阿斑\n(B) 札克\n(C) 奧立佛\n(D) 密歇爾",
+        "constraints": "1, 5, 10, 19",
+        "content": "以下何種植物不擁有塊莖?\n(A) 馬鈴薯\n(B) 白頭翁\n(C) 海芋\n(D) 老鼠葛",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -109,14 +97,14 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "10, 10, 18, 19",
-        "content": "B",
+        "constraints": "11, 11, 19, 19",
+        "content": "D",
         "properties": {
           "textsize": "80",
           "textsizefull": "120",
+          "textcolor": "00ff00",
           "textbold": "true",
-          "center": "true",
-          "textcolor": "00ff00"
+          "center": "true"
         }
       }
     ]

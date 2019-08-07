@@ -33,8 +33,6 @@ public class FrameCoral extends JFrame {
 
     public FrameCoral(Game game) {
 
-
-
         this.game = game;
         this.game.teams.get(2).hasPrivilege = true;
 
@@ -108,6 +106,13 @@ public class FrameCoral extends JFrame {
         ControlKey controlKey = ControlKey.getKey(buttonStr);
 
         this.currentPanel.react(team, controlKey);
+
+    }
+
+    public void refreshGame(Game game) {
+
+        this.game = game;
+        this.panelGame = new PanelGame(this);
 
     }
 

@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "D",
   "points": {
-    "D": 50
+    "D": 600
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "八寶粥vs.鱷魚 (50pt)"
+        "八寶粥vs.鱷魚 (600pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (30pt)",
+          "content": "八寶粥vs.鱷魚 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -52,7 +52,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (30pt)",
+          "content": "八寶粥vs.鱷魚 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -84,7 +84,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (30pt)",
+          "content": "八寶粥vs.鱷魚 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -129,7 +129,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "八寶粥vs.鱷魚 (30pt)",
+        "content": "八寶粥vs.鱷魚 (600pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

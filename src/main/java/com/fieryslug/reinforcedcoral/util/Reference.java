@@ -13,7 +13,7 @@ public class Reference {
     public static final int MAGIC_PRIME = 62;
 
     public static final Color WHITE = new Color(255, 255, 255);
-    public static final Color AQUA = new Color(85, 221, 209);
+    public static final Color AQUA = new Color(76, 173, 171);
     public static final Color DARKRED = new Color(130, 32, 0);
     public static final Color RED = new Color(205, 10, 10);
     public static final Color BROWN = new Color(138, 89, 41);

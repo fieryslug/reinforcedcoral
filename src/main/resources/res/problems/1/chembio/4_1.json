@@ -1,15 +1,15 @@
 {
-  "name": "骨折嘉年華",
+  "name": "龍眼",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "D",
   "points": {
-    "B": "150"
+    "D": "150"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "骨折嘉年華 (150pt)"
+        "龍眼 (150pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "骨折嘉年華 (150pt)",
+          "content": "龍眼 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,12 +29,18 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
-          "content": "骨折（英文：Bone Fracture）是指身體骨頭因為直接或間接的外力造成碎裂或變形。人體骨骼剛形成時原本是柔軟有彈性和可塑性的，隨著年紀的增長，軟骨的成份漸少，硬骨的組成漸漸變多，骨折開始容易發生。",
+          "constraints": "1, 5, 10, 19",
+          "content": "龍眼和桂圓其實是同一種東西，只不過在中國的南方習慣將乾燥新鮮的龍眼稱之為桂圓，而北方則喜歡稱之為龍眼",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
           }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/longan.png",
+          "properties": {}
         }
       ]
     },
@@ -45,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "骨折嘉年華 (150pt)",
+          "content": "龍眼 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -55,17 +61,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 8",
-          "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?",
-          "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
-          }
-        },
-        {
-          "widget": "jtextarea",
-          "constraints": "1, 9, 9, 19",
-          "content": "(A) 阿斑\n(B) 札克\n(C) 奧立佛\n(D) 密歇爾",
+          "constraints": "1, 5, 10, 19",
+          "content": "下列哪一組也是指同個東西?\n(A) 蟻酸/乙酸\n(B) 蘋果迷/蘋果醚\n(C) 餅乾/丙酐\n(D) 鹽酸/盐酸",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -81,7 +78,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "骨折嘉年華 (150pt)",
+        "content": "龍眼 (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -91,17 +88,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 8",
-        "content": "如果河豚阿斑、蛞蝓札克、浣熊奧立佛、飛鼠密歇爾去參加一場骨折嘉年華，誰不能入場?",
-        "properties": {
-          "textsize": "30",
-          "textsizefull": "45"
-        }
-      },
-      {
-        "widget": "jtextarea",
-        "constraints": "1, 9, 9, 19",
-        "content": "(A) 阿斑\n(B) 札克\n(C) 奧立佛\n(D) 密歇爾",
+        "constraints": "1, 5, 10, 19",
+        "content": "下列哪一組也是指同個東西?\n(A) 蟻酸/乙酸\n(B) 蘋果迷/蘋果醚\n(C) 餅乾/丙酐\n(D) 鹽酸/盐酸",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -109,14 +97,14 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "10, 10, 18, 19",
-        "content": "B",
+        "constraints": "11, 5, 19, 19",
+        "content": "D",
         "properties": {
           "textsize": "80",
           "textsizefull": "120",
+          "textcolor": "00ff00",
           "textbold": "true",
-          "center": "true",
-          "textcolor": "00ff00"
+          "center": "true"
         }
       }
     ]

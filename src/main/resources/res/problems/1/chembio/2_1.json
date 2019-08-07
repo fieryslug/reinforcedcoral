@@ -1,15 +1,15 @@
 {
-  "name": "不確定的猜C",
+  "name": "餐桌上的生物",
   "fuzzy": "false",
   "answer": "C",
   "points": {
-    "C": "10"
+    "C": "250"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "不確定的猜C (10pt)"
+        "餐桌上的生物 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "不確定的猜C (10pt)",
+          "content": "餐桌上的生物 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -55,7 +55,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "不確定的猜C (10pt)",
+        "content": "餐桌上的生物 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

@@ -3,19 +3,19 @@
   "fuzzy": true,
   "answer": "C",
   "points": {
-    "C": 30
+    "C": 400
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "8不是質數 (10pt)"
+        "8不是質數 (400pt)"
       ]
     },
     {
       "type": -1,
       "res": [
-        "8不是質數 (10pt)",
+        "8不是質數 (400pt)",
         "星期三的英文Wednesday和哪個神有關?\n(A) 朱比特\n(B) 阿波羅\n(C) 奧丁\n(D)土地公"
       ]
     }
@@ -27,7 +27,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "8不是質數 (10pt)",
+        "content": "8不是質數 (400pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

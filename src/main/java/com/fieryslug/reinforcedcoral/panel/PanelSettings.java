@@ -1,6 +1,8 @@
 package com.fieryslug.reinforcedcoral.panel;
 
+import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.Team;
+import com.fieryslug.reinforcedcoral.core.WorkTable;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
@@ -23,6 +25,10 @@ public class PanelSettings extends PanelPrime {
 
     public JButton buttonConfirm;
 
+    public JButton buttonSet1;
+    public JButton buttonSet2;
+
+    private int problemSetNumber = 1;
 
     public PanelSettings(FrameCoral parent) {
         super(parent);
@@ -55,6 +61,22 @@ public class PanelSettings extends PanelPrime {
         this.buttonConfirm.setText("confirm");
         this.buttonConfirm.setFocusPainted(false);
 
+        this.buttonSet1 = new JButton();
+        this.buttonSet1.setForeground(Reference.WHITE);
+        this.buttonSet1.setBackground(Reference.AQUA);
+        this.buttonSet1.setText("1");
+        this.buttonSet1.setFont(FontRef.TAIPEI60);
+        this.buttonSet1.setFocusPainted(false);
+        this.buttonSet1.setBorderPainted(false);
+
+        this.buttonSet2 = new JButton();
+        this.buttonSet2.setForeground(Reference.WHITE);
+        this.buttonSet2.setBackground(Reference.DARKBLUE);
+        this.buttonSet2.setText("2");
+        this.buttonSet2.setFont(FontRef.TAIPEI60);
+        this.buttonSet2.setFocusPainted(false);
+        this.buttonSet2.setBorderPainted(false);
+
         add(this.fieldTeam1, "5, 1, 5, 1");
         add(this.fieldTeam2, "5, 3, 5, 3");
         add(this.fieldTeam3, "5, 5, 5, 5");
@@ -65,6 +87,9 @@ public class PanelSettings extends PanelPrime {
         add(this.labelTeam4, "3, 7, 4, 7");
         add(this.buttonConfirm, "4, 9, 5, 9");
 
+        add(this.buttonSet1, "7, 5");
+        add(this.buttonSet2, "8, 5");
+
         refresh();
     }
 
@@ -72,11 +97,37 @@ public class PanelSettings extends PanelPrime {
         buttonConfirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
+                if(problemSetNumber == 1) {
+                    Game game = WorkTable.getGame();
+                    parent.refreshGame(game);
+                }
+                if (problemSetNumber == 2) {
+                    Game game = WorkTable.getGame1();
+                    parent.refreshGame(game);
+                }
+
                 parent.game.teams.get(0).setId(Integer.parseInt(fieldTeam1.getText()));
                 parent.game.teams.get(1).setId(Integer.parseInt(fieldTeam2.getText()));
                 parent.game.teams.get(2).setId(Integer.parseInt(fieldTeam3.getText()));
                 parent.game.teams.get(3).setId(Integer.parseInt(fieldTeam4.getText()));
                 parent.switchPanel(PanelSettings.this, parent.panelTitle);
+            }
+        });
+        buttonSet1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                problemSetNumber = 1;
+                buttonSet1.setBackground(Reference.AQUA);
+                buttonSet2.setBackground(Reference.DARKBLUE);
+            }
+        });
+        buttonSet2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                problemSetNumber = 2;
+                buttonSet2.setBackground(Reference.AQUA);
+                buttonSet1.setBackground(Reference.DARKBLUE);
             }
         });
     }
@@ -92,7 +143,10 @@ public class PanelSettings extends PanelPrime {
             this.labelTeam2.setFont(FontRef.TAIPEI60);
             this.labelTeam3.setFont(FontRef.TAIPEI60);
             this.labelTeam3.setFont(FontRef.TAIPEI60);
+            this.labelTeam4.setFont(FontRef.TAIPEI60);
             this.buttonConfirm.setFont(FontRef.TAIPEI60);
+            this.buttonSet1.setFont(FontRef.TAIPEI90);
+            this.buttonSet2.setFont(FontRef.TAIPEI90);
         } else {
             this.fieldTeam1.setFont(FontRef.TAIPEI40);
             this.fieldTeam2.setFont(FontRef.TAIPEI40);
@@ -103,6 +157,9 @@ public class PanelSettings extends PanelPrime {
             this.labelTeam3.setFont(FontRef.TAIPEI40);
             this.labelTeam4.setFont(FontRef.TAIPEI40);
             this.buttonConfirm.setFont(FontRef.TAIPEI40);
+
+            this.buttonSet1.setFont(FontRef.TAIPEI60);
+            this.buttonSet2.setFont(FontRef.TAIPEI60);
 
         }
     }

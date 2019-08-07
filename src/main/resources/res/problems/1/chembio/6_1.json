@@ -3,13 +3,13 @@
   "fuzzy": false,
   "answer": "A",
   "points": {
-    "A": 30
+    "A": 400
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "不要選這題 (30pt)"
+        "不要選這題 (400pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "不要選這題 (30pt)",
+          "content": "不要選這題 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -70,7 +70,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "不要選這題 (30pt)",
+        "content": "不要選這題 (400pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

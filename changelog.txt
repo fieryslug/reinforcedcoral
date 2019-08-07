@@ -1,3 +1,23 @@
+===gradle 3.0=== 8/7
+-added problem set 2
+-updated settings
+-removed add button on title screen
+-bug fix: 胡桃仙子的小祕密[1/chembio/3] overlapping layout
+-bug fix: 骨折嘉年華[1/chembio/5] overlapping layout
+-bug fix: F^7[1/physmath/2_1] overlapping layout
+-bug fix: 過去發生的都較歷史[1/socio/4] overlapping layout
+-removed 史萊姆遺傳學[1/chembio/1_1]; added 夕陽產業[1/chembio/1_2]
+-removed 牙齦狂想曲[1/chembio/4]; added 龍眼[1/chembio/4_1]
+-removed 新詩共賞(1)[1/lit/1]; added 尋找威利[1/lit/1_1]
+-removed 方程式與環保塑膠[1/physmath/4]; added 羅伯特瘋狂大冒險[1/physmath/4_1]
+-renamed 新詩共賞(2)[1/lit/2] to 新詩共賞
+-renamed 不會的猜C[1/chembio/2_1] to 餐桌上的生物
+-renamed 樹脂-8[1/physmath/5] to 不會的猜C
+-reworked scoring scheme: 150, 150, 250, 250, 400, 600
+
+
+
+
 ===gradle 2.2===
 -new feature: scrolling font size
 -title now shows version
