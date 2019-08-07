@@ -1,8 +1,11 @@
-===gradle 3.1=== 8/7
+===gradle_3.1=== 8/7 21pm
+-new feature: manually manipulate scores
+-new feature: manually activate/deactivate problems
 -bug fix: 鐵梨與鯊魚[1/socio/1] problem statement
 
 
-===gradle 3.0=== 8/7 16pm
+
+===gradle_3.0=== 8/7 16pm
 -added problem set 2
 -updated settings
 -removed add button on title screen
@@ -22,18 +25,18 @@
 
 
 
-===gradle 2.2===
+===gradle_2.2===
 -new feature: scrolling font size
 -title now shows version
 
 
-===gradle 2.1===
+===gradle_2.1===
 -refined settings: modifiable teams
 -bug fix: [1/chembio/3] [1/chembio/4] solution mismatch
 -finished W^6[1/physmath/1_1]
 -finished F^7[1/physmath/2_1]
 
-===gradle 2.0===
+===gradle_2.0===
 -added settings (WIP)
 -removed 飛行的原理1[1/physmath/1] 飛行的原理2[1/physmath/2]; added W^6[1/physmath/1_1] F^7[1/physmath/2_1]
 -modified S^5
@@ -47,7 +50,7 @@
 
 
 
-===gradle 1.0===
+===gradle_1.0===
 -24 problems
 
 

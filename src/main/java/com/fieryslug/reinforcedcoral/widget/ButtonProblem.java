@@ -5,6 +5,8 @@ import com.fieryslug.reinforcedcoral.util.MediaRef;
 import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -51,6 +53,25 @@ public class ButtonProblem extends ButtonCoral {
                     timerAnimation.purge();
             }
         };
+
+        this.addMouseWheelListener(new MouseWheelListener() {
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
+                boolean isUp = mouseWheelEvent.getPreciseWheelRotation() < 0;
+                if (mouseWheelEvent.isControlDown()) {
+                    if (!isUp) {
+                        int state1 = Math.max(-1, state - 1);
+                        setState(state1);
+                    }
+                    else {
+                        int state1 = Math.min(1, state + 1);
+                        setState(state1);
+                    }
+                }
+
+
+            }
+        });
 
     }
 
@@ -150,7 +171,11 @@ public class ButtonProblem extends ButtonCoral {
     public void playAnimation() {
         this.animationNumber = 0;
         this.timerAnimation = new Timer();
-        this.timerAnimation.scheduleAtFixedRate(this.taskAnimation, 500, 500);
+        try {
+            this.timerAnimation.scheduleAtFixedRate(this.taskAnimation, 500, 500);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -5,6 +5,9 @@ import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+
 import javax.swing.*;
 
 public class PanelTeam extends JPanel {
@@ -41,6 +44,35 @@ public class PanelTeam extends JPanel {
         this.labelState.setFont(FontRef.TAIPEI40BOLD);
         this.labelState.setForeground(Reference.WHITE);
         this.labelState.setText("");
+
+        this.labelScore.addMouseWheelListener(new MouseWheelListener() {
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
+
+                boolean isUp = mouseWheelEvent.getPreciseWheelRotation() < 0;
+
+                if (mouseWheelEvent.isControlDown()) {
+                    if(isUp)
+                        team.addPoints(100);
+                    else
+                        team.addPoints(-100);
+                }
+                if (mouseWheelEvent.isShiftDown()) {
+                    if (isUp)
+                        team.addPoints(5);
+                    else
+                        team.addPoints(-5);
+
+                }
+                if (mouseWheelEvent.isAltDown()) {
+                    if(isUp)
+                        team.addPoints(1);
+                    else
+                        team.addPoints(-1);
+                }
+                labelScore.setText(String.valueOf(team.getScore()));
+            }
+        });
 
         add(this.labelName);
         add(this.labelScore);
