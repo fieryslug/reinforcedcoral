@@ -1,3 +1,10 @@
 out/
 build/
 .idea/
+.gradle
+
+*.jar
+*.war
+*.ear
+
+*.class

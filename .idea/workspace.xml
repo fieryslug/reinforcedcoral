@@ -7,37 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontChangingListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/widget/FontChangerLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/widget/FontChangerTextArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelTitle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelTitle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelTitle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/panel/PanelTitle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/FontRef.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/FontRef.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/Reference.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/lit/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/lit/4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTitle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/1_1.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [jar]">
+  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [run]">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -258,8 +232,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.gradle_reinforcedcoral [jar]" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [run]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [jar]" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [clean]" />
         <item itemvalue="JAR Application.reinforcedcoral-1.0-SNAPSHOT.jar" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [runJar]" />
@@ -289,6 +263,7 @@
       <workItem from="1565059528272" duration="3829000" />
       <workItem from="1565071200227" duration="13600000" />
       <workItem from="1565093012815" duration="20861000" />
+      <workItem from="1565142507462" duration="1326000" />
     </task>
     <servers />
   </component>
