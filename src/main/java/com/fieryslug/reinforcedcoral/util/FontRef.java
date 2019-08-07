@@ -3,15 +3,15 @@ package com.fieryslug.reinforcedcoral.util;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class FontRef {
 
-    private static Map<Pair<Integer, Integer>, Font> fontCache = new HashMap<>();
+    private static Map<Pair<Integer, Integer>, Font> taipeiFontCache = new HashMap<>();
+    private static Map<Pair<String, Pair<Integer, Integer>>, Font> fontCache = new HashMap<>();
+
 
 
     static {
@@ -26,14 +26,28 @@ public class FontRef {
         }
     }
 
+    @Deprecated
     public static Font getTaipeiFont(int b, int s) {
 
         Pair<Integer, Integer> pair = new Pair<>(b, s);
-        Font font = fontCache.get(pair);
-        if(font != null)
+        Font font = taipeiFontCache.get(pair);
+        if (font != null)
             return font;
         font = new Font("Taipei Sans TC Beta Regular", b, s);
-        fontCache.put(pair, font);
+        taipeiFontCache.put(pair, font);
+        return font;
+
+    }
+
+    public static Font getFont(String fontName, int b, int s) {
+
+        Pair<String, Pair<Integer, Integer>> info = new Pair<>(fontName, new Pair<>(b, s));
+        Font font = fontCache.get(info);
+        if (font != null) {
+            return font;
+        }
+        font = new Font(fontName, b, s);
+        fontCache.put(info, font);
         return font;
 
     }

@@ -115,11 +115,11 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "15, 15, 19, 19",
+        "constraints": "18, 18, 19, 19",
         "content": "D",
         "properties": {
-          "textsize": "80",
-          "textsizefull": "120",
+          "textsize": "40",
+          "textsizefull": "60",
           "center": "true",
           "textcolor": "00ff00",
           "textbold": "true"

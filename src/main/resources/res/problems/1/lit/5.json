@@ -56,7 +56,7 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 19",
+        "constraints": "1, 5, 13, 19",
         "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) schamanism",
         "properties": {
           "textsize": "40",
@@ -65,7 +65,7 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "10, 10, 19, 19",
+        "constraints": "14, 10, 19, 19",
         "content": "D",
         "properties": {
           "textsize": "120",

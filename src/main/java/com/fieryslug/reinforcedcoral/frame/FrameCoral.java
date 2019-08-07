@@ -6,6 +6,7 @@ import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.panel.PanelSettings;
+import com.fieryslug.reinforcedcoral.panel.PanelTeam;
 import com.fieryslug.reinforcedcoral.panel.PanelTitle;
 import com.fieryslug.reinforcedcoral.util.ActionFullScreen;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
@@ -43,7 +44,7 @@ public class FrameCoral extends JFrame {
 
         setSize(this.maxWidth *2/3, this.maxHeight *2/3);
         setLocationRelativeTo(null);
-        setTitle(Reference.PROJECT_NAME);
+        setTitle(Reference.PROJECT_NAME + "-" + Reference.VERSION);
         setIconImage(MediaRef.CORAL);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,6 +62,7 @@ public class FrameCoral extends JFrame {
         this.currentPanel = panelTitle;
 
         setVisible(true);
+
     }
 
     public void switchPanel(PanelPrime panel1, PanelPrime panel2) {

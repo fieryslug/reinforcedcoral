@@ -1,3 +1,8 @@
+===gradle 2.2===
+-new feature: scrolling font size
+-title now shows version
+
+
 ===gradle 2.1===
 -refined settings: modifiable teams
 -bug fix: [1/chembio/3] [1/chembio/4] solution mismatch

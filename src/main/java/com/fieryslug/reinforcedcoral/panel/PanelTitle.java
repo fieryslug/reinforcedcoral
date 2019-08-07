@@ -6,10 +6,15 @@ import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
 
+import javax.media.Manager;
+import javax.media.Player;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
+
+import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 
 public class PanelTitle extends PanelPrime {
 
@@ -18,6 +23,8 @@ public class PanelTitle extends PanelPrime {
     public JLabel labelTitle;
 
     public JButton buttontest;
+
+    public EmbeddedMediaPlayerComponent tempComponent;
 
     public PanelTitle(FrameCoral parent) {
 
@@ -51,6 +58,7 @@ public class PanelTitle extends PanelPrime {
         buttonSettings.setFocusPainted(false);
 
         buttontest = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
+
 
         add(FuncBox.blankLabel(2000, 200));
         add(labelTitle);

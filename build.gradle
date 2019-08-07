@@ -6,7 +6,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
-version 'gradle_2.1'
+version 'gradle_2.2'
 
 mainClassName = 'com.fieryslug.reinforcedcoral.Main'
 sourceCompatibility = 1.8
@@ -26,7 +26,11 @@ dependencies {
     compile group: 'org.json', name: 'json', version: '20180813'
     compile group: 'javax.media', name: 'jmf', version: '2.1.1e'
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'uk.co.caprica', name: 'vlcj', version: '3.8.0'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile group: 'org.slf4j', name: 'slf4j-simple', 'version': '1.6.6'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.6'
 }
 
 jar {

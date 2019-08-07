@@ -29,8 +29,17 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
-          "content": "龍蝦沙拉、紅燒海參、烏骨雞湯、豆酥鱈魚、與魚翅羹是台灣婚宴中沒意外就會吃到的菜色，請問這些料理中有幾個門的動物？\n(A) 1\n(B) 2\n(C)3\n(D)19",
+          "constraints": "1, 5, 18, 9",
+          "content": "龍蝦沙拉、紅燒海參、烏骨雞湯、豆酥鱈魚、與魚翅羹是台灣婚宴中沒意外就會吃到的菜色，請問這些料理中有幾個門的動物？",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 10, 9, 19",
+          "content": "(A) 1\n(B) 2\n(C)3\n(D)19",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -56,8 +65,17 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 19",
-        "content": "龍蝦沙拉、紅燒海參、烏骨雞湯、豆酥鱈魚、與魚翅羹是台灣婚宴中沒意外就會吃到的菜色，請問這些料理中有幾個門的動物？\n(A) 1\n(B) 2\n(C)3\n(D)19",
+        "constraints": "1, 5, 18, 9",
+        "content": "龍蝦沙拉、紅燒海參、烏骨雞湯、豆酥鱈魚、與魚翅羹是台灣婚宴中沒意外就會吃到的菜色，請問這些料理中有幾個門的動物？",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 10, 9, 19",
+        "content": "(A) 1\n(B) 2\n(C)3\n(D)19",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

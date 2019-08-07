@@ -7,6 +7,8 @@ import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
+import com.fieryslug.reinforcedcoral.widget.FontChangerLabel;
+import com.fieryslug.reinforcedcoral.widget.FontChangerTextArea;
 
 //import layout.TableLayout;
 //import layout.TableLayoutConstraints;
@@ -45,7 +47,7 @@ public class PanelProblem extends JPanel {
         this.layout = new TableLayout(layoutSize);
         setLayout(this.layout);
 
-        this.areaDescription = new JTextArea();
+        this.areaDescription = new FontChangerTextArea();
         this.areaDescription.setFont(FontRef.TAIPEI30);
         this.areaDescription.setBackground(Reference.BLACK);
         this.areaDescription.setForeground(Reference.WHITE);
@@ -53,7 +55,7 @@ public class PanelProblem extends JPanel {
         this.areaDescription.setEditable(false);
         this.setBackground(Reference.BLACK);
 
-        this.labelTitle = new JLabel();
+        this.labelTitle = new FontChangerLabel();
         this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
         this.labelTitle.setBackground(Reference.BLACK);
         this.labelTitle.setForeground(Reference.WHITE);
@@ -184,7 +186,7 @@ public class PanelProblem extends JPanel {
     private void addAndConfigWidget(Widget widget) {
 
         if(widget.widgetType == Widget.EnumWidget.JLABEL) {
-            JLabel label = new JLabel();
+            JLabel label = new FontChangerLabel();
             label.setText(widget.content);
             label.setForeground(widget.getTextColor());
             label.setBackground(Reference.BLACK);
@@ -197,10 +199,10 @@ public class PanelProblem extends JPanel {
 
         }
         if(widget.widgetType == Widget.EnumWidget.JTEXTAREA) {
-            JTextArea area = new JTextArea();
+            JTextArea area = new FontChangerTextArea();
             area.setText(widget.content);
             area.setForeground(widget.getTextColor());
-            area.setBackground(Reference.TRANSPARENT);
+            area.setBackground(Reference.BLACK);
             area.setLineWrap(true);
             area.setEditable(false);
             area.setSelectedTextColor(widget.getTextColor());
