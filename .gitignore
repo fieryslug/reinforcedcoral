@@ -1,7 +1,7 @@
 out/
 build/
 .idea/
-.gradle
+.gradle/
 
 *.jar
 *.war
