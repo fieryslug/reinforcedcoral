@@ -1,4 +1,8 @@
-===gradle 3.0=== 8/7
+===gradle 3.1=== 8/7
+-bug fix: 鐵梨與鯊魚[1/socio/1] problem statement
+
+
+===gradle 3.0=== 8/7 16pm
 -added problem set 2
 -updated settings
 -removed add button on title screen
