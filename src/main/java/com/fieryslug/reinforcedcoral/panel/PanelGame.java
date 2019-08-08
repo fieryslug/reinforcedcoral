@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.panel;
 
+import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
@@ -33,7 +34,7 @@ public class PanelGame extends PanelPrime {
     int paneWidth;
     int paneHeight;
 
-    public int state;
+    private int state;
     public int prevState;
     public Problem currentProblem;
     public int currentPageNumber = 0;
@@ -58,6 +59,8 @@ public class PanelGame extends PanelPrime {
     public Map<Team, ArrayList<ControlKey>> teamKeys;
     public Map<Team, Boolean> teamLockedMap;
     public Map<Team, Integer> teamTempScoreMap;
+
+    public PanelMiniGame currenMinigamePanel = null;
 
     public static final int MAX_KEYS = 1;
 
@@ -207,6 +210,7 @@ public class PanelGame extends PanelPrime {
                         PanelGame.this.currentProblem = null;
                         PanelGame.this.currentPageNumber = 0;
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+                        panelInteriorPage.clearSounds();
                     } else {
                         PanelGame.this.currentPageNumber--;
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
@@ -233,7 +237,7 @@ public class PanelGame extends PanelPrime {
                     ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
                     buttonProblem.setState(1);
                     setState(0);
-                    panelInteriorPage.finishUp();
+                    panelInteriorPage.clearSounds();
                 }
                 parent.switchPanel(PanelGame.this, PanelGame.this);
             }
@@ -441,6 +445,13 @@ public class PanelGame extends PanelPrime {
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
         }
+        if (this.state == -1) {
+            add(this.panelBoxes.get(0), "0, 0, 2, 0");
+            add(this.panelBoxes.get(1), "3, 0, 5, 0");
+
+            add(this.panelBoxes.get(2), "0, 5, 2, 5");
+            add(this.panelBoxes.get(3), "3, 5, 5, 5");
+        }
         this.refresh();
     }
 
@@ -589,9 +600,16 @@ public class PanelGame extends PanelPrime {
                     this.teamPanelMap.get(team).labelState.setText(s);
             }
         }
+
+        if (this.state == -1) {
+            if (this.currenMinigamePanel != null) {
+                this.currenMinigamePanel.react(team, key);
+                System.out.println("reacted!");
+            }
+        }
     }
 
-    private void setState(int newState) {
+    public void setState(int newState) {
 
         this.prevState = this.state;
         this.state = newState;

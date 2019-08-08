@@ -34,7 +34,7 @@ public class FrameCoral extends JFrame {
     public FrameCoral(Game game) {
 
         this.game = game;
-        this.game.teams.get(2).hasPrivilege = true;
+        //this.game.teams.get(2).hasPrivilege = true;
 
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.maxHeight = dimension.height;

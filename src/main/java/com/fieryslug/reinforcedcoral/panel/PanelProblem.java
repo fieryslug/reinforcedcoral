@@ -235,6 +235,11 @@ public class PanelProblem extends JPanel {
             add(label, widget.constraints);
         }
         if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+            AudioStream audioStreamOld = this.playingAudios.get(widget.content);
+            if (audioStreamOld != null) {
+                AudioPlayer.player.stop(audioStreamOld);
+                this.playingAudios.remove(widget.content);
+            }
             AudioStream audioStream = MediaRef.playWav(widget.content);
             this.playingAudios.put(widget.content, audioStream);
         }
@@ -355,7 +360,7 @@ public class PanelProblem extends JPanel {
     }
 
     //called when switched back to menu
-    public void finishUp() {
+    public void clearSounds() {
         for (String audioName : this.playingAudios.keySet()) {
             AudioStream audioStream = this.playingAudios.get(audioName);
             AudioPlayer.player.stop(audioStream);

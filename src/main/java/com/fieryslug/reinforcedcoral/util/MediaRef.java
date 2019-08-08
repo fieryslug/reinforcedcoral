@@ -16,6 +16,7 @@ import java.util.Map;
 
 public class MediaRef {
 
+
     public static Map<String, Image> pathImageCache = new HashMap<>();
 
     public static final Image CHROME = getImage("/res/icon/chrome.png");
@@ -36,6 +37,7 @@ public class MediaRef {
 
     public static final String APPLE1 = "/res/sound/apple1.wav";
     public static final String SUPERCELL = "/res/sound/supercell.wav";
+    public static final String EXPLOSION = "/res/sound/explosion.wav";
 
 
     public static Image getImage(String path) {

@@ -30,7 +30,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 19",
-          "content": "log(-1)=\n\n(A) 胡桃\n(B) 2iπ\n(C) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(D) 0",
+          "content": "log(-1)=\n\n(A) 7\n(B) 2iπ\n(C) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(D) 0",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -57,7 +57,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 10, 19",
-        "content": "log(-1)=\n\n(A) 胡桃\n(B) 2iπ\n(C) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(D) 0",
+        "content": "log(-1)=\n\n(A) 7\n(B) 2iπ\n(C) {..., -5iπ, -3iπ, -iπ, iπ, 3iπ, 5iπ, ...}\n(D) 0",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

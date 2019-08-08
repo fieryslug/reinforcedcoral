@@ -1,5 +1,15 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_4.1=== 8/8 25pm
+-finished snake[2/avocado/?] (potential bugs)
+-bug fix: audio in problems not behaving correctly
+-bug fix: team 3 no longer has privilege on startup
+-mine now takes 100 points instead of 50
+-bug fix: 校園禮儀[2/nehs/2] answer mismatch
+-modified 過去發生的都叫歷史[1/socio/4]
+-modified 不會的猜C[1/physmath/5]
+
+
 ===gradle_4.0=== 8/8 17pm
 -new feature: audio support for problems, "audio" and "audiostop" widgets
 -new feature: custom fonts for problems, property "font"

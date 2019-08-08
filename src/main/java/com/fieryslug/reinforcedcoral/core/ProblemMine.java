@@ -2,6 +2,7 @@ package com.fieryslug.reinforcedcoral.core;
 
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.panel.PanelTeam;
+import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
 
 import java.awt.Component;
@@ -13,6 +14,8 @@ import java.util.TimerTask;
 import javax.media.Manager;
 import javax.media.Player;
 import javax.swing.SpringLayout;
+
+import sun.audio.AudioPlayer;
 
 public class ProblemMine extends Problem {
 
@@ -32,8 +35,9 @@ public class ProblemMine extends Problem {
 
         PanelTeam panelTeam = panelGame.teamPanelMap.get(team);
         String s = panelTeam.labelScore.getText();
-        panelTeam.labelScore.setText("<html>" + s + "<font color=red> -50</font></html>");
-        team.addPoints(-50);
+        MediaRef.playWav(MediaRef.EXPLOSION);
+        panelTeam.labelScore.setText("<html>" + s + "<font color=red> -100</font></html>");
+        team.addPoints(-100);
         ButtonProblem buttonProblem = panelGame.problemButtonMap.get(this);
         buttonProblem.state = 1;
         panelGame.refresh();

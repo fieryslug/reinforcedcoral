@@ -100,7 +100,7 @@
       {
         "widget": "jlabel",
         "constraints": "11, 11, 19, 19",
-        "content": "C",
+        "content": "D",
         "properties": {
           "textsize": "80",
           "textsizefull": "120",

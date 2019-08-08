@@ -99,6 +99,14 @@ public class WorkTable {
         Problem prb35 = new Problem("placeholder", 0);
         Problem prb36 = new Problem("placeholder", 0);
 
+        prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb13.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb14.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+
+
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);
         catNehs2.addProblem(prb11, prb12, prb13, prb14, prb15, prb16);
         catLifeHax.addProblem(prb21, prb22, prb23, prb24, prb25, prb26);

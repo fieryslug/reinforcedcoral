@@ -11,9 +11,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 
 public class FuncBox {
 
@@ -111,6 +115,14 @@ public class FuncBox {
         for (Font font : allFonts) {
             System.out.println(font.getFontName(Locale.US));
         }
+    }
+
+    public static <T> T ramdomChoice(Set<T> set, Random random) {
+
+        ArrayList<T> list = new ArrayList<>(set);
+        int i = random.nextInt(list.size());
+        return list.get(i);
+
     }
 
 
