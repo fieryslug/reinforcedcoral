@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.core;
 
 import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.minigame.minesweeper.ProblemMineSweeper;
 
 //all the dirty work here
 public class WorkTable {
@@ -96,7 +97,7 @@ public class WorkTable {
         Problem prb32 = new ProblemSnake("貪食蛇");
         Problem prb33 = new ProblemSlipper("<html><font color=3333ff>左腳拖鞋</font></html>");
         Problem prb34 = new Problem("placeholder", 0);
-        Problem prb35 = new Problem("placeholder", 0);
+        Problem prb35 = new ProblemMineSweeper("採地雷");
         Problem prb36 = new Problem("placeholder", 0);
 
         prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);

@@ -80,11 +80,12 @@ public class PanelSnake extends PanelMiniGame {
         this.idGeneratorMap = new HashMap<>();
         this.freeSlots = new HashSet<>();
 
-        addFruitGenerator(new FruitGenerator(50, 1, 21, -1));
-        addFruitGenerator(new FruitGenerator(50, 1, 49, -2));
-        addFruitGenerator(new FruitGenerator(50, 1, 37, -3));
-        addFruitGenerator(new FruitGenerator(150, 3, 59, -4));
-        addFruitGenerator(new FruitGenerator(500, 10, 119, -5));
+        addFruitGenerator(new FruitGenerator(7, 0, 51, -6, Reference.WHITE));
+        addFruitGenerator(new FruitGenerator(50, 1, 21, -1, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(50, 1, 49, -2, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(50, 1, 37, -3, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(150, 3, 59, -4, Reference.BROWN));
+        addFruitGenerator(new FruitGenerator(500, 10, 119, -5, Reference.RED));
 
         this.snakes = new Snake[4];
 
@@ -369,7 +370,7 @@ public class PanelSnake extends PanelMiniGame {
                     this.pixels[point.x][point.y].state = generator.id;
                     this.freeSlots.remove(point);
 
-                    this.colorPlan.put(point, Reference.LIME);
+                    this.colorPlan.put(point, generator.color);
                     this.textPlan.put(point, String.valueOf(generator.points));
 
                     generator.active = false;
@@ -385,9 +386,9 @@ public class PanelSnake extends PanelMiniGame {
         }
         else {
             this.timerUpdate.cancel();
-            add(this.labelGameOver, "10, 0, 39, 10");
+            add(this.labelGameOver, "0, 5, 19, 13");
             this.labelGameOver.setText("Game Over");
-            add(this.buttonBack, "20, 11, 29, 19");
+            add(this.buttonBack, "0, 14, 19, 16");
             this.buttonBack.setText("");
             this.buttonBack.setText("main menu");
         }

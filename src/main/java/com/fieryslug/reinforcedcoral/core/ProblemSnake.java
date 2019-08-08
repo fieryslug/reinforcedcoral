@@ -25,8 +25,6 @@ public class ProblemSnake extends Problem {
 
 
 
-
-
         panelGame.add(this.panelSnake, "0, 1, 5, 4");
         panelGame.currenMinigamePanel = this.panelSnake;
         panelSnake.start();

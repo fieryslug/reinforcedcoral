@@ -1,5 +1,9 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_4.2=== 8/8 26pm
+-added minesweeper[2/avocado/?] (WIP)
+-refined snake[2/avocado/?]
+
 ===gradle_4.1=== 8/8 25pm
 -finished snake[2/avocado/?] (potential bugs)
 -bug fix: audio in problems not behaving correctly
