@@ -7,26 +7,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/bar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/chief.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/chief2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/cleff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/cleff.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/elevator.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/newyork.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/sink1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/sink2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/sink3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs/4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs/5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs/6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs2/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/sound/humble.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/frame/FrameCoral.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/fieryslug/reinforcedcoral/util/Reference.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/res/problems/1/socio/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/res/problems/1/socio/1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1.json" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
->>>>>>> 67c4dc6dee880e210bcccb33733209de625b79c3
+      <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/page/Widget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/MediaRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1_2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/1_2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/2_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/4_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/chembio/5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/6.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/physmath/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/2/jinshan/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs/2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/nehs/2.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [jar]">
+  <component name="RunManager" selected="Gradle.gradle_reinforcedcoral [run]">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -250,8 +264,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.gradle_reinforcedcoral [jar]" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [run]" />
+        <item itemvalue="Gradle.gradle_reinforcedcoral [jar]" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [clean]" />
         <item itemvalue="JAR Application.reinforcedcoral-1.0-SNAPSHOT.jar" />
         <item itemvalue="Gradle.gradle_reinforcedcoral [runJar]" />
@@ -283,12 +297,11 @@
       <workItem from="1565093012815" duration="20861000" />
       <workItem from="1565142507462" duration="1326000" />
       <workItem from="1565146335858" duration="772000" />
-<<<<<<< HEAD
-      <workItem from="1565150256860" duration="19617000" />
-      <workItem from="1565173317117" duration="3793000" />
-=======
       <workItem from="1565150256860" duration="19745000" />
->>>>>>> 67c4dc6dee880e210bcccb33733209de625b79c3
+      <workItem from="1565225670282" duration="11000" />
+      <workItem from="1565225701053" duration="1114000" />
+      <workItem from="1565227309039" duration="3895000" />
+      <workItem from="1565241403055" duration="14975000" />
     </task>
     <servers />
   </component>

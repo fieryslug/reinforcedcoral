@@ -233,6 +233,7 @@ public class PanelGame extends PanelPrime {
                     ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
                     buttonProblem.setState(1);
                     setState(0);
+                    panelInteriorPage.finishUp();
                 }
                 parent.switchPanel(PanelGame.this, PanelGame.this);
             }

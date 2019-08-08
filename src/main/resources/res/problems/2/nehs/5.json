@@ -1,0 +1,112 @@
+{
+  "name": "大怒神",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 150
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "大怒神 (150pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "大怒神 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 8, 15",
+          "content": "六福村遊樂設施「大怒神」曾經在運作時突然故障，4名遊客卡在半空中近10分鐘，並獲得一瓶綠茶。還好實驗中學沒有大怒神(你也不會獲得綠茶)，但有電梯；",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "9, 5, 19, 19",
+          "content": "/res/images/elevator.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "大怒神 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "請問什麼時候可以搭電梯\n(A) 受傷 \n(B) 遇到老師要搭\n(C) 需要特殊身分\n(D) 想搭就搭",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "大怒神 (150pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "請問什麼時候可以搭電梯\n(A) 受傷 \n(B) 遇到老師要搭\n(C) 需要特殊身分\n(D) 想搭就搭",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

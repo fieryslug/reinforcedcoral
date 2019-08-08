@@ -12,7 +12,7 @@ public class FontRef {
 
     private static Map<Pair<Integer, Integer>, Font> taipeiFontCache = new HashMap<>();
     private static Map<Pair<String, Pair<Integer, Integer>>, Font> fontCache = new HashMap<>();
-
+    public static final Map<String, String> BOLD_FONT_MAP = new HashMap<>();
 
 
     static {
@@ -25,6 +25,10 @@ public class FontRef {
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
+    }
+
+    static {
+        BOLD_FONT_MAP.put("Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Bold");
     }
 
     @Deprecated

@@ -1,0 +1,112 @@
+{
+  "name": "阿蛇的酒吧",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "阿蛇的酒吧 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": " 阿蛇的酒吧 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "雖然又臭又沒特色，大家卻很愛去一間名為「操場」的酒吧，店長的綽號叫阿蛇。許多電影人或黨外人士紛紛聚集於此，甚至連一些藝人都會光顧，這些形形色色的顧客，為這家小店帶來了豐沛的生命力。(旅人專欄, 2018.12)",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/bar.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": " 阿蛇的酒吧 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "學校的操場是幾公尺的?\n(A) 200\n(B) 300\n(C) 350\n(D) 400",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": " 阿蛇的酒吧 (150pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "學校的操場是幾公尺的?\n(A) 200\n(B) 300\n(C) 350\n(D) 400",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "B",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

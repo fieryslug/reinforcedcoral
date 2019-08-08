@@ -62,7 +62,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 10, 19",
-          "content": "下列哪一組也是指同個東西?\n(A) 蟻酸/乙酸\n(B) 蘋果迷/蘋果醚\n(C) 餅乾/丙酐\n(D) 鹽酸/盐酸",
+          "content": "下列哪一組也是指同個東西?\n(A) 甲酸/蟻酸/乙酸\n(B) 石灰/灰石/熟石灰\n(C) 餅乾/丙酐/新貴派\n(D) 鹽酸/盐酸/塩酸",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -89,7 +89,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 10, 19",
-        "content": "下列哪一組也是指同個東西?\n(A) 蟻酸/乙酸\n(B) 蘋果迷/蘋果醚\n(C) 餅乾/丙酐\n(D) 鹽酸/盐酸",
+        "content": "下列哪一組也是指同個東西?\n(A) 甲酸/蟻酸/乙酸\n(B) 石灰/灰石/熟石灰\n(C) 餅乾/丙酐/新貴派\n(D) 鹽酸/盐酸/塩酸",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

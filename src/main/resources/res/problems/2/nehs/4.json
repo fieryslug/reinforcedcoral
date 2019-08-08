@@ -1,0 +1,112 @@
+{
+  "name": "迷路的酋長",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": "250"
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "迷路的酋長 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "迷路的酋長 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 7",
+          "content": "阿強是一位酋長，他迷路了。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 8, 18, 19",
+          "content": "/res/images/chief2.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "迷路的酋長 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 19, 16",
+          "content": "聰明的你能幫阿強找出實驗中學的地址嗎？\n(A) No. 36, Xuefu Rd., East Dist., Hsinchu City 300, Taiwan (R.O.C.)\n(B) No. 2, Xingchan Rd., Lugu Township, Nantou County 558, Taiwan (R.O.C.)\n(C) 1600 Pennsylvania Avenue NW, Washington\n(D) No. 300, Jieshou Rd., East Dist., Hsinchu City 300, Taiwan (R.O.C.)",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "迷路的酋長 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 19, 16",
+        "content": "聰明的你能幫阿強找出實驗中學的地址嗎？\n(A) No. 36, Xuefu Rd., East Dist., Hsinchu City 300, Taiwan (R.O.C.)\n(B) No. 2, Xingchan Rd., Lugu Township, Nantou County 558, Taiwan (R.O.C.)\n(C) 1600 Pennsylvania Avenue NW, Washington\n(D) No. 300, Jieshou Rd., East Dist., Hsinchu City 300, Taiwan (R.O.C.)",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 17, 18, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "60",
+          "textsizefull": "90",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "name": "風紀股長阿瓜",
+  "fuzzy": false,
+  "answer": "C",
+  "points": {
+    "C": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "風紀股長阿瓜 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "夕陽產業(600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 7",
+          "content": "實驗中學有一個調皮的洗手台，而風紀股長阿瓜必須要教育它。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 8, 19, 19",
+          "content": "/res/images/cleff.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "夕陽產業(600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 7",
+          "content": "眾所周知，只有泡麵能拿來修理洗手台：",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 8, 6, 19",
+          "content": "/res/images/sink1.jpg",
+          "properties": {}
+        },
+        {
+          "widget": "image",
+          "constraints": "7, 8, 12, 19",
+          "content": "/res/images/sink2.jpg",
+          "properties": {}
+        },
+        {
+          "widget": "image",
+          "constraints": "13, 8, 18, 19",
+          "content": "/res/images/sink3.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "夕陽產業(600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "但問題來了，到底什麼時候才能在萊爾富買到泡麵呢？\n(A) 隨時\n(B) 下午12點到1點\n(C) 下午12點以前或1點之後\n(D) 來爾富沒有賣泡麵",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "夕陽產業(600pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "但問題來了，到底什麼時候才能在萊爾富買到泡麵呢？\n(A) 隨時\n(B) 下午12點到1點\n(C) 下午12點以前或1點之後\n(D) 來爾富沒有賣泡麵",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "C",
+        "properties": {
+          "textbold": "true",
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

@@ -1,5 +1,22 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_4.0=== 8/8 17pm
+-new feature: audio support for problems, "audio" and "audiostop" widgets
+-new feature: custom fonts for problems, property "font"
+-added 校園禮儀[2/nehs/2]
+-added 風紀股長阿瓜[2/nehs/3]
+-added 迷路的酋長[2/nehs/4]
+-added 大怒神[2/nehs/5]
+-added 傲慢與偏見[2/nehs/6]
+-added 阿蛇的酒吧[2/nehs2/1]
+-modified 夕陽產業[1/chembio/1_2]
+-modified 餐桌上的生物[1/chembio/2_1]
+-modified 骨折嘉年華[1/chembio/5]
+-modified 龍眼[1/chembio/4_1]
+-modified S^5[1/physmath/3]
+-modified Vocabulary 101[1/lit/5]
+-modified Be Humble[1/lit/6]
+
 
 ===gradle_3.2=== 8/7 25pm
 -temporary feature: default problem set: #2

@@ -66,19 +66,19 @@ public class WorkTable {
 
         Game game = new Game(1, 2, 3, 4);
 
-        Category catNehs = new Category("實驗生活");
-        Category catJinShan = new Category("金山街");
+        Category catNehs = new Category("實中(基礎)");
+        Category catNehs2 = new Category("實中(進階)");
         Category catLifeHax = new Category("生活常識");
         Category catAvocado = new Category("Fiery Avocado 3");
 
         Problem prb01 = new Problem("2/nehs/1.json");
-        Problem prb02 = new Problem("placeholder", 0);
-        Problem prb03 = new Problem("placeholder", 0);
-        Problem prb04 = new Problem("placeholder", 0);
-        Problem prb05 = new Problem("placeholder", 0);
-        Problem prb06 = new Problem("placeholder", 0);
+        Problem prb02 = new Problem("2/nehs/2.json");
+        Problem prb03 = new Problem("2/nehs/3.json");
+        Problem prb04 = new Problem("2/nehs/4.json");
+        Problem prb05 = new Problem("2/nehs/5.json");
+        Problem prb06 = new Problem("2/nehs/6.json");
 
-        Problem prb11 = new Problem("placeholder", 0);
+        Problem prb11 = new Problem("2/nehs2/1.json");
         Problem prb12 = new Problem("placeholder", 0);
         Problem prb13 = new Problem("placeholder", 0);
         Problem prb14 = new Problem("placeholder", 0);
@@ -100,12 +100,12 @@ public class WorkTable {
         Problem prb36 = new Problem("placeholder", 0);
 
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);
-        catJinShan.addProblem(prb11, prb12, prb13, prb14, prb15, prb16);
+        catNehs2.addProblem(prb11, prb12, prb13, prb14, prb15, prb16);
         catLifeHax.addProblem(prb21, prb22, prb23, prb24, prb25, prb26);
         catAvocado.addProblem(prb31, prb32, prb33, prb34, prb35, prb36);
 
         game.addCategory(catNehs);
-        game.addCategory(catJinShan);
+        game.addCategory(catNehs2);
         game.addCategory(catLifeHax);
         game.addCategory(catAvocado);
         return game;

@@ -71,7 +71,7 @@ public class MediaRef {
         return bimage;
     }
 
-    public static void playWav(String path) {
+    public static AudioStream playWav(String path) {
 
         AudioStream audioStream = null;
 
@@ -84,5 +84,6 @@ public class MediaRef {
         }
 
         AudioPlayer.player.start(audioStream);
+        return audioStream;
     }
 }

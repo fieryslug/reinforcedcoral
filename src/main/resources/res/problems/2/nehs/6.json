@@ -1,0 +1,112 @@
+{
+  "name": "傲慢與偏見",
+  "fuzzy": false,
+  "answer": "C",
+  "points": {
+    "C": 150
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "傲慢與偏見 (150pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "傲慢與偏見 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 10",
+          "content": "<html>科學的傲慢，常讓我們以為現今的科學已到了全知的境界，也很容易出現排他的現象，把「非我族類」一竿子打翻成為「不科學」、「迷信」。 (紐約時報 10/8/2015)</html>",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 11, 19, 19",
+          "content": "/res/images/newyork.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "傲慢與偏見 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "以下何者並非科學大樓中設置的專科教室\n(A) 國文科\n(B) 輔導科\n(C) 英文科\n(D) 數學科",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "傲慢與偏見 (150pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "以下何者並非科學大樓中設置的專科教室\n(A) 國文科\n(B) 輔導科\n(C) 英文科\n(D) 數學科",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "90",
+          "textsizefull": "135",
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

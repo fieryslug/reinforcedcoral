@@ -24,7 +24,7 @@
       "type": -1,
       "res": [
         "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</html>",
-        "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很傲慢\t\t(D) 因為他想慢慢吃"
+        "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很勤儉\t\t(D) 因為他想慢慢吃"
       ]
     }
   ],
@@ -46,7 +46,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 18, 10",
-        "content": "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很傲慢\t\t(D) 因為他想慢慢吃",
+        "content": "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很勤儉\t\t(D) 因為他想慢慢吃",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

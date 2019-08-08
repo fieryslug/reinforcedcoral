@@ -14,9 +14,12 @@ import com.fieryslug.reinforcedcoral.widget.FontChangerTextArea;
 //import layout.TableLayoutConstraints;
 import info.clearthought.layout.TableLayout;
 import info.clearthought.layout.TableLayoutConstraints;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,6 +36,8 @@ public class PanelProblem extends JPanel {
     private double[][] layoutSize;
 
     public Map<Widget, JComponent> widgetInstanceMap;
+
+    private Map<String, AudioStream> playingAudios;
 
     public PanelProblem(FrameCoral parent) {
 
@@ -62,6 +67,8 @@ public class PanelProblem extends JPanel {
 
         this.labelImage = new JLabel();
         this.labelImage.setBackground(Reference.BLACK);
+
+        this.playingAudios = new HashMap<>();
 
         //setBorder(FontRef.BEVELGREEN);
 
@@ -227,6 +234,14 @@ public class PanelProblem extends JPanel {
             this.widgetInstanceMap.put(widget, label);
             add(label, widget.constraints);
         }
+        if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+            AudioStream audioStream = MediaRef.playWav(widget.content);
+            this.playingAudios.put(widget.content, audioStream);
+        }
+        if (widget.widgetType == Widget.EnumWidget.AUDIOSTOP) {
+            AudioStream audioStream = this.playingAudios.get(widget.content);
+            AudioPlayer.player.stop(audioStream);
+        }
     }
 
     public void changeFonts(boolean isFullScreen) {
@@ -259,11 +274,21 @@ public class PanelProblem extends JPanel {
             if(this.page.type == Reference.MAGIC_PRIME) {
 
                 for(Widget widget : this.page.widgets) {
-                    JComponent component = this.widgetInstanceMap.get(widget);
-                    if(widget.getBold())
-                        component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSizeFull()));
-                    else
-                        component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSizeFull()));
+                    /*
+                    if(!widget.isAbstract()) {
+                        JComponent component = this.widgetInstanceMap.get(widget);
+                        String fontName = widget.getFontName();
+                        if (widget.getBold())
+                            component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSizeFull()));
+                        else
+                            component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSizeFull()));
+                    }
+                    */
+                    if(!widget.isAbstract()) {
+                        JComponent component = this.widgetInstanceMap.get(widget);
+                        component.setFont(widget.getFont(true));
+                    }
+
                 }
 
             }
@@ -294,11 +319,19 @@ public class PanelProblem extends JPanel {
             if(this.page.type == Reference.MAGIC_PRIME) {
 
                 for(Widget widget : this.page.widgets) {
-                    JComponent component = this.widgetInstanceMap.get(widget);
-                    if(widget.getBold())
-                        component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSize()));
-                    else
-                        component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSize()));
+                    /*
+                    if(!widget.isAbstract()) {
+                        JComponent component = this.widgetInstanceMap.get(widget);
+                        if (widget.getBold())
+                            component.setFont(new Font("Taipei Sans TC Beta Bold", Font.PLAIN, widget.getTextSize()));
+                        else
+                            component.setFont(new Font("Taipei Sans TC Beta Regular", Font.PLAIN, widget.getTextSize()));
+                    }
+                    */
+                    if(!widget.isAbstract()) {
+                        JComponent component = this.widgetInstanceMap.get(widget);
+                        component.setFont(widget.getFont(false));
+                    }
                 }
             }
         }
@@ -319,5 +352,14 @@ public class PanelProblem extends JPanel {
                 }
             }
         }
+    }
+
+    //called when switched back to menu
+    public void finishUp() {
+        for (String audioName : this.playingAudios.keySet()) {
+            AudioStream audioStream = this.playingAudios.get(audioName);
+            AudioPlayer.player.stop(audioStream);
+        }
+        this.playingAudios.clear();
     }
 }

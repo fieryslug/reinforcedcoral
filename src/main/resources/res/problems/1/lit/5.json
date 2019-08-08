@@ -30,7 +30,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 19",
-          "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) schamanism",
+          "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) belieber4ever",
           "properties": {
             "textsize": "40",
             "textsizefull": "60"
@@ -57,7 +57,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 13, 19",
-        "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) schamanism",
+        "content": "Which of the following is not a real word?\n(A) gobbledygook\n(B) kerfuffle\n(C) ragamuffin\n(D) belieber4ever",
         "properties": {
           "textsize": "40",
           "textsizefull": "60"

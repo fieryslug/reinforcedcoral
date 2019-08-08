@@ -7,12 +7,27 @@
   },
   "pages": [
     {
-      "type": 1,
-      "res": [
-        "Be Humble (150pt)"
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 19",
+          "content": "Be Humble (150pt)",
+          "properties": {
+            "textsize": "80",
+            "textsizefull": "120",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "audio",
+          "constraints": "",
+          "content": "/res/sound/humble.wav",
+          "properties": {}
+        }
       ]
     },
-
     {
       "type": 62,
       "final": false,

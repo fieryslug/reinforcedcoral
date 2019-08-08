@@ -30,7 +30,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 18, 19",
-          "content": "骨折（英文：Bone Fracture）是指身體骨頭因為直接或間接的外力造成碎裂或變形。人體骨骼剛形成時原本是柔軟有彈性和可塑性的，隨著年紀的增長，軟骨的成份漸少，硬骨的組成漸漸變多，骨折開始容易發生。",
+          "content": "骨折（英文：Bone Fracture）是指身體骨頭因為直接或間接的外力造成碎裂或變形。",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"

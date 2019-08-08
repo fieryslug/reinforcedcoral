@@ -1,3 +1,114 @@
 {
-  "name": ""
+  "name": "校園禮儀",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "校園禮儀 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "校園禮儀 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 10",
+          "content": "實中是個溫暖的大家庭。而實中精神更反應在實中人對師長的尊敬，其中會唸老師的名字十分基本且重要。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 11, 19, 19",
+          "content": "/res/images/studentteacher.gif",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "校園禮儀 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 12, 19",
+          "content": "請問Ms. Wang 的 Wang怎麼發音?\n\n(A) w\u0251\u014b\n(B) ʍɐɲ\n(C) wæɳ\n(D) wæŋ",
+          "properties": {
+            "font": "monospaced",
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "校園禮儀 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "請問Ms. Wang 的 Wang怎麼發音?\n\n(A) w\u0251\u014b\n(B) ʍɐɲ\n(C) wæɳ\n(D) wæŋ",
+        "properties": {
+          "font": "monospaced",
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      }
+    ]
+  }
 }

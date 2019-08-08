@@ -39,7 +39,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 10, 9, 19",
-          "content": "(A) 1\n(B) 2\n(C)3\n(D)19",
+          "content": "(A) 2\n(B) 3\n(C) 4\n(D) 以上皆非",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -75,7 +75,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 10, 9, 19",
-        "content": "(A) 1\n(B) 2\n(C)3\n(D)19",
+        "content": "(A) 2\n(B) 3\n(C) 4\n(D) 以上皆非",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
