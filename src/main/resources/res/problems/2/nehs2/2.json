@@ -1,16 +1,16 @@
 {
-  "name": "八寶粥vs.鱷魚",
+  "name": "地中海風情",
   "fuzzy": false,
-  "answer": "D",
-  "duration": 30,
+  "answer": "B",
+  "duration": 10,
   "points": {
-    "D": 600
+    "B": 250
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "八寶粥vs.鱷魚 (600pt)"
+        "地中海風情 (250pt)"
       ]
     },
     {
@@ -20,7 +20,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (600pt)",
+          "content": "地中海風情 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,19 +29,18 @@
           }
         },
         {
-          "widget": "jlabel",
-          "constraints": "1, 5, 18, 10",
-          "content": "鱷魚是一種爬蟲類動物，常見於河川、湖泊、印表機中。一英呎的鱷魚大約值8美元。",
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 7",
+          "content": "利比亞位於地中海南岸，是全世界最熱的國家。",
           "properties": {
             "textsize": "30",
-            "textsizefull": "45",
-            "center": "true"
+            "textsizefull": "45"
           }
         },
         {
           "widget": "image",
-          "constraints": "1, 11, 18, 19",
-          "content": "/res/images/alligator.png",
+          "constraints": "0, 8, 19, 19",
+          "content": "/res/images/libya.jpg",
           "properties": {}
         }
       ]
@@ -53,7 +52,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (600pt)",
+          "content": "地中海風情 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -63,8 +62,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 8, 19",
-          "content": "八寶粥是一種以豆類、穀物等食材烹調而程的甜粥。一打八寶粥新台幣239元。",
+          "constraints": "1, 5, 10, 19",
+          "content": "來自利比亞的吸塵器喬治喜歡在學校霸凌同學。為了逃離吸塵器喬治，聰明絕頂的班長潘潘想到了一個妙計：躲進開冷氣的教室，讓吸塵器喬治因為不適應低溫而不敢進入。",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -72,8 +71,8 @@
         },
         {
           "widget": "image",
-          "constraints": "9, 5, 18, 19",
-          "content": "/res/images/congee.png",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/vacuum_george.png",
           "properties": {}
         }
       ]
@@ -85,7 +84,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (600pt)",
+          "content": "地中海風情 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -95,17 +94,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 8",
-          "content": "律師阿邦每天三餐飯後喝八寶粥。如果他現在開始不喝八寶粥，一個禮拜後存下來的錢可以買幾公分的鱷魚? (1英呎=0.3公尺)",
-          "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
-          }
-        },
-        {
-          "widget": "jtextarea",
-          "constraints": "1, 9, 18, 16",
-          "content": "(A) 33.1\n(B) 36.0\n(C) 42.5\n(D) 51.4",
+          "constraints": "1, 5, 10, 19",
+          "content": "哪間教室有免費的冷氣？\n\n(A) 高一五班\n(B) 高二五班\n(C) 高三五班\n(D) 高三一班",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -114,14 +104,14 @@
       ]
     }
   ],
-  "solution":  {
+  "solution": {
     "type": 62,
-    "final": true,
+    "final": false,
     "elements": [
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "八寶粥vs.鱷魚 (600pt)",
+        "content": "地中海風情 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -131,17 +121,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 8",
-        "content": "律師阿邦每天三餐飯後喝八寶粥。如果他現在開始不喝八寶粥，一個禮拜後存下來的錢可以買幾公分的鱷魚? (1英呎=0.3公尺)",
-        "properties": {
-          "textsize": "30",
-          "textsizefull": "45"
-        }
-      },
-      {
-        "widget": "jtextarea",
-        "constraints": "1, 9, 10, 16",
-        "content": "(A) 33.1\n(B) 36.0\n(C) 42.5\n(D) 51.4",
+        "constraints": "1, 5, 10, 19",
+        "content": "哪間教室有免費的冷氣？\n\n(A) 高一五班\n(B) 高二五班\n(C) 高三五班\n(D) 高三一班",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -149,14 +130,14 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "11, 9, 19, 16",
-        "content": "D",
+        "constraints": "11, 11, 19, 19",
+        "content": "B",
         "properties": {
-          "textsize": "70",
-          "textsizefull": "105",
+          "textsize": "80",
+          "textsizefull": "120",
           "textcolor": "00ff00",
-          "center": "true",
-          "textbold": "true"
+          "textbold": "true",
+          "center": "true"
         }
       }
     ]

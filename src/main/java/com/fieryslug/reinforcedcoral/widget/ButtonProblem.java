@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.widget;
 
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 
 import javax.print.attribute.standard.Media;
@@ -66,6 +67,17 @@ public class ButtonProblem extends ButtonCoral {
                     else {
                         int state1 = Math.min(1, state + 1);
                         setState(state1);
+                    }
+                } else if (mouseWheelEvent.isShiftDown()) {
+                    Font font = label.getFont();
+                    int size = font.getSize();
+                    if (isUp) {
+                        size += 5;
+                        label.setFont(FontRef.getFont(font.getFontName(), font.getStyle(), size));
+                    } else {
+                        size = Math.max(5, size - 5);
+                        label.setFont(FontRef.getFont(font.getFontName(), font.getStyle(), size));
+
                     }
                 }
 

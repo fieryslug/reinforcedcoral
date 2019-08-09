@@ -266,7 +266,7 @@ public class PanelSnake extends PanelMiniGame {
             public void run() {
                 update();
             }
-        }, 400, 400);
+        }, 500, 500);
 
     }
 

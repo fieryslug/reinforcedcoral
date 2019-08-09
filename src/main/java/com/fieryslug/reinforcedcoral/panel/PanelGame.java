@@ -63,14 +63,16 @@ public class PanelGame extends PanelPrime {
     public Map<Team, Integer> teamIndexMap;
     public Map<Team, PanelTeam> teamPanelMap;
 
-    public Map<Team, ArrayList<ControlKey>> teamKeys;
+    @Deprecated
+    public Map<Team, ArrayList<ControlKey>> teamKeysDeprecated;
+    public Map<Team, LinkedList<ControlKey>> teamKeys;
     public Map<Team, Boolean> teamLockedMap;
     public Map<Team, Integer> teamTempScoreMap;
     private ArrayList<Team> answerSequence;
 
     public PanelMiniGame currentMinigamePanel = null;
 
-    public static final int MAX_KEYS = 1;
+    public static final int MAX_KEYS = 5;
 
     private double[][] layoutSize;
 
@@ -99,6 +101,7 @@ public class PanelGame extends PanelPrime {
         this.positionButtonMap = new ButtonProblem[4][6];
         this.categoryLabels = new ArrayList<>();
         this.teamIndexMap = new HashMap<>();
+        this.teamKeysDeprecated = new HashMap<>();
         this.teamKeys = new HashMap<>();
         this.teamPanelMap = new HashMap<>();
         this.teamLockedMap = new HashMap<>();
@@ -247,7 +250,9 @@ public class PanelGame extends PanelPrime {
                     int index = 0;
                     boolean first = true;
                     for (Team team : answerSequence) {
-                        int points = currentProblem.getPoints(teamKeys.get(team));
+                        int points = currentProblem.getPoints(teamKeysDeprecated.get(team));
+                        points = currentProblem.getPoints(new ArrayList<>(teamKeys.get(team)));
+
                         if(!first) points /= 2;
                         if (points > 0 && first) {
                             parent.game.setPrivilegeTeam(team);
@@ -501,8 +506,9 @@ public class PanelGame extends PanelPrime {
             for (int i = 0; i < 4; ++i) {
                 Team team = this.parent.game.teams.get(i);
                 PanelTeam panelTeam = this.teamPanelMap.get(team);
-                System.out.println(team.getId() + ": " + this.teamKeys.get(team));
-                panelTeam.labelState.setText(ControlKey.stringRepresentation(this.teamKeys.get(team)));
+                //System.out.println(team.getId() + ": " + this.teamKeysDeprecated.get(team));
+                panelTeam.labelState.setText(ControlKey.stringRepresentation(this.teamKeysDeprecated.get(team)));
+                panelTeam.labelState.setText(ControlKey.stringRepresentation(new ArrayList<>(this.teamKeys.get(team))));
             }
 
             add(this.panelBoxes.get(0), "0, 0, 2, 0");
@@ -627,7 +633,8 @@ public class PanelGame extends PanelPrime {
         for (int i = 0; i < 4; ++i) {
             Team team = this.parent.game.teams.get(i);
             PanelTeam panelTeam = this.panelBoxes.get(i);
-            this.teamKeys.put(team, new ArrayList<>());
+            this.teamKeysDeprecated.put(team, new ArrayList<>());
+            this.teamKeys.put(team, new LinkedList<>());
             this.teamLockedMap.put(team, false);
             //this.teamTempScoreMap.put(team, 0);
 
@@ -681,7 +688,8 @@ public class PanelGame extends PanelPrime {
 
         if (this.phase == GamePhase.ANSWERING) {
             if (!(this.teamLockedMap.get(team))) {
-                ArrayList<ControlKey> keys = this.teamKeys.get(team);
+                ArrayList<ControlKey> keys1 = this.teamKeysDeprecated.get(team);
+                LinkedList<ControlKey> keys = this.teamKeys.get(team);
                 if (key.equals(ControlKey.ENTER)) {
                     boolean flag = true;
                     if (keys.isEmpty()) flag = false;
@@ -704,9 +712,11 @@ public class PanelGame extends PanelPrime {
                     }
                 } else if (key.equals(ControlKey.DEL)) {
                     keys.remove(keys.size() - 1);
-                } else if (this.teamKeys.get(team).size() < MAX_KEYS) {
+                } else if (keys.size() < MAX_KEYS) {
                     keys.add(key);
-                    System.out.println(keys);
+                } else if (keys.size() == MAX_KEYS) {
+                    keys.add(key);
+                    keys.poll();
                 }
                 //String s = ControlKey.stringRepresentation(keys);
                 //this.teamPanelMap.get(team).labelState.setText(s);

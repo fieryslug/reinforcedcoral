@@ -1,16 +1,15 @@
 {
-  "name": "八寶粥vs.鱷魚",
+  "name": "公車奇遇記",
   "fuzzy": false,
   "answer": "D",
-  "duration": 30,
   "points": {
-    "D": 600
+    "D": 400
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "八寶粥vs.鱷魚 (600pt)"
+        "公車奇遇記 (400pt)"
       ]
     },
     {
@@ -20,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (600pt)",
+          "content": "公車奇遇記 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,19 +28,18 @@
           }
         },
         {
-          "widget": "jlabel",
+          "widget": "jtextarea",
           "constraints": "1, 5, 18, 10",
-          "content": "鱷魚是一種爬蟲類動物，常見於河川、湖泊、印表機中。一英呎的鱷魚大約值8美元。",
+          "content": "來自實中的阿摳搭藍一公車時，為了是否要打開冷氣口，和來自竹中的小蟯爭吵了起來，他們決定比賽看誰會唱比較多校歌。",
           "properties": {
             "textsize": "30",
-            "textsizefull": "45",
-            "center": "true"
+            "textsizefull": "45"
           }
         },
         {
           "widget": "image",
-          "constraints": "1, 11, 18, 19",
-          "content": "/res/images/alligator.png",
+          "constraints": "0, 11, 19, 19",
+          "content": "/res/images/ac.jpg",
           "properties": {}
         }
       ]
@@ -53,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (600pt)",
+          "content": "公車奇遇記 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -63,8 +61,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 8, 19",
-          "content": "八寶粥是一種以豆類、穀物等食材烹調而程的甜粥。一打八寶粥新台幣239元。",
+          "constraints": "1, 5, 18, 10",
+          "content": "但阿摳在唱到第三句的時候忘記怎麼唸了",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -72,8 +70,8 @@
         },
         {
           "widget": "image",
-          "constraints": "9, 5, 18, 19",
-          "content": "/res/images/congee.png",
+          "constraints": "1, 11, 18, 19",
+          "content": "/res/images/lyrics.png",
           "properties": {}
         }
       ]
@@ -85,7 +83,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "八寶粥vs.鱷魚 (600pt)",
+          "content": "公車奇遇記 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -95,17 +93,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 8",
-          "content": "律師阿邦每天三餐飯後喝八寶粥。如果他現在開始不喝八寶粥，一個禮拜後存下來的錢可以買幾公分的鱷魚? (1英呎=0.3公尺)",
-          "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
-          }
-        },
-        {
-          "widget": "jtextarea",
-          "constraints": "1, 9, 18, 16",
-          "content": "(A) 33.1\n(B) 36.0\n(C) 42.5\n(D) 51.4",
+          "constraints": "1, 5, 10, 19",
+          "content": "「巍巍黌舍」怎麼唸？\n(A) ㄨㄟˋㄨㄟˋㄏㄨㄤˊㄕㄜˋ\n(B) ㄨㄟˊㄨㄟˊㄏㄨㄤˊㄕㄜˇ\n(C) ㄨㄟˋㄨㄟˊㄏㄨㄥˊㄕㄜˇ\n(D) ㄨㄟˊㄨㄟˊㄏㄨㄥˊㄕㄜˋ",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -113,15 +102,16 @@
         }
       ]
     }
+
   ],
-  "solution":  {
+  "solution": {
     "type": 62,
-    "final": true,
+    "final": false,
     "elements": [
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "八寶粥vs.鱷魚 (600pt)",
+        "content": "公車奇遇記 (400pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -131,17 +121,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 8",
-        "content": "律師阿邦每天三餐飯後喝八寶粥。如果他現在開始不喝八寶粥，一個禮拜後存下來的錢可以買幾公分的鱷魚? (1英呎=0.3公尺)",
-        "properties": {
-          "textsize": "30",
-          "textsizefull": "45"
-        }
-      },
-      {
-        "widget": "jtextarea",
-        "constraints": "1, 9, 10, 16",
-        "content": "(A) 33.1\n(B) 36.0\n(C) 42.5\n(D) 51.4",
+        "constraints": "1, 5, 10, 19",
+        "content": "「巍巍黌舍」怎麼唸？\n(A) ㄨㄟˋㄨㄟˋㄏㄨㄤˊㄕㄜˋ\n(B) ㄨㄟˊㄨㄟˊㄏㄨㄤˊㄕㄜˇ\n(C) ㄨㄟˋㄨㄟˊㄏㄨㄥˊㄕㄜˇ\n(D) ㄨㄟˊㄨㄟˊㄏㄨㄥˊㄕㄜˋ",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -149,14 +130,14 @@
       },
       {
         "widget": "jlabel",
-        "constraints": "11, 9, 19, 16",
+        "constraints": "11, 11, 19, 19",
         "content": "D",
         "properties": {
-          "textsize": "70",
-          "textsizefull": "105",
+          "textsize": "80",
+          "textsizefull": "120",
+          "textbold": "true",
           "textcolor": "00ff00",
-          "center": "true",
-          "textbold": "true"
+          "center": "true"
         }
       }
     ]

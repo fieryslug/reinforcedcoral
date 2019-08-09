@@ -1,0 +1,112 @@
+{
+  "name": "孝順的彼得",
+  "fuzzy": false,
+  "answer": "C",
+  "points": {
+    "C": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "孝順的彼得 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "孝順的彼得 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "住在雪梨的彼得的媽媽生病了，因此他決定去坐船去買山藥。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/boat.JPG",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "孝順的彼得 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "如果彼得打算利用風力前進，他應該會朝哪個方向航行？\n\n(A) 西南方\n(B) 西北方\n(C) 東南方\n(D) 東北方",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "孝順的彼得 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "如果彼得打算利用風力前進，他應該會朝哪個方向航行？\n\n(A) 西南方\n(B) 西北方\n(C) 東南方\n(D) 東北方",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}

@@ -11,6 +11,8 @@ import org.json.JSONObject;
 import java.lang.reflect.Array;
 import java.util.*;
 
+import javax.naming.ldap.Control;
+
 public class Problem {
 
     private int points;
@@ -134,6 +136,8 @@ public class Problem {
         //System.out.println("POINTS: " + points1);
         return points1;
     }
+
+
 
     public void addDependence(Problem... problems) {
         this.dependences.addAll(Arrays.asList(problems));

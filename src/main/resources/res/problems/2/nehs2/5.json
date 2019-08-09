@@ -1,0 +1,198 @@
+{
+  "name": "皇帝企鵝找媽媽",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 250
+  },
+  "pages": [
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 19",
+          "content": "皇帝企鵝找媽媽 (250pt)",
+          "properties": {
+            "textsize": "80",
+            "textsizefull": "120",
+            "center": "true"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "image",
+          "constraints": "0, 0, 19, 19",
+          "content": "/res/images/penguin.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "皇帝企鵝找媽媽 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 10, 18, 19",
+          "content": "這是皇帝企鵝阿丹，他在找媽媽。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/penguin1.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "皇帝企鵝找媽媽 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "3, 7, 10, 19",
+          "content": "阿丹遇見了一位奸商。奸商對他說：「我知道你媽媽在哪裡呦！」",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/treacherous.gif",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "皇帝企鵝找媽媽 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/treacherous.gif",
+          "properties": {}
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 19, 18",
+          "content": "「但你必須先告訴我實驗中學的全稱」",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "皇帝企鵝找媽媽 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "實驗中學的全稱是什麼?\n\n(A) 實驗雙語部附設高級中學\n(B) 國立科學工業園區實驗高級中學\n(C) 清大附中\n(D) 國立工業科學園區實驗高級中學",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "皇帝企鵝找媽媽 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "實驗中學的全稱是什麼?\n\n(A) 實驗雙語部附設高級中學\n(B) 國立科學工業園區實驗高級中學\n(C) 清大附中\n(D) 國立工業科學園區實驗高級中學",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "B",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "center": "true",
+          "textbold": "true"
+        }
+      }
+    ]
+  }
+}

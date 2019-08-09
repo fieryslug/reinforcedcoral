@@ -36,12 +36,12 @@ public class WorkTable {
         Problem prbCrab = new Problem("1/socio/3.json");
         Problem prbMine = new ProblemMine("<html><font color=red>地雷(認真的)</font></html>");
         Problem prbMoney = new Problem("1/socio/4.json");
-        Problem prbArthur = new Problem("1/socio/5.json");
+        Problem prbArthur = new Problem("1/socio/5_1.json");
 
         Problem prbWilly = new Problem("1/lit/1_1.json");
         Problem prbPoemSunset = new Problem("1/lit/2.json");
         Problem prbOdin = new Problem("1/lit/3.json");
-        Problem prbPPB = new Problem("1/lit/4.json");
+        Problem prbPPB = new Problem("1/lit/4_1.json");
         Problem prbVocab = new Problem("1/lit/5.json");
         Problem prbHumble = new Problem("1/lit/6.json");
 
@@ -80,10 +80,10 @@ public class WorkTable {
         Problem prb06 = new Problem("2/nehs/6.json");
 
         Problem prb11 = new Problem("2/nehs2/1.json");
-        Problem prb12 = new Problem("placeholder", 0);
-        Problem prb13 = new Problem("placeholder", 0);
-        Problem prb14 = new Problem("placeholder", 0);
-        Problem prb15 = new Problem("placeholder", 0);
+        Problem prb12 = new Problem("2/nehs2/2.json");
+        Problem prb13 = new Problem("2/nehs2/3.json");
+        Problem prb14 = new Problem("2/nehs2/4.json");
+        Problem prb15 = new Problem("2/nehs2/5.json");
         Problem prb16 = new Problem("placeholder", 0);
 
         Problem prb21 = new Problem("placeholder", 0);
@@ -97,17 +97,17 @@ public class WorkTable {
         Problem prbSnake = new ProblemSnake("貪食蛇");
         Problem prb33 = new ProblemSlipper("<html><font color=3333ff>左腳拖鞋</font></html>");
         Problem prb34 = new Problem("placeholder", 0);
-        Problem prb35 = new ProblemMineSweeper("採地雷");
+        Problem prb35 = new ProblemMineSweeper("踩地雷");
         Problem prb36 = new Problem("placeholder", 0);
 
-        prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        prb13.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        prb14.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        //prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        //prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        //prb13.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        //prb14.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        //prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        //prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
 
-        prbSnake.addDependence(prb11);
+        //prbSnake.addDependence(prb11);
 
 
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);

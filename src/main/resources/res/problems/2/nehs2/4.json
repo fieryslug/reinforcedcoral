@@ -1,0 +1,122 @@
+{
+  "name": "小芍的夢想",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": "250"
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "小杓的夢想 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小芍的夢想 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 16",
+          "content": "小芍是管樂社的二胡首席，同時也是金州勇士的死忠球迷。她最喜歡站在管樂社外的廣場，邊拉二胡邊看帥氣的男生打籃球。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "9, 17, 10, 19",
+          "content": "二胡 \u25b6",
+          "properties": {
+            "textsize": "24",
+            "textsizefull": "36",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19 ,19",
+          "content": "/res/images/erhu.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小芍的夢想 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 16",
+          "content": "管樂社辦外面的空地叫什麼名字？\n\n(A) 喬丹廣場\n(B) 杜蘭特廣場\n(C) Jonny\n(D) Ms. Wang的粉紅色夢幻樂園",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "小芍的夢想 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 16",
+        "content": "管樂社辦外面的空地叫什麼名字？\n\n(A) 喬丹廣場\n(B) 杜蘭特廣場\n(C) Jonny\n(D) Ms. Wang的粉紅色夢幻樂園",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "A",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}
