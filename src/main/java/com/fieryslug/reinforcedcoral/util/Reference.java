@@ -7,8 +7,8 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_4.2";
-    public static final int DEFAULT_GAME = 1;
+    public static final String VERSION = "gradle_5.0";
+    public static final int DEFAULT_GAME = 0;
     //public static final String
 
     public static final int MAGIC_PRIME = 62;
@@ -32,6 +32,7 @@ public class Reference {
     public static final Color MAGENTA = new Color(217, 26, 132, 255);
     public static final Color PURPLE = new Color(125, 31, 175);
     public static final Color YELLOW = new Color(255, 188, 0);
+    public static final Color DARKAQUA = new Color(9, 79, 70);
 
     public static final Font MONOSPACED30 = new Font("Monospaced", Font.PLAIN, 30);
     public static final Font MONOSPACED30BOLD = new Font("Monospaced", Font.BOLD, 30);

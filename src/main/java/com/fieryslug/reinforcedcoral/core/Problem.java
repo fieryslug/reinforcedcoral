@@ -14,6 +14,7 @@ import java.util.*;
 public class Problem {
 
     private int points;
+    private int duration;
     private boolean fuzzy = true;
     public String name;
     private ArrayList<ControlKey> answer;
@@ -53,6 +54,9 @@ public class Problem {
             this.fuzzy = jsonObject.getBoolean("fuzzy");
             String answerString = jsonObject.getString("answer");
             this.answer = ControlKey.stringToArray(answerString);
+
+            this.duration = jsonObject.optInt("duration", 15);
+            System.out.println(this.name + ":" + this.duration);
 
             JSONObject pointsObj = jsonObject.getJSONObject("points");
             Set<String> pointsKeys = pointsObj.keySet();
@@ -136,5 +140,7 @@ public class Problem {
     }
 
 
-
+    public int getDuration() {
+        return this.duration;
+    }
 }

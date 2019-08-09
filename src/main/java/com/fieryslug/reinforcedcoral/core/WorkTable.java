@@ -94,7 +94,7 @@ public class WorkTable {
         Problem prb26 = new Problem("placeholder", 0);
 
         Problem prb31 = new Problem("placeholder", 0);
-        Problem prb32 = new ProblemSnake("貪食蛇");
+        Problem prbSnake = new ProblemSnake("貪食蛇");
         Problem prb33 = new ProblemSlipper("<html><font color=3333ff>左腳拖鞋</font></html>");
         Problem prb34 = new Problem("placeholder", 0);
         Problem prb35 = new ProblemMineSweeper("採地雷");
@@ -107,11 +107,13 @@ public class WorkTable {
         prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
         prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
 
+        prbSnake.addDependence(prb11);
+
 
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);
         catNehs2.addProblem(prb11, prb12, prb13, prb14, prb15, prb16);
         catLifeHax.addProblem(prb21, prb22, prb23, prb24, prb25, prb26);
-        catAvocado.addProblem(prb31, prb32, prb33, prb34, prb35, prb36);
+        catAvocado.addProblem(prb31, prbSnake, prb33, prb34, prb35, prb36);
 
         game.addCategory(catNehs);
         game.addCategory(catNehs2);

@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.minigame.snake;
 
 import com.fieryslug.reinforcedcoral.core.ControlKey;
+import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.Problem;
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
@@ -101,7 +102,7 @@ public class PanelSnake extends PanelMiniGame {
         this.labelGameOver.setFont(FontRef.MONOSPACED60BOLD);
         this.labelGameOver.setForeground(Reference.WHITE);
         this.labelGameOver.setOpaque(true);
-        this.labelGameOver.setBackground(Reference.BLACK);
+        this.labelGameOver.setBackground(new Color(170, 97, 62, 0));
         double[][] size = {new double[50], new double[20]};
         for (int i = 0; i < 50; ++i) {
             size[0][i] = 0.02;
@@ -123,8 +124,9 @@ public class PanelSnake extends PanelMiniGame {
         this.buttonBack.setText("main menu");
         this.buttonBack.setFont(FontRef.JHENGHEI30);
         this.buttonBack.setForeground(Reference.WHITE);
-        this.buttonBack.setBackground(Reference.DARKGRAY);
-
+        this.buttonBack.setBackground(new Color(72, 91, 146, 64));
+        this.buttonBack.setFocusPainted(false);
+        this.buttonBack.setFocusable(false);
         linkButtons();
         JLabel dummy = new JLabel();
         dummy.setBackground(Reference.BLACK);
@@ -146,6 +148,7 @@ public class PanelSnake extends PanelMiniGame {
             public void actionPerformed(ActionEvent actionEvent) {
 
                 panelGame.setState(0);
+                panelGame.setPhase(GamePhase.MENU);
                 panelGame.parent.switchPanel(panelGame, panelGame);
                 panelGame.problemButtonMap.get(parentProblem).setState(1);
 
@@ -263,7 +266,7 @@ public class PanelSnake extends PanelMiniGame {
             public void run() {
                 update();
             }
-        }, 500, 500);
+        }, 400, 400);
 
     }
 
@@ -386,9 +389,9 @@ public class PanelSnake extends PanelMiniGame {
         }
         else {
             this.timerUpdate.cancel();
-            add(this.labelGameOver, "0, 5, 19, 13");
+            add(this.labelGameOver, "15, 5, 34, 13");
             this.labelGameOver.setText("Game Over");
-            add(this.buttonBack, "0, 14, 19, 16");
+            add(this.buttonBack, "15, 14, 34, 16");
             this.buttonBack.setText("");
             this.buttonBack.setText("main menu");
         }
