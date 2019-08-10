@@ -3,10 +3,7 @@ package com.fieryslug.reinforcedcoral.panel;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.core.page.Widget;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
-import com.fieryslug.reinforcedcoral.util.FontRef;
-import com.fieryslug.reinforcedcoral.util.FuncBox;
-import com.fieryslug.reinforcedcoral.util.MediaRef;
-import com.fieryslug.reinforcedcoral.util.Reference;
+import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.FontChangerLabel;
 import com.fieryslug.reinforcedcoral.widget.FontChangerTextArea;
 
@@ -18,6 +15,7 @@ import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
 import javax.swing.*;
+import javax.xml.soap.Text;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -250,6 +248,7 @@ public class PanelProblem extends JPanel {
     }
 
     public void changeFonts(boolean isFullScreen) {
+
         this.height = (int)this.getPreferredSize().getHeight();
         this.width = (int)this.getPreferredSize().getWidth();
         System.out.println("height: " + this.height + ", width: " + this.width);
@@ -366,5 +365,16 @@ public class PanelProblem extends JPanel {
             AudioPlayer.player.stop(audioStream);
         }
         this.playingAudios.clear();
+    }
+
+    public void applyTexture(TextureHolder holder) {
+
+        for (Widget widget : this.widgetInstanceMap.keySet()) {
+
+            JComponent component = this.widgetInstanceMap.get(widget);
+            component.setBackground(holder.getColor("title"));
+
+        }
+
     }
 }

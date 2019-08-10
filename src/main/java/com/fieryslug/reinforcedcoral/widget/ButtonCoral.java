@@ -34,13 +34,17 @@ public class ButtonCoral extends JButton {
         this.imageHover = imageHover;
         this.imagePress = imagePress;
 
-        this.iconDefault = new ImageIcon(imageDefault);
-        this.iconHover = new ImageIcon(imageHover);
-        this.iconPress = new ImageIcon(imagePress);
+        try {
+            this.iconDefault = new ImageIcon(imageDefault);
+            this.iconHover = new ImageIcon(imageHover);
+            this.iconPress = new ImageIcon(imagePress);
+        } catch (NullPointerException e) {
+
+        }
 
         this.neighbors = new HashMap<>();
 
-        setIcon(new ImageIcon(this.imageDefault));
+        toDefault();
 
 
         setOpaque(false);
@@ -57,26 +61,43 @@ public class ButtonCoral extends JButton {
             @Override
             public void mouseReleased(MouseEvent mouseEvent) {
                 if (ButtonCoral.this.isMouseInside)
-                    setIcon(ButtonCoral.this.iconHover);
+                    onHover();
                 else
-                    setIcon(ButtonCoral.this.iconDefault);
+                    toDefault();
             }
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
-                setIcon(ButtonCoral.this.iconHover);
-                ButtonCoral.this.isMouseInside = true;
+                onEntered();
             }
 
             @Override
             public void mouseExited(MouseEvent mouseEvent) {
-                setIcon(ButtonCoral.this.iconDefault);
-                ButtonCoral.this.isMouseInside = false;
+                onExited();
             }
         };
 
         this.addMouseListener(this.mouseListener);
 
+    }
+
+
+    public void onHover() {
+        setIcon(this.iconHover);
+    }
+
+    public void toDefault() {
+        setIcon(this.iconDefault);
+    }
+
+    public void onEntered() {
+        setIcon(ButtonCoral.this.iconHover);
+        this.isMouseInside = true;
+    }
+
+    public void onExited() {
+        setIcon(ButtonCoral.this.iconDefault);
+        this.isMouseInside = false;
     }
 
     public void resizeImageForIcons(int x, int y) {

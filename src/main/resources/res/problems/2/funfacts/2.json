@@ -1,0 +1,51 @@
+{
+  "name": "拉鍊的原理",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 150
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "拉鍊的原理 (150pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "超級正音班 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "拉鏈是把兩片織物暫時結合在一起的一種部件,常見於衣物、旅行箱、 窗簾或海星等。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/zipper.png",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "solution": {
+
+  }
+}

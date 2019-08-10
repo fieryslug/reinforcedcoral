@@ -39,5 +39,9 @@ public class ActionFullScreen extends AbstractAction {
         frame.refresh();
 
         frame.repaint();
+        int x = frame.getWidth();
+        int y = frame.getHeight();
+
+        System.out.println("fram size: (" + x + ", " + y + ")");
     }
 }

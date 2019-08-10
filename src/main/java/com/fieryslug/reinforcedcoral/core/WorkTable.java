@@ -86,7 +86,7 @@ public class WorkTable {
         Problem prb15 = new Problem("2/nehs2/5.json");
         Problem prb16 = new Problem("placeholder", 0);
 
-        Problem prb21 = new Problem("placeholder", 0);
+        Problem prb21 = new Problem("2/funfacts/1.json");
         Problem prb22 = new Problem("placeholder", 0);
         Problem prb23 = new Problem("placeholder", 0);
         Problem prb24 = new Problem("placeholder", 0);

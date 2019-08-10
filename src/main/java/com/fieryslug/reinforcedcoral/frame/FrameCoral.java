@@ -8,10 +8,7 @@ import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.panel.PanelSettings;
 import com.fieryslug.reinforcedcoral.panel.PanelTeam;
 import com.fieryslug.reinforcedcoral.panel.PanelTitle;
-import com.fieryslug.reinforcedcoral.util.ActionFullScreen;
-import com.fieryslug.reinforcedcoral.util.FuncBox;
-import com.fieryslug.reinforcedcoral.util.MediaRef;
-import com.fieryslug.reinforcedcoral.util.Reference;
+import com.fieryslug.reinforcedcoral.util.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,6 +28,8 @@ public class FrameCoral extends JFrame {
 
     public Game game;
 
+    public TextureHolder textureHolder;
+
     public FrameCoral(Game game) {
 
         this.game = game;
@@ -48,11 +47,14 @@ public class FrameCoral extends JFrame {
         setResizable(false);
         setBackground(Color.BLACK);
 
-
+        this.textureHolder = new TextureHolder();
+        this.textureHolder.read(Preference.texture);
 
         this.panelTitle = new PanelTitle(this);
         this.panelSettings = new PanelSettings(this);
         this.panelGame = new PanelGame(this);
+
+
 
         FuncBox.addKeyBinding(this.getRootPane(), "F11", new ActionFullScreen(this));
 
@@ -113,9 +115,7 @@ public class FrameCoral extends JFrame {
 
         this.game = game;
         this.panelGame = new PanelGame(this);
+        this.textureHolder.read(Preference.texture);
 
     }
-
-
-
 }

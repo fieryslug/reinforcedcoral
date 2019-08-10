@@ -1,5 +1,14 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_5.2=== 8/10 12pm
+-new feature: texture packs
+
+
+===gradle_5.1=== 8/10 10am
+-added 超級正音班[2/funfacts/1]
+-refined UI transition
+
+
 ===gradle_5.0=== 8/9 25pm
 -new feature: no need for backspace now
 -new feature: adjustable timing
@@ -12,7 +21,7 @@ visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 -added 小杓的夢想[2/nehs2/4]
 -added 皇帝企鵝找媽媽[2/nehs2/5]
 -added [2/nehs2/6] (WIP)
--removed 需要四章圖的歷史[1/socio/5]; added 孝順的彼得[1/socio/5_1]
+-removed 需要四張圖的歷史[1/socio/5]; added 孝順的彼得[1/socio/5_1]
 -removed p不發音[1/lit/4]; added 台語[1/lit/4_1]
 -modified 八寶粥vs.鱷魚[1/physmat/6]
 

@@ -12,17 +12,18 @@ import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
 public class ButtonProblem extends ButtonCoral {
 
     private boolean enabled;
     public int state; //0:normal, 1:deactivated, -1:to be activated
-    private boolean selected;
+    protected boolean selected;
     public Image imageDisabled;
     public Image imageSelected;
     public Image imageDisabledSelected;
     public Image imagePreenabled;
     public Image imagePreenabledSelected;
-    public ImageIcon iconDisabled;
+    private ImageIcon iconDisabled;
     private ImageIcon iconSelected;
     private ImageIcon iconDisabledSelected;
     private ImageIcon iconPreeanbled;
@@ -87,6 +88,7 @@ public class ButtonProblem extends ButtonCoral {
 
     }
 
+
     public void setImageDisabled(Image image) {
 
         this.imageDisabled = image;
@@ -128,7 +130,7 @@ public class ButtonProblem extends ButtonCoral {
         refreshState();
     }
 
-    private void refreshState() {
+    protected void refreshState() {
 
         if(this.state == 0) {
             setEnabled(true);

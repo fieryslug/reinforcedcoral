@@ -3,6 +3,8 @@ package com.fieryslug.reinforcedcoral.panel;
 import com.fieryslug.reinforcedcoral.core.*;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.util.FontRef;
+import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.widget.ButtonColorized;
 import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
 import com.fieryslug.reinforcedcoral.widget.Direction;
@@ -45,6 +47,8 @@ public class PanelGame extends PanelPrime {
     ArrayList<PanelTeam> panelBoxes;
     public JPanel panelInteriorMenu;
     public PanelProblem panelInteriorPage;
+    private JPanel panelBanner;
+
     public ButtonCoral buttonNext;
     public ButtonCoral buttonPrev;
     public ButtonCoral buttonConfirm;
@@ -72,7 +76,7 @@ public class PanelGame extends PanelPrime {
 
     public PanelMiniGame currentMinigamePanel = null;
 
-    public static final int MAX_KEYS = 5;
+    public static final int MAX_KEYS = 1;
 
     private double[][] layoutSize;
 
@@ -82,7 +86,7 @@ public class PanelGame extends PanelPrime {
         this.state = 0; //0: menu, 1: problem, 2: answer, 3: post-answer
         this.phase = GamePhase.MENU;
         this.prevState = 0;
-        this.layoutSize = new double[][]{{0.166, 0.166, 0.166, 0.166, 0.166, 0.166}, {0.2, 0.2, 0.2, 0.1, 0.1, 0.2}};
+        this.layoutSize = new double[][]{{0.166666, 0.166666, 0.166666, 0.166666, 0.166666, 0.166666}, {0.2, 0.2, 0.2, 0.1, 0.1, 0.2}};
 
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
@@ -108,14 +112,18 @@ public class PanelGame extends PanelPrime {
         this.teamTempScoreMap = new HashMap<>();
         this.answerSequence = new ArrayList<>();
 
-        double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15}};
+        double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15}};
         this.panelInteriorMenu = new JPanel();
-
         this.panelInteriorMenu.setLayout(new TableLayout(size));
-        this.panelInteriorMenu.setBackground(Reference.DARKGRAY);
-        this.panelInteriorMenu.setBorder(Reference.BEVEL2);
+        //this.panelInteriorMenu.setBackground(Reference.DARKGRAY);
+        //this.panelInteriorMenu.setBorder(Reference.BEVEL2);
 
         this.panelInteriorPage = new PanelProblem(this.parent);
+
+        double size1[][] = {{0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1}, {1}};
+        this.panelBanner = new JPanel();
+        //this.panelBanner.setLayout(new TableLayout(size1));
+        //this.panelBanner.setBorder(Reference.BEVEL1);
 
         this.buttonNext = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
         this.buttonPrev = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
@@ -138,13 +146,14 @@ public class PanelGame extends PanelPrime {
             JLabel label = new JLabel("", SwingConstants.CENTER);
 
             label.setText(category.name);
+            label.setOpaque(true);
             label.setFont(FontRef.JHENGHEI30);
-            label.setForeground(Reference.AQUA);
-            label.setBorder(Reference.BEVEL2);
+            //label.setForeground(Reference.AQUA);
             this.categoryLabels.add(label);
 
 
             for (Problem problem : category.problems) {
+                /*
                 ButtonProblem button = new ButtonProblem(MediaRef.PROBLEM, MediaRef.PROBLEM_HOVER, MediaRef.PROBLEM_PRESS);
                 button.setImageDisabled(MediaRef.PROBLEM_DISABLED);
                 button.setImageSelected(MediaRef.PROBLEM_SELECTED);
@@ -159,6 +168,17 @@ public class PanelGame extends PanelPrime {
                 label2.setText("<html><div style='text-align: center;'>" + problem.name + "</div></html>");
                 button.add(label2);
                 button.label = label2;
+                */
+                ButtonProblem button = new ButtonColorized();
+                button.setLayout(new BorderLayout(5, 5));
+                button.setOpaque(true);
+                button.setBorderPainted(true);
+                JLabel label3 = new JLabel("", SwingConstants.CENTER);
+                label3.setText("<html><div style='text-align: center;'>" + problem.name + "</div></html>");
+                button.add(label3);
+                button.label = label3;
+                button.label.setOpaque(false);
+
                 this.buttonProblemMap.put(button, problem);
                 this.problemButtonMap.put(problem, button);
 
@@ -167,6 +187,7 @@ public class PanelGame extends PanelPrime {
                 j += 1;
 
             }
+            applyTexture();
             i += 1;
             j = 0;
         }
@@ -190,9 +211,7 @@ public class PanelGame extends PanelPrime {
                     this.positionButtonMap[i1][j1].setNeighbor(Direction.RIGHT, this.positionButtonMap[i1 + 1][j1]);
 
             }
-
         }
-
     }
 
     private void linkButtons() {
@@ -243,17 +262,21 @@ public class PanelGame extends PanelPrime {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 System.out.println(phase);
-                for (Team team : parent.game.teams) {
-                    teamTempScoreMap.put(team, 0);
-                }
-                if (phase == GamePhase.SHOW_ANSWER) {
+
+                if (phase == GamePhase.INTERMEDIATE) {
+                    setPhase(GamePhase.SHOW_ANSWER);
+                    parent.switchPanel(PanelGame.this, PanelGame.this);
+                } else if (phase == GamePhase.SHOW_ANSWER) {
+                    for (Team team : parent.game.teams) {
+                        teamTempScoreMap.put(team, 0);
+                    }
                     int index = 0;
                     boolean first = true;
                     for (Team team : answerSequence) {
                         int points = currentProblem.getPoints(teamKeysDeprecated.get(team));
                         points = currentProblem.getPoints(new ArrayList<>(teamKeys.get(team)));
 
-                        if(!first) points /= 2;
+                        if (!first) points /= 2;
                         if (points > 0 && first) {
                             parent.game.setPrivilegeTeam(team);
                             first = false;
@@ -289,7 +312,7 @@ public class PanelGame extends PanelPrime {
         this.labelCountDown.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                setPhase(GamePhase.SHOW_ANSWER);
+                setPhase(GamePhase.INTERMEDIATE);
                 labelCountDown.setForeground(Reference.YELLOW);
                 timer.cancel();
                 parent.switchPanel(PanelGame.this, PanelGame.this);
@@ -326,6 +349,9 @@ public class PanelGame extends PanelPrime {
         this.frameWidth = this.parent.getContentPane().getWidth();
         this.frameHeight = this.parent.getContentPane().getHeight();
 
+        TextureHolder holder = this.parent.textureHolder;
+        setBackground(holder.getColor("background"));
+
         //if (this.phase != this.prevPhase) reset();
 
         //this.teamKeys.clear();
@@ -361,9 +387,9 @@ public class PanelGame extends PanelPrime {
             PanelTeam panel = this.panelBoxes.get(i);
             Team team = this.parent.game.teams.get(i);
             if (team.hasPrivilege) {
-                panel.setBackground(Reference.DARKBLUE);
+                panel.setBackground(holder.getColor("team_privilege"));
             } else {
-                panel.setBackground(Reference.BLACK);
+                panel.setBackground(holder.getColor("team"));
             }
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
         }
@@ -377,9 +403,10 @@ public class PanelGame extends PanelPrime {
             this.answerSequence.clear();
 
             this.currentPageNumber = 0;
-            double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15}};
+            double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.14286, 0.14286, 0.14286, 0.14286, 0.14286, 0.14286, 0.14286}};
             this.panelInteriorMenu.removeAll();
             this.panelInteriorMenu.setLayout(new TableLayout(size));
+
             //this.panelInteriorMenu.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
 
             int i = 0, j = 1;
@@ -448,6 +475,8 @@ public class PanelGame extends PanelPrime {
             add(this.panelInteriorPage, "0, 1, 5, 3");
             add(this.buttonPrev, "0, 4");
             add(this.buttonNext, "5, 4");
+            add(this.panelBanner, "0, 4, 5, 4");
+
             //add(FuncBox.blankLabel(2000, 2));
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
@@ -473,7 +502,7 @@ public class PanelGame extends PanelPrime {
                     }
                     labelCountDown.setText(String.valueOf(countDown));
                     if (countDown <= 0) {
-                        setPhase(GamePhase.SHOW_ANSWER);
+                        setPhase(GamePhase.INTERMEDIATE);
                         SwingUtilities.invokeLater(new Runnable() {
                             @Override
                             public void run() {
@@ -495,13 +524,29 @@ public class PanelGame extends PanelPrime {
             add(this.panelInteriorPage, "0, 1, 5, 3");
             //add(this.buttonConfirm, "2, 4, 3, 4");
             add(this.labelCountDown, "2, 4, 3, 4");
+            add(this.panelBanner, "0, 4, 5, 4");
             //add(FuncBox.blankLabel(2000, 2));
+            add(this.panelBoxes.get(2), "0, 5, 2, 5");
+            add(this.panelBoxes.get(3), "3, 5, 5, 5");
+        }
+        if (this.phase == GamePhase.INTERMEDIATE) {
+
+            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+
+            add(this.panelBoxes.get(0), "0, 0, 2, 0");
+            add(this.panelBoxes.get(1), "3, 0, 5, 0");
+
+            add(this.panelInteriorPage, "0, 1, 5, 3");
+            add(this.buttonConfirm, "2, 4, 3, 4");
+            add(this.panelBanner, "0, 4, 5, 4");
+
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
         }
         if (this.phase == GamePhase.SHOW_ANSWER) {
 
             this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.applyTexture(holder);
 
             for (int i = 0; i < 4; ++i) {
                 Team team = this.parent.game.teams.get(i);
@@ -516,6 +561,7 @@ public class PanelGame extends PanelPrime {
 
             add(this.panelInteriorPage, "0, 1, 5, 3");
             add(this.buttonConfirm, "2, 4, 3, 4");
+            add(this.panelBanner, "0, 4, 5, 4");
 
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
@@ -548,6 +594,7 @@ public class PanelGame extends PanelPrime {
             //add(FuncBox.blankLabel(2000, 2));
             add(this.panelInteriorPage, "0, 1, 5, 3");
             add(this.buttonConfirm, "2, 4, 3, 4");
+            add(this.panelBanner, "0, 4, 5, 4");
             //add(FuncBox.blankLabel(2000, 2));
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
@@ -583,16 +630,16 @@ public class PanelGame extends PanelPrime {
             for (Category category : this.parent.game.categories) {
                 JLabel labelCategory = this.categoryLabels.get(i);
                 if (this.parent.isFullScreen) {
-                    labelCategory.setFont(FontRef.TAIPEI45);
+                    labelCategory.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
                 } else {
-                    labelCategory.setFont(FontRef.TAIPEI35);
+                    labelCategory.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
                 }
                 for (Problem problem : category.problems) {
                     ButtonProblem button = this.problemButtonMap.get(problem);
                     if (this.parent.isFullScreen) {
-                        button.label.setFont(FontRef.TAIPEI40);
+                        button.label.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 39));
                     } else {
-                        button.label.setFont(FontRef.TAIPEI30);
+                        button.label.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 26));
                     }
                     button.resizeImageForIcons((int) (this.paneWidth * 0.25), (int) (this.paneHeight * 0.15));
                     j += 1;
@@ -606,25 +653,42 @@ public class PanelGame extends PanelPrime {
             this.buttonNext.resizeImageForIcons(buttonX, buttonY);
             this.buttonPrev.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
         }
         if (this.phase == GamePhase.ANSWERING) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             //this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
             if (this.parent.isFullScreen)
                 this.labelCountDown.setFont(FontRef.TAIPEI90);
             else
                 this.labelCountDown.setFont(FontRef.TAIPEI60);
         }
+        if (this.phase == GamePhase.INTERMEDIATE) {
+            for (int i = 0; i < 4; ++i) {
+                Team team = this.parent.game.teams.get(i);
+                PanelTeam panelTeam = this.teamPanelMap.get(team);
+                if (this.teamLockedMap.get(team)) {
+                    panelTeam.setBackground(Reference.DARKAQUA);
+                }
+            }
+            this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
+            this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
+            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
+        }
         if (this.phase == GamePhase.SHOW_ANSWER) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
         }
         if (this.phase == GamePhase.SOLUTION) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
         }
     }
 
@@ -685,7 +749,6 @@ public class PanelGame extends PanelPrime {
                 }
             }
         }
-
         if (this.phase == GamePhase.ANSWERING) {
             if (!(this.teamLockedMap.get(team))) {
                 ArrayList<ControlKey> keys1 = this.teamKeysDeprecated.get(team);
@@ -757,4 +820,38 @@ public class PanelGame extends PanelPrime {
         }
         return flag;
     }
+
+    public void applyTexture() {
+
+        TextureHolder holder = this.parent.textureHolder;
+        for (ButtonProblem button : this.buttonProblemMap.keySet()) {
+            button.setIcon(null);
+            Color colorProblem = holder.getColor("problem");
+            new Color(236, 167, 44);
+            button.setBackground(holder.getColor("problem"));
+
+            button.setBorder(BorderFactory.createLineBorder(holder.getColor("problem_border"), 3));
+
+            System.out.println(holder.getColor("problem_border"));
+            button.label.setForeground(holder.getColor("problem_text"));
+            button.label.setOpaque(false);
+
+        }
+
+        for (PanelTeam panelTeam : this.panelBoxes) {
+            panelTeam.applyTexture(holder);
+        }
+
+        for (JLabel label : this.categoryLabels) {
+            label.setBackground(holder.getColor("title"));
+            label.setBorder(BorderFactory.createLineBorder(holder.getColor("title_border"), 3));
+            label.setForeground(holder.getColor("title_text"));
+        }
+
+        this.panelInteriorMenu.setBackground(holder.getColor("background"));
+        this.panelInteriorPage.setBackground(holder.getColor("title"));
+        this.panelBanner.setBackground(holder.getColor("title"));
+
+    }
+
 }

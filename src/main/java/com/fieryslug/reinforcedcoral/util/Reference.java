@@ -7,8 +7,8 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_5.0";
-    public static final int DEFAULT_GAME = 0;
+    public static final String VERSION = "gradle_5.2";
+    public static final int DEFAULT_GAME = 1;
     //public static final String
 
     public static final int MAGIC_PRIME = 62;

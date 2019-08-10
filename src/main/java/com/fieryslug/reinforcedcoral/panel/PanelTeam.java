@@ -4,7 +4,9 @@ import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
+import com.fieryslug.reinforcedcoral.util.TextureHolder;
 
+import java.awt.*;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
@@ -31,7 +33,7 @@ public class PanelTeam extends JPanel {
         this.setBackground(Reference.BLACK);
 
         this.labelName = new JLabel();
-        this.labelName.setFont(FontRef.TAIPEI30);
+        this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
         this.labelName.setForeground(Reference.BLAZE);
         this.labelName.setText("第" + this.team.getId() + "小隊    ");
 
@@ -97,12 +99,20 @@ public class PanelTeam extends JPanel {
         if (isFullScreen) {
             this.labelState.setFont(FontRef.TAIPEI60BOLD);
             this.labelScore.setFont(FontRef.MONOSPACED45BOLD);
-            this.labelName.setFont(FontRef.TAIPEI45);
+            this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 51));
         } else {
             this.labelState.setFont(FontRef.TAIPEI40BOLD);
             this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
-            this.labelName.setFont(FontRef.TAIPEI30);
+            this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
         }
+    }
+
+    public void applyTexture(TextureHolder holder) {
+
+        setBackground(holder.getColor("team"));
+        setBorder(BorderFactory.createLineBorder(holder.getColor("team_border"), 3));
+        this.labelName.setForeground(holder.getColor("team_text"));
+
     }
 
 }

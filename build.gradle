@@ -6,7 +6,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
-version 'gradle_5.0'
+version 'gradle_5.2'
 
 mainClassName = 'com.fieryslug.reinforcedcoral.Main'
 sourceCompatibility = 1.8

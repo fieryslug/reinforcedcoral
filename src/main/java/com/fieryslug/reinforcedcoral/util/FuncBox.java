@@ -58,12 +58,6 @@ public class FuncBox {
 
     }
 
-    public static Object readJson() {
-
-        return null;
-
-    }
-
     public static Image resizeImage(Image image, int x, int y) {
         BufferedImage bimage = MediaRef.toBufferedImage(image);
         return bimage.getScaledInstance(x, y, Image.SCALE_SMOOTH);
@@ -118,11 +112,9 @@ public class FuncBox {
     }
 
     public static <T> T ramdomChoice(Set<T> set, Random random) {
-
         ArrayList<T> list = new ArrayList<>(set);
         int i = random.nextInt(list.size());
         return list.get(i);
-
     }
 
 

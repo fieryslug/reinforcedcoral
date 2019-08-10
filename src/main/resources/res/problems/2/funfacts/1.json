@@ -1,0 +1,143 @@
+{
+  "name": "超級正音班",
+  "fuzzy": false,
+  "answer": "D",
+  "duration": 10,
+  "points": {
+    "D": 150
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "超級正音班 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "超級正音班 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 10",
+          "content": "造詣",
+          "properties": {
+            "textsize": "60",
+            "textsizefull": "90",
+            "textcolor": "aaaaaa",
+            "center": "true",
+            "font": "kaiuasefeasfasef"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 11, 18, 19",
+          "content": "這個詞念ㄗㄠˋㄧˋ，不要再念成ㄗㄠˋㄓˇ了",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45",
+            "center": "true"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "超級正音班 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 19, 19",
+          "content": "/res/images/dict.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "超級正音班 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "哪加公司一開始從事造紙業?\n(A) 燦坤\n(B) Hitachi\n(C) IKEA\n(D) Nokia",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "超級正音班 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "center": "true",
+          "textbold": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "哪加公司一開始從事造紙業?\n(A) 燦坤\n(B) Hitachi\n(C) IKEA\n(D) Nokia",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textbold": "true",
+          "textcolor": "00ff00",
+          "center": "true"
+        }
+      }
+    ]
+  }
+}
