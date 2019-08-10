@@ -20,9 +20,12 @@ public class PanelTeam extends JPanel {
 
     public Team team;
 
-    public PanelTeam(Team team) {
+    private int where;
+
+    public PanelTeam(Team team, int i) {
 
         this.team = team;
+        this.where = i;
         initialize();
 
     }
@@ -35,7 +38,7 @@ public class PanelTeam extends JPanel {
         this.labelName = new JLabel();
         this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
         this.labelName.setForeground(Reference.BLAZE);
-        this.labelName.setText("第" + this.team.getId() + "小隊    ");
+        this.labelName.setText("第" + this.team.getId() + "小隊  ");
 
         this.labelScore = new JLabel();
         this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
@@ -104,14 +107,17 @@ public class PanelTeam extends JPanel {
             this.labelState.setFont(FontRef.TAIPEI40BOLD);
             this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
             this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
+            new Color(110, 170, 131);
         }
     }
 
     public void applyTexture(TextureHolder holder) {
 
-        setBackground(holder.getColor("team"));
-        setBorder(BorderFactory.createLineBorder(holder.getColor("team_border"), 3));
-        this.labelName.setForeground(holder.getColor("team_text"));
+        setBackground(holder.getColor("team" + this.where));
+        System.out.println(holder.getColor("team" + this.where));
+        setBorder(BorderFactory.createLineBorder(holder.getColor("team" + this.where + "_border"), 3));
+        this.labelName.setForeground(holder.getColor("team" + this.where + "_text"));
+        this.labelScore.setForeground(holder.getColor("team" + this.where + "_score"));
 
     }
 

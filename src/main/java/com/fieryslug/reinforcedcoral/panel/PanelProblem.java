@@ -247,7 +247,7 @@ public class PanelProblem extends JPanel {
         }
     }
 
-    public void changeFonts(boolean isFullScreen) {
+    public void refreshRendering(boolean isFullScreen) {
 
         this.height = (int)this.getPreferredSize().getHeight();
         this.width = (int)this.getPreferredSize().getWidth();
@@ -338,7 +338,11 @@ public class PanelProblem extends JPanel {
                     }
                 }
             }
+
+
         }
+
+
 
         if(this.page.type == Reference.MAGIC_PRIME) {
             for (Widget widget : this.page.widgets) {
@@ -367,12 +371,21 @@ public class PanelProblem extends JPanel {
         this.playingAudios.clear();
     }
 
-    public void applyTexture(TextureHolder holder) {
+    public void applyTexture() {
+
+        TextureHolder holder = TextureHolder.getInstance();
+        this.setBackground(holder.getColor("interior"));
+        this.labelTitle.setForeground(holder.getColor("text"));
+        this.labelTitle.setBackground(holder.getColor("interior"));
+        this.areaDescription.setForeground(holder.getColor("text"));
+        this.areaDescription.setBackground(holder.getColor("interior"));
 
         for (Widget widget : this.widgetInstanceMap.keySet()) {
 
             JComponent component = this.widgetInstanceMap.get(widget);
-            component.setBackground(holder.getColor("title"));
+            component.setBackground(holder.getColor("interior"));
+            if(!widget.properties.containsKey("textcolor"))
+                component.setForeground(holder.getColor("text"));
 
         }
 

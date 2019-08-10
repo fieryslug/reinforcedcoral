@@ -34,7 +34,7 @@ public class WorkTable {
         Problem prbShark = new Problem("1/socio/1.json");
         Problem prbElect = new Problem("1/socio/2.json");
         Problem prbCrab = new Problem("1/socio/3.json");
-        Problem prbMine = new ProblemMine("<html><font color=red>地雷(認真的)</font></html>");
+        Problem prbMine = new ProblemMine("<html><strong><font color=red>地雷(認真的)</font></strong></html>");
         Problem prbMoney = new Problem("1/socio/4.json");
         Problem prbArthur = new Problem("1/socio/5_1.json");
 

@@ -1,0 +1,190 @@
+{
+  "keys": [
+    "background",
+    "interior",
+    "text",
+    "countdown",
+    "countdown_5",
+
+
+    "title",
+    "title_border",
+    "title_text",
+
+    "problem",
+    "problem_border",
+    "problem_text",
+
+    "problem_disabled",
+    "problem_disabled_border",
+    "problem_disabled_text",
+
+    "problem_preenabled",
+    "problem_preenabled_border",
+    "problem_preenabled_text",
+
+    "problem_hover",
+    "problem_hover_border",
+    "problem_hover_text",
+
+    "problem_selected",
+    "problem_selected_border",
+    "problem_selected_text",
+
+    "problem_selected_disabled",
+    "problem_selected_disabled_border",
+    "problem_selected_disabled_text",
+
+    "problem_selected_preenabled",
+    "problem_selected_preenabled_border",
+    "problem_selected_preenabled_text",
+
+
+    "team",
+    "team_privilege",
+    "team_locked",
+    "team_border",
+    "team_text",
+    "team_score",
+
+    "teamu",
+    "teamd",
+    "teamu_border",
+    "teamd_border",
+    "teamu_text",
+    "teamd_text",
+    "teamu_score",
+    "teamd_score",
+
+    "team1",
+    "team2",
+    "team3",
+    "team4",
+    "team1_border",
+    "team2_border",
+    "team3_border",
+    "team4_border",
+    "team1_text",
+    "team2_text",
+    "team3_text",
+    "team4_text",
+    "team1_score",
+    "team2_score",
+    "team3_score",
+    "team4_score"
+  ],
+  "wildcard": {
+    "problem": [
+      "problem_hover",
+      "problem_selected",
+      "problem_disabled",
+      "problem_selected_disabled",
+      "problem_preenabled",
+      "problem_selected_preenabled"
+    ],
+    "problem_border": [
+      "problem_hover_border",
+      "problem_selected_border",
+      "problem_disabled_border",
+      "problem_selected_disabled_border",
+      "problem_preenabled_border",
+      "problem_selected_preenabled_border"
+    ],
+    "problem_text": [
+      "problem_hover_text",
+      "problem_selected_text",
+      "problem_disabled_text",
+      "problem_selected_disabled_text",
+      "problem_preenabled_text",
+      "problem_selected_preenabled_text"
+
+    ],
+    "problem_disabled": [
+      "problem_selected_disabled"
+    ],
+    "problem_disabled_border": [
+      "problem_selected_disabled_border"
+    ],
+    "problem_disabled_text": [
+      "problem_selected_disabled_text"
+    ],
+    "problem_preenabled": [
+      "problem_selected_preenabled"
+    ],
+    "problem_preenabled_border": [
+      "problem_selected_preenabled_border"
+    ],
+    "problem_preenabled_text": [
+      "problem_selected_prenabled_text"
+    ],
+    "problem_selected_border": [
+      "problem_selected_preenabled_border",
+      "problem_selected_disabled_border"
+    ],
+    "team": [
+      "team1",
+      "team2",
+      "team3",
+      "team4"
+    ],
+    "team_border": [
+      "team1_border",
+      "team2_border",
+      "team3_border",
+      "team4_border"
+    ],
+    "team_text": [
+      "team1_text",
+      "team2_text",
+      "team3_text",
+      "team4_text",
+      "team1_score",
+      "team2_score",
+      "team3_score",
+      "team4_score"
+
+    ],
+    "team_score": [
+      "team1_score",
+      "team2_score",
+      "team3_score",
+      "team4_score"
+    ],
+    "teamu": [
+      "team1",
+      "team2"
+    ],
+    "teamd": [
+      "team3",
+      "team4"
+    ],
+    "teamu_border": [
+      "team1_border",
+      "team2_border"
+    ],
+    "teamd_border": [
+      "team3_border",
+      "team4_border"
+    ],
+    "teamu_text": [
+      "team1_text",
+      "team2_text",
+      "team1_score",
+      "team2_score"
+    ],
+    "teamd_text": [
+      "team3_text",
+      "team4_text",
+      "team3_score",
+      "team4_score"
+    ],
+    "teamu_score": [
+      "team1_score",
+      "team2_score"
+    ],
+    "teamd_score": [
+      "team3_score",
+      "team4_score"
+    ]
+  }
+}

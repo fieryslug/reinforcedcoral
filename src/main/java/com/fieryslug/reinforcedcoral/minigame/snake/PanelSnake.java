@@ -11,7 +11,6 @@ import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.widget.Direction;
-import com.sun.jna.platform.win32.COM.COMUtils;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -369,7 +368,7 @@ public class PanelSnake extends PanelMiniGame {
 
                     Point point = new Point(x, y);
                     */
-                    Point point = FuncBox.<Point>ramdomChoice(this.freeSlots, this.random);
+                    Point point = FuncBox.<Point>randomChoice(this.freeSlots, this.random);
                     this.pixels[point.x][point.y].state = generator.id;
                     this.freeSlots.remove(point);
 

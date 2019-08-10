@@ -55,7 +55,7 @@ public class ButtonCoral extends JButton {
         this.mouseListener = new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent mouseEvent) {
-                setIcon(ButtonCoral.this.iconPress);
+                onPressed();
             }
 
             @Override
@@ -81,6 +81,9 @@ public class ButtonCoral extends JButton {
 
     }
 
+    public void onPressed() {
+        setIcon(ButtonCoral.this.iconPress);
+    }
 
     public void onHover() {
         setIcon(this.iconHover);

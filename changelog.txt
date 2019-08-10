@@ -1,7 +1,8 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
-===gradle_5.2=== 8/10 12pm
+===gradle_5.2=== 8/10 25pm
 -new feature: texture packs
+-added texture packs: ocean, eggplant, classic, caramel, balloon
 
 
 ===gradle_5.1=== 8/10 10am

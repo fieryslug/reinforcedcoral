@@ -55,6 +55,14 @@ public class FontRef {
         if (font != null) {
             return font;
         }
+        if (b == Font.BOLD) {
+            String boldFontName = BOLD_FONT_MAP.get(fontName);
+            if (boldFontName != null) {
+                font = new Font(boldFontName, Font.PLAIN, s);
+                fontCache.put(info, font);
+                return font;
+            }
+        }
         font = new Font(fontName, b, s);
         fontCache.put(info, font);
         return font;

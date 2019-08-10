@@ -3,6 +3,8 @@ package com.fieryslug.reinforcedcoral.util;
 import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -22,6 +24,7 @@ import java.util.Set;
 public class FuncBox {
 
     public static Map<Pair<Image, Dimension>, Image> imageCache = new HashMap<>();
+    public static Map<Pair<Color, Integer>, Border> lineBorderCache = new HashMap<>();
 
     public static JLabel blankLabel(int width, int height) {
         JLabel label = new JLabel();
@@ -111,10 +114,23 @@ public class FuncBox {
         }
     }
 
-    public static <T> T ramdomChoice(Set<T> set, Random random) {
+    public static <T> T randomChoice(Set<T> set, Random random) {
         ArrayList<T> list = new ArrayList<>(set);
         int i = random.nextInt(list.size());
         return list.get(i);
+    }
+
+    public static Border getLineBorder(Color color, int size) {
+
+        Pair<Color, Integer> info = new Pair<>(color, size);
+        Border border = lineBorderCache.get(info);
+        if (border != null) {
+            return border;
+        }
+        border = BorderFactory.createLineBorder(color, size);
+        lineBorderCache.put(info, border);
+        return border;
+
     }
 
 

@@ -45,9 +45,10 @@ public class ButtonProblem extends ButtonCoral {
             public void run() {
                 if (animationNumber < 9) {
                     if (animationNumber % 2 == 0) {
-                        setIcon(iconDefault);
+                        //setIcon(iconDefault);
+                        toDefault();
                     } else {
-                        setIcon(iconPreeanbled);
+                        toPreenabled();
                     }
                     animationNumber += 1;
                 }
@@ -116,6 +117,10 @@ public class ButtonProblem extends ButtonCoral {
     public void setImagePreenabledSelected(Image image) {
         this.imagePreenabledSelected = image;
         this.iconPreenabledSelected = new ImageIcon(this.imagePreenabledSelected);
+    }
+
+    public void toPreenabled() {
+        setIcon(this.iconPreeanbled);
     }
 
     public void setState(int state) {

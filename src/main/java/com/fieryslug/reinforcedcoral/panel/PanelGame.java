@@ -130,12 +130,12 @@ public class PanelGame extends PanelPrime {
         this.buttonConfirm = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
 
         this.labelCountDown = new JLabel("", SwingConstants.CENTER);
-        this.labelCountDown.setForeground(Reference.YELLOW);
+        //this.labelCountDown.setForeground(Reference.YELLOW);
 
         for (int i = 0; i < 4; ++i) {
             Team team = this.parent.game.teams.get(i);
             teamIndexMap.put(team, i);
-            PanelTeam panel = new PanelTeam(team);
+            PanelTeam panel = new PanelTeam(team, i+1);
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
             this.panelBoxes.add(panel);
             this.teamPanelMap.put(team, panel);
@@ -173,8 +173,10 @@ public class PanelGame extends PanelPrime {
                 button.setLayout(new BorderLayout(5, 5));
                 button.setOpaque(true);
                 button.setBorderPainted(true);
+                button.setFocusable(true);
                 JLabel label3 = new JLabel("", SwingConstants.CENTER);
                 label3.setText("<html><div style='text-align: center;'>" + problem.name + "</div></html>");
+                label3.setText(problem.name);
                 button.add(label3);
                 button.label = label3;
                 button.label.setOpaque(false);
@@ -312,8 +314,9 @@ public class PanelGame extends PanelPrime {
         this.labelCountDown.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
+                TextureHolder holder = TextureHolder.getInstance();
                 setPhase(GamePhase.INTERMEDIATE);
-                labelCountDown.setForeground(Reference.YELLOW);
+                labelCountDown.setForeground(holder.getColor("countdown"));
                 timer.cancel();
                 parent.switchPanel(PanelGame.this, PanelGame.this);
             }
@@ -389,7 +392,7 @@ public class PanelGame extends PanelPrime {
             if (team.hasPrivilege) {
                 panel.setBackground(holder.getColor("team_privilege"));
             } else {
-                panel.setBackground(holder.getColor("team"));
+                panel.setBackground(holder.getColor("team"+(i+1)));
             }
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
         }
@@ -427,6 +430,7 @@ public class PanelGame extends PanelPrime {
                     ButtonProblem button = this.problemButtonMap.get(problem);
 
                     this.panelInteriorMenu.add(button, String.valueOf(i) + ", " + String.valueOf(j));
+                    button.toDefault();
                     //button.resizeImageForIcons((int) (this.paneWidth * 0.25), (int) (this.paneHeight * 0.15));
 
                     if (button.state == -1) {
@@ -489,16 +493,16 @@ public class PanelGame extends PanelPrime {
             }
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
-            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
             this.timer = new java.util.Timer();
             this.labelCountDown.setText(String.valueOf(this.countDown));
             if (countDown <= 5)
-                this.labelCountDown.setForeground(Reference.RED);
+                labelCountDown.setForeground(holder.getColor("countdown_5"));
             this.timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
                 public void run() {
                     if (countDown == 5) {
-                        labelCountDown.setForeground(Reference.RED);
+                        labelCountDown.setForeground(holder.getColor("countdown_5"));
                     }
                     labelCountDown.setText(String.valueOf(countDown));
                     if (countDown <= 0) {
@@ -509,7 +513,7 @@ public class PanelGame extends PanelPrime {
                                 parent.switchPanel(PanelGame.this, PanelGame.this);
                             }
                         });
-                        labelCountDown.setForeground(Reference.YELLOW);
+                        labelCountDown.setForeground(holder.getColor("countdown"));
                         timer.cancel();
                     } else {
                         countDown--;
@@ -546,7 +550,7 @@ public class PanelGame extends PanelPrime {
         if (this.phase == GamePhase.SHOW_ANSWER) {
 
             this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
-            this.panelInteriorPage.applyTexture(holder);
+            this.panelInteriorPage.applyTexture();
 
             for (int i = 0; i < 4; ++i) {
                 Team team = this.parent.game.teams.get(i);
@@ -652,14 +656,14 @@ public class PanelGame extends PanelPrime {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonNext.resizeImageForIcons(buttonX, buttonY);
             this.buttonPrev.resizeImageForIcons(buttonX, buttonY);
-            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
-            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture();
         }
         if (this.phase == GamePhase.ANSWERING) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             //this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
-            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
-            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture();
             if (this.parent.isFullScreen)
                 this.labelCountDown.setFont(FontRef.TAIPEI90);
             else
@@ -675,20 +679,20 @@ public class PanelGame extends PanelPrime {
             }
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
-            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
-            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture();
         }
         if (this.phase == GamePhase.SHOW_ANSWER) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
-            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
-            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture();
         }
         if (this.phase == GamePhase.SOLUTION) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
-            this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
-            this.panelInteriorPage.applyTexture(this.parent.textureHolder);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture();
         }
     }
 
@@ -832,7 +836,6 @@ public class PanelGame extends PanelPrime {
 
             button.setBorder(BorderFactory.createLineBorder(holder.getColor("problem_border"), 3));
 
-            System.out.println(holder.getColor("problem_border"));
             button.label.setForeground(holder.getColor("problem_text"));
             button.label.setOpaque(false);
 
@@ -849,8 +852,9 @@ public class PanelGame extends PanelPrime {
         }
 
         this.panelInteriorMenu.setBackground(holder.getColor("background"));
-        this.panelInteriorPage.setBackground(holder.getColor("title"));
-        this.panelBanner.setBackground(holder.getColor("title"));
+        this.panelInteriorPage.setBackground(holder.getColor("interior"));
+        this.panelBanner.setBackground(holder.getColor("interior"));
+        this.labelCountDown.setForeground(holder.getColor("countdown"));
 
     }
 
