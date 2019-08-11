@@ -1,0 +1,168 @@
+{
+  "name": "小莉一家人2",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "小莉一家人 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小莉一家人 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "小莉正值及笄之年，她有一個爸爸、一個媽媽和一箱立可帶。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/cartoon_girl.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小莉一家人 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "三年前，媽媽的年齡是小莉的兩倍；三年後，爸爸的年齡是小莉的三倍。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 18, 19",
+          "content": "/res/images/thinking_round.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小莉一家人 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 8",
+          "content": "三年前，媽媽的年齡是小莉的兩倍；三年後，爸爸的年齡是小莉的三倍。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 9, 10, 19",
+          "content": "請問為什麼這邊要加分號                  \u2b06\n\n(A) 兩個句子在意思上是緊緊相連的\n(B) 下句含有轉折的意思\n(C) 下句總結前面的句子\n(D) 兩個句子互相對比",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 18, 19",
+          "content": "/res/images/thinking_round.png",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "solution":  {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "A",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "小莉一家人 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 8",
+        "content": "三年前，媽媽的年齡是小莉的兩倍；三年後，爸爸的年齡是小莉的三倍。",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 9, 10, 19",
+        "content": "請問為什麼這邊要加分號                  \u2b06\n\n(A) 兩個句子在意思上是緊緊相連的\n(B) 下句含有轉折的意思\n(C) 下句總結前面的句子\n(D) 兩個句子互相對比",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      }
+    ]
+  }
+}

@@ -255,7 +255,7 @@ public class PanelProblem extends JPanel {
         if (isFullScreen) {
             if(this.page.type == 0) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI45);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
             }
             if(this.page.type == 1) {
                 this.labelTitle.setFont(FontRef.TAIPEI120BOLD);
@@ -269,11 +269,11 @@ public class PanelProblem extends JPanel {
             }
             if(this.page.type == -1) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI45);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
             }
             if(this.page.type == 4) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI45);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
             }
             if(this.page.type == Reference.MAGIC_PRIME) {
 
@@ -300,25 +300,25 @@ public class PanelProblem extends JPanel {
         else {
             if(this.page.type == 0) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI30);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
             }
             if(this.page.type == 1) {
                 this.labelTitle.setFont(FontRef.TAIPEI80BOLD);
             }
             if(this.page.type == 2) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI30);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
                 Image image = MediaRef.getImage(page.res.get(2));
                 image = FuncBox.resizeImagePreservingRatio(image, this.width * 8/20, this.height * 15/20);
                 this.labelImage.setIcon(new ImageIcon(image));
             }
             if(this.page.type == -1) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI30);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
             }
             if (this.page.type == 4) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI30);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
             }
             if(this.page.type == Reference.MAGIC_PRIME) {
 

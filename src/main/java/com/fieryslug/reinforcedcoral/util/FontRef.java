@@ -28,6 +28,8 @@ public class FontRef {
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/cmunss.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/Times New Roman.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/Times_New_Roman_Bold.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/DejaVuSans.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/DejaVuSans-Bold.ttf")));
             System.out.println("Fonts loaded");
             FuncBox.listAllFonts();
         } catch (IOException | FontFormatException e) {
@@ -38,6 +40,7 @@ public class FontRef {
     static {
         BOLD_FONT_MAP.put("Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Bold");
         BOLD_FONT_MAP.put("Times New Roman", "Times New Roman Bold");
+        BOLD_FONT_MAP.put("DejaVu Sans", "DejaVu Sans Bold");
     }
 
     @Deprecated

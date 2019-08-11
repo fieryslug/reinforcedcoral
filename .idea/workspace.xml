@@ -7,8 +7,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/fonts/DejaVuSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/fonts/DejaVuSans.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/cartoon_girl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/jinping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/kiwi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/ode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/papua.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/thinking_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/images/tzuyu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/1_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/2_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/socio/1_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/avocado/4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/avocado/6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/funfacts/6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/res/sound/ode.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/res/images/rats.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/images/rats.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/GamePhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/GamePhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/Problem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/1/lit/5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/problems/2/avocado/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/problems/2/avocado/5.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -304,6 +332,7 @@
       <workItem from="1565485613302" duration="30898000" />
       <workItem from="1565519519515" duration="2616000" />
       <workItem from="1565522164623" duration="39000" />
+      <workItem from="1565527664567" duration="19886000" />
     </task>
     <servers />
   </component>

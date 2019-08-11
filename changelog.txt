@@ -1,12 +1,25 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
-===gradle_6.0=== 8/11 25pm
+===gradle_6.0=== 8/11 27pm
+-new feature: post-solution slides
+-added texture pack jungle
 -added 沖繩驚魂記[2/funfacts/5]
+-added PNG[2/funfacts/6]
+-added 衛生習慣[2/nehs2/6]
 -modified 孝順的彼得->孝順的總召[1/socio/5_1]
 -modified 大怒神[2/nehs/5]
+-removed 新詩共賞[1/lit/2]; added 隰有萇楚[1/lit/2_1]
+-removed 鐵梨與鯊魚[1/socio/1]; added 阿平的獨裁派對[1/socio/1_1]
+-removed 阿平的獨裁派對[1/socio/1_1]; added 小莉一家人[1/socio/1_2]
+-removed 尋找威利[1/lit/1_1]; added 小莉一家人2[1/lit/1_2]
 -bug fix: snake
+-bug fix: background color not changing correctly
+-bug fix: 左腳拖鞋 not changing color after clicking
+
 
 ===gradle_5.3=== 8/11 13pm
+-new feature: press T to switch texture pack
+-added texture pack punk
 -added 拉鍊的原理[2/funfacts/2]
 -added 消失的蠑螈[2/funfacts/3]
 -added 害羞鯊魚[2/funfacts/4]

@@ -43,6 +43,7 @@ public class PanelGame extends PanelPrime {
 
     public Problem currentProblem;
     public int currentPageNumber = 0;
+    public int currentExplanationNumber = 0;
 
     ArrayList<PanelTeam> panelBoxes;
     public JPanel panelInteriorMenu;
@@ -221,7 +222,7 @@ public class PanelGame extends PanelPrime {
         this.buttonNext.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if (PanelGame.this.state == 1) {
+                if (phase == GamePhase.IN_PROBLEM) {
                     if (currentPageNumber + 1 < currentProblem.pages.size()) {
                         int nextpage = PanelGame.this.currentPageNumber + 1;
                         if (PanelGame.this.currentProblem.pages.get(nextpage).isFinal()) {
@@ -232,6 +233,19 @@ public class PanelGame extends PanelPrime {
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
 
                     }
+                } else if (phase == GamePhase.POST_SOLUTION) {
+                    if (currentExplanationNumber + 1 < currentProblem.pagesExplanation.size()) {
+                        int nextpage = currentExplanationNumber + 1;
+                        currentExplanationNumber = nextpage;
+                        parent.switchPanel(PanelGame.this, PanelGame.this);
+                    } else {
+                        currentExplanationNumber = 0;
+                        ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
+                        buttonProblem.setState(1);
+                        setPhase(GamePhase.MENU);
+                        panelInteriorPage.clearSounds();
+                        parent.switchPanel(PanelGame.this, PanelGame.this);
+                    }
                 }
             }
         });
@@ -240,7 +254,7 @@ public class PanelGame extends PanelPrime {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                if (PanelGame.this.state == 1) {
+                if (phase == GamePhase.IN_PROBLEM) {
 
                     if (currentPageNumber == 0) {
                         System.out.println("switched");
@@ -255,6 +269,14 @@ public class PanelGame extends PanelPrime {
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
                     }
 
+                } else if (phase == GamePhase.POST_SOLUTION) {
+                    if (currentExplanationNumber <= 0) {
+
+                    }
+                    else {
+                        currentExplanationNumber --;
+                        parent.switchPanel(PanelGame.this, PanelGame.this);
+                    }
                 }
 
             }
@@ -268,7 +290,8 @@ public class PanelGame extends PanelPrime {
                 if (phase == GamePhase.INTERMEDIATE) {
                     setPhase(GamePhase.SHOW_ANSWER);
                     parent.switchPanel(PanelGame.this, PanelGame.this);
-                } else if (phase == GamePhase.SHOW_ANSWER) {
+                }
+                else if (phase == GamePhase.SHOW_ANSWER) {
                     for (Team team : parent.game.teams) {
                         teamTempScoreMap.put(team, 0);
                     }
@@ -300,12 +323,19 @@ public class PanelGame extends PanelPrime {
                     */
                     PanelGame.this.setState(3);
                     setPhase(GamePhase.SOLUTION);
-                } else if (phase == GamePhase.SOLUTION) {
-                    ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
-                    buttonProblem.setState(1);
-                    setState(0);
-                    setPhase(GamePhase.MENU);
-                    panelInteriorPage.clearSounds();
+                }
+                else if (phase == GamePhase.SOLUTION) {
+                    if (currentProblem.pagesExplanation.size() > 0) {
+                        setPhase(GamePhase.POST_SOLUTION);
+                        currentExplanationNumber = 0;
+                    }
+                    else {
+                        ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
+                        buttonProblem.setState(1);
+                        setState(0);
+                        setPhase(GamePhase.MENU);
+                        panelInteriorPage.clearSounds();
+                    }
                 }
                 parent.switchPanel(PanelGame.this, PanelGame.this);
             }
@@ -529,12 +559,12 @@ public class PanelGame extends PanelPrime {
 
             add(this.panelBoxes.get(0), "0, 0, 2, 0");
             add(this.panelBoxes.get(1), "3, 0, 5, 0");
-            //add(FuncBox.blankLabel(2000, 2));
+
             add(this.panelInteriorPage, "0, 1, 5, 3");
             //add(this.buttonConfirm, "2, 4, 3, 4");
             add(this.labelCountDown, "2, 4, 3, 4");
             add(this.panelBanner, "0, 4, 5, 4");
-            //add(FuncBox.blankLabel(2000, 2));
+
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
         }
@@ -605,6 +635,20 @@ public class PanelGame extends PanelPrime {
             add(this.buttonConfirm, "2, 4, 3, 4");
             add(this.panelBanner, "0, 4, 5, 4");
             //add(FuncBox.blankLabel(2000, 2));
+            add(this.panelBoxes.get(2), "0, 5, 2, 5");
+            add(this.panelBoxes.get(3), "3, 5, 5, 5");
+        }
+        if (this.phase == GamePhase.POST_SOLUTION) {
+            this.panelInteriorPage.inflate2(this.currentProblem.pagesExplanation.get(this.currentExplanationNumber));
+
+            add(this.panelBoxes.get(0), "0, 0, 2, 0");
+            add(this.panelBoxes.get(1), "3, 0, 5, 0");
+
+            add(this.panelInteriorPage, "0, 1, 5, 3");
+            add(this.buttonPrev, "0, 4");
+            add(this.buttonNext, "5, 4");
+            add(this.panelBanner, "0, 4, 5, 4");
+
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
         }
@@ -698,6 +742,13 @@ public class PanelGame extends PanelPrime {
         if (this.phase == GamePhase.SOLUTION) {
             this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
+            this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
+            this.panelInteriorPage.applyTexture();
+        }
+        if (this.phase == GamePhase.POST_SOLUTION) {
+            this.panelInteriorPage.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
+            this.buttonNext.resizeImageForIcons(buttonX, buttonY);
+            this.buttonPrev.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
             this.panelInteriorPage.applyTexture();
         }
@@ -816,6 +867,8 @@ public class PanelGame extends PanelPrime {
     public void setPhase(GamePhase phase) {
         this.prevPhase = this.phase;
         this.phase = phase;
+        this.prevState = this.prevPhase.getId();
+        this.state = this.phase.getId();
     }
 
     private boolean dependencesSatisfied(ButtonProblem button) {
@@ -835,6 +888,7 @@ public class PanelGame extends PanelPrime {
     public void applyTexture() {
 
         TextureHolder holder = this.parent.textureHolder;
+        setBackground(holder.getColor("background"));
         for (ButtonProblem button : this.buttonProblemMap.keySet()) {
             button.setIcon(null);
             button.setBackground(holder.getColor("problem"));

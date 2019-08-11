@@ -31,15 +31,15 @@ public class WorkTable {
         Problem prbBone = new Problem("1/chembio/5.json");
         Problem prbSoda = new Problem("1/chembio/6_1.json");
 
-        Problem prbShark = new Problem("1/socio/1.json");
+        Problem prbFamily1 = new Problem("1/socio/1_2.json");
         Problem prbElect = new Problem("1/socio/2.json");
         Problem prbCrab = new Problem("1/socio/3.json");
         Problem prbMine = new ProblemMine("<html><strong><font color=red>地雷(認真的)</font></strong></html>");
         Problem prbMoney = new Problem("1/socio/4.json");
         Problem prbArthur = new Problem("1/socio/5_1.json");
 
-        Problem prbWilly = new Problem("1/lit/1_1.json");
-        Problem prbPoemSunset = new Problem("1/lit/2.json");
+        Problem prbFamily2 = new Problem("1/lit/1_2.json");
+        Problem prbPoemSunset = new Problem("1/lit/2_1.json");
         Problem prbOdin = new Problem("1/lit/3.json");
         Problem prbPPB = new Problem("1/lit/4_1.json");
         Problem prbVocab = new Problem("1/lit/5.json");
@@ -48,11 +48,12 @@ public class WorkTable {
         prbW6.addDependence(prbS5);
         prbF7.addDependence(prbW6);
         prbCrab.addDependence(prbOdin);
+        prbFamily2.addDependence(prbFamily1);
 
         catPhysMath.addProblem(prbS5, prbW6, prbF7, prbBear, prbLog, prbCongee);
         catChemBio.addProblem(prbSunset, prbFood, prbSofa, prbLongan, prbBone, prbSoda);
-        catSocio.addProblem(prbShark, prbElect, prbCrab, prbMine, prbMoney, prbArthur);
-        catLit.addProblem(prbWilly, prbPoemSunset, prbOdin, prbPPB, prbVocab, prbHumble);
+        catSocio.addProblem(prbFamily1, prbElect, prbCrab, prbMine, prbMoney, prbArthur);
+        catLit.addProblem(prbFamily2, prbPoemSunset, prbOdin, prbPPB, prbVocab, prbHumble);
 
         game.addCategory(catPhysMath);
         game.addCategory(catChemBio);
@@ -91,13 +92,13 @@ public class WorkTable {
         Problem prb23 = new Problem("2/funfacts/3.json");
         Problem prb24 = new Problem("2/funfacts/4.json");
         Problem prb25 = new Problem("2/funfacts/5.json");
-        Problem prb26 = new Problem("placeholder", 0);
+        Problem prb26 = new Problem("2/funfacts/6.json");
 
-        Problem prb31 = new Problem("placeholder", 0);
+        Problem prb31 = new ProblemMineSweeper("踩地雷");
         Problem prbSnake = new ProblemSnake("貪食蛇");
         Problem prb33 = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
         Problem prb34 = new Problem("placeholder", 0);
-        Problem prb35 = new ProblemMineSweeper("踩地雷");
+        Problem prb35 = new Problem("placeholder", 0);
         Problem prb36 = new Problem("placeholder", 0);
 
         prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);

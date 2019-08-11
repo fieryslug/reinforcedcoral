@@ -1,0 +1,176 @@
+{
+  "name": "PNG",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "PNG (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "PNG (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 9, 19",
+          "content": "Fun fact: 這次的知識用到的圖片大部分都是PNG格式的",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "10, 5, 19, 19",
+          "content": "/res/images/png.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "PNG (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "但是像這張我在韓國買的正版周子瑜公仔的圖片就不是，這個是JPG。\n\n我不是迷妹。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 15, 19",
+          "content": "/res/images/tzuyu.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "PNG (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 8",
+          "content": "回歸正題，PNG也可以是巴布亞紐幾內亞(Papua New Guinea)的縮寫。巴布亞紐幾內亞是一個太平洋西南部的島嶼國家。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 9, 19, 19",
+          "content": "/res/images/papua.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "PNG (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "全世界有約七千種語言，巴布亞紐幾內亞境內總共有幾種語言？\n\n(A) 二十 \n(B) 五十 \n(C) 一百 \n(D) 八百",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "PNG (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 18, 19",
+        "content": "全世界有約七千種語言，巴布亞紐幾內亞境內總共有幾種語言？\n\n(A) 二十 \n(B) 五十 \n(C) 一百 \n(D) 八百",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      }
+    ]
+  }
+}

@@ -8,10 +8,7 @@ import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.*;
-
-import javax.naming.ldap.Control;
 
 public class Problem {
 
@@ -22,6 +19,7 @@ public class Problem {
     private ArrayList<ControlKey> answer;
     public ArrayList<Page> pages;
     public Page pageSolution;
+    public ArrayList<Page> pagesExplanation;
 
     public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
     public ArrayList<Problem> dependences;
@@ -37,6 +35,7 @@ public class Problem {
         this.answer = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
         this.dependences = new ArrayList<>();
+        this.pagesExplanation = new ArrayList<>();
 
     }
 
@@ -45,6 +44,7 @@ public class Problem {
         this.pages = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
         this.dependences = new ArrayList<>();
+        this.pagesExplanation = new ArrayList<>();
         try {
             //this.answer = new ArrayList<>();
 
@@ -74,9 +74,20 @@ public class Problem {
                 this.pages.add(new Page(objectPage));
             }
 
-            this.pageSolution = new Page(jsonObject.getJSONObject("solution"));
-        }
-        catch (Exception e) {
+            Page page = new Page(jsonObject.getJSONObject("solution"));
+            this.pageSolution = page;
+
+
+            if (jsonObject.has("post_solution")) {
+                JSONArray arraySolutions = jsonObject.getJSONArray("post_solution");
+                for (int i = 0; i < arraySolutions.length(); ++i) {
+                    JSONObject objectSolution = arraySolutions.getJSONObject(i);
+                    this.pagesExplanation.add(new Page(objectSolution));
+                }
+            }
+
+
+        } catch (Exception e) {
             System.out.println("Error occurred while loading " + path + ":");
             e.printStackTrace();
         }
@@ -113,22 +124,21 @@ public class Problem {
     public int getPoints(ArrayList<ControlKey> teamAnswer) {
 
         int points1 = 0;
-        if(this.fuzzy) {
-            ArrayList<ControlKey> list1 = (ArrayList<ControlKey>)teamAnswer.clone();
+        if (this.fuzzy) {
+            ArrayList<ControlKey> list1 = (ArrayList<ControlKey>) teamAnswer.clone();
             Collections.sort(list1);
-            for(ArrayList<ControlKey> candidate : this.keysPointsMap.keySet()) {
+            for (ArrayList<ControlKey> candidate : this.keysPointsMap.keySet()) {
 
-                ArrayList<ControlKey> list0 = (ArrayList<ControlKey>)candidate.clone();
+                ArrayList<ControlKey> list0 = (ArrayList<ControlKey>) candidate.clone();
                 Collections.sort(list0);
-                if(list0.equals(list1)) {
+                if (list0.equals(list1)) {
                     points1 = Integer.max(points1, this.keysPointsMap.get(candidate));
                 }
             }
-        }
-        else {
-            for(ArrayList<ControlKey> candidate : this.keysPointsMap.keySet()) {
+        } else {
+            for (ArrayList<ControlKey> candidate : this.keysPointsMap.keySet()) {
 
-                if(teamAnswer.equals(candidate)) {
+                if (teamAnswer.equals(candidate)) {
                     points1 = Integer.max(points1, this.keysPointsMap.get(candidate));
                 }
             }
@@ -136,7 +146,6 @@ public class Problem {
         //System.out.println("POINTS: " + points1);
         return points1;
     }
-
 
 
     public void addDependence(Problem... problems) {

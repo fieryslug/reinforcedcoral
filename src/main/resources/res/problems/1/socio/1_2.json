@@ -1,0 +1,144 @@
+{
+  "name": "小莉一家人",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 400
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "小莉一家人 (400pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小莉一家人 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "小莉正值及笄之年，她有一個爸爸、一個媽媽和一箱立可帶。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/cartoon_girl.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小莉一家人 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "三年前，媽媽的年齡是小莉的兩倍；三年後，爸爸的年齡是小莉的三倍。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 18, 19",
+          "content": "/res/images/thinking_round.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "小莉一家人 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "假設法官很有效率，請問小莉的爸爸可能什麼時候出獄?\n(A) 5年後到12年後\n(B) 12年前到5年前\n(C) 去年\n(D) 感恩節",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "B",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "小莉一家人 (400pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "假設法官很有效率，請問小莉的爸爸可能什麼時候出獄?\n(A) 5年後到12年後\n(B) 12年前到5年前\n(C) 去年\n(D) 感恩節",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      }
+    ]
+  }
+}

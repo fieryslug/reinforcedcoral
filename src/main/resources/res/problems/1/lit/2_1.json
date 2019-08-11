@@ -1,0 +1,155 @@
+{
+  "name": "隰有萇楚",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 600
+  },
+  "duration": 20,
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "隰有萇楚 (600pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "隰有萇楚 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 10",
+          "content": "隰有萇楚是詩經〈檜風〉的一首詩。萇楚就是奇異果。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 11, 19, 19",
+          "content": "/res/images/kiwi.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "隰有萇楚 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "1, 5, 18, 7",
+          "content": "上古漢語的「隰有萇楚」怎麼念?",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 8, 18, 19",
+          "content": "(A) [ɕi i̯əu̯ ʈʂʰaŋ ʈʂʰu]\n(B) [si i̯əu̯ ʈʂʰaŋ ʈʂʰu]\n(C) [sip i̯u tʃiaŋ ʈʂy]\n(D) [ljɯb ɢʷɯʔ daŋ sŋ̊ʰraʔ]",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45",
+            "font": "DejaVu Sans",
+            "textbold": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "center": "true",
+          "textbold": "true"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "隰有萇楚 (600pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "1, 5, 18, 7",
+        "content": "上古漢語的「隰有萇楚」怎麼念?",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 8, 10, 19",
+        "content": "(A) [ɕi i̯əu̯ ʈʂʰaŋ ʈʂʰu]\n(B) [si i̯əu̯ ʈʂʰaŋ ʈʂʰu]\n(C) [sip i̯u tʃiaŋ ʈʂy]\n(D) [ljɯb ɢʷɯʔ daŋ sŋ̊ʰraʔ]",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45",
+          "font": "DejaVu Sans",
+          "textbold": "false"
+        }
+      }
+    ]
+  },
+  "post_solution": [
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "image",
+          "constraints": "0, 0, 19, 19",
+          "content": "/res/images/ode.png",
+          "properties": {}
+        },
+        {
+          "widget": "audio",
+          "constraints": "",
+          "content": "/res/sound/ode.wav",
+          "properties": {}
+        }
+      ]
+    }
+  ]
+}

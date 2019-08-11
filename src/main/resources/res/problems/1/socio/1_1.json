@@ -1,0 +1,118 @@
+{
+  "name": "阿平的獨裁派對",
+  "fuzzy": false,
+  "answer": "C",
+  "points": {
+    "C": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "阿平的狂歡派對 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "阿平的獨裁派對 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "今天是阿平的生日，他想要辦一個狂歡派對，只有優秀的獨裁者才能被邀請。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/jinping.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "阿平的獨裁派對 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "請問誰不會被邀請？\n(A) 弗朗西斯科·佛朗哥\n(B) 洪秀全\n(C) 利瑪竇\n(D) 凱薩",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/jinping.png",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "1, 5, 10, 19",
+        "content": "C",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "阿平的獨裁派對 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "11, 5, 18, 19",
+        "content": "請問誰不會被邀請？\n(A) 弗朗西斯科·佛朗哥\n(B) 洪秀全\n(C) 利瑪竇\n(D) 凱薩",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      }
+    ]
+  }
+}
