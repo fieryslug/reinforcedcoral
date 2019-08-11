@@ -87,27 +87,27 @@ public class WorkTable {
         Problem prb16 = new Problem("placeholder", 0);
 
         Problem prb21 = new Problem("2/funfacts/1.json");
-        Problem prb22 = new Problem("placeholder", 0);
-        Problem prb23 = new Problem("placeholder", 0);
-        Problem prb24 = new Problem("placeholder", 0);
+        Problem prb22 = new Problem("2/funfacts/2.json");
+        Problem prb23 = new Problem("2/funfacts/3.json");
+        Problem prb24 = new Problem("2/funfacts/4.json");
         Problem prb25 = new Problem("placeholder", 0);
         Problem prb26 = new Problem("placeholder", 0);
 
         Problem prb31 = new Problem("placeholder", 0);
         Problem prbSnake = new ProblemSnake("貪食蛇");
-        Problem prb33 = new ProblemSlipper("<html><font color=3333ff>左腳拖鞋</font></html>");
+        Problem prb33 = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
         Problem prb34 = new Problem("placeholder", 0);
         Problem prb35 = new ProblemMineSweeper("踩地雷");
         Problem prb36 = new Problem("placeholder", 0);
 
-        //prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        //prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        //prb13.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        //prb14.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        //prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
-        //prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb13.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb14.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
+        prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
 
-        //prbSnake.addDependence(prb11);
+        prbSnake.addDependence(prb11);
 
 
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);

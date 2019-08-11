@@ -1,0 +1,210 @@
+{
+  "name": "消失的蠑螈",
+  "fuzzy": false,
+  "answer": "B",
+  "points": {
+    "B": 400
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "消失的蠑螈 (400pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "消失的蠑螈 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "福德是一個業餘的蠑螈愛好者，他的興趣是帶著他的蠑螈到迪士尼樂園散步。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 5, 10, 19",
+          "content": "/res/images/tommy.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "image",
+          "constraints": "0, 0, 19, 19",
+          "content": "/res/images/disney.jpg",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "消失的蠑螈 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 17",
+          "content": "有一天，福德最喜歡的藍色蠑螈在迪士尼樂園走丟了。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/worried_face.png",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "7, 18, 10, 19",
+          "content": "心急的福德(示意圖)\u25b6",
+          "properties": {
+            "textsize": "24",
+            "textsizefull": "36"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "消失的蠑螈 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 17",
+          "content": "「幸好我今天有帶火雞。」\n\n福德把火雞從書包拿出來，想讓牠幫他尋找藍色蠑螈。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/idea.png",
+          "properties": {}
+        },
+
+        {
+          "widget": "jlabel",
+          "constraints": "6, 18, 10, 19",
+          "content": "靈光乍現的福德(示意圖)\u25b6",
+          "properties": {
+            "textsize": "24",
+            "textsizefull": "36"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "消失的蠑螈 (400pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "但福德不會成功，因為下列何者是唯一能分辨藍色的鳥類？\n(A) 白頭翁\n(B) 貓頭鷹\n(C) 麻雀\n(D) 企鵝",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution":  {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "消失的蠑螈 (400pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "center": "true",
+          "textbold": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 13, 19",
+        "content": "但福德不會成功，因為下列何者是唯一能分辨藍色的鳥類？\n(A) 白頭翁\n(B) 貓頭鷹\n(C) 麻雀\n(D) 企鵝",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "14, 11, 19, 19",
+        "content": "B",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
+  }
+}

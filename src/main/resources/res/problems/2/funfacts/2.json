@@ -1,10 +1,11 @@
 {
   "name": "拉鍊的原理",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "D",
   "points": {
-    "B": 150
+    "D": 150
   },
+  "duration": 10,
   "pages": [
     {
       "type": 1,
@@ -19,7 +20,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "超級正音班 (250pt)",
+          "content": "拉鍊的原理 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -43,9 +44,106 @@
           "properties": {}
         }
       ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "拉鍊的原理 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "拉鏈可分為鏈帶、鏈牙和拉頭三個部份。拉起拉鍊時，拉頭左右的斜面，會使得鏈牙折彎，如齒輪般一樣緊緊合起。因此，透過拉頭的滑動，能讓鏈牙緊咬或分離。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/zipper.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "拉鍊的原理 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 19, 19",
+          "content": "請問這是什麼\n(A) 鏈帶\n(B) 鍊牙\n(C) 拉頭\n(D) 四川",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 5, 10, 19",
+          "content": "/res/images/zipper_sichuan.png",
+          "properties": {}
+        }
+      ]
     }
   ],
   "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "拉鍊的原理 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "center": "true",
+          "textbold": "true"
+        }
+      },
+      {
+        "widget": "image",
+        "constraints": "1, 5, 10, 19",
+        "content": "/res/images/zipper_sichuan_big.png",
+        "properties": {}
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "11, 5, 19, 19",
+        "content": "(D) 四川",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      }
+    ]
 
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "市場與螃蟹",
+  "name": "經濟學與螃蟹",
   "fuzzy": false,
   "answer": "C",
   "points": {
@@ -71,8 +71,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 9, 19",
-          "content": "右圖是台灣的環狀螃蟹市場供需，其中S為供給，D為需求。若生產每單位環狀螃蟹所製造的廢水會對社會造成價值E元的損失，請問當政府對市場採行自由放任的政策時，經濟福祉是多少？\n(A)14\t(B)a+b\n(C)a-d\t(D)a+b+c-d",
+          "constraints": "1, 5, 10, 19",
+          "content": "右圖是三份工作每小時獲得的環狀螃蟹數量，選擇乙和丙工作的機會成本分別是多少？\n(A) 90, 80\n(B) 90, 170\n(C) 90, 90\n(D) 170, 170     (環狀螃蟹/hr)",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -80,8 +80,8 @@
         },
         {
           "widget": "image",
-          "constraints": "10, 5, 19, 19",
-          "content": "/res/images/graph1.png",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/economy101.png",
           "properties": {}
         }
       ]
@@ -104,8 +104,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 9, 17",
-        "content": "右圖是台灣的環狀螃蟹市場供需，其中S為供給，D為需求。若生產每單位環狀螃蟹所製造的廢水會對社會造成價值E元的損失，請問當政府對市場採行自由放任的政策時，經濟福祉是多少？\n(A)14\t(B)a+b\n(C)a-d\t(D)a+b+c-d",
+        "constraints": "1, 5, 10, 15",
+        "content": "右圖是三份工作每小時獲得的環狀螃蟹數量，選擇乙和丙工作的機會成本分別是多少？\n(A) 90, 80\n(B) 90, 170\n(C) 90, 90\n(D) 170, 170     (環狀螃蟹/hr)",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
@@ -113,13 +113,13 @@
       },
       {
         "widget": "image",
-        "constraints": "10, 5, 19, 19",
-        "content": "/res/images/graph1.png",
+        "constraints": "11, 5, 19, 19",
+        "content": "/res/images/economy101.png",
         "properties": {}
       },
       {
         "widget": "jlabel",
-        "constraints": "0, 18, 9, 19",
+        "constraints": "1, 16, 10, 19",
         "content": "C",
         "properties": {
           "textsize": "50",
@@ -130,5 +130,83 @@
         }
       }
     ]
-  }
+  },
+  "deprecated": [
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "市場與螃蟹 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 9, 19",
+          "content": "右圖是台灣的環狀螃蟹市場供需，其中S為供給，D為需求。若生產每單位環狀螃蟹所製造的廢水會對社會造成價值E元的損失，請問當政府對市場採行自由放任的政策時，經濟福祉是多少？\n(A)14\t(B)a+b\n(C)a-d\t(D)a+b+c-d",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "10, 5, 19, 19",
+          "content": "/res/images/graph1.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "市場與螃蟹 (600pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "textbold": "true",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 9, 17",
+          "content": "右圖是台灣的環狀螃蟹市場供需，其中S為供給，D為需求。若生產每單位環狀螃蟹所製造的廢水會對社會造成價值E元的損失，請問當政府對市場採行自由放任的政策時，經濟福祉是多少？\n(A)14\t(B)a+b\n(C)a-d\t(D)a+b+c-d",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "10, 5, 19, 19",
+          "content": "/res/images/graph1.png",
+          "properties": {}
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "0, 18, 9, 19",
+          "content": "C",
+          "properties": {
+            "textsize": "50",
+            "textsizefull": "75",
+            "textcolor": "00ff00",
+            "center": "true",
+            "textbold": "true"
+          }
+        }
+      ]
+    }
+  ]
 }

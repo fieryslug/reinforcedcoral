@@ -411,7 +411,7 @@ public class PanelGame extends PanelPrime {
             this.answerSequence.clear();
 
             this.currentPageNumber = 0;
-            double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857}};
+            double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.14275, 0.14275, 0.14275, 0.14275, 0.14275, 0.14275, 0.14275}};
             this.panelInteriorMenu.removeAll();
             this.panelInteriorMenu.setLayout(new TableLayout(size));
 

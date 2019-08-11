@@ -1,0 +1,81 @@
+{
+  "name": "害羞鯊魚",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 250
+  },
+  "duration": 10,
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "害羞鯊魚 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "害羞鯊魚 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 19",
+          "content": "鯊魚一分鐘心跳大約幾下?？\n(A) 9\n(B) 32\n(C) 62\n(D) 150",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+  "type": 62,
+  "final": false,
+  "elements": [
+    {
+      "widget": "jlabel",
+      "constraints": "0, 0, 19, 4",
+      "content": "害羞鯊魚 (250pt)",
+      "properties": {
+        "textsize": "40",
+        "textsizefull": "60",
+        "center": "true",
+        "textbold": "true"
+      }
+    },
+    {
+      "widget": "jtextarea",
+      "constraints": "1, 5, 10, 19",
+      "content": "鯊魚一分鐘心跳大約幾下?？\n(A) 9\n(B) 32\n(C) 62\n(D) 150",
+      "properties": {
+        "textsize": "30",
+        "textsizefull": "45"
+      }
+    },
+    {
+      "widget": "jlabel",
+      "constraints": "11, 11, 19, 19",
+      "content": "A",
+      "properties": {
+        "textsize": "80",
+        "textsizefull": "120",
+        "center": "true",
+        "textbold": "true",
+        "textcolor": "00ff00"
+      }
+    }
+  ]
+}
+}
