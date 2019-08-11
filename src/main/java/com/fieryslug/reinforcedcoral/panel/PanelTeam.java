@@ -119,6 +119,13 @@ public class PanelTeam extends JPanel {
         this.labelName.setForeground(holder.getColor("team" + this.where + "_text"));
         this.labelScore.setForeground(holder.getColor("team" + this.where + "_score"));
 
+        if (this.team.hasPrivilege) {
+            setBackground(holder.getColor("team_privilege"));
+            setBorder(BorderFactory.createLineBorder(holder.getColor("team_privilege_border"), 3));
+            this.labelName.setForeground(holder.getColor("team_privilege_text"));
+            this.labelScore.setForeground(holder.getColor("team_privilege_score"));
+        }
+
     }
 
 }

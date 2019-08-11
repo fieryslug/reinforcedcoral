@@ -349,6 +349,7 @@ public class PanelGame extends PanelPrime {
     public void enter() {
 
         removeAll();
+
         this.frameWidth = this.parent.getContentPane().getWidth();
         this.frameHeight = this.parent.getContentPane().getHeight();
 
@@ -391,8 +392,12 @@ public class PanelGame extends PanelPrime {
             Team team = this.parent.game.teams.get(i);
             if (team.hasPrivilege) {
                 panel.setBackground(holder.getColor("team_privilege"));
+                panel.labelName.setForeground(holder.getColor("team_privilege_text"));
+                panel.labelScore.setForeground(holder.getColor("team_privilege_score"));
             } else {
                 panel.setBackground(holder.getColor("team"+(i+1)));
+                panel.labelName.setForeground(holder.getColor("team" + (i + 1) + "_text"));
+                panel.labelScore.setForeground(holder.getColor("team" + (i + 1) + "_score"));
             }
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
         }
@@ -406,7 +411,7 @@ public class PanelGame extends PanelPrime {
             this.answerSequence.clear();
 
             this.currentPageNumber = 0;
-            double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.14286, 0.14286, 0.14286, 0.14286, 0.14286, 0.14286, 0.14286}};
+            double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857}};
             this.panelInteriorMenu.removeAll();
             this.panelInteriorMenu.setLayout(new TableLayout(size));
 
@@ -610,11 +615,13 @@ public class PanelGame extends PanelPrime {
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
         }
+        applyTexture();
         this.refresh();
     }
 
     @Override
     public void refresh() {
+        applyTexture();
         this.frameWidth = this.parent.getContentPane().getWidth();
         this.frameHeight = this.parent.getContentPane().getHeight();
         this.boxWidth = this.frameWidth / 2 - 10;

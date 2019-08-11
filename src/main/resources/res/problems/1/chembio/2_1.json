@@ -1,9 +1,9 @@
 {
   "name": "餐桌上的生物",
   "fuzzy": "false",
-  "answer": "C",
+  "answer": "B",
   "points": {
-    "C": "250"
+    "B": "250"
   },
   "pages": [
     {
@@ -84,7 +84,7 @@
       {
         "widget": "jlabel",
         "constraints": "10, 10, 19, 19",
-        "content": "C",
+        "content": "B",
         "properties": {
           "textsize": "80",
           "textsizefull": "120",

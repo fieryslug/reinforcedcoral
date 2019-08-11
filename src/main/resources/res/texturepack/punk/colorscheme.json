@@ -1,0 +1,118 @@
+{
+  "background": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "text": {
+    "r": 0,
+    "g": 255,
+    "b": 0
+  },
+  "interior": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "team": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "team_privilege": {
+    "r": 255,
+    "g": 255,
+    "b": 255
+  },
+  "team_privilege_text": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "team_privilege_score": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "team_locked": {
+    "r": 40,
+    "g": 40,
+    "b": 40
+  },
+  "team_border": {
+    "r": 0,
+    "g": 0,
+    "b": 255
+  },
+  "team_text": {
+    "r": 246,
+    "g": 246,
+    "b": 246
+  },
+  "title": {
+    "r": 0,
+    "g": 0,
+    "b": 255
+  },
+  "title_border": {
+    "r": 0,
+    "g": 0,
+    "b": 255
+  },
+  "title_text": {
+    "r": 255,
+    "g": 255,
+    "b": 255
+  },
+  "problem": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "problem_border": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "problem_text": {
+    "r": 0,
+    "g": 255,
+    "b": 0
+  },
+  "problem_hover": {
+    "r": 255,
+    "g": 255,
+    "b": 255
+  },
+  "problem_hover_text": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "problem_disabled": {
+    "r": 50,
+    "g": 50,
+    "b": 50
+  },
+  "problem_preenabled": {
+    "r": 50,
+    "g": 50,
+    "b": 100
+  },
+  "problem_selected_border": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "problem_selected": {
+    "r": 255,
+    "g": 255,
+    "b": 255
+  },
+  "countdown": {
+    "r": 246,
+    "g": 246,
+    "b": 246
+  }
+
+}

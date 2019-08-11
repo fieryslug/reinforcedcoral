@@ -6,13 +6,10 @@ import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
 
-import javax.media.Manager;
-import javax.media.Player;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 
 //import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 
@@ -20,6 +17,7 @@ public class PanelTitle extends PanelPrime {
 
     public JButton buttonStart;
     public JButton buttonSettings;
+    public JButton buttonThemes;
     public JLabel labelTitle;
 
     public JButton buttontest;
@@ -56,6 +54,13 @@ public class PanelTitle extends PanelPrime {
         buttonSettings.setPreferredSize(new Dimension(350, 50));
         buttonSettings.setFocusPainted(false);
 
+        buttonThemes = new JButton();
+        buttonThemes.setText("Themes");
+        buttonThemes.setFont(Reference.MONOSPACED45);
+        buttonThemes.setForeground(Reference.WHITE);
+        buttonThemes.setBackground(Reference.BLAZE);
+        buttonThemes.setPreferredSize(new Dimension(250, 50));
+        buttonThemes.setFocusPainted(false);
         buttontest = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
 
 
@@ -65,6 +70,8 @@ public class PanelTitle extends PanelPrime {
         add(buttonStart);
         add(FuncBox.blankLabel(2000, 30));
         add(buttonSettings);
+        add(FuncBox.blankLabel(2000, 30));
+        add(buttonThemes);
         //add(buttontest);
 
     }
@@ -86,6 +93,14 @@ public class PanelTitle extends PanelPrime {
                         parent.switchPanel(PanelTitle.this, parent.panelSettings);
                     }
                 }
+        );
+        this.buttonThemes.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                        parent.switchPanel(PanelTitle.this, parent.panelThemes);
+                    }
+            }
         );
     }
 

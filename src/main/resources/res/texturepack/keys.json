@@ -41,11 +41,19 @@
 
 
     "team",
-    "team_privilege",
-    "team_locked",
     "team_border",
     "team_text",
     "team_score",
+
+    "team_privilege",
+    "team_privilege_text",
+    "team_privilege_border",
+    "team_privilege_score",
+
+    "team_locked",
+    "team_locked_text",
+    "team_locked_border",
+    "team_locked_score",
 
     "teamu",
     "teamd",
@@ -131,7 +139,9 @@
       "team1_border",
       "team2_border",
       "team3_border",
-      "team4_border"
+      "team4_border",
+      "team_privilege_border",
+      "team_locked_border"
     ],
     "team_text": [
       "team1_text",
@@ -141,14 +151,20 @@
       "team1_score",
       "team2_score",
       "team3_score",
-      "team4_score"
+      "team4_score",
+      "team_privilege_text",
+      "team_privilege_score",
+      "team_locked_text",
+      "team_locked_score"
 
     ],
     "team_score": [
       "team1_score",
       "team2_score",
       "team3_score",
-      "team4_score"
+      "team4_score",
+      "team_locked_score",
+      "team_privilege_score"
     ],
     "teamu": [
       "team1",

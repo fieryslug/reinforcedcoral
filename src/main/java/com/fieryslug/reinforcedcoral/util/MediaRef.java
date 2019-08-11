@@ -39,11 +39,23 @@ public class MediaRef {
     public static final String SUPERCELL = "/res/sound/supercell.wav";
     public static final String EXPLOSION = "/res/sound/explosion.wav";
 
+    public static final Map<String, Image> TEXTURE_ICON_MAP = new HashMap<>();
+
+    static {
+        String prefix = "/res/images/texture_preview/";
+        TEXTURE_ICON_MAP.put("caramel", getImage(prefix + "caramel.png"));
+        TEXTURE_ICON_MAP.put("balloon", getImage(prefix + "balloon.png"));
+        TEXTURE_ICON_MAP.put("classic", getImage(prefix + "classic.png"));
+        TEXTURE_ICON_MAP.put("ocean", getImage(prefix + "ocean.png"));
+        TEXTURE_ICON_MAP.put("eggplant", getImage(prefix + "eggplant.png"));
+        TEXTURE_ICON_MAP.put("punk", getImage(prefix + "punk.png"));
+    }
+
 
     public static Image getImage(String path) {
 
         Image image = pathImageCache.get(path);
-        if(image != null) return image;
+        if (image != null) return image;
 
         try {
             image = ImageIO.read(MediaRef.class.getResource(path));
@@ -51,7 +63,7 @@ public class MediaRef {
             System.out.println("Error occurred while loading image: " + path);
             e.printStackTrace();
         }
-        if(image != null) pathImageCache.put(path, image);
+        if (image != null) pathImageCache.put(path, image);
         return image;
     }
 
