@@ -11,5 +11,9 @@ public abstract class PanelMiniGame extends JPanel {
 
     }
 
+    public void applyTexture() {
+
+    }
+
 
 }

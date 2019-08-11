@@ -35,26 +35,26 @@ public class Widget {
     public int getTextSize() {
         String s = properties.get(KEY_TEXT_SIZE);
         if(s == null) return 40;
-        return Integer.valueOf(s);
+        return Integer.parseInt(s);
     }
 
     public int getTextSizeFull() {
         String s = properties.get(KEY_TEXT_SIZE_FULL);
         if(s == null) return 60;
-        return Integer.valueOf(s);
+        return Integer.parseInt(s);
     }
 
     public boolean getBold() {
         String s = properties.get(KEY_TEXT_BOLD);
-        System.out.println("BOLD: " + s);
-        if(s == null) return false;
-        return Boolean.valueOf(s);
+        //System.out.println("BOLD: " + s);
+        if(s == null) return true;
+        return Boolean.parseBoolean(s);
     }
 
     public boolean getCenter() {
         String s = properties.get(KEY_CENTER);
         if(s == null) return false;
-        return Boolean.valueOf(s);
+        return Boolean.parseBoolean(s);
     }
 
     public Color getTextColor() {
@@ -73,6 +73,11 @@ public class Widget {
 
         String fontName = getFontName();
         int size = full ? getTextSizeFull() : getTextSize();
+        if (getBold())
+            return FontRef.getFont(getFontName(), Font.BOLD, size);
+        else
+            return FontRef.getFont(getFontName(), Font.PLAIN, size);
+        /*
         if (getBold()) {
             String boldFontName = FontRef.BOLD_FONT_MAP.get(fontName);
             if(boldFontName == null)
@@ -82,6 +87,8 @@ public class Widget {
 
         }
         return FontRef.getFont(fontName, Font.PLAIN, size);
+
+        */
     }
 
     public TableLayoutConstraints getConstraints() {
@@ -136,8 +143,5 @@ public class Widget {
             this.id = id;
 
         }
-
-
-
     }
 }

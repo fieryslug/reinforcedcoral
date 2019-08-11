@@ -3,6 +3,8 @@ package com.fieryslug.reinforcedcoral.core;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
 
+import javax.swing.SwingUtilities;
+
 public class ProblemSlipper extends Problem {
 
     public ProblemSlipper(String name) {
@@ -15,7 +17,13 @@ public class ProblemSlipper extends Problem {
     public boolean onClick(PanelGame panelGame) {
 
         ButtonProblem buttonProblem = panelGame.problemButtonMap.get(this);
-        buttonProblem.setState(1);
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                buttonProblem.setState(1);
+            }
+        });
+
         return true;
 
     }

@@ -837,8 +837,6 @@ public class PanelGame extends PanelPrime {
         TextureHolder holder = this.parent.textureHolder;
         for (ButtonProblem button : this.buttonProblemMap.keySet()) {
             button.setIcon(null);
-            Color colorProblem = holder.getColor("problem");
-            new Color(236, 167, 44);
             button.setBackground(holder.getColor("problem"));
 
             button.setBorder(BorderFactory.createLineBorder(holder.getColor("problem_border"), 3));
@@ -862,6 +860,12 @@ public class PanelGame extends PanelPrime {
         this.panelInteriorPage.setBackground(holder.getColor("interior"));
         this.panelBanner.setBackground(holder.getColor("interior"));
         this.labelCountDown.setForeground(holder.getColor("countdown"));
+
+        if (this.phase == GamePhase.SPECIAL) {
+            if (this.currentMinigamePanel != null) {
+                this.currentMinigamePanel.applyTexture();
+            }
+        }
 
     }
 

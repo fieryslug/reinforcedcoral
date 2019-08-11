@@ -1,5 +1,19 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_6.0=== 8/11 25pm
+-added 沖繩驚魂記[2/funfacts/5]
+-modified 孝順的彼得->孝順的總召[1/socio/5_1]
+-modified 大怒神[2/nehs/5]
+-bug fix: snake
+
+===gradle_5.3=== 8/11 13pm
+-added 拉鍊的原理[2/funfacts/2]
+-added 消失的蠑螈[2/funfacts/3]
+-added 害羞鯊魚[2/funfacts/4]
+-modified 市場與螃蟹->經濟學與螃蟹[1/socio/3]
+
+
+
 ===gradle_5.2=== 8/10 25pm
 -new feature: texture packs
 -added texture packs: ocean, eggplant, classic, caramel, balloon
@@ -24,7 +38,7 @@ visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 -added [2/nehs2/6] (WIP)
 -removed 需要四張圖的歷史[1/socio/5]; added 孝順的彼得[1/socio/5_1]
 -removed p不發音[1/lit/4]; added 台語[1/lit/4_1]
--modified 八寶粥vs.鱷魚[1/physmat/6]
+-modified 八寶粥vs.鱷魚[1/physmath/6]
 
 
 ===gradle_4.3=== 8/9 07am

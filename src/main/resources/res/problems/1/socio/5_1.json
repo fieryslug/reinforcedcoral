@@ -1,5 +1,5 @@
 {
-  "name": "孝順的彼得",
+  "name": "孝順的總召",
   "fuzzy": false,
   "answer": "C",
   "points": {
@@ -9,7 +9,7 @@
     {
       "type": 1,
       "res": [
-        "孝順的彼得 (250pt)"
+        "孝順的總召 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "孝順的彼得 (250pt)",
+          "content": "孝順的總召 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -30,7 +30,7 @@
         {
           "widget": "jtextarea",
           "constraints": "11, 5, 18, 19",
-          "content": "住在雪梨的彼得的媽媽生病了，因此他決定去坐船去買山藥。",
+          "content": "住在雪梨的總召的媽媽生病了，因此他決定去坐船去買山藥。",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "孝順的彼得 (250pt)",
+          "content": "孝順的總召 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -62,7 +62,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 10, 19",
-          "content": "如果彼得打算利用風力前進，他應該會朝哪個方向航行？\n\n(A) 西南方\n(B) 西北方\n(C) 東南方\n(D) 東北方",
+          "content": "如果總召打算利用風力前進，他應該會朝哪個方向航行？\n\n(A) 西南方\n(B) 西北方\n(C) 東南方\n(D) 東北方",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -78,7 +78,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "孝順的彼得 (250pt)",
+        "content": "孝順的總召 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -89,7 +89,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 10, 19",
-        "content": "如果彼得打算利用風力前進，他應該會朝哪個方向航行？\n\n(A) 西南方\n(B) 西北方\n(C) 東南方\n(D) 東北方",
+        "content": "如果總召打算利用風力前進，他應該會朝哪個方向航行？\n\n(A) 西南方\n(B) 西北方\n(C) 東南方\n(D) 東北方",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

@@ -25,6 +25,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -151,11 +152,14 @@ public class PanelSnake extends PanelMiniGame {
                 panelGame.parent.switchPanel(panelGame, panelGame);
                 panelGame.problemButtonMap.get(parentProblem).setState(1);
 
+
+                /*
                 for (Team team : panelGame.parent.game.teams) {
                     PanelTeam panelTeam = panelGame.teamPanelMap.get(team);
                     panelTeam.labelName.setForeground(Reference.BLAZE);
                     panelTeam.labelScore.setForeground(Reference.BLAZE);
                 }
+                */
 
             }
         });
@@ -273,6 +277,8 @@ public class PanelSnake extends PanelMiniGame {
 
         if(this.snakesAlive > 1) {
 
+            Set<Point> pointsZero = new HashSet<>();
+
             for (int i = 0; i < 4; ++i) {
                 Snake snake = this.snakes[i];
                 Team team = this.snakeTeamMap.get(snake);
@@ -291,8 +297,9 @@ public class PanelSnake extends PanelMiniGame {
                     Point point = snake.head.getNeighbor(snake.direction, 50, 20);
 
                     if (this.pixels[point.x][point.y].state == 1) {
-                        snake.isAlive = false;
-                        this.snakesAlive--;
+                        boolean b = snake.die();
+                        if(b)
+                            this.snakesAlive--;
                         this.textPlan.put(snake.head, "X");
                         continue;
                     }
@@ -302,8 +309,9 @@ public class PanelSnake extends PanelMiniGame {
                         snake.fruitEaten += generator.fruitWorth;
                         team.addPoints(generator.points);
                         this.panelGame.teamPanelMap.get(team).labelScore.setText(String.valueOf(team.getScore()));
-                        this.pixels[point.x][point.y].state = 0;
-                        this.freeSlots.add(point);
+                        //this.pixels[point.x][point.y].state = 0;
+                        pointsZero.add(point);
+                        //this.freeSlots.add(point);
                         this.textPlan.put(point, "");
                         generator.active = true;
                     }
@@ -329,6 +337,31 @@ public class PanelSnake extends PanelMiniGame {
 
 
             }
+
+            for (Point point : pointsZero) {
+                this.pixels[point.x][point.y].state = 0;
+                pointsZero.add(point);
+            }
+
+            for (int i = 0; i < 4; ++i) {
+                for (int j = i; j < 4; ++j) {
+                    if (i != j) {
+                        Snake snake1 = this.snakes[i];
+                        Snake snake2 = this.snakes[j];
+                        if (snake1.head.equals(snake2.head)) {
+
+                            if(snake1.die())
+                                this.snakesAlive--;
+                            if(snake2.die())
+                                this.snakesAlive--;
+
+                            this.textPlan.put(snake1.head, "X");
+
+                        }
+                    }
+                }
+            }
+
             for (int i = 0; i < 4; ++i) {
                 this.colorPlan.put(this.snakes[i].head, this.snakes[i].color);
                 this.pixels[this.snakes[i].head.x][this.snakes[i].head.y].occupied = true;
@@ -439,5 +472,17 @@ public class PanelSnake extends PanelMiniGame {
             repaint();
         }
         this.textPlan.clear();
+    }
+
+    @Override
+    public void applyTexture() {
+        int tempInt = 0;
+        for (Team team : this.panelGame.parent.game.teams) {
+
+            PanelTeam panelTeam = panelGame.teamPanelMap.get(team);
+            panelTeam.labelName.setForeground(SNAKE_COLORS[tempInt]);
+            panelTeam.labelScore.setForeground(SNAKE_COLORS[tempInt]);
+            tempInt++;
+        }
     }
 }

@@ -84,13 +84,13 @@ public class WorkTable {
         Problem prb13 = new Problem("2/nehs2/3.json");
         Problem prb14 = new Problem("2/nehs2/4.json");
         Problem prb15 = new Problem("2/nehs2/5.json");
-        Problem prb16 = new Problem("placeholder", 0);
+        Problem prb16 = new Problem("2/nehs2/6.json");
 
         Problem prb21 = new Problem("2/funfacts/1.json");
         Problem prb22 = new Problem("2/funfacts/2.json");
         Problem prb23 = new Problem("2/funfacts/3.json");
         Problem prb24 = new Problem("2/funfacts/4.json");
-        Problem prb25 = new Problem("placeholder", 0);
+        Problem prb25 = new Problem("2/funfacts/5.json");
         Problem prb26 = new Problem("placeholder", 0);
 
         Problem prb31 = new Problem("placeholder", 0);

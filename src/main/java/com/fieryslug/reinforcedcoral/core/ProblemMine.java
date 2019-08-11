@@ -60,7 +60,7 @@ public class ProblemMine extends Problem {
             }
         }, 2000);
 
-        System.out.println("hi");
+        //System.out.println("hi");
 
         return true;
     }

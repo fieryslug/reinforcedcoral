@@ -1,0 +1,81 @@
+{
+  "name": "衛生習慣",
+  "fuzzy": false,
+  "answer": "A",
+  "points": {
+    "A": 150
+  },
+  "duration": 10,
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "衛生習慣 (150pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "衛生習慣 (150pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 19",
+          "content": "什麼東西灰色、毛茸茸的、而且住在高三四班?\n\n(A) 老鼠\n(B) 無尾熊\n(C) 穿山甲\n(D) 灰太狼",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "11, 5, 19, 19",
+          "content": "/res/images/gray_wolf.png",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": true,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "衛生習慣 (150pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "center": "true",
+          "textbold": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "什麼東西灰色、毛茸茸的、而且住在高三四班?\n\n(A) 老鼠\n(B) 無尾熊\n(C) 穿山甲\n(D) 灰太狼",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "image",
+        "constraints": "11, 5, 19, 19",
+        "content": "/res/images/rats.png",
+        "properties": {}
+      }
+    ]
+  }
+}

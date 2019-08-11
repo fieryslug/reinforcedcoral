@@ -48,6 +48,7 @@ public class MediaRef {
         TEXTURE_ICON_MAP.put("classic", getImage(prefix + "classic.png"));
         TEXTURE_ICON_MAP.put("ocean", getImage(prefix + "ocean.png"));
         TEXTURE_ICON_MAP.put("eggplant", getImage(prefix + "eggplant.png"));
+        TEXTURE_ICON_MAP.put("jungle", getImage(prefix + "jungle.png"));
         TEXTURE_ICON_MAP.put("punk", getImage(prefix + "punk.png"));
     }
 
@@ -64,6 +65,7 @@ public class MediaRef {
             e.printStackTrace();
         }
         if (image != null) pathImageCache.put(path, image);
+        System.out.println("currently " + pathImageCache.size() + " images in cache.");
         return image;
     }
 

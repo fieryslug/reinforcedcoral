@@ -62,7 +62,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 10, 19",
-          "content": "請問什麼時候可以搭電梯\n(A) 受傷 \n(B) 遇到老師要搭\n(C) 需要特殊身分\n(D) 想搭就搭",
+          "content": "請問什麼時候可以搭電梯\n(A) 需要買門票 \n(B) 遇到老師要搭\n(C) 需要特殊身分\n(D) 想搭就搭",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -89,7 +89,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 10, 19",
-        "content": "請問什麼時候可以搭電梯\n(A) 受傷 \n(B) 遇到老師要搭\n(C) 需要特殊身分\n(D) 想搭就搭",
+        "content": "請問什麼時候可以搭電梯\n(A) 需要買門票 \n(B) 遇到老師要搭\n(C) 需要特殊身分\n(D) 想搭就搭",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

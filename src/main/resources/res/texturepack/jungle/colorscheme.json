@@ -1,0 +1,133 @@
+{
+  "background": {
+    "r": 41,
+    "g": 82,
+    "b": 14
+  },
+  "text": {
+    "r": 53,
+    "g": 29,
+    "b": 23
+  },
+  "interior": {
+    "r": 145,
+    "g": 89,
+    "b": 55
+  },
+  "teamu": {
+    "r": 58,
+    "g": 125,
+    "b": 54
+  },
+  "teamd": {
+    "r": 35,
+    "g": 91,
+    "b": 33
+  },
+  "team_privilege": {
+    "r": 68,
+    "g": 53,
+    "b": 91
+  },
+  "team_locked": {
+    "r": 68,
+    "g": 53,
+    "b": 91
+  },
+  "team_border": {
+    "r": 27,
+    "g": 59,
+    "b": 19
+  },
+  "teamu_text": {
+    "r": 100,
+    "g": 167,
+    "b": 124
+  },
+  "teamu_score": {
+    "r": 100,
+    "g": 167,
+    "b": 124
+  },
+  "teamd_score": {
+    "r": 100,
+    "g": 167,
+    "b": 124
+  },
+  "teamd_text": {
+    "r": 100,
+    "g": 167,
+    "b": 124
+  },
+  "title": {
+    "r": 145,
+    "g": 89,
+    "b": 55
+  },
+  "title_border": {
+    "r": 27,
+    "g": 59,
+    "b": 19
+  },
+  "title_text": {
+    "r": 89,
+    "g": 49,
+    "b": 39
+  },
+  "problem": {
+    "r": 73,
+    "g": 163,
+    "b": 47
+  },
+  "problem_border": {
+    "r": 27,
+    "g": 59,
+    "b": 19
+  },
+  "problem_text": {
+    "r": 45,
+    "g": 98,
+    "b": 31
+  },
+  "problem_hover": {
+    "r": 42,
+    "g": 192,
+    "b": 122
+  },
+  "problem_hover_border": {
+    "r": 246,
+    "g": 246,
+    "b": 246
+  },
+  "problem_hover_text": {
+    "r": 58,
+    "g": 80,
+    "b": 107
+  },
+  "problem_disabled": {
+    "r": 221,
+    "g": 219,
+    "b": 241
+  },
+  "problem_preenabled": {
+    "r": 57,
+    "g": 122,
+    "b": 37
+  },
+  "problem_selected_border": {
+    "r": 101,
+    "g": 0,
+    "b": 120
+  },
+  "countdown": {
+    "r": 246,
+    "g": 246,
+    "b": 246
+  },
+  "countdown_5": {
+    "r": 10,
+    "g": 10,
+    "b": 10
+  }
+
+}

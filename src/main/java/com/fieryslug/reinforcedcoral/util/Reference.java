@@ -8,9 +8,9 @@ public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
     public static final String VERSION = "gradle_5.3";
-    public static final int DEFAULT_GAME = 0;
+    public static final int DEFAULT_GAME = 1;
 
-    public static final String[] TEXTURE_PACKS = {"eggplant", "caramel", "classic", "balloon", "ocean", "punk"};
+    public static final String[] TEXTURE_PACKS = {"eggplant", "caramel", "classic", "balloon", "ocean", "jungle", "punk"};
     //public static final String
 
     public static final int MAGIC_PRIME = 62;

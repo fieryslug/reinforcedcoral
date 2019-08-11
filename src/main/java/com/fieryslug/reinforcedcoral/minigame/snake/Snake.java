@@ -30,6 +30,14 @@ public class Snake {
         return occupiedSlots.size();
     }
 
+    public boolean die() {
+        if(this.isAlive) {
+            this.isAlive = false;
+            return true;
+        }
+        return false;
+    }
+
 
 
 }

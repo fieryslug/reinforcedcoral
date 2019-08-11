@@ -62,12 +62,22 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 12, 19",
-          "content": "請問Ms. Wang 的 Wang怎麼發音?\n\n(A) w\u0251\u014b\n(B) ʍɐɲ\n(C) wæɳ\n(D) wæŋ",
+          "constraints": "1, 5, 10, 8",
+          "content": "請問Ms. Wang 的 Wang怎麼發音?",
           "properties": {
-            "font": "monospaced",
             "textsize": "30",
             "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 9, 10, 19",
+          "content": "(A) w\u0251\u014b\n(B) ʍɐɲ\n(C) wæɳ\n(D) wæŋ",
+          "properties": {
+            "font": "Times New Roman",
+            "textsize": "30",
+            "textsizefull": "45",
+            "textbold": "false"
           }
         }
       ]
@@ -90,11 +100,21 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 10, 19",
-        "content": "請問Ms. Wang 的 Wang怎麼發音?\n\n(A) w\u0251\u014b\n(B) ʍɐɲ\n(C) wæɳ\n(D) wæŋ",
+        "constraints": "1, 5, 10, 8",
+        "content": "請問Ms. Wang 的 Wang怎麼發音?",
         "properties": {
-          "font": "monospaced",
           "textsize": "30",
+          "textsizefull": "45"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 9, 10, 19",
+        "content": "(A) w\u0251\u014b\n(B) ʍɐɲ\n(C) wæɳ\n(D) wæŋ",
+        "properties": {
+          "font": "Times New Roman",
+          "textsize": "30",
+          "textbold": "false",
           "textsizefull": "45"
         }
       },

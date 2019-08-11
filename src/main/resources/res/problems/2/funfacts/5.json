@@ -1,0 +1,182 @@
+{
+  "name": "沖繩驚魂記",
+  "fuzzy": false,
+  "answer": "D",
+  "points": {
+    "D": 250
+  },
+  "pages": [
+    {
+      "type": 1,
+      "res": [
+        "沖繩驚魂記 (250pt)"
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "沖繩驚魂記 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 5, 10, 19",
+          "content": "/res/images/okinawa.jpg",
+          "properties": {}
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 5, 18, 19",
+          "content": "小羅想去沖繩潛水，順便帶他的寵物烏龜阿允一起去。",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "5, 5, 14, 19",
+          "content": "阿允(示意圖)",
+          "properties": {
+            "textsize": "80",
+            "textsizefull": "120",
+            "textbold": "true",
+            "textcolor": "ffffff",
+            "center": "true"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "0, 0, 19, 19",
+          "content": "/res/images/brian.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": false,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "沖繩驚魂記 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 18, 7",
+          "content": "可是在潛水到中途時，阿允突然鼻塞了！",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "image",
+          "constraints": "1, 8, 18, 19",
+          "content": "/res/images/plugged_nose.png",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "type": 62,
+      "final": true,
+      "elements": [
+        {
+          "widget": "jlabel",
+          "constraints": "0, 0, 19, 4",
+          "content": "沖繩驚魂記 (250pt)",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "1, 5, 10, 16",
+          "content": "請問小羅應該從哪裡接氧氣筒？\n(A) 龜殼\n(B) 尾巴\n(C) 弧口\n(D) 屁股",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45",
+            "textbold": "true"
+          }
+        },
+        {
+          "widget": "jlabel",
+          "constraints": "0, 17, 19, 19",
+          "content": "\u2b07快！不然小羅會哭！\u2b07",
+          "properties": {
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true",
+            "textcolor": "ff0000"
+          }
+        }
+      ]
+    }
+  ],
+  "solution": {
+    "type": 62,
+    "final": false,
+    "elements": [
+      {
+        "widget": "jlabel",
+        "constraints": "11, 11, 19, 19",
+        "content": "D",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "center": "true",
+          "textbold": "true",
+          "textcolor": "00ff00"
+        }
+      },
+      {
+        "widget": "jlabel",
+        "constraints": "0, 0, 19, 4",
+        "content": "沖繩驚魂記 (250pt)",
+        "properties": {
+          "textsize": "40",
+          "textsizefull": "60",
+          "center": "true",
+          "textbold": "true"
+        }
+      },
+      {
+        "widget": "jtextarea",
+        "constraints": "1, 5, 10, 19",
+        "content": "請問小羅應該從哪裡接氧氣筒？\n(A) 龜殼\n(B) 尾巴\n(C) 弧口\n(D) 屁股",
+        "properties": {
+          "textsize": "30",
+          "textsizefull": "45",
+          "textbold": "true"
+        }
+      }
+    ]
+  }
+}

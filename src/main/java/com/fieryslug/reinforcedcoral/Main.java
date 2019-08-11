@@ -43,6 +43,7 @@ public class Main {
     public static void start() {
         System.out.println("fieryslug is back");
 
+
         Game game = null;
         if (Reference.DEFAULT_GAME == 0)
             game = WorkTable.getGame();

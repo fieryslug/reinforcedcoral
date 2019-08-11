@@ -103,6 +103,7 @@ public class ButtonColorized extends ButtonProblem {
                 this.label.setForeground(holder.getColor("problem_disabled_text"));
                 setBorder(FuncBox.getLineBorder(holder.getColor("problem_disabled_border"), 3));
             }
+
         }
         if(this.state == -1) {
             setEnabled(false);

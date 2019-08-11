@@ -58,7 +58,7 @@ public class Problem {
             this.answer = ControlKey.stringToArray(answerString);
 
             this.duration = jsonObject.optInt("duration", 15);
-            System.out.println(this.name + ":" + this.duration);
+            //System.out.println(this.name + ":" + this.duration);
 
             JSONObject pointsObj = jsonObject.getJSONObject("points");
             Set<String> pointsKeys = pointsObj.keySet();

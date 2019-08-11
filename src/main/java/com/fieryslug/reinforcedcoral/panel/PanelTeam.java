@@ -114,7 +114,8 @@ public class PanelTeam extends JPanel {
     public void applyTexture(TextureHolder holder) {
 
         setBackground(holder.getColor("team" + this.where));
-        System.out.println(holder.getColor("team" + this.where));
+        //System.out.println(holder.getColor("team" + this.where));
+        //System.out.println();
         setBorder(BorderFactory.createLineBorder(holder.getColor("team" + this.where + "_border"), 3));
         this.labelName.setForeground(holder.getColor("team" + this.where + "_text"));
         this.labelScore.setForeground(holder.getColor("team" + this.where + "_score"));

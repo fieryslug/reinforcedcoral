@@ -71,7 +71,7 @@ public class PanelThemes extends PanelPrime {
         this.comboBox.getEditor().getEditorComponent().setBackground(Reference.DARKDARKBLUE);
         this.comboBox.setSelectedItem(Preference.texture);
 
-        this.buttonConfirm = new JButton("confirm");
+        this.buttonConfirm = new JButton("ok");
         this.buttonConfirm.setBackground(Reference.BLAZE);
         this.buttonConfirm.setForeground(Reference.WHITE);
         this.buttonConfirm.setAlignmentX(CENTER_ALIGNMENT);

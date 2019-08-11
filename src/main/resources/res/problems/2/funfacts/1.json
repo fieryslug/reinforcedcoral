@@ -35,9 +35,10 @@
           "properties": {
             "textsize": "60",
             "textsizefull": "90",
-            "textcolor": "aaaaaa",
+            "textcolor": "777777",
             "center": "true",
-            "font": "kaiuasefeasfasef"
+            "font": "DFKai-SB",
+            "textbold": "false"
           }
         },
         {
@@ -93,7 +94,7 @@
         {
           "widget": "jtextarea",
           "constraints": "1, 5, 10, 19",
-          "content": "哪加公司一開始從事造紙業?\n(A) 燦坤\n(B) Hitachi\n(C) IKEA\n(D) Nokia",
+          "content": "哪家公司一開始從事造紙業?\n(A) 燦坤\n(B) Hitachi\n(C) IKEA\n(D) Nokia",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -120,7 +121,7 @@
       {
         "widget": "jtextarea",
         "constraints": "1, 5, 10, 19",
-        "content": "哪加公司一開始從事造紙業?\n(A) 燦坤\n(B) Hitachi\n(C) IKEA\n(D) Nokia",
+        "content": "哪家公司一開始從事造紙業?\n(A) 燦坤\n(B) Hitachi\n(C) IKEA\n(D) Nokia",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"

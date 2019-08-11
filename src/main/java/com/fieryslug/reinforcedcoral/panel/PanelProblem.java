@@ -258,7 +258,7 @@ public class PanelProblem extends JPanel {
                 this.areaDescription.setFont(FontRef.TAIPEI45);
             }
             if(this.page.type == 1) {
-                this.labelTitle.setFont(FontRef.TAIPEI120);
+                this.labelTitle.setFont(FontRef.TAIPEI120BOLD);
             }
             if(this.page.type == 2) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
@@ -303,7 +303,7 @@ public class PanelProblem extends JPanel {
                 this.areaDescription.setFont(FontRef.TAIPEI30);
             }
             if(this.page.type == 1) {
-                this.labelTitle.setFont(FontRef.TAIPEI80);
+                this.labelTitle.setFont(FontRef.TAIPEI80BOLD);
             }
             if(this.page.type == 2) {
                 this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
@@ -354,7 +354,7 @@ public class PanelProblem extends JPanel {
                     int widthBoxes = constraints.col2 - constraints.col1 + 1;
                     int heightBoxes = constraints.row2 - constraints.row1 + 1;
                     Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
-                    System.out.println();
+                    //System.out.println();
                     label.setIcon(new ImageIcon(image1));
 
                 }

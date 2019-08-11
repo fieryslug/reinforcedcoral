@@ -16,7 +16,6 @@ public class FontChangerLabel extends JLabel {
     public FontChangerLabel() {
 
         super();
-        System.out.println("EEEEEE");
         setFocusable(true);
 
         addMouseWheelListener(new FontChangingListener(this));
