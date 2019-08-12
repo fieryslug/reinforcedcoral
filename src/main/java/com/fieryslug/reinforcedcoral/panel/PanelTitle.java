@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.panel;
 
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
@@ -35,12 +36,12 @@ public class PanelTitle extends PanelPrime {
 
         labelTitle = new JLabel();
         labelTitle.setText("Zhī Shì Wáng II");
-        labelTitle.setFont(Reference.MONOSPACED60BOLD);
+        labelTitle.setFont(FontRef.MONOSPACED60BOLD);
         labelTitle.setForeground(Reference.WHITE);
 
         buttonStart = new JButton();
         buttonStart.setText("Reionize Mitochondrea");
-        buttonStart.setFont(Reference.MONOSPACED45);
+        buttonStart.setFont(FontRef.MONOSPACED45);
         buttonStart.setForeground(Reference.AQUA);
         buttonStart.setBackground(Reference.DARKRED);
         buttonStart.setPreferredSize(new Dimension(650, 50));
@@ -48,7 +49,7 @@ public class PanelTitle extends PanelPrime {
 
         buttonSettings = new JButton();
         buttonSettings.setText("Settings");
-        buttonSettings.setFont(Reference.MONOSPACED45);
+        buttonSettings.setFont(FontRef.MONOSPACED45);
         buttonSettings.setForeground(Reference.BLACK);
         buttonSettings.setBackground(Reference.GRAY);
         buttonSettings.setPreferredSize(new Dimension(350, 50));
@@ -56,7 +57,7 @@ public class PanelTitle extends PanelPrime {
 
         buttonThemes = new JButton();
         buttonThemes.setText("Themes");
-        buttonThemes.setFont(Reference.MONOSPACED45);
+        buttonThemes.setFont(FontRef.MONOSPACED45);
         buttonThemes.setForeground(Reference.WHITE);
         buttonThemes.setBackground(Reference.BLAZE);
         buttonThemes.setPreferredSize(new Dimension(250, 50));

@@ -90,10 +90,10 @@ public class PanelTeam extends JPanel {
     public void enter(boolean isFullScreen) {
 
         if(isFullScreen) {
-            this.labelState.setFont(Reference.JHENGHEI60BOLD);
+            this.labelState.setFont(FontRef.JHENGHEI60BOLD);
         }
         else {
-            this.labelState.setFont(Reference.JHENGHEI40BOLD);
+            this.labelState.setFont(FontRef.JHENGHEI40BOLD);
         }
 
     }
