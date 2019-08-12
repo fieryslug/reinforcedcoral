@@ -263,7 +263,10 @@ public class PanelGame extends PanelPrime {
                         PanelGame.this.currentProblem = null;
                         PanelGame.this.currentPageNumber = 0;
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+
+                        System.out.println("ffffffffffffffff");
                         panelInteriorPage.clearSounds();
+
                     } else {
                         PanelGame.this.currentPageNumber--;
                         PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
@@ -797,7 +800,8 @@ public class PanelGame extends PanelPrime {
                             this.buttonSelected.setButtonSelected(false);
                             this.buttonSelected = (ButtonProblem) button1;
                             System.out.println("playsound");
-                            MediaRef.playWav(MediaRef.APPLE1);
+                            //MediaRef.playWav(MediaRef.APPLE1);
+                            MediaRef.playSound(MediaRef.APPLE1);
                         }
                     }
                     this.buttonSelected.setButtonSelected(true);
@@ -829,7 +833,8 @@ public class PanelGame extends PanelPrime {
                     }
                     */
                     if (flag) {
-                        MediaRef.playWav(MediaRef.SUPERCELL);
+                        //MediaRef.playWav(MediaRef.SUPERCELL);
+                        MediaRef.playSound(MediaRef.SUPERCELL);
                         this.teamLockedMap.put(team, true);
                         this.teamPanelMap.get(team).labelState.setForeground(Reference.AQUA);
                         this.teamPanelMap.get(team).setBackground(Reference.DARKAQUA);

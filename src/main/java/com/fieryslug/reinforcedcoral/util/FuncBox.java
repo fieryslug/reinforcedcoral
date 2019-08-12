@@ -1,6 +1,5 @@
 package com.fieryslug.reinforcedcoral.util;
 
-import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -14,7 +13,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -29,6 +28,8 @@ public class FuncBox {
     public static JLabel blankLabel(int width, int height) {
         JLabel label = new JLabel();
         label.setPreferredSize(new Dimension(width, height));
+
+
         return label;
     }
 

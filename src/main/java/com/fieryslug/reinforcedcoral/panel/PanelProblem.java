@@ -11,8 +11,8 @@ import com.fieryslug.reinforcedcoral.widget.FontChangerTextArea;
 //import layout.TableLayoutConstraints;
 import info.clearthought.layout.TableLayout;
 import info.clearthought.layout.TableLayoutConstraints;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+//import sun.audio.AudioPlayer;
+//import sun.audio.AudioStream;
 
 import javax.swing.*;
 import javax.xml.soap.Text;
@@ -35,7 +35,8 @@ public class PanelProblem extends JPanel {
 
     public Map<Widget, JComponent> widgetInstanceMap;
 
-    private Map<String, AudioStream> playingAudios;
+    //private Map<String, AudioStream> playingAudios;
+    private Map<String, AePlayWave> playingAePlayWaves;
 
     public PanelProblem(FrameCoral parent) {
 
@@ -66,7 +67,8 @@ public class PanelProblem extends JPanel {
         this.labelImage = new JLabel();
         this.labelImage.setBackground(Reference.BLACK);
 
-        this.playingAudios = new HashMap<>();
+        //this.playingAudios = new HashMap<>();
+        this.playingAePlayWaves = new HashMap<>();
 
         //setBorder(FontRef.BEVELGREEN);
 
@@ -233,17 +235,30 @@ public class PanelProblem extends JPanel {
             add(label, widget.constraints);
         }
         if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+            /*
             AudioStream audioStreamOld = this.playingAudios.get(widget.content);
             if (audioStreamOld != null) {
                 AudioPlayer.player.stop(audioStreamOld);
                 this.playingAudios.remove(widget.content);
             }
-            AudioStream audioStream = MediaRef.playWav(widget.content);
-            this.playingAudios.put(widget.content, audioStream);
+            */
+
+            AePlayWave aePlayWaveOld = this.playingAePlayWaves.get(widget.content);
+            if (aePlayWaveOld != null) {
+                aePlayWaveOld.stopSound();
+                this.playingAePlayWaves.remove(widget.content);
+            }
+            //AudioStream audioStream = MediaRef.playWav(widget.content);
+            AePlayWave aePlayWave = MediaRef.playSound(widget.content);
+
+            //this.playingAudios.put(widget.content, audioStream);
+            this.playingAePlayWaves.put(widget.content, aePlayWave);
         }
         if (widget.widgetType == Widget.EnumWidget.AUDIOSTOP) {
-            AudioStream audioStream = this.playingAudios.get(widget.content);
-            AudioPlayer.player.stop(audioStream);
+            AePlayWave aePlayWave = this.playingAePlayWaves.get(widget.content);
+            aePlayWave.stopSound();
+            //AudioStream audioStream = this.playingAudios.get(widget.content);
+            //AudioPlayer.player.stop(audioStream);
         }
     }
 
@@ -364,11 +379,22 @@ public class PanelProblem extends JPanel {
 
     //called when switched back to menu
     public void clearSounds() {
+        /*
         for (String audioName : this.playingAudios.keySet()) {
             AudioStream audioStream = this.playingAudios.get(audioName);
             AudioPlayer.player.stop(audioStream);
         }
         this.playingAudios.clear();
+        */
+
+        for (String audioName : this.playingAePlayWaves.keySet()) {
+            //System.out.println(audioName);
+            AePlayWave aePlayWave = this.playingAePlayWaves.get(audioName);
+            aePlayWave.stopSound();
+
+        }
+        this.playingAePlayWaves.clear();
+        System.out.println("eeeeeeeeee");
     }
 
     public void applyTexture() {

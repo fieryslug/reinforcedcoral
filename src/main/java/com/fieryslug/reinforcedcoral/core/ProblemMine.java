@@ -15,7 +15,7 @@ import javax.media.Manager;
 import javax.media.Player;
 import javax.swing.SpringLayout;
 
-import sun.audio.AudioPlayer;
+//import sun.audio.AudioPlayer;
 
 public class ProblemMine extends Problem {
 
@@ -35,7 +35,8 @@ public class ProblemMine extends Problem {
 
         PanelTeam panelTeam = panelGame.teamPanelMap.get(team);
         String s = panelTeam.labelScore.getText();
-        MediaRef.playWav(MediaRef.EXPLOSION);
+        //MediaRef.playWav(MediaRef.EXPLOSION);
+        MediaRef.playSound(MediaRef.EXPLOSION);
         panelTeam.labelScore.setText("<html>" + s + "<font color=red> -100</font></html>");
         team.addPoints(-300);
         ButtonProblem buttonProblem = panelGame.problemButtonMap.get(this);

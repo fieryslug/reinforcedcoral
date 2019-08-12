@@ -2,27 +2,26 @@ package com.fieryslug.reinforcedcoral;
 
 import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
-import com.fieryslug.reinforcedcoral.core.page.Page;
+
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
-import com.fieryslug.reinforcedcoral.util.ActionFullScreen;
-import com.fieryslug.reinforcedcoral.util.FontRef;
+
+
+import com.fieryslug.reinforcedcoral.util.AePlayWave;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
 import com.sun.net.httpserver.HttpServer;
-import org.json.JSONObject;
 
-import java.awt.Font;
-import java.awt.FontFormatException;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
+
+import java.io.InputStream;
 import java.net.InetSocketAddress;
-import java.sql.Ref;
+
 
 import javax.swing.AbstractAction;
-import javax.swing.Action;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -36,6 +35,9 @@ public class Main {
     public static void main(String[] args) {
 
         start();
+
+
+        //start();
 
 
     }

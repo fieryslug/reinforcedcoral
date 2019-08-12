@@ -1,14 +1,16 @@
 package com.fieryslug.reinforcedcoral.util;
 
 import info.clearthought.layout.TableLayout;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+//import sun.audio.AudioPlayer;
+//import sun.audio.AudioStream;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -87,6 +89,8 @@ public class MediaRef {
         return bimage;
     }
 
+    /*
+    @Deprecated
     public static AudioStream playWav(String path) {
 
         AudioStream audioStream = null;
@@ -102,4 +106,39 @@ public class MediaRef {
         AudioPlayer.player.start(audioStream);
         return audioStream;
     }
+    */
+
+    public static AePlayWave playSound(String path) {
+        InputStream inputStream = FuncBox.inputStreamFromPath(path);
+        AePlayWave res = new AePlayWave(inputStream);
+        res.start();
+        return res;
+    }
+
+    public static boolean isCollided = false;
+
+    public static void play(String filename) {
+        new Thread(new Runnable() {
+
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    clip.open(AudioSystem.getAudioInputStream(MediaRef.class.getResourceAsStream(filename)));// new
+                    // File(filename)));
+                    if (isCollided) {
+                        clip.stop();
+                    } else {
+                        clip.loop(0);
+                    }
+                } catch (Exception exc) {
+                    exc.printStackTrace(System.out);
+                }
+            }
+        }).start();
+    }
+
+
+
+
+
 }

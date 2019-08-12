@@ -1,5 +1,8 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_6.4=== 8/12 19pm
+-no longer uses deprecated apis
+
 ===gradle_6.3=== 8/12 12pm
 -bug fix for various problems
 
