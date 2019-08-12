@@ -426,6 +426,14 @@ public class PanelSnake extends PanelMiniGame {
             add(this.buttonBack, "15, 14, 34, 16");
             this.buttonBack.setText("");
             this.buttonBack.setText("main menu");
+
+            for (int i = 0; i < 4; ++i) {
+                if (this.snakes[i].isAlive) {
+                    this.snakeTeamMap.get(this.snakes[i]);
+
+                }
+            }
+
         }
 
     }

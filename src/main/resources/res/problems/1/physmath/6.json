@@ -104,8 +104,17 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 9, 18, 16",
+          "constraints": "1, 9, 10, 16",
           "content": "(A) 33.1\n(B) 36.0\n(C) 42.5\n(D) 51.4",
+          "properties": {
+            "textsize": "30",
+            "textsizefull": "45"
+          }
+        },
+        {
+          "widget": "jtextarea",
+          "constraints": "11, 9, 18, 19",
+          "content": "鱷魚一英呎8美元\n八寶粥一打新台幣239元",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -116,7 +125,7 @@
   ],
   "solution":  {
     "type": 62,
-    "final": true,
+    "final": false,
     "elements": [
       {
         "widget": "jlabel",

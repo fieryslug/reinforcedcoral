@@ -12,43 +12,20 @@ import java.util.Map;
 public class TextureHolder {
 
     private Map<String, Color> colorMap;
+    private Map<String, Image> imageMap;
     private static TextureHolder instance;
-    public static final String[] KEYS = {
-            "background",
-            "team",
-            "team_privilege",
-            "team_locked",
-            "team_border",
-            "team_text",
-            "title",
-            "title_border",
-            "title_text",
-            "problem",
-            "problem_disabled",
-            "problem_border",
-            "problem_text",
-            "team1",
-            "team2",
-            "team3",
-            "team4",
-            "team1_border",
-            "team2_border",
-            "team3_border",
-            "team4_border",
-            "team1_text",
-            "team2_text",
-            "team3_text",
-            "team4_text"
-    };
 
     private ArrayList<String> keys;
+    private ArrayList<String> imageKeys;
     private Map<String, ArrayList<String>> wildcardMap;
 
 
     public TextureHolder() {
         this.colorMap = new HashMap<>();
+        this.imageMap = new HashMap<>();
         this.keys = new ArrayList<>();
         this.wildcardMap = new HashMap<>();
+        this.imageKeys = new ArrayList<>();
 
         JSONObject object = new JSONObject(FuncBox.readFile("/res/texturepack/keys.json"));
         JSONArray array = object.getJSONArray("keys");
@@ -69,13 +46,17 @@ public class TextureHolder {
             this.wildcardMap.put(key, otherKeys);
         }
 
-
+        JSONArray arrayImageKeys = object.getJSONArray("image_keys");
+        for (int i = 0; i < arrayImageKeys.length(); ++i) {
+            this.imageKeys.add(arrayImageKeys.getString(i));
+        }
 
         instance = this;
     }
 
     public void read(String textureName) {
         this.colorMap.clear();
+        this.imageMap.clear();
 
         try {
             String path = "/res/texturepack/" + textureName + "/";
@@ -96,8 +77,14 @@ public class TextureHolder {
                         }
                     }
                 } catch (Exception e) {
-
                 }
+            }
+
+            for (String imageKey : this.imageKeys) {
+
+                System.out.println("/res/texturepack/" + textureName + "/" + imageKey + ".png");
+                Image image = MediaRef.getImage("/res/texturepack/" + textureName + "/" + imageKey + ".png");
+                this.imageMap.put(imageKey, image);
 
             }
             System.out.println("loaded texturepack " + textureName);
@@ -114,6 +101,10 @@ public class TextureHolder {
         if (color != null) return color;
         return Reference.WHITE;
 
+    }
+
+    public Image getImage(String key) {
+        return this.imageMap.get(key);
     }
 
     public static TextureHolder getInstance() {

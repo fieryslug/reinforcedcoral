@@ -9,7 +9,7 @@
     {
       "type": 1,
       "res": [
-        "小莉一家人 (250pt)"
+        "小莉一家人2 (250pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "小莉一家人 (250pt)",
+          "content": "小莉一家人2 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "小莉一家人 (250pt)",
+          "content": "小莉一家人2 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -83,7 +83,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "小莉一家人 (250pt)",
+          "content": "小莉一家人2 (250pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -137,7 +137,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "小莉一家人 (250pt)",
+        "content": "小莉一家人2 (250pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

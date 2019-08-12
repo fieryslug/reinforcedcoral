@@ -262,7 +262,7 @@ public class PanelProblem extends JPanel {
             }
             if(this.page.type == 2) {
                 this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
-                this.areaDescription.setFont(FontRef.TAIPEI45);
+                this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
                 Image image = MediaRef.getImage(page.res.get(2));
                 image = FuncBox.resizeImagePreservingRatio(image, this.width * 8/20, this.height * 15/20);
                 this.labelImage.setIcon(new ImageIcon(image));

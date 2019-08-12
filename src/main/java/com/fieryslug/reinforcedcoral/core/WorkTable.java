@@ -36,7 +36,7 @@ public class WorkTable {
         Problem prbCrab = new Problem("1/socio/3.json");
         Problem prbMine = new ProblemMine("<html><strong><font color=red>地雷(認真的)</font></strong></html>");
         Problem prbMoney = new Problem("1/socio/4.json");
-        Problem prbArthur = new Problem("1/socio/5_1.json");
+        Problem prbBoat = new Problem("1/socio/5_1.json");
 
         Problem prbFamily2 = new Problem("1/lit/1_2.json");
         Problem prbPoemSunset = new Problem("1/lit/2_1.json");
@@ -49,10 +49,11 @@ public class WorkTable {
         prbF7.addDependence(prbW6);
         prbCrab.addDependence(prbOdin);
         prbFamily2.addDependence(prbFamily1);
+        prbBoat.addDependence(prbLog);
 
         catPhysMath.addProblem(prbS5, prbW6, prbF7, prbBear, prbLog, prbCongee);
         catChemBio.addProblem(prbSunset, prbFood, prbSofa, prbLongan, prbBone, prbSoda);
-        catSocio.addProblem(prbFamily1, prbElect, prbCrab, prbMine, prbMoney, prbArthur);
+        catSocio.addProblem(prbFamily1, prbElect, prbCrab, prbMine, prbMoney, prbBoat);
         catLit.addProblem(prbFamily2, prbPoemSunset, prbOdin, prbPPB, prbVocab, prbHumble);
 
         game.addCategory(catPhysMath);

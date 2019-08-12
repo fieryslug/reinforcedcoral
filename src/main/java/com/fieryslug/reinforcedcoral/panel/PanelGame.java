@@ -887,8 +887,13 @@ public class PanelGame extends PanelPrime {
 
     public void applyTexture() {
 
+
+
         TextureHolder holder = this.parent.textureHolder;
         setBackground(holder.getColor("background"));
+
+
+
         for (ButtonProblem button : this.buttonProblemMap.keySet()) {
             button.setIcon(null);
             button.setBackground(holder.getColor("problem"));
@@ -919,6 +924,18 @@ public class PanelGame extends PanelPrime {
             if (this.currentMinigamePanel != null) {
                 this.currentMinigamePanel.applyTexture();
             }
+        }
+
+
+        try {
+            Image image0 = holder.getImage("button/button");
+            Image image1 = holder.getImage("button/button_hover");
+            Image image2 = holder.getImage("button/button_press");
+
+            this.buttonConfirm.setImages(image0, image1, image2);
+            this.buttonNext.setImages(image0, image1, image2);
+            this.buttonPrev.setImages(image0, image1, image2);
+        } catch (Exception e) {
         }
 
     }

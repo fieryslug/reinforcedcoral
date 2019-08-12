@@ -9,13 +9,13 @@
     {
       "type": 1,
       "res": [
-        "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<br/><font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</html>"
+        "<html><strong><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<br/><font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</strong></html>"
       ]
     },
     {
       "type": 4,
       "res": [
-        "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</html>",
+        "<html><strong><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</strong></html>",
         "心急的狡詐鯊魚餓了! 寬1公尺的狡詐鯊魚覺得自己可以吞下100公尺的蛇，最可能的原因是什麼?",
         "/res/images/shark_eel.png"
       ]
@@ -23,7 +23,7 @@
     {
       "type": -1,
       "res": [
-        "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</html>",
+        "<html><strong><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</strong></html>",
         "\n(A) 因為相對速度接近光速 \t\t(B) 因為狡詐鯊魚說謊\n(C) 因為狡詐鯊魚很勤儉\t\t(D) 因為他想慢慢吃"
       ]
     }
@@ -35,7 +35,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "<html><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</html>",
+        "content": "<html><strong><font color=blue>S</font>hort <font color=blue>S</font>hark <font color=blue>S</font>wallows<font color=blue>S</font>nake <font color=blue>S</font>nack  (150pt)</strong></html>",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

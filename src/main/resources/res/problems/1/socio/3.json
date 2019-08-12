@@ -9,7 +9,7 @@
     {
       "type": 1,
       "res": [
-        "市場與螃蟹 (600pt)"
+        "經濟學與螃蟹 (600pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "市場與螃蟹 (600pt)",
+          "content": "經濟學與螃蟹 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -61,7 +61,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "市場與螃蟹 (600pt)",
+          "content": "經濟學與螃蟹 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -139,7 +139,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "市場與螃蟹 (600pt)",
+          "content": "經濟學與螃蟹 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -171,7 +171,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "市場與螃蟹 (600pt)",
+          "content": "經濟學與螃蟹 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",

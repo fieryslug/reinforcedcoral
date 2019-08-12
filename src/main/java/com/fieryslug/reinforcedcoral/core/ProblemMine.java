@@ -37,7 +37,7 @@ public class ProblemMine extends Problem {
         String s = panelTeam.labelScore.getText();
         MediaRef.playWav(MediaRef.EXPLOSION);
         panelTeam.labelScore.setText("<html>" + s + "<font color=red> -100</font></html>");
-        team.addPoints(-100);
+        team.addPoints(-300);
         ButtonProblem buttonProblem = panelGame.problemButtonMap.get(this);
         buttonProblem.state = 1;
         panelGame.refresh();

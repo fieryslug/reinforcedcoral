@@ -30,10 +30,13 @@ public class ButtonCoral extends JButton {
 
     public ButtonCoral(Image imageDefault, Image imageHover, Image imagePress) {
 
+        setImages(imageDefault, imageHover, imagePress);
+
         this.imageDefault = imageDefault;
         this.imageHover = imageHover;
         this.imagePress = imagePress;
 
+        /*
         try {
             this.iconDefault = new ImageIcon(imageDefault);
             this.iconHover = new ImageIcon(imageHover);
@@ -41,6 +44,7 @@ public class ButtonCoral extends JButton {
         } catch (NullPointerException e) {
 
         }
+        */
 
         this.neighbors = new HashMap<>();
 
@@ -79,6 +83,21 @@ public class ButtonCoral extends JButton {
 
         this.addMouseListener(this.mouseListener);
 
+    }
+
+    public void setImages(Image imageDefault, Image imageHover, Image imagePress) {
+        System.out.println("images set");
+        this.imageDefault = imageDefault;
+        this.imageHover = imageHover;
+        this.imagePress = imagePress;
+
+        try {
+            this.iconDefault = new ImageIcon(imageDefault);
+            this.iconHover = new ImageIcon(imageHover);
+            this.iconPress = new ImageIcon(imagePress);
+        } catch (NullPointerException e) {
+
+        }
     }
 
     public void onPressed() {

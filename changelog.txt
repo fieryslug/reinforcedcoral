@@ -1,5 +1,14 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_6.3=== 8/12 12pm
+-bug fix for various problems
+
+===gradle_6.1~gradle_6.2=== 8/12 12pm
+-new feature: image support for texture packs
+-new button icons
+-bug fix for various problems
+
+
 ===gradle_6.0=== 8/11 27pm
 -new feature: post-solution slides
 -added texture pack jungle
