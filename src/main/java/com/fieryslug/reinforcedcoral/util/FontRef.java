@@ -15,7 +15,9 @@ public class FontRef {
     public static final Map<String, String> BOLD_FONT_MAP = new HashMap<>();
 
     public static final String TAIPEI = "Taipei Sans TC Beta Regular";
+    public static final String MONOSPACE = "Monospace Regular";
     public static final String TAIPEI_BOLD = "Taipei Sans TC Beta Bold";
+    public static final String TIMES_NEW_ROMAN = "Times New Roman";
 
 
     static {
@@ -30,6 +32,8 @@ public class FontRef {
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/Times_New_Roman_Bold.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/DejaVuSans.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/DejaVuSans-Bold.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/Monospace.ttf")));
+            //ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/arialuni.ttf")));
             System.out.println("Fonts loaded");
             FuncBox.listAllFonts();
         } catch (IOException | FontFormatException e) {

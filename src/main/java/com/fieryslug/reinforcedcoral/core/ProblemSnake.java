@@ -15,10 +15,10 @@ public class ProblemSnake extends Problem {
     @Override
     public boolean onClick(PanelGame panelGame) {
 
-        panelGame.setState(-1);
+        //panelGame.setState(-1);
         panelGame.setPhase(GamePhase.SPECIAL);
         this.panelSnake = new PanelSnake(this);
-        panelSnake.bindPanelGame(panelGame);
+        this.panelSnake.bindPanelGame(panelGame);
 
         panelGame.parent.switchPanel(panelGame, panelGame);
 

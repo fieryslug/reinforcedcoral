@@ -7,8 +7,8 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_6.4";
-    public static final int DEFAULT_GAME = 0;
+    public static final String VERSION = "gradle_6.6";
+    public static final int DEFAULT_GAME = 1;
 
     public static final String[] TEXTURE_PACKS = {"eggplant", "caramel", "classic", "balloon", "ocean", "jungle", "punk"};
     //public static final String
@@ -35,6 +35,7 @@ public class Reference {
     public static final Color PURPLE = new Color(125, 31, 175);
     public static final Color YELLOW = new Color(255, 188, 0);
     public static final Color DARKAQUA = new Color(9, 79, 70);
+    public static final Color DARKERGREEN = new Color(0, 32, 3);
 
 
     public static final Border BEVEL1 = BorderFactory.createBevelBorder(0, AQUA, WHITE);
@@ -42,6 +43,7 @@ public class Reference {
     public static final Border BEVELGREEN = BorderFactory.createBevelBorder(0, LIME, GREEN);
     public static final Border STROKE1 = BorderFactory.createStrokeBorder(new BasicStroke(3));
     public static final Border COMPOUND1 = BorderFactory.createCompoundBorder(BEVELGREEN, STROKE1);
+    public static final Border PLAIN1 = BorderFactory.createLineBorder(BROWN, 1);
 
 
 }

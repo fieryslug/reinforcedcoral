@@ -14,7 +14,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
@@ -119,6 +121,17 @@ public class FuncBox {
         ArrayList<T> list = new ArrayList<>(set);
         int i = random.nextInt(list.size());
         return list.get(i);
+    }
+
+    public static <T> Set<T> randomChoice(Set<T> set, Random random, int count) {
+        if (set.size() < count) {
+            return null;
+        }
+        ArrayList<T> list = new ArrayList<>(set);
+        Collections.shuffle(list);
+        return new HashSet<>(list.subList(0, count));
+
+
     }
 
     public static Border getLineBorder(Color color, int size) {
