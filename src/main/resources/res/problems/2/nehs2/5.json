@@ -3,7 +3,7 @@
   "fuzzy": false,
   "answer": "B",
   "points": {
-    "B": 250
+    "B": 150
   },
   "pages": [
     {
@@ -13,7 +13,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 19",
-          "content": "皇帝企鵝找媽媽 (250pt)",
+          "content": "皇帝企鵝找媽媽 (150pt)",
           "properties": {
             "textsize": "80",
             "textsizefull": "120",
@@ -41,7 +41,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "皇帝企鵝找媽媽 (250pt)",
+          "content": "皇帝企鵝找媽媽 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -73,7 +73,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "皇帝企鵝找媽媽 (250pt)",
+          "content": "皇帝企鵝找媽媽 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -105,7 +105,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "皇帝企鵝找媽媽 (250pt)",
+          "content": "皇帝企鵝找媽媽 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -137,7 +137,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "皇帝企鵝找媽媽 (250pt)",
+          "content": "皇帝企鵝找媽媽 (150pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -164,7 +164,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "皇帝企鵝找媽媽 (250pt)",
+        "content": "皇帝企鵝找媽媽 (150pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

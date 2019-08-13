@@ -78,13 +78,13 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
         this.idGeneratorMap = new HashMap<>();
         this.freeSlots = new HashSet<>();
 
-        addFruitGenerator(new FruitGenerator(7, 0, 51, -6, Reference.WHITE));
-        addFruitGenerator(new FruitGenerator(30, 1, 21, -1, Reference.LIME));
-        addFruitGenerator(new FruitGenerator(30, 1, 49, -2, Reference.LIME));
-        addFruitGenerator(new FruitGenerator(30, 1, 37, -3, Reference.LIME));
-        addFruitGenerator(new FruitGenerator(100, 3, 59, -4, Reference.BROWN));
-        addFruitGenerator(new FruitGenerator(400, 10, 119, -5, Reference.BLAZE));
-        addFruitGenerator(new FruitGenerator(1, 100, 450, -7, Reference.RED));
+        addFruitGenerator(new FruitGenerator(7, 0, 51, 51, -6, Reference.WHITE));
+        addFruitGenerator(new FruitGenerator(30, 1, 21, 21, -1, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(30, 1, 49, 49, -2, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(30, 1, 37, 37, -3, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(100, 3, 59, 59, -4, Reference.BROWN));
+        addFruitGenerator(new FruitGenerator(400, 10, 119, 119, -5, Reference.BLAZE));
+        addFruitGenerator(new FruitGenerator(1, 100, 33, 400, -7, Reference.RED));
 
         this.snakes = new Snake[4];
 

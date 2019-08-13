@@ -4,13 +4,13 @@
   "answer": "B",
   "duration": 10,
   "points": {
-    "B": 250
+    "B": 400
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "地中海風情 (250pt)"
+        "地中海風情 (400pt)"
       ]
     },
     {
@@ -20,7 +20,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "地中海風情 (250pt)",
+          "content": "地中海風情 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -52,7 +52,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "地中海風情 (250pt)",
+          "content": "地中海風情 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -84,7 +84,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "地中海風情 (250pt)",
+          "content": "地中海風情 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -111,7 +111,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "地中海風情 (250pt)",
+        "content": "地中海風情 (400pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

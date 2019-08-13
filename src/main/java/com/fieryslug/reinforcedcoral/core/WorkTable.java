@@ -15,8 +15,6 @@ public class WorkTable {
         Category catSocio = new Category("歷史/地理/公民");
         Category catLit = new Category("國文/英文");
 
-        //coralcoralcoralcoralcoral-----------------------------------------------------------
-
         Problem prbS5 = new Problem("1/physmath/3.json");
         Problem prbW6 = new Problem("1/physmath/1_1.json");
         Problem prbF7 = new Problem("1/physmath/2_1.json");
@@ -95,12 +93,13 @@ public class WorkTable {
         Problem prb25 = new Problem("2/funfacts/5.json");
         Problem prb26 = new Problem("2/funfacts/6.json");
 
+
+        Problem prb31 = new Problem("2/avocado/1.json");
+        Problem prbMine = new ProblemMineSweeper("踩地雷");
+        Problem prb33 = new Problem("2/avocado/3.json");
+        Problem prbMatch = new ProblemMatch("記憶遊戲");
+        Problem prbSlipper = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
         Problem prbSnake = new ProblemSnake("貪食蛇");
-        Problem prb32 = new Problem("placeholder", 0);
-        Problem prbPong = new Problem("PONG", 0);
-        Problem prb34 = new Problem("placeholder", 0);
-        Problem prbMine = new ProblemMineSweeper("瘋狂踩地雷");
-        Problem prb36 = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
 
         prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
         prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
@@ -109,13 +108,17 @@ public class WorkTable {
         prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
         prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
 
+        prbMine.addDependence(prb31);
+        prbMatch.addDependence(prb33);
         prbSnake.addDependence(prb11);
+
+        prbMine.addDependence(prb11);
 
 
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);
         catNehs2.addProblem(prb11, prb12, prb13, prb14, prb15, prb16);
         catLifeHax.addProblem(prb21, prb22, prb23, prb24, prb25, prb26);
-        catAvocado.addProblem(prbSnake, prb32, prbPong, prb34, prbMine, prb36);
+        catAvocado.addProblem(prb31, prbMine, prb33, prbMatch, prbSlipper, prbSnake);
 
         game.addCategory(catNehs);
         game.addCategory(catNehs2);

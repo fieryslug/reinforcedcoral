@@ -7,7 +7,7 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_6.7";
+    public static final String VERSION = "gradle_7.0";
     public static final int DEFAULT_GAME = 1;
 
     public static final String[] TEXTURE_PACKS = {"eggplant", "caramel", "classic", "balloon", "ocean", "jungle", "punk"};
@@ -44,6 +44,8 @@ public class Reference {
     public static final Border STROKE1 = BorderFactory.createStrokeBorder(new BasicStroke(3));
     public static final Border COMPOUND1 = BorderFactory.createCompoundBorder(BEVELGREEN, STROKE1);
     public static final Border PLAIN1 = BorderFactory.createLineBorder(BROWN, 1);
+
+
 
 
 }

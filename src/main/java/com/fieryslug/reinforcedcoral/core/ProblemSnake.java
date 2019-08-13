@@ -42,8 +42,22 @@ public class ProblemSnake extends Problem {
         this.panelMiniGameIntro.inflate2(new Page(new JSONObject(FuncBox.readFile("/res/problems/special/snake.json"))));
         this.panelMiniGameIntro.refreshRendering(panelGame.parent.isFullScreen);
         this.panelMiniGameIntro.applyTexture();
+
+        this.panelMiniGameIntro.buttonNext.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                panelGame.setPhase(GamePhase.SPECIAL);
+                panelGame.parent.switchPanel(panelGame, panelGame);
+
+                panelGame.add(panelSnake, "0, 1, 5, 4");
+                panelGame.currentMinigamePanel = panelSnake;
+                panelSnake.start();
+            }
+        });
+
         panelGame.currentMinigamePanel = this.panelMiniGameIntro;
         panelGame.add(this.panelMiniGameIntro.buttonBack, "0, 4");
+        panelGame.add(this.panelMiniGameIntro.buttonNext, "5, 4");
         panelGame.add(panelGame.panelBanner, "0, 4, 5, 4");
 
 

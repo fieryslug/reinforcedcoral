@@ -28,6 +28,7 @@ public class PanelMiniGameIntro extends PanelProblem implements PanelMiniGame {
 
         TextureHolder holder = TextureHolder.getInstance();
         this.buttonBack = new ButtonCoral(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
+        this.buttonNext = new ButtonCoral(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
 
         this.buttonBack.addActionListener(new ActionListener() {
             @Override
@@ -50,8 +51,10 @@ public class PanelMiniGameIntro extends PanelProblem implements PanelMiniGame {
         int height = this.buttonBack.getHeight();
         int buttonX = this.panelGame.paneHeight / 8, buttonY = this.panelGame.paneHeight / 8;
         this.buttonBack.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
-        if (width > 0 && height > 0) {
+        this.buttonNext.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
+        if (buttonX > 0 && buttonY > 0) {
             this.buttonBack.resizeImageForIcons(buttonX, buttonY);
+            this.buttonNext.resizeImageForIcons(buttonX, buttonY);
         }
 
     }

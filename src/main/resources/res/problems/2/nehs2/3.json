@@ -9,7 +9,7 @@
     {
       "type": 1,
       "res": [
-        "公車奇遇記 (400pt)"
+        "公車奇遇記 (600pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "公車奇遇記 (400pt)",
+          "content": "公車奇遇記 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "公車奇遇記 (400pt)",
+          "content": "公車奇遇記 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -83,7 +83,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "公車奇遇記 (400pt)",
+          "content": "公車奇遇記 (600pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -111,7 +111,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "公車奇遇記 (400pt)",
+        "content": "公車奇遇記 (600pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

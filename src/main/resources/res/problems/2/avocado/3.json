@@ -1,15 +1,15 @@
 {
-  "name": "阿蛇的酒吧",
+  "name": "失憶的鱷魚",
   "fuzzy": false,
-  "answer": "B",
+  "answer": "C",
   "points": {
-    "B": 250
+    "C": 100
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "阿蛇的酒吧 (250pt)"
+        "失憶的鱷魚 (100pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "阿蛇的酒吧 (150pt)",
+          "content": "失憶的鱷魚 (100pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,8 +29,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 10, 19",
-          "content": "雖然又臭又沒特色，大家卻很愛去一間名為「操場」的酒吧，店長的綽號叫阿蛇。許多電影人或黨外人士紛紛聚集於此，甚至連一些藝人都會光顧，這些形形色色的顧客，為這家小店帶來了豐沛的生命力。(旅人專欄, 2018.12)",
+          "constraints": "1, 5, 18, 6",
+          "content": "鱷魚阿邦得了腸胃炎，現在失憶了!",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -38,8 +38,8 @@
         },
         {
           "widget": "image",
-          "constraints": "11, 5, 19, 19",
-          "content": "/res/images/bar.jpg",
+          "constraints": "0, 7, 19, 19",
+          "content": "/res/images/alligator.png",
           "properties": {}
         }
       ]
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": " 阿蛇的酒吧 (150pt)",
+          "content": "失憶的鱷魚 (100pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -61,8 +61,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 10, 19",
-          "content": "學校的操場是幾公尺的?\n(A) 200\n(B) 300\n(C) 350\n(D) 400",
+          "constraints": "1, 5, 11, 19",
+          "content": "你能幫牠想起牠的名字嗎？\n(A) 樂觀珍妮佛\n(B) 公爵詹姆士\n(C) 阿邦\n(D) Tommy",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -77,8 +77,20 @@
     "elements": [
       {
         "widget": "jlabel",
+        "constraints": "12, 12, 19, 19",
+        "content": "c",
+        "properties": {
+          "textsize": "80",
+          "textsizefull": "120",
+          "textcolor": "00ff00",
+          "textbold": "true",
+          "center": "true"
+        }
+      },
+      {
+        "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": " 阿蛇的酒吧 (150pt)",
+        "content": "失憶的鱷魚 (100pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -88,23 +100,11 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 10, 19",
-        "content": "學校的操場是幾公尺的?\n(A) 200\n(B) 300\n(C) 350\n(D) 400",
+        "constraints": "1, 5, 11, 19",
+        "content": "你能幫牠想起牠的名字嗎？\n\n(A) 樂觀珍妮佛\n(B) 公爵詹姆士\n(C) 阿邦\n(D) Tommy",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
-        }
-      },
-      {
-        "widget": "jlabel",
-        "constraints": "11, 11, 19, 19",
-        "content": "B",
-        "properties": {
-          "textsize": "80",
-          "textsizefull": "120",
-          "textcolor": "00ff00",
-          "textbold": "true",
-          "center": "true"
         }
       }
     ]

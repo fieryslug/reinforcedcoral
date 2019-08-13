@@ -1,15 +1,15 @@
 {
-  "name": "PNG",
+  "name": "歡樂端午節",
   "fuzzy": false,
   "answer": "D",
   "points": {
-    "D": 600
+    "D": "400"
   },
   "pages": [
     {
       "type": 1,
       "res": [
-        "PNG (600pt)"
+        "歡樂端午節 (400pt)"
       ]
     },
     {
@@ -19,7 +19,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "PNG (600pt)",
+          "content": "歡樂端午節 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -29,8 +29,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 9, 19",
-          "content": "Fun fact: 這次的知識王用到的圖片大部分都是PNG格式的",
+          "constraints": "1, 5, 18, 6",
+          "content": "一年一度的端午節又到了，但掃興的是最近一直在打雷",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -38,8 +38,8 @@
         },
         {
           "widget": "image",
-          "constraints": "10, 5, 19, 19",
-          "content": "/res/images/png.png",
+          "constraints": "0, 7, 19, 19",
+          "content": "/res/images/dumpling.jpg",
           "properties": {}
         }
       ]
@@ -51,7 +51,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "PNG (600pt)",
+          "content": "歡樂端午節 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -60,18 +60,25 @@
           }
         },
         {
-          "widget": "jtextarea",
-          "constraints": "1, 5, 10, 19",
-          "content": "但是像這張我在韓國買的正版周子瑜公仔的圖片就不是，這個是JPG。\n\n我不是迷妹。",
+          "widget": "jlabel",
+          "constraints": "3, 5, 7, 19",
+          "content": "打雷(1)",
           "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true"
           }
         },
         {
           "widget": "image",
-          "constraints": "11, 5, 15, 19",
-          "content": "/res/images/tzuyu.jpg",
+          "constraints": "8, 5, 16, 19",
+          "content": "/res/images/lightning.jpg",
+          "properties": {}
+        },
+        {
+          "widget": "audio",
+          "constraints": "",
+          "content": "/res/sound/thunder1.wav",
           "properties": {}
         }
       ]
@@ -83,7 +90,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "PNG (600pt)",
+          "content": "歡樂端午節 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -92,18 +99,25 @@
           }
         },
         {
-          "widget": "jtextarea",
-          "constraints": "1, 5, 18, 8",
-          "content": "回歸正題，PNG也可以是巴布亞紐幾內亞(Papua New Guinea)的縮寫。巴布亞紐幾內亞是一個太平洋西南部的島嶼國家。",
+          "widget": "jlabel",
+          "constraints": "12, 5, 16, 19",
+          "content": "打雷(2)",
           "properties": {
-            "textsize": "30",
-            "textsizefull": "45"
+            "textsize": "40",
+            "textsizefull": "60",
+            "center": "true"
           }
         },
         {
           "widget": "image",
-          "constraints": "0, 9, 19, 19",
-          "content": "/res/images/papua.jpg",
+          "constraints": "3, 5, 11, 19",
+          "content": "/res/images/lightning.jpg",
+          "properties": {}
+        },
+        {
+          "widget": "audio",
+          "constraints": "",
+          "content": "/res/sound/thunder2.wav",
           "properties": {}
         }
       ]
@@ -115,7 +129,7 @@
         {
           "widget": "jlabel",
           "constraints": "0, 0, 19, 4",
-          "content": "PNG (600pt)",
+          "content": "歡樂端午節 (400pt)",
           "properties": {
             "textsize": "40",
             "textsizefull": "60",
@@ -125,8 +139,8 @@
         },
         {
           "widget": "jtextarea",
-          "constraints": "1, 5, 18, 19",
-          "content": "全世界有約七千種語言，巴布亞紐幾內亞境內總共有幾種語言？\n\n(A) 二十 \n(B) 五十 \n(C) 一百 \n(D) 八百",
+          "constraints": "1, 5, 12, 19",
+          "content": "美國國家氣象局建議打雷時不要做哪件事？\n\n(A) 待在車內\n(B) 翻筋斗\n(C) 使用刮鬍刀\n(D) 洗澡",
           "properties": {
             "textsize": "30",
             "textsizefull": "45"
@@ -141,7 +155,7 @@
     "elements": [
       {
         "widget": "jlabel",
-        "constraints": "11, 11, 19, 19",
+        "constraints": "13, 13, 19, 19",
         "content": "D",
         "properties": {
           "textsize": "80",
@@ -154,7 +168,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "PNG (600pt)",
+        "content": "歡樂端午節 (400pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",
@@ -164,8 +178,8 @@
       },
       {
         "widget": "jtextarea",
-        "constraints": "1, 5, 18, 19",
-        "content": "全世界有約七千種語言，巴布亞紐幾內亞境內總共有幾種語言？\n\n(A) 二十 \n(B) 五十 \n(C) 一百 \n(D) 八百",
+        "constraints": "1, 5, 12, 19",
+        "content": "美國國家氣象局建議打雷時不要做哪件事？\n\n(A) 待在車內\n(B) 翻筋斗\n(C) 使用刮鬍刀\n(D) 洗澡",
         "properties": {
           "textsize": "30",
           "textsizefull": "45"
