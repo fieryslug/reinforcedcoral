@@ -197,8 +197,8 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                                             correct = true;
                                             confirmed[i][j] = confirmed[fx][fy] = true;
                                             PanelTeam panelTeam = panelGame.teamPanelMap.get(teamOrder[playing]);
-                                            panelTeam.labelScore.setText(String.valueOf(teamOrder[playing].getScore()) + " + 75");
-                                            teamOrder[playing].addPoints(75);
+                                            panelTeam.labelScore.setText(String.valueOf(teamOrder[playing].getScore()) + " + 50");
+                                            teamOrder[playing].addPoints(50);
                                             //panelGame.panelBoxes.get(playing).labelScore.repaint();
                                             //panelTeam.repaint();
                                             tot += 2;
