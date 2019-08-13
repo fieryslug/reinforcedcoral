@@ -36,6 +36,7 @@ public class PanelMatch extends PanelMiniGame {
     private boolean[][] confirmed = new boolean[3][8];
     private boolean correct = false;
     private int tot = 0;
+    private boolean ready = false;
     private static final String FACEDOWN = new String(Character.toChars(0x1F0A0));
 
     private String idToString(int id) {
@@ -151,7 +152,7 @@ public class PanelMatch extends PanelMiniGame {
                 grid[i][j].setText(idToString(card[i][j]));
             }
         }*/
-
+        ready = true;
         recolor();
         repaint();
     }
@@ -162,7 +163,7 @@ public class PanelMatch extends PanelMiniGame {
         System.out.println(teamOrder[playing].getId());
         //System.out.println(ControlKey.KEY_CHARACTER_MAP.get(key));
 
-        if (team.getId() == teamOrder[playing].getId()) {
+        if (ready && team.getId() == teamOrder[playing].getId()) {
             if (key == ControlKey.UP) {
                 if (nowX-1 >= 0) nowX--;
             }
