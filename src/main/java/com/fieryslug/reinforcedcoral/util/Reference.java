@@ -7,7 +7,7 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_7.0";
+    public static final String VERSION = "gradle_7.1";
     public static final int DEFAULT_GAME = 1;
 
     public static final String[] TEXTURE_PACKS = {"eggplant", "caramel", "classic", "balloon", "ocean", "jungle", "punk"};

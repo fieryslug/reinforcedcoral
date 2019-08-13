@@ -136,6 +136,8 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         this.buttonBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
+                panelGame.problemButtonMap.get(problemMineSweeper).setState(1);
                 panelGame.setPhase(GamePhase.MENU);
                 panelGame.parent.switchPanel(panelGame, panelGame);
                 timer2.cancel();
@@ -446,9 +448,9 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                 MineSlot s = this.slots[i][j];
 
                 if (this.panelGame.parent.isFullScreen) {
-                    s.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 21));
+                    s.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 39));
                 } else {
-                    s.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 14));
+                    s.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 26));
                 }
 
                 if (s.hasIcon) {

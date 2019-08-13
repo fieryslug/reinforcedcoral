@@ -133,6 +133,13 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
         add(dummy, "0, 0");
         //add(tempButton, "0, 0");
         //add(tempButton2, "1, 1");
+
+        FuncBox.addKeyBinding(this, "C", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                update();
+            }
+        });
     }
 
     public void bindPanelGame(PanelGame panelGame) {
