@@ -7,25 +7,20 @@ import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
 import com.fieryslug.reinforcedcoral.util.AePlayWave;
+import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 import java.io.InputStream;
 import java.net.InetSocketAddress;
 
 
-import javax.swing.AbstractAction;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 //import layout.TableLayout;
 import info.clearthought.layout.TableLayout;
@@ -34,11 +29,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        start();
         //start();
-
-        //start();
-
-
     }
 
     public static void start() {

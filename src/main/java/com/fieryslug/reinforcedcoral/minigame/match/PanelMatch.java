@@ -37,14 +37,14 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
     private boolean correct = false;
     private int tot = 0;
     private boolean ready = false;
-    //private static final String FACEDOWN = new String(Character.toChars(0x1F0A0));
-    private static final String FACEDOWN = "#";
+    private static final String FACEDOWN = new String(Character.toChars(0x1F0A0));
+    //private static final String FACEDOWN = "#";
 
     private String idToString(int id) {
         int suit = id / 6;
         int rank = id % 6;
-        return ""+rank;
-        //return new String(Character.toChars(0x1F000 | ((10 + suit) << 4) | (rank >= 11 ? 2 + rank : 1 + rank)));
+        //return ""+rank;
+        return new String(Character.toChars(0x1F000 | ((10 + suit) << 4) | (rank >= 11 ? 2 + rank : 1 + rank)));
     }
 
     public PanelMatch(Problem problem, PanelGame panelGame) {
@@ -83,7 +83,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                 grid[i][j].setOpaque(true);
                 grid[i][j].setBackground(new Color(0, 0, 0, 0));
                 grid[i][j].setForeground(new Color(31, 31, 31, 255));
-                grid[i][j].setFont(new Font("Microsoft JhengHei", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
+                grid[i][j].setFont(new Font("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
                 //grid[i][j].setText(new String(Character.toChars(0x1F0A0)));
                 add(grid[i][j], j + ", " + i);
                 //layeredPane.setLayer(grid[i][j], JLayeredPane.DEFAULT_LAYER);
@@ -260,7 +260,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
         recolor();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
-                grid[i][j].setFont(new Font("Microsoft JhengHei", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
+                grid[i][j].setFont(new Font("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
             }
         }
     }
