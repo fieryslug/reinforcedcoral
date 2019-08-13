@@ -26,49 +26,46 @@ public class PanelMatch extends PanelMiniGame {
     private JLayeredPane layeredPane;
 
     private JButton buttonBack;
-    private JLabel[][] grid = new JLabel[4][13];
-    private int[][] card = new int[4][13];
+    private JLabel[][] grid = new JLabel[3][8];
+    private int[][] card = new int[3][8];
     private Team[] teamOrder = new Team[4];
     private int playing = 0;
     private int nowX = 0, nowY = 0;
     private int pickNum = 0;
-    private boolean[][] picked = new boolean[4][13];
-    private boolean[][] confirmed = new boolean[4][13];
+    private boolean[][] picked = new boolean[3][8];
+    private boolean[][] confirmed = new boolean[3][8];
     private boolean correct = false;
     private int tot = 0;
     private static final String FACEDOWN = new String(Character.toChars(0x1F0A0));
 
-    public void bindPanelGame(PanelGame panelGame) {
-        this.panelGame = panelGame;
-    }
-
     private String idToString(int id) {
-        int suit = id / 13;
-        int rank = id % 13;
+        int suit = id / 6;
+        int rank = id % 6;
         return new String(Character.toChars(0x1F000 | ((10 + suit) << 4) | (rank >= 11 ? 2 + rank : 1 + rank)));
     }
 
-    public PanelMatch(Problem problem) {
+    public PanelMatch(Problem problem, PanelGame panelGame) {
 
         this.parentProblem = problem;
+        this.panelGame = panelGame;
 
         List<Integer> pool = new ArrayList<>();
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < 24; i++) {
             pool.add(i);
         }
         Collections.shuffle(pool);
-        for (int i = 0; i < 52; i++) {
-            card[i/13][i%13] = pool.get(i);
+        for (int i = 0; i < 24; i++) {
+            card[i/8][i%8] = pool.get(i);
         }
 
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
-        double[][] size = {new double[13], new double[4]};
-        for (int i = 0; i < 13; ++i) {
-            size[0][i] = 1.0/13;
+        double[][] size = {new double[8], new double[3]};
+        for (int i = 0; i < 8; ++i) {
+            size[0][i] = 1.0/8;
         }
-        for (int i = 0; i < 4; ++i) {
-            size[1][i] = 1.0/4;
+        for (int i = 0; i < 3; ++i) {
+            size[1][i] = 1.0/3;
         }
 
         TableLayout layout = new TableLayout(size);
@@ -76,13 +73,13 @@ public class PanelMatch extends PanelMiniGame {
         layout.setVGap(5);
         setLayout(layout);
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
                 //grid[i][j] = new JLabel(idToString(card[i][j]), SwingConstants.CENTER);
                 grid[i][j] = new JLabel(FACEDOWN, SwingConstants.CENTER);
                 grid[i][j].setOpaque(true);
                 grid[i][j].setBackground(new Color(0, 0, 0, 0));
-                grid[i][j].setFont(new Font("Microsoft JhengHei", Font.PLAIN, 70));
+                grid[i][j].setFont(new Font("Microsoft JhengHei", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
                 //grid[i][j].setText(new String(Character.toChars(0x1F0A0)));
                 add(grid[i][j], j + ", " + i);
                 //layeredPane.setLayer(grid[i][j], JLayeredPane.DEFAULT_LAYER);
@@ -96,6 +93,9 @@ public class PanelMatch extends PanelMiniGame {
         this.buttonBack.setBackground(new Color(72, 91, 146, 167));
         this.buttonBack.setFocusPainted(false);
         this.buttonBack.setFocusable(false);
+        this.buttonBack.setVisible(false);
+
+        add(buttonBack, "3, 2, 4, 2");
 
         this.buttonBack.addActionListener(new ActionListener() {
             @Override
@@ -109,8 +109,8 @@ public class PanelMatch extends PanelMiniGame {
     }
 
     private void recolor() {
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
                 if (picked[i][j]) {
                     if (pickNum == 2) {
                         if (correct) grid[i][j].setBackground(new Color(0, 152, 16, 255));
@@ -146,11 +146,11 @@ public class PanelMatch extends PanelMiniGame {
             //panelGame.teamPanelMap.get(team).setBackground(TextureHolder.getInstance().getColor("team"+(tmp+1)));
         }
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
+        /*for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
                 grid[i][j].setText(idToString(card[i][j]));
             }
-        }
+        }*/
 
         recolor();
         repaint();
@@ -162,18 +162,18 @@ public class PanelMatch extends PanelMiniGame {
         System.out.println(teamOrder[playing].getId());
         //System.out.println(ControlKey.KEY_CHARACTER_MAP.get(key));
 
-        if (team.getId() == teamOrder[playing].getId() || true) {
+        if (team.getId() == teamOrder[playing].getId()) {
             if (key == ControlKey.UP) {
                 if (nowX-1 >= 0) nowX--;
             }
             else if (key == ControlKey.DOWN) {
-                if (nowX+1 < 4) nowX++;
+                if (nowX+1 < 3) nowX++;
             }
             else if (key == ControlKey.LEFT) {
                 if (nowY-1 >= 0) nowY--;
             }
             else if (key == ControlKey.RIGHT) {
-                if (nowY+1 < 13) nowY++;
+                if (nowY+1 < 8) nowY++;
             }
             else if (key == ControlKey.ENTER) {
                 if  (!picked[nowX][nowY] && !confirmed[nowX][nowY] && pickNum < 2) {
@@ -184,11 +184,11 @@ public class PanelMatch extends PanelMiniGame {
                         boolean flag = false;
                         int first = -1;
                         int fx = 0, fy = 0;
-                        for (int i = 0; i < 4; i++) {
-                            for (int j = 0; j < 13; j++) {
+                        for (int i = 0; i < 3; i++) {
+                            for (int j = 0; j < 8; j++) {
                                 if (picked[i][j]) {
                                     if (flag) {
-                                        if (first % 13 == card[i][j] % 13 && first/13 + card[i][j]/13 == 3) {
+                                        if (first % 6 == card[i][j] % 6 && first/6 + card[i][j]/6 == 3) {
                                             correct = true;
                                             confirmed[i][j] = confirmed[fx][fy] = true;
                                             teamOrder[playing].addPoints(20);
@@ -214,8 +214,8 @@ public class PanelMatch extends PanelMiniGame {
                             @Override
                             public void actionPerformed(ActionEvent arg0) {
                                 pickNum = 0;
-                                for (int i = 0; i < 4; i++) {
-                                    for (int j = 0; j < 13; j++) {
+                                for (int i = 0; i < 3; i++) {
+                                    for (int j = 0; j < 8; j++) {
                                         picked[i][j] = false;
                                         if (!confirmed[i][j]) {
                                             grid[i][j].setText(FACEDOWN);
@@ -224,9 +224,9 @@ public class PanelMatch extends PanelMiniGame {
                                 }
                                 if (!correct) playing = (playing + 1) % 4;
                                 correct = false;
-                                if (tot >= 2) {
-                                    System.out.println("WTF???");
-                                    add(buttonBack, "5, 3, 7, 3");
+                                if (tot >= 24) {
+                                    //System.out.println("WTF???");
+                                    buttonBack.setVisible(true);
                                     //layeredPane.setLayer(buttonBack, JLayeredPane.PALETTE_LAYER);
                                     //setComponentZOrder(buttonBack, 52);
                                 }
@@ -248,5 +248,10 @@ public class PanelMatch extends PanelMiniGame {
     @Override
     public void applyTexture() {
         recolor();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                grid[i][j].setFont(new Font("Microsoft JhengHei", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
+            }
+        }
     }
 }

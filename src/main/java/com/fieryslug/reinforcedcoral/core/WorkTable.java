@@ -109,7 +109,7 @@ public class WorkTable {
         prb15.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
         prb16.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
 
-        //prbSnake.addDependence(prb11);
+        prbSnake.addDependence(prb11);
 
 
         catNehs.addProblem(prb01, prb02, prb03, prb04, prb05, prb06);

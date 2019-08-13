@@ -13,8 +13,7 @@ public class ProblemMatch extends Problem {
     public boolean onClick(PanelGame panelGame) {
 
         panelGame.setPhase(GamePhase.SPECIAL);
-        this.panelMatch = new PanelMatch(this);
-        panelMatch.bindPanelGame(panelGame);
+        this.panelMatch = new PanelMatch(this, panelGame);
 
         panelGame.parent.switchPanel(panelGame, panelGame);
 
