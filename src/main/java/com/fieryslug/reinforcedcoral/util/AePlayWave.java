@@ -3,6 +3,7 @@ package com.fieryslug.reinforcedcoral.util;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -19,24 +20,31 @@ public class AePlayWave extends Thread {
 
     private boolean continuing = true;
     private SourceDataLine audioLine;
+    private URL url;
 
 
     public AePlayWave(InputStream wavfile) {
         filename = wavfile;
+
+    }
+
+    public AePlayWave(URL url) {
+        this.url = url;
     }
 
     public void run() {
 
         AudioInputStream audioInputStream = null;
 
-        try{
-            audioInputStream = AudioSystem.getAudioInputStream(filename);
-        }catch(UnsupportedAudioFileException e)
-        {
+        try {
+            //audioInputStream = AudioSystem.getAudioInputStream(filename);
+            audioInputStream = AudioSystem.getAudioInputStream(this.url);
+        } catch (UnsupportedAudioFileException e) {
 
-        }catch(IOException e)
-        {
+        } catch (IOException e) {
 
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         AudioFormat format = audioInputStream.getFormat();
         SourceDataLine auline = null;

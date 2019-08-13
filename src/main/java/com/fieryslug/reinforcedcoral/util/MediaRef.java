@@ -110,7 +110,7 @@ public class MediaRef {
 
     public static AePlayWave playSound(String path) {
         InputStream inputStream = FuncBox.inputStreamFromPath(path);
-        AePlayWave res = new AePlayWave(inputStream);
+        AePlayWave res = new AePlayWave(FuncBox.class.getResource(path));
         res.start();
         return res;
     }
