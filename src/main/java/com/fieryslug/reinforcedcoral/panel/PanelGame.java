@@ -32,7 +32,7 @@ public class PanelGame extends PanelPrime {
     int boxWidth;
     int boxHeight;
     int paneWidth;
-    int paneHeight;
+    public int paneHeight;
 
     @Deprecated
     private int state;
@@ -48,7 +48,7 @@ public class PanelGame extends PanelPrime {
     ArrayList<PanelTeam> panelBoxes;
     public JPanel panelInteriorMenu;
     public PanelProblem panelInteriorPage;
-    private JPanel panelBanner;
+    public JPanel panelBanner;
 
     public ButtonCoral buttonNext;
     public ButtonCoral buttonPrev;
@@ -754,6 +754,10 @@ public class PanelGame extends PanelPrime {
             this.buttonPrev.resizeImageForIcons(buttonX, buttonY);
             this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
             this.panelInteriorPage.applyTexture();
+        }
+        if (this.phase == GamePhase.SPECIAL) {
+            if(this.currentMinigamePanel != null)
+                this.currentMinigamePanel.applyTexture();
         }
     }
 

@@ -1,11 +1,24 @@
 package com.fieryslug.reinforcedcoral.core;
 
+import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
+import com.fieryslug.reinforcedcoral.minigame.PanelMiniGameIntro;
 import com.fieryslug.reinforcedcoral.minigame.snake.PanelSnake;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
+import com.fieryslug.reinforcedcoral.util.FuncBox;
+import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
+import org.json.JSONObject;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ProblemSnake extends Problem {
 
     private PanelSnake panelSnake;
+    private PanelGame panelGame;
+    private PanelMiniGameIntro panelMiniGameIntro;
 
     public ProblemSnake(String name) {
         super(name, 0);
@@ -16,17 +29,31 @@ public class ProblemSnake extends Problem {
     public boolean onClick(PanelGame panelGame) {
 
         //panelGame.setState(-1);
+        this.panelGame = panelGame;
         panelGame.setPhase(GamePhase.SPECIAL);
         this.panelSnake = new PanelSnake(this);
         this.panelSnake.bindPanelGame(panelGame);
 
+        if(this.panelMiniGameIntro == null)
+            this.panelMiniGameIntro = new PanelMiniGameIntro(panelGame.parent);
         panelGame.parent.switchPanel(panelGame, panelGame);
+        panelGame.add(this.panelMiniGameIntro, "0, 1, 5, 3");
+
+        this.panelMiniGameIntro.inflate2(new Page(new JSONObject(FuncBox.readFile("/res/problems/special/snake.json"))));
+        this.panelMiniGameIntro.refreshRendering(panelGame.parent.isFullScreen);
+        this.panelMiniGameIntro.applyTexture();
+        panelGame.currentMinigamePanel = this.panelMiniGameIntro;
+        panelGame.add(this.panelMiniGameIntro.buttonBack, "0, 4");
+        panelGame.add(panelGame.panelBanner, "0, 4, 5, 4");
 
 
+        /*
+        panelGame.parent.switchPanel(panelGame, panelGame);
 
         panelGame.add(this.panelSnake, "0, 1, 5, 4");
         panelGame.currentMinigamePanel = this.panelSnake;
         panelSnake.start();
+        */
 
         return true;
     }

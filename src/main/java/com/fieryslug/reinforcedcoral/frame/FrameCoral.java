@@ -57,8 +57,6 @@ public class FrameCoral extends JFrame {
         this.panelGame = new PanelGame(this);
         this.panelThemes = new PanelThemes(this);
 
-
-
         FuncBox.addKeyBinding(this.getRootPane(), "F11", new ActionFullScreen(this));
         FuncBox.addKeyBinding(this.getRootPane(), "T", new AbstractAction() {
             @Override

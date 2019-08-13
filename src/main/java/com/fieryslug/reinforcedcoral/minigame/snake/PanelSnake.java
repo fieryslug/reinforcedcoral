@@ -24,13 +24,11 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
 import info.clearthought.layout.TableLayout;
 
-public class PanelSnake extends PanelMiniGame {
+public class PanelSnake extends JPanel implements PanelMiniGame {
 
     private static final int COUNT_DOWN = 4;
 

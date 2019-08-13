@@ -5,15 +5,11 @@ import com.fieryslug.reinforcedcoral.core.Team;
 
 import javax.swing.JPanel;
 
-public abstract class PanelMiniGame extends JPanel {
+public interface PanelMiniGame {
 
-    public void react(Team team, ControlKey key) {
+    void react(Team team, ControlKey key);
 
-    }
-
-    public void applyTexture() {
-
-    }
+    void applyTexture();
 
 
 }

@@ -1,0 +1,17 @@
+{
+  "type": 62,
+  "final": false,
+  "elements": [
+    {
+      "widget": "jlabel",
+      "constraints": "0, 0, 19, 19",
+      "content": "貪食蛇",
+      "properties": {
+        "textsize": "80",
+        "textsizefull": "120",
+        "textbold": "true",
+        "center": "true"
+      }
+    }
+  ]
+}

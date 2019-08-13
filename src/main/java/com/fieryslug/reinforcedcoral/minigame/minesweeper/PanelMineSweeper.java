@@ -27,14 +27,12 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.border.Border;
 
 import info.clearthought.layout.TableLayout;
 
-public class PanelMineSweeper extends PanelMiniGame {
+public class PanelMineSweeper extends JPanel implements PanelMiniGame {
 
     private ProblemMineSweeper problemMineSweeper;
     private PanelGame panelGame;
@@ -70,8 +68,6 @@ public class PanelMineSweeper extends PanelMiniGame {
     PanelMineSweeper(ProblemMineSweeper problem, int rows, int columns, int mines) {
         this.random = new Random();
         this.cursorMap = new HashMap<>();
-
-
 
         this.problemMineSweeper = problem;
 

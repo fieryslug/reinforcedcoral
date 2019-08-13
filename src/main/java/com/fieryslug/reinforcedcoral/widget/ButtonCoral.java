@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.widget;
 
+import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Pair;
 
@@ -131,6 +132,20 @@ public class ButtonCoral extends JButton {
 
     }
 
+    public void resizePreservingRatio(int x, int y) {
+        this.imageDefault = FuncBox.resizeImagePreservingRatio(this.imageDefault, x, y);
+        this.imageHover = FuncBox.resizeImagePreservingRatio(this.imageHover, x, y);
+        this.imagePress = FuncBox.resizeImagePreservingRatio(this.imagePress, x, y);
+
+        this.iconDefault = new ImageIcon(this.imageDefault);
+        this.iconHover = new ImageIcon(this.imageHover);
+        this.iconPress = new ImageIcon(this.imagePress);
+
+        setIcon(this.iconDefault);
+
+
+    }
+
     public static ImageIcon resizeImage(Image image, int x, int y) {
         Pair<Image, Dimension> key = new Pair<Image, Dimension>(image, new Dimension(x, y));
 
@@ -153,5 +168,4 @@ public class ButtonCoral extends JButton {
     public ButtonCoral getNeighbor(Direction direction) {
         return this.neighbors.get(direction);
     }
-
 }
