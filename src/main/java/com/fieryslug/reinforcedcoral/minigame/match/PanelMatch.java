@@ -80,6 +80,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                 grid[i][j] = new JLabel(FACEDOWN, SwingConstants.CENTER);
                 grid[i][j].setOpaque(true);
                 grid[i][j].setBackground(new Color(0, 0, 0, 0));
+                grid[i][j].setForeground(new Color(31, 31, 31, 255));
                 grid[i][j].setFont(new Font("Microsoft JhengHei", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
                 //grid[i][j].setText(new String(Character.toChars(0x1F0A0)));
                 add(grid[i][j], j + ", " + i);
@@ -115,7 +116,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                 if (picked[i][j]) {
                     if (pickNum == 2) {
                         if (correct) grid[i][j].setBackground(new Color(0, 152, 16, 255));
-                        else grid[i][j].setBackground(new Color(211, 58, 33, 255));
+                        else grid[i][j].setBackground(new Color(211, 116, 56, 255));
                     }
                     else grid[i][j].setBackground(new Color(112, 89, 180, 255));
                 }
@@ -181,6 +182,9 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                     picked[nowX][nowY] = true;
                     pickNum++;
                     grid[nowX][nowY].setText(idToString(card[nowX][nowY]));
+                    if (card[nowX][nowY] / 6 == 1 || card[nowX][nowY] / 6 == 2) {
+                        grid[nowX][nowY].setForeground(new Color(255, 0, 0, 255));
+                    }
                     if (pickNum == 2) {
                         boolean flag = false;
                         int first = -1;
@@ -192,10 +196,10 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                                         if (first % 6 == card[i][j] % 6 && first/6 + card[i][j]/6 == 3) {
                                             correct = true;
                                             confirmed[i][j] = confirmed[fx][fy] = true;
-                                            teamOrder[playing].addPoints(75);
-                                            //panelGame.panelBoxes.get(playing).labelScore.repaint();
                                             PanelTeam panelTeam = panelGame.teamPanelMap.get(teamOrder[playing]);
-                                            panelTeam.labelScore.setText(String.valueOf(teamOrder[playing].getScore()));
+                                            panelTeam.labelScore.setText(String.valueOf(teamOrder[playing].getScore()) + " + 50");
+                                            teamOrder[playing].addPoints(50);
+                                            //panelGame.panelBoxes.get(playing).labelScore.repaint();
                                             //panelTeam.repaint();
                                             tot += 2;
                                         }
@@ -220,9 +224,12 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                                         picked[i][j] = false;
                                         if (!confirmed[i][j]) {
                                             grid[i][j].setText(FACEDOWN);
+                                            grid[i][j].setForeground(new Color(31, 31, 31, 255));
                                         }
                                     }
                                 }
+                                PanelTeam panelTeam = panelGame.teamPanelMap.get(teamOrder[playing]);
+                                panelTeam.labelScore.setText(String.valueOf(teamOrder[playing].getScore()));
                                 if (!correct) playing = (playing + 1) % 4;
                                 correct = false;
                                 if (tot >= 24) {
