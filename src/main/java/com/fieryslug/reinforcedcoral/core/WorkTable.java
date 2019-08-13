@@ -15,8 +15,6 @@ public class WorkTable {
         Category catSocio = new Category("歷史/地理/公民");
         Category catLit = new Category("國文/英文");
 
-        //coralcoralcoralcoralcoral-----------------------------------------------------------
-
         Problem prbS5 = new Problem("1/physmath/3.json");
         Problem prbW6 = new Problem("1/physmath/1_1.json");
         Problem prbF7 = new Problem("1/physmath/2_1.json");
@@ -97,10 +95,10 @@ public class WorkTable {
 
         Problem prb31 = new ProblemMineSweeper("踩地雷");
         Problem prbSnake = new ProblemSnake("貪食蛇");
-        Problem prb33 = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
+        Problem prb33 = new ProblemMineSweeper("瘋狂踩地雷");
         Problem prb34 = new ProblemMatch("神經衰弱");
         Problem prb35 = new Problem("placeholder", 0);
-        Problem prb36 = new Problem("placeholder", 0);
+        Problem prb36 = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
 
         prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);
         prb12.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);

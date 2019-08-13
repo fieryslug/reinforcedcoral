@@ -1,7 +1,6 @@
 package com.fieryslug.reinforcedcoral.panel;
 
 import com.fieryslug.reinforcedcoral.core.Game;
-import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.FontRef;

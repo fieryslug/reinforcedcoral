@@ -25,7 +25,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -82,11 +81,12 @@ public class PanelSnake extends PanelMiniGame {
         this.freeSlots = new HashSet<>();
 
         addFruitGenerator(new FruitGenerator(7, 0, 51, -6, Reference.WHITE));
-        addFruitGenerator(new FruitGenerator(50, 1, 21, -1, Reference.LIME));
-        addFruitGenerator(new FruitGenerator(50, 1, 49, -2, Reference.LIME));
-        addFruitGenerator(new FruitGenerator(50, 1, 37, -3, Reference.LIME));
-        addFruitGenerator(new FruitGenerator(150, 3, 59, -4, Reference.BROWN));
-        addFruitGenerator(new FruitGenerator(500, 10, 119, -5, Reference.RED));
+        addFruitGenerator(new FruitGenerator(30, 1, 21, -1, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(30, 1, 49, -2, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(30, 1, 37, -3, Reference.LIME));
+        addFruitGenerator(new FruitGenerator(100, 3, 59, -4, Reference.BROWN));
+        addFruitGenerator(new FruitGenerator(400, 10, 119, -5, Reference.BLAZE));
+        addFruitGenerator(new FruitGenerator(1, 100, 450, -7, Reference.RED));
 
         this.snakes = new Snake[4];
 
@@ -420,6 +420,16 @@ public class PanelSnake extends PanelMiniGame {
             this.finishPlans();
         }
         else {
+
+            for (int i = 0; i < 4; ++i) {
+                if (this.snakes[i].isAlive) {
+                    Team team = this.panelGame.parent.game.teams.get(i);
+                    PanelTeam panelTeam = this.panelGame.teamPanelMap.get(team);
+                    panelTeam.labelState.setText("+500");
+                    team.addPoints(500);
+                }
+            }
+
             this.timerUpdate.cancel();
             add(this.labelGameOver, "15, 5, 34, 13");
             this.labelGameOver.setText("Game Over");
