@@ -37,12 +37,14 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
     private boolean correct = false;
     private int tot = 0;
     private boolean ready = false;
-    private static final String FACEDOWN = new String(Character.toChars(0x1F0A0));
+    //private static final String FACEDOWN = new String(Character.toChars(0x1F0A0));
+    private static final String FACEDOWN = "#";
 
     private String idToString(int id) {
         int suit = id / 6;
         int rank = id % 6;
-        return new String(Character.toChars(0x1F000 | ((10 + suit) << 4) | (rank >= 11 ? 2 + rank : 1 + rank)));
+        return ""+rank;
+        //return new String(Character.toChars(0x1F000 | ((10 + suit) << 4) | (rank >= 11 ? 2 + rank : 1 + rank)));
     }
 
     public PanelMatch(Problem problem, PanelGame panelGame) {
