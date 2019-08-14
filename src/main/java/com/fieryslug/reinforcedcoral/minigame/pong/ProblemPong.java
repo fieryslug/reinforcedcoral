@@ -1,5 +1,7 @@
-package com.fieryslug.reinforcedcoral.core;
+package com.fieryslug.reinforcedcoral.minigame.pong;
 
+import com.fieryslug.reinforcedcoral.core.GamePhase;
+import com.fieryslug.reinforcedcoral.core.Problem;
 import com.fieryslug.reinforcedcoral.minigame.pong.PanelPong;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 

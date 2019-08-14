@@ -7,6 +7,7 @@ import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.minigame.snake.Point;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.panel.PanelTeam;
+import com.fieryslug.reinforcedcoral.util.AlphaContainer;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
@@ -16,8 +17,11 @@ import com.fieryslug.reinforcedcoral.widget.Direction;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -103,6 +107,35 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         this.slots = new MineSlot[width][height];
         this.slotCount = this.columns * this.rows;
 
+
+        this.labelEnd = new JLabel("", SwingConstants.CENTER);
+        this.labelEnd.setText("Game Over");
+        this.labelEnd.setForeground(Reference.WHITE);
+        this.labelEnd.setFont(FontRef.TAIPEI80BOLD);
+        this.labelEnd.setVisible(false);
+
+
+        this.buttonBack = new JButton();
+        this.buttonBack.setBackground(Reference.BLACK);
+
+
+        this.buttonBack2 = new JButton();
+        this.buttonBack2.setOpaque(true);
+        this.buttonBack2.setBackground(Reference.TRANSPARENT_ORANGE);
+        this.buttonBack2.setForeground(Reference.WHITE);
+        this.buttonBack2.setVisible(false);
+        this.buttonBack2.setFont(FontRef.TAIPEI40BOLD);
+        this.buttonBack2.setText("main menu");
+
+        int x1, x2, y1, y2;
+        x1 = width * 1 / 4;
+        x2 = width * 3 / 4;
+        y1 = height * 3 / 4;
+        y2 = height * 1;
+
+        add(this.labelEnd, x1 + "," + 0 + "," + x2 + "," + y2) ;
+        add(this.buttonBack2, x1 + "," + y1 + "," + x2 + "," + y2);
+        add(this.buttonBack, "0, 0");
         for (int i = 0; i < this.columns; ++i) {
             for (int j = 0; j < this.rows; ++j) {
                 this.slots[i][j] = new MineSlot(i, j, this);
@@ -130,19 +163,6 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
             this.borders[i] = BorderFactory.createLineBorder(FLAG_COLORS[i], 3);
         }
 
-        this.buttonBack = new JButton();
-        this.buttonBack.setBackground(Reference.BLACK);
-        add(this.buttonBack, "0, 0");
-
-        this.buttonBack2 = new JButton();
-        this.buttonBack2.setBackground(Reference.TRANSPARENT_BLUE);
-        this.buttonBack2.setVisible(false);
-        int x1, x2, y1, y2;
-        x1 = width * 1 / 4;
-        x2 = width * 3 / 4;
-        y1 = width * 3 / 4;
-        y2 = width * 1;
-        add(this.buttonBack2, x1 + "," + y2 + "," + x2 + "," + y2);
 
         linkButtons();
 
@@ -155,6 +175,17 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
+                panelGame.problemButtonMap.get(problemMineSweeper).setState(1);
+                panelGame.setPhase(GamePhase.MENU);
+                panelGame.parent.switchPanel(panelGame, panelGame);
+                timer2.cancel();
+                timer.cancel();
+            }
+        });
+
+        this.buttonBack2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
                 panelGame.problemButtonMap.get(problemMineSweeper).setState(1);
                 panelGame.setPhase(GamePhase.MENU);
                 panelGame.parent.switchPanel(panelGame, panelGame);
@@ -273,8 +304,8 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                         if (points != 0) {
 
                             this.locked = true;
-                            addPointsToTeam(points, team);
 
+                            addPointsToTeam(points, team);
                             this.timer.schedule(new TimerTask() {
                                 @Override
                                 public void run() {
@@ -321,7 +352,6 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                 System.out.println("slots left: " + this.slotCount);
             }
         }
-
     }
 
     private void addPointsToTeam(int points, Team team) {
@@ -344,34 +374,44 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         }, 1000);
     }
 
-    private void toNextTeam() {
+    private synchronized void toNextTeam() {
         timer2.cancel();
         timer2 = new Timer();
-        Team team = this.teams.get(this.currentTeamNum);
-        PanelTeam panelTeam = this.panelGame.teamPanelMap.get(team);
-        panelTeam.labelState.setText("");
-        panelTeam.setBackground(TextureHolder.getInstance().getColor("team" + (currentTeamNum + 1)));
-        currentTeamNum++;
-        currentTeamNum %= 2;
-        Team nextTeam = teams.get(currentTeamNum);
-        PanelTeam panelNextTeam = this.panelGame.teamPanelMap.get(nextTeam);
-        panelGame.teamPanelMap.get(nextTeam).setBackground(CURRENT_TEAM_COLOR);
 
-        this.countDown = COUNTDOWN;
+        System.out.println(this.slotCount);
 
-        this.timer2.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                countDown--;
-                panelNextTeam.labelState.setText(countDown + "");
-                if (countDown <= 0) {
-                    countDown = COUNTDOWN;
-                    react(nextTeam, ControlKey.ENTER);
-                    timer2.cancel();
-                    timer2 = new Timer();
+        if (this.slotCount == 0) {
+            endGame();
+        }
+
+        else {
+
+            Team team = this.teams.get(this.currentTeamNum);
+            PanelTeam panelTeam = this.panelGame.teamPanelMap.get(team);
+            panelTeam.labelState.setText("");
+            panelTeam.setBackground(TextureHolder.getInstance().getColor("team" + (currentTeamNum + 1)));
+            currentTeamNum++;
+            currentTeamNum %= 1;
+            Team nextTeam = teams.get(currentTeamNum);
+            PanelTeam panelNextTeam = this.panelGame.teamPanelMap.get(nextTeam);
+            panelGame.teamPanelMap.get(nextTeam).setBackground(CURRENT_TEAM_COLOR);
+
+            this.countDown = COUNTDOWN;
+
+            this.timer2.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    countDown--;
+                    panelNextTeam.labelState.setText(countDown + "");
+                    if (countDown <= 0) {
+                        countDown = COUNTDOWN;
+                        react(nextTeam, ControlKey.ENTER);
+                        timer2.cancel();
+                        timer2 = new Timer();
+                    }
                 }
-            }
-        }, 1000, 1000);
+            }, 1000, 1000);
+        }
     }
 
     private void generateMines(int safeX, int safeY, int mines) {
@@ -441,9 +481,34 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
             panelTeam.labelScore.setForeground(FLAG_COLORS[index]);
             index++;
         }
-        updateDisplay();
+        if (this.ready) {
+            Team team = this.teams.get(this.currentTeamNum);
+            this.panelGame.teamPanelMap.get(team).setBackground(CURRENT_TEAM_COLOR);
+            Point point = this.cursorMap.get(team);
+            System.out.println(point);
+            //this.slots[point.x][point.y].setBorder(this.borders[this.currentTeamNum]);
+            //changeSelectedSlotDisplay(this.currentTeamNum, );
+        }
+
+        //updateDisplay();
         System.out.println("updated");
 
+
+    }
+
+    @Override
+    public void refreshRendering(boolean isFullScreen) {
+
+        updateDisplay();
+
+        if (isFullScreen) {
+            this.buttonBack2.setFont(FontRef.TAIPEI60BOLD);
+            this.labelEnd.setFont(FontRef.TAIPEI120BOLD);
+
+        } else {
+            this.buttonBack2.setFont(FontRef.TAIPEI40BOLD);
+            this.labelEnd.setFont(FontRef.TAIPEI80BOLD);
+        }
 
     }
 
@@ -523,13 +588,37 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
     }
 
     void endGame() {
-
         this.timer.cancel();
+        this.timer.purge();
         this.timer = new Timer();
         this.timer2.cancel();
+        this.timer2.purge();
         this.timer2 = new Timer();
 
+        this.ready = false;
+        this.locked = true;
+
+
+        int width = this.columns + 1, height = this.rows + 1;
+        int x1, x2, y1, y2;
+        x1 = width * 1 / 4;
+        x2 = width * 3 / 4;
+        y1 = height * 3 / 4;
+        y2 = height * 1;
+
         this.buttonBack2.setVisible(true);
+        this.labelEnd.setVisible(true);
+
+        /*
+        this.slotCount = this.columns * this.rows;
+        add(this.buttonBack2, x1 + "," + y1 + "," + x2 + "," + y2);
+        this.buttonBack.setText("");
+        this.buttonBack.setText("main menu");
+        */
+
+
+
+
 
     }
 }

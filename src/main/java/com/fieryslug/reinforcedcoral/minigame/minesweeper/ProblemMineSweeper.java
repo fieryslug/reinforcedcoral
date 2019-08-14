@@ -19,7 +19,7 @@ public class ProblemMineSweeper extends Problem {
 
         PanelProblem panelProblem = new PanelProblem (panelGame.parent);
         panelGame.setPhase(GamePhase.SPECIAL);
-        this.panelMineSweeper = new PanelMineSweeper(this, 7, 24, 30);
+        this.panelMineSweeper = new PanelMineSweeper(this, 3, 3, 1);
         this.panelMineSweeper.bindPanelGame(panelGame);
 
         panelGame.parent.switchPanel(panelGame, panelGame);

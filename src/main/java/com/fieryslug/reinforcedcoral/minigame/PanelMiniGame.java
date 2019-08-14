@@ -11,5 +11,6 @@ public interface PanelMiniGame {
 
     void applyTexture();
 
+    void refreshRendering(boolean isFullScreen);
 
 }

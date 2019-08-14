@@ -1,7 +1,8 @@
 package com.fieryslug.reinforcedcoral.core;
 
-import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.minigame.match.ProblemMatch;
 import com.fieryslug.reinforcedcoral.minigame.minesweeper.ProblemMineSweeper;
+import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
 
 //all the dirty work here
 public class WorkTable {

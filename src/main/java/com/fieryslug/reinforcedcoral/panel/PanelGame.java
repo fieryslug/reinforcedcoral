@@ -757,7 +757,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.SPECIAL) {
             if(this.currentMinigamePanel != null)
-                this.currentMinigamePanel.applyTexture();
+                this.currentMinigamePanel.refreshRendering(this.parent.isFullScreen);
         }
     }
 

@@ -258,10 +258,23 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
     @Override
     public void applyTexture() {
         recolor();
+        /*
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
                 grid[i][j].setFont(new Font("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
             }
         }
+        */
+    }
+
+    @Override
+    public void refreshRendering(boolean isFullScreen) {
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                grid[i][j].setFont(FontRef.getFont("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
+            }
+        }
+
     }
 }

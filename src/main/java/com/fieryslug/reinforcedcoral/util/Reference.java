@@ -37,6 +37,7 @@ public class Reference {
     public static final Color DARKAQUA = new Color(9, 79, 70);
     public static final Color DARKERGREEN = new Color(0, 32, 3);
     public static final Color TRANSPARENT_BLUE = new Color(72, 91, 146, 64);
+    public static final Color TRANSPARENT_ORANGE = new Color(200, 135, 41, 128);
 
 
     public static final Border BEVEL1 = BorderFactory.createBevelBorder(0, AQUA, WHITE);
@@ -45,7 +46,6 @@ public class Reference {
     public static final Border STROKE1 = BorderFactory.createStrokeBorder(new BasicStroke(3));
     public static final Border COMPOUND1 = BorderFactory.createCompoundBorder(BEVELGREEN, STROKE1);
     public static final Border PLAIN1 = BorderFactory.createLineBorder(BROWN, 1);
-
 
 
 

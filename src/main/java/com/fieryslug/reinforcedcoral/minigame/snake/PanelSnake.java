@@ -131,7 +131,7 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
         dummy.setBackground(Reference.BLACK);
         dummy.setOpaque(true);
         add(this.labelCountDown, "0, 0, 49, 19");
-        add(dummy, "0, 0");
+        //add(dummy, "0, 0");
         //add(tempButton, "0, 0");
         //add(tempButton2, "1, 1");
 
@@ -508,5 +508,10 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
             panelTeam.labelScore.setForeground(SNAKE_COLORS[tempInt]);
             tempInt++;
         }
+    }
+
+    @Override
+    public void refreshRendering(boolean isFullScreen) {
+
     }
 }

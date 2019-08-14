@@ -1,5 +1,7 @@
-package com.fieryslug.reinforcedcoral.core;
+package com.fieryslug.reinforcedcoral.minigame.snake;
 
+import com.fieryslug.reinforcedcoral.core.GamePhase;
+import com.fieryslug.reinforcedcoral.core.Problem;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGameIntro;

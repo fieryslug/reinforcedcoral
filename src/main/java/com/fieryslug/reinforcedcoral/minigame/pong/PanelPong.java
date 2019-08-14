@@ -127,4 +127,9 @@ public class PanelPong extends JPanel implements PanelMiniGame {
     public void applyTexture() {
 
     }
+
+    @Override
+    public void refreshRendering(boolean isFullScreen) {
+
+    }
 }
