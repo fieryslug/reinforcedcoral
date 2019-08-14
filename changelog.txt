@@ -1,5 +1,15 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
+===gradle_7.2=== 8/14 12pm
+-
+
+===gradle_7.1=== 8/13 13pm
+-various bug fixes
+
+
+===gradle_7.0=== 8/13 10am
+-added 歡樂端午節[2/avocado/1]
+-added 失意的鱷魚[2/avocado/3]
 
 ===gradle_6.5=== 8/12 20pm
 -clean up code

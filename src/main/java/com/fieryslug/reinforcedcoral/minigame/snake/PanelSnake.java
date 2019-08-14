@@ -122,9 +122,10 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
         this.buttonBack.setText("main menu");
         this.buttonBack.setFont(FontRef.JHENGHEI30);
         this.buttonBack.setForeground(Reference.WHITE);
-        this.buttonBack.setBackground(new Color(72, 91, 146, 64));
+        this.buttonBack.setBackground(Reference.TRANSPARENT_BLUE);
         this.buttonBack.setFocusPainted(false);
         this.buttonBack.setFocusable(false);
+
         linkButtons();
         JLabel dummy = new JLabel();
         dummy.setBackground(Reference.BLACK);

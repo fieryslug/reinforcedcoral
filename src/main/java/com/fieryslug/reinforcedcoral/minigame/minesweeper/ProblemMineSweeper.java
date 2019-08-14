@@ -2,7 +2,6 @@ package com.fieryslug.reinforcedcoral.minigame.minesweeper;
 
 import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.Problem;
-import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.panel.PanelProblem;
 
@@ -13,7 +12,6 @@ public class ProblemMineSweeper extends Problem {
     public ProblemMineSweeper(String name) {
         super(name, 0);
         this.panelMineSweeper = new PanelMineSweeper(this, 7, 24, 34);
-
     }
 
     @Override

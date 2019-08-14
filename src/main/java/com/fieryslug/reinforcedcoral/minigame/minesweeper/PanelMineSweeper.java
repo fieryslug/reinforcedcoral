@@ -46,8 +46,8 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
     private Timer timer;
     private Timer timer2;
 
-
-
+    private JLabel labelEnd;
+    private JButton buttonBack2;
 
     private boolean ready = false;
     private boolean locked = false;
@@ -62,6 +62,13 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
     private static final Color[] FLAG_COLORS = {Reference.MAGENTA, Reference.AQUA, Reference.YELLOW, Reference.GREEN};
     private static final Color CURRENT_TEAM_COLOR = Reference.DARKRED;
     private static final int COUNTDOWN = 10;
+
+    private static final int MINE_POINT = -100;
+    private static final int WRONG_FLAG = -50;
+    private static final int RIGHT_FLAG = 100;
+    private static final int SAFE_POP = 10;
+    private static final int ALREADY_POPPED = -20;
+
     private int countDown;
 
 
@@ -94,7 +101,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         setLayout(new TableLayout(size));
 
         this.slots = new MineSlot[width][height];
-        this.slotCount = width * height;
+        this.slotCount = this.columns * this.rows;
 
         for (int i = 0; i < this.columns; ++i) {
             for (int j = 0; j < this.rows; ++j) {
@@ -122,9 +129,20 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         for (int i = 0; i < 4; ++i) {
             this.borders[i] = BorderFactory.createLineBorder(FLAG_COLORS[i], 3);
         }
+
         this.buttonBack = new JButton();
         this.buttonBack.setBackground(Reference.BLACK);
         add(this.buttonBack, "0, 0");
+
+        this.buttonBack2 = new JButton();
+        this.buttonBack2.setBackground(Reference.TRANSPARENT_BLUE);
+        this.buttonBack2.setVisible(false);
+        int x1, x2, y1, y2;
+        x1 = width * 1 / 4;
+        x2 = width * 3 / 4;
+        y1 = width * 3 / 4;
+        y2 = width * 1;
+        add(this.buttonBack2, x1 + "," + y2 + "," + x2 + "," + y2);
 
         linkButtons();
 
@@ -155,6 +173,8 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
 
         this.timer = new Timer();
         this.timer2 = new Timer();
+
+        this.buttonBack2.setVisible(false);
 
         for (int i = 0; i < this.columns; ++i) {
             for (int j = 0; j < this.rows; ++j) {
@@ -212,7 +232,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                             s.setBackground(FLAG_COLORS[currentTeamNum]);
 
                             this.locked = true;
-                            addPointsToTeam(50, team);
+                            addPointsToTeam(RIGHT_FLAG, team);
                             this.timer.schedule(new TimerTask() {
                                 @Override
                                 public void run() {
@@ -229,7 +249,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                         else if (s.type == 0) {
                             popMine(s.x, s.y);
                             this.locked = true;
-                            addPointsToTeam(-150, team);
+                            addPointsToTeam(WRONG_FLAG, team);
                             this.timer.schedule(new TimerTask() {
                                 @Override
                                 public void run() {
@@ -283,7 +303,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                         }
                     }
                     else {
-                        addPointsToTeam(-50, team);
+                        addPointsToTeam(ALREADY_POPPED, team);
                         this.timer.schedule(new TimerTask() {
                             @Override
                             public void run() {
@@ -332,7 +352,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         panelTeam.labelState.setText("");
         panelTeam.setBackground(TextureHolder.getInstance().getColor("team" + (currentTeamNum + 1)));
         currentTeamNum++;
-        currentTeamNum %= 4;
+        currentTeamNum %= 2;
         Team nextTeam = teams.get(currentTeamNum);
         PanelTeam panelNextTeam = this.panelGame.teamPanelMap.get(nextTeam);
         panelGame.teamPanelMap.get(nextTeam).setBackground(CURRENT_TEAM_COLOR);
@@ -395,14 +415,14 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                 for (MineSlot slot : s.getAdjacentSlots()) {
                     if (slot.getState() == 0) popMine(slot.x, slot.y);
                 }
-                points = 10;
+                points = SAFE_POP;
 
             } else if (s.unpoppedAndSafe()) {
                 s.popSelf();
-                points = 10;
+                points = SAFE_POP;
             } else if (s.type == 1) {
 
-                points = -100;
+                points = MINE_POINT;
                 s.popSelf();
                 MediaRef.playSound(MediaRef.EXPLOSION);
             }
@@ -485,9 +505,31 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
                 Team team = this.teams.get(i);
                 Point point = this.cursorMap.get(team);
                 this.slots[point.x][point.y].setTopBorder(this.borders[i]);
-
             }
         }
+    }
+
+    public int slotsLeft() {
+        int count = 0;
+        for (int i = 0; i < this.columns; ++i) {
+            for (int j = 0; j < this.rows; ++j) {
+                if (this.slots[i][j].getState() == 0) {
+                    count += 1;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    void endGame() {
+
+        this.timer.cancel();
+        this.timer = new Timer();
+        this.timer2.cancel();
+        this.timer2 = new Timer();
+
+        this.buttonBack2.setVisible(true);
 
     }
 }

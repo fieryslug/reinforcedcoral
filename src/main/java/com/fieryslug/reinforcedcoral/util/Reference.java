@@ -36,6 +36,7 @@ public class Reference {
     public static final Color YELLOW = new Color(255, 188, 0);
     public static final Color DARKAQUA = new Color(9, 79, 70);
     public static final Color DARKERGREEN = new Color(0, 32, 3);
+    public static final Color TRANSPARENT_BLUE = new Color(72, 91, 146, 64);
 
 
     public static final Border BEVEL1 = BorderFactory.createBevelBorder(0, AQUA, WHITE);

@@ -89,7 +89,8 @@ public class MineSlot extends JLabel {
         if (this.type == 0) {
             setState(1);
             this.setBackground(Reference.DARKGRAY);
-            this.setText(this.neighborMines + "");
+            if (this.neighborMines > 0)
+                this.setText(this.neighborMines + "");
         }
         if (this.type == 1) {
             setState(1);
@@ -110,7 +111,13 @@ public class MineSlot extends JLabel {
         }
         if(state == 0)
             this.state = 0;
+
+        if (this.mineParent.slotCount == 0) {
+            this.mineParent.endGame();
+        }
     }
+
+
 
     int getState() {
         return this.state;
