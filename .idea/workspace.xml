@@ -8,19 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/match/ProblemMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/pong/ProblemPong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/snake/ProblemSnake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/WorkTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/PanelMiniGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/PanelMiniGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/match/PanelMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/match/PanelMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/minesweeper/PanelMineSweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/minesweeper/PanelMineSweeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/minesweeper/ProblemMineSweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/minesweeper/ProblemMineSweeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/pong/PanelPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/pong/PanelPong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/snake/PanelSnake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/minigame/snake/PanelSnake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Preference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -344,6 +332,7 @@
       <workItem from="1565702513156" duration="557000" />
       <workItem from="1565744755016" duration="7404000" />
       <workItem from="1565758484397" duration="1725000" />
+      <workItem from="1565865764835" duration="1507000" />
     </task>
     <servers />
   </component>

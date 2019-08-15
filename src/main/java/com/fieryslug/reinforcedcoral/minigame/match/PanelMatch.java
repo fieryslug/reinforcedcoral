@@ -26,6 +26,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
     private JLayeredPane layeredPane;
 
     private JButton buttonBack;
+    private JButton buttonBack0;
     private JLabel[][] grid = new JLabel[3][8];
     private int[][] card = new int[3][8];
     private Team[] teamOrder = new Team[4];
@@ -47,7 +48,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
         return new String(Character.toChars(0x1F000 | ((10 + suit) << 4) | (rank >= 11 ? 2 + rank : 1 + rank)));
     }
 
-    public PanelMatch(Problem problem, PanelGame panelGame) {
+    PanelMatch(Problem problem, PanelGame panelGame) {
 
         this.parentProblem = problem;
         this.panelGame = panelGame;
@@ -63,36 +64,24 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
 
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
-        double[][] size = {new double[8], new double[3]};
+        double[][] size = {new double[8], new double[4]};
         for (int i = 0; i < 8; ++i) {
-            size[0][i] = 1.0/8;
+            size[0][i] = 1.0d/8;
         }
         for (int i = 0; i < 3; ++i) {
-            size[1][i] = 1.0/3;
+            size[1][i] = 0.85d/3;
         }
+
+        size[1][3] = 0.15d;
 
         TableLayout layout = new TableLayout(size);
         layout.setHGap(5);
         layout.setVGap(5);
         setLayout(layout);
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 8; j++) {
-                //grid[i][j] = new JLabel(idToString(card[i][j]), SwingConstants.CENTER);
-                grid[i][j] = new JLabel(FACEDOWN, SwingConstants.CENTER);
-                grid[i][j].setOpaque(true);
-                grid[i][j].setBackground(new Color(0, 0, 0, 0));
-                grid[i][j].setForeground(new Color(31, 31, 31, 255));
-                grid[i][j].setFont(new Font("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
-                //grid[i][j].setText(new String(Character.toChars(0x1F0A0)));
-                add(grid[i][j], j + ", " + i);
-                //layeredPane.setLayer(grid[i][j], JLayeredPane.DEFAULT_LAYER);
-            }
-        }
-
         this.buttonBack = new JButton();
         this.buttonBack.setText("main menu");
-        this.buttonBack.setFont(FontRef.JHENGHEI30);
+        this.buttonBack.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, panelGame.parent.isFullScreen ? 45 : 30));
         this.buttonBack.setForeground(Reference.WHITE);
         this.buttonBack.setBackground(new Color(72, 91, 146, 167));
         this.buttonBack.setFocusPainted(false);
@@ -100,6 +89,16 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
         this.buttonBack.setVisible(false);
 
         add(buttonBack, "3, 2, 4, 2");
+
+        this.buttonBack0 = new JButton();
+        this.buttonBack0.setText("main menu");
+        this.buttonBack0.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, panelGame.parent.isFullScreen ? 45 : 30));
+        this.buttonBack0.setForeground(Reference.WHITE);
+        this.buttonBack0.setBackground(new Color(72, 91, 146, 167));
+        this.buttonBack0.setFocusPainted(false);
+        this.buttonBack0.setFocusable(false);
+
+        add(buttonBack0, "3, 3, 4, 3");
 
         this.buttonBack.addActionListener(new ActionListener() {
             @Override
@@ -110,6 +109,33 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                 panelGame.problemButtonMap.get(parentProblem).setState(1);
             }
         });
+
+        this.buttonBack0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                panelGame.setState(0);
+                panelGame.setPhase(GamePhase.MENU);
+                panelGame.parent.switchPanel(panelGame, panelGame);
+            }
+        });
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                //grid[i][j] = new JLabel(idToString(card[i][j]), SwingConstants.CENTER);
+                grid[i][j] = new JLabel(FACEDOWN, SwingConstants.CENTER);
+                grid[i][j].setOpaque(true);
+                grid[i][j].setBackground(new Color(0, 0, 0, 0));
+                grid[i][j].setForeground(new Color(31, 31, 31, 255));
+                grid[i][j].setFont(new Font("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 120 : 80));
+                //grid[i][j].setText(new String(Character.toChars(0x1F0A0)));
+                add(grid[i][j], j + ", " + i);
+                //layeredPane.setLayer(grid[i][j], JLayeredPane.DEFAULT_LAYER);
+            }
+        }
+
+
+
+
     }
 
     private void recolor() {
@@ -272,8 +298,16 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
-                grid[i][j].setFont(FontRef.getFont("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 135 : 90));
+                grid[i][j].setFont(FontRef.getFont("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 120 : 80));
             }
+        }
+
+        if (isFullScreen) {
+            this.buttonBack.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 45));
+            this.buttonBack0.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 45));
+        } else {
+            this.buttonBack.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 30));
+            this.buttonBack0.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 30));
         }
 
     }
