@@ -1,8 +1,9 @@
-package com.fieryslug.reinforcedcoral.panel;
+package com.fieryslug.reinforcedcoral.panel.subpanel;
 
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
+import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 
@@ -21,11 +22,21 @@ public class PanelTeam extends JPanel {
     public Team team;
 
     private int where;
+    private boolean isUp;
 
     public PanelTeam(Team team, int i) {
 
         this.team = team;
         this.where = i;
+        this.isUp = i - 1 < ((Preference.teams + 1) / 2);
+        initialize();
+
+    }
+
+    public PanelTeam(Team team, boolean isUp) {
+
+        this.team = team;
+        this.isUp = isUp;
         initialize();
 
     }
@@ -36,7 +47,7 @@ public class PanelTeam extends JPanel {
         this.setBackground(Reference.BLACK);
 
         this.labelName = new JLabel();
-        this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
+        this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
         this.labelName.setForeground(Reference.BLAZE);
         this.labelName.setText("第" + this.team.getId() + "小隊  ");
 
@@ -90,10 +101,10 @@ public class PanelTeam extends JPanel {
     public void enter(boolean isFullScreen) {
 
         if(isFullScreen) {
-            this.labelState.setFont(FontRef.JHENGHEI60BOLD);
+            this.labelState.setFont(FontRef.TAIPEI60BOLD);
         }
         else {
-            this.labelState.setFont(FontRef.JHENGHEI40BOLD);
+            this.labelState.setFont(FontRef.TAIPEI40BOLD);
         }
 
     }
@@ -113,20 +124,43 @@ public class PanelTeam extends JPanel {
 
     public void applyTexture(TextureHolder holder) {
 
-        setBackground(holder.getColor("team" + this.where));
+        System.out.println("hi");
+
+        String side = this.isUp ? "u" : "d";
+
+        setBackground(holder.getColor("team" + side));
         //System.out.println(holder.getColor("team" + this.where));
         //System.out.println();
-        setBorder(BorderFactory.createLineBorder(holder.getColor("team" + this.where + "_border"), 3));
-        this.labelName.setForeground(holder.getColor("team" + this.where + "_text"));
-        this.labelScore.setForeground(holder.getColor("team" + this.where + "_score"));
+        setBorder(FuncBox.getLineBorder(holder.getColor("team" + side + "_border"), 3));
+
+
+
+        this.labelName.setForeground(holder.getColor("team" + side + "_text"));
+        this.labelScore.setForeground(holder.getColor("team" + side + "_score"));
 
         if (this.team.hasPrivilege) {
             setBackground(holder.getColor("team_privilege"));
-            setBorder(BorderFactory.createLineBorder(holder.getColor("team_privilege_border"), 3));
+            setBorder(FuncBox.getLineBorder(holder.getColor("team_privilege_border"), 3));
             this.labelName.setForeground(holder.getColor("team_privilege_text"));
             this.labelScore.setForeground(holder.getColor("team_privilege_score"));
         }
 
+    }
+
+
+    public void applyPrimitiveTexture(TextureHolder holder) {
+        String side = this.isUp ? "u" : "d";
+
+        setBackground(holder.getColor("team" + side));
+
+        setBorder(BorderFactory.createLineBorder(holder.getColor("team" + side + "_border"), 3));
+
+        this.labelName.setForeground(holder.getColor("team" + side + "_text"));
+        this.labelScore.setForeground(holder.getColor("team" + side + "_score"));
+    }
+
+    public boolean isUp() {
+        return this.isUp;
     }
 
 }

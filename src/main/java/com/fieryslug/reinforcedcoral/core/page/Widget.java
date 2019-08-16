@@ -3,6 +3,9 @@ package com.fieryslug.reinforcedcoral.core.page;
 //import com.sun.org.apache.regexp.internal.RECompiler;
 //import layout.TableLayoutConstraints;
 import com.fieryslug.reinforcedcoral.util.FontRef;
+
+import org.json.JSONObject;
+
 import info.clearthought.layout.TableLayoutConstraints;
 
 import java.awt.*;
@@ -97,6 +100,22 @@ public class Widget {
 
     public boolean isAbstract() {
         return this.widgetType.isAbstract();
+    }
+
+    public JSONObject exportAsJson() {
+
+        JSONObject json = new JSONObject();
+        json.put("widget", this.widgetType);
+        json.put("constraints", this.constraints);
+        json.put("content", this.content);
+
+        JSONObject jsonProperties = new JSONObject();
+        for (String key : this.properties.keySet()) {
+            jsonProperties.put(key, this.properties.get(key));
+        }
+
+        json.put("properties", jsonProperties);
+        return json;
     }
 
 

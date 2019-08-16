@@ -7,4 +7,5 @@ public class Preference {
     public static int categories = 4;
     public static int problemsPerCategory = 6;
 
+
 }

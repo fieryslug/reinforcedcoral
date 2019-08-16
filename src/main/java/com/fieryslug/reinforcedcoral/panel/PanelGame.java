@@ -1,12 +1,16 @@
 package com.fieryslug.reinforcedcoral.panel;
 
 import com.fieryslug.reinforcedcoral.core.*;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelProblem;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.FontRef;
+import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
-import com.fieryslug.reinforcedcoral.widget.ButtonColorized;
-import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
-import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonColorized;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 import com.fieryslug.reinforcedcoral.widget.Direction;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
@@ -113,7 +117,7 @@ public class PanelGame extends PanelPrime {
         this.teamTempScoreMap = new HashMap<>();
         this.answerSequence = new ArrayList<>();
 
-        double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15}};
+        double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.14285d, 0.14285d, 0.14285d, 0.14285d, 0.14285d, 0.14285d, 0.14285d}};
         this.panelInteriorMenu = new JPanel();
         this.panelInteriorMenu.setLayout(new TableLayout(size));
         //this.panelInteriorMenu.setBackground(Reference.DARKGRAY);
@@ -133,7 +137,7 @@ public class PanelGame extends PanelPrime {
         this.labelCountDown = new JLabel("", SwingConstants.CENTER);
         //this.labelCountDown.setForeground(Reference.YELLOW);
 
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < Preference.teams; ++i) {
             Team team = this.parent.game.teams.get(i);
             teamIndexMap.put(team, i);
             PanelTeam panel = new PanelTeam(team, i+1);
@@ -182,6 +186,8 @@ public class PanelGame extends PanelPrime {
                 button.label = label3;
                 button.label.setOpaque(false);
 
+                //System.out.println(button.getIcon());
+
                 this.buttonProblemMap.put(button, problem);
                 this.problemButtonMap.put(problem, button);
 
@@ -190,7 +196,7 @@ public class PanelGame extends PanelPrime {
                 j += 1;
 
             }
-            applyTexture();
+            applyTexture(TextureHolder.getInstance());
             i += 1;
             j = 0;
         }
@@ -392,7 +398,7 @@ public class PanelGame extends PanelPrime {
         //if (this.phase != this.prevPhase) reset();
 
         //this.teamKeys.clear();
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < Preference.teams; ++i) {
             Team team = this.parent.game.teams.get(i);
             PanelTeam panelTeam = this.panelBoxes.get(i);
             //this.teamKeys.put(team, new ArrayList<>());
@@ -420,8 +426,9 @@ public class PanelGame extends PanelPrime {
         this.paneWidth = this.frameWidth - 10;
         this.paneHeight = this.frameHeight * 3 / 5 - 5;
 
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < Preference.teams; ++i) {
             PanelTeam panel = this.panelBoxes.get(i);
+            /*
             Team team = this.parent.game.teams.get(i);
             if (team.hasPrivilege) {
                 panel.setBackground(holder.getColor("team_privilege"));
@@ -432,6 +439,8 @@ public class PanelGame extends PanelPrime {
                 panel.labelName.setForeground(holder.getColor("team" + (i + 1) + "_text"));
                 panel.labelScore.setForeground(holder.getColor("team" + (i + 1) + "_score"));
             }
+            */
+            panel.applyTexture(holder);
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
         }
 
@@ -590,7 +599,7 @@ public class PanelGame extends PanelPrime {
             this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
             this.panelInteriorPage.applyTexture();
 
-            for (int i = 0; i < 4; ++i) {
+            for (int i = 0; i < Preference.teams; ++i) {
                 Team team = this.parent.game.teams.get(i);
                 PanelTeam panelTeam = this.teamPanelMap.get(team);
                 //System.out.println(team.getId() + ": " + this.teamKeysDeprecated.get(team));
@@ -662,13 +671,13 @@ public class PanelGame extends PanelPrime {
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
         }
-        applyTexture();
-        this.refresh();
+        applyTexture(holder);
+        refresh();
     }
 
     @Override
     public void refresh() {
-        applyTexture();
+        //applyTexture();
         this.frameWidth = this.parent.getContentPane().getWidth();
         this.frameHeight = this.parent.getContentPane().getHeight();
         this.boxWidth = this.frameWidth / 2 - 10;
@@ -724,7 +733,7 @@ public class PanelGame extends PanelPrime {
                 this.labelCountDown.setFont(FontRef.TAIPEI60);
         }
         if (this.phase == GamePhase.INTERMEDIATE) {
-            for (int i = 0; i < 4; ++i) {
+            for (int i = 0; i < Preference.teams; ++i) {
                 Team team = this.parent.game.teams.get(i);
                 PanelTeam panelTeam = this.teamPanelMap.get(team);
                 if (this.teamLockedMap.get(team)) {
@@ -763,7 +772,7 @@ public class PanelGame extends PanelPrime {
 
     private void reset() {
 
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < Preference.teams; ++i) {
             Team team = this.parent.game.teams.get(i);
             PanelTeam panelTeam = this.panelBoxes.get(i);
             this.teamKeysDeprecated.put(team, new ArrayList<>());
@@ -894,11 +903,10 @@ public class PanelGame extends PanelPrime {
         return flag;
     }
 
-    public void applyTexture() {
+    @Override
+    public void applyTexture(TextureHolder holder) {
 
 
-
-        TextureHolder holder = this.parent.textureHolder;
         setBackground(holder.getColor("background"));
 
 
@@ -945,6 +953,7 @@ public class PanelGame extends PanelPrime {
             this.buttonNext.setImages(image0, image1, image2);
             this.buttonPrev.setImages(image0, image1, image2);
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }

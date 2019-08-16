@@ -1,7 +1,7 @@
-package com.fieryslug.reinforcedcoral.core;
+package com.fieryslug.reinforcedcoral.core.problem;
 
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
-import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 
 import javax.swing.SwingUtilities;
 

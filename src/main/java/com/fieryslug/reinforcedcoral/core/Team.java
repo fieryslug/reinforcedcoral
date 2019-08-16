@@ -5,6 +5,7 @@ public class Team {
     private int score;
     private int id;
     public boolean hasPrivilege;
+    private String name;
 
     public Team(int id) {
 
@@ -14,10 +15,16 @@ public class Team {
 
     }
 
+
+
     public void addPoints(int points) {
 
-        this.score += points;
+        addPoints(points, "");
 
+    }
+
+    public void addPoints(int points, String reason) {
+        this.score += points;
     }
 
     public int getScore() {
@@ -38,6 +45,14 @@ public class Team {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
 }

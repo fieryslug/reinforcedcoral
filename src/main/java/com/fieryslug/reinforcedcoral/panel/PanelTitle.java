@@ -1,7 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel;
 
 import com.fieryslug.reinforcedcoral.util.FontRef;
-import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;

@@ -90,7 +90,6 @@ public class PanelThemes extends PanelPrime {
 
         add(this.comboBox, "2, 2");
         add(this.labelImage, "4, 2, 8, 7");
-        add(this.buttonConfirm, "4, 9, 5, 9");
     }
 
     private void addAndLinkButtons() {
@@ -116,16 +115,10 @@ public class PanelThemes extends PanelPrime {
             public void actionPerformed(ActionEvent actionEvent) {
                 Preference.texture = selectedTexture;
                 TextureHolder.getInstance().read(Preference.texture);
-                parent.switchPanel(PanelThemes.this, parent.panelTitle);
+
+                parent.switchPanel(PanelThemes.this, parent.panelTitleBeautified);
             }
         });
-
-    }
-
-    @Override
-    protected void paintComponent(Graphics graphics) {
-
-        super.paintComponent(graphics);
 
     }
 

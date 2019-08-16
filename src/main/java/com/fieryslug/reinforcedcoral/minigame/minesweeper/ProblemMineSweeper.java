@@ -1,9 +1,9 @@
 package com.fieryslug.reinforcedcoral.minigame.minesweeper;
 
 import com.fieryslug.reinforcedcoral.core.GamePhase;
-import com.fieryslug.reinforcedcoral.core.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
-import com.fieryslug.reinforcedcoral.panel.PanelProblem;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelProblem;
 
 public class ProblemMineSweeper extends Problem {
 

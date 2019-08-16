@@ -1,4 +1,4 @@
-package com.fieryslug.reinforcedcoral.panel;
+package com.fieryslug.reinforcedcoral.panel.subpanel;
 
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.core.page.Widget;

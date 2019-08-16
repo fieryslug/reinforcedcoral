@@ -6,6 +6,7 @@ public class Game {
 
     public ArrayList<Team> teams;
     public ArrayList<Category> categories;
+    private ProblemSet problemSet;
 
     public Game(int t1, int t2, int t3, int t4) {
 
@@ -25,6 +26,9 @@ public class Game {
         this.categories.add(category);
 
     }
+
+
+
 
     public void setPrivilegeTeam(Team team) {
 

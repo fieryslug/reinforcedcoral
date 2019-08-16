@@ -6,22 +6,19 @@ import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.minigame.snake.Point;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
-import com.fieryslug.reinforcedcoral.panel.PanelTeam;
-import com.fieryslug.reinforcedcoral.util.AlphaContainer;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
+import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.widget.Direction;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -389,9 +386,14 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
             Team team = this.teams.get(this.currentTeamNum);
             PanelTeam panelTeam = this.panelGame.teamPanelMap.get(team);
             panelTeam.labelState.setText("");
-            panelTeam.setBackground(TextureHolder.getInstance().getColor("team" + (currentTeamNum + 1)));
+            //panelTeam.setBackground(TextureHolder.getInstance().getColor("team" + (currentTeamNum + 1)));
+
+            String side = panelTeam.isUp() ? "u" : "d";
+            panelTeam.setBackground(TextureHolder.getInstance().getColor("team" + side));
+
+
             currentTeamNum++;
-            currentTeamNum %= 1;
+            currentTeamNum %= Preference.teams;
             Team nextTeam = teams.get(currentTeamNum);
             PanelTeam panelNextTeam = this.panelGame.teamPanelMap.get(nextTeam);
             panelGame.teamPanelMap.get(nextTeam).setBackground(CURRENT_TEAM_COLOR);

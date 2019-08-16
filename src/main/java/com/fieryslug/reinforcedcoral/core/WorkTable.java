@@ -1,5 +1,8 @@
 package com.fieryslug.reinforcedcoral.core;
 
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemMine;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemSlipper;
 import com.fieryslug.reinforcedcoral.minigame.match.ProblemMatch;
 import com.fieryslug.reinforcedcoral.minigame.minesweeper.ProblemMineSweeper;
 import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
@@ -7,7 +10,7 @@ import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
 //all the dirty work here
 public class WorkTable {
 
-    public static Game getGame() {
+    public static Game getGame0() {
 
         Game game = new Game(1, 2, 3, 12);
 
@@ -59,6 +62,8 @@ public class WorkTable {
         game.addCategory(catChemBio);
         game.addCategory(catSocio);
         game.addCategory(catLit);
+
+        System.out.println(prbPPB.exportAsJson().toString(4));
 
         return game;
 
@@ -125,5 +130,6 @@ public class WorkTable {
         game.addCategory(catAvocado);
         return game;
     }
+
 
 }

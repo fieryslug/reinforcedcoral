@@ -1,9 +1,7 @@
 package com.fieryslug.reinforcedcoral.minigame.match;
 
 import com.fieryslug.reinforcedcoral.core.GamePhase;
-import com.fieryslug.reinforcedcoral.core.Problem;
-import com.fieryslug.reinforcedcoral.minigame.match.PanelMatch;
-import com.fieryslug.reinforcedcoral.minigame.pong.PanelPong;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 
 public class ProblemMatch extends Problem {

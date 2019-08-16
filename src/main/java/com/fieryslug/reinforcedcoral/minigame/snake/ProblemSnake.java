@@ -1,18 +1,14 @@
 package com.fieryslug.reinforcedcoral.minigame.snake;
 
 import com.fieryslug.reinforcedcoral.core.GamePhase;
-import com.fieryslug.reinforcedcoral.core.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.core.page.Page;
-import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGameIntro;
-import com.fieryslug.reinforcedcoral.minigame.snake.PanelSnake;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
-import com.fieryslug.reinforcedcoral.util.TextureHolder;
-import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
+
 import org.json.JSONObject;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

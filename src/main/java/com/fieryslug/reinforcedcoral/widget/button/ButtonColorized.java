@@ -1,4 +1,4 @@
-package com.fieryslug.reinforcedcoral.widget;
+package com.fieryslug.reinforcedcoral.widget.button;
 
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
@@ -6,7 +6,6 @@ import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import java.util.Arrays;
 
 import javax.swing.BorderFactory;
-import javax.swing.border.Border;
 
 public class ButtonColorized extends ButtonProblem {
 

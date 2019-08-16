@@ -8,6 +8,7 @@ import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.panel.PanelSettings;
 import com.fieryslug.reinforcedcoral.panel.PanelThemes;
 import com.fieryslug.reinforcedcoral.panel.PanelTitle;
+import com.fieryslug.reinforcedcoral.panel.title.PanelTitleBeautified;
 import com.fieryslug.reinforcedcoral.util.*;
 
 import javax.swing.*;
@@ -20,6 +21,7 @@ public class FrameCoral extends JFrame {
     public int maxHeight, maxWidth;
 
     public PanelPrime panelTitle;
+    public PanelPrime panelTitleBeautified;
     public PanelPrime panelSettings;
     public PanelPrime panelGame;
     public PanelPrime panelThemes;
@@ -53,6 +55,7 @@ public class FrameCoral extends JFrame {
         this.textureHolder.read(Preference.texture);
 
         this.panelTitle = new PanelTitle(this);
+        this.panelTitleBeautified = new PanelTitleBeautified(this);
         this.panelSettings = new PanelSettings(this);
         this.panelGame = new PanelGame(this);
         this.panelThemes = new PanelThemes(this);
@@ -71,15 +74,24 @@ public class FrameCoral extends JFrame {
                 }
                 index = (index + 1) % Reference.TEXTURE_PACKS.length;
                 Preference.texture = Reference.TEXTURE_PACKS[index];
-                TextureHolder.getInstance().read(Preference.texture);
-                refresh();
+                TextureHolder holder = TextureHolder.getInstance();
+                holder.read(Preference.texture);
+                refresh(holder);
             }
         });
 
-        getContentPane().add(panelTitle);
-        this.currentPanel = panelTitle;
+        boolean notTesting = false;
+
+        if(notTesting) getContentPane().add(panelTitle);
+        else getContentPane().add(panelTitleBeautified);
+
+        if(notTesting) this.currentPanel = panelTitle;
+        else this.currentPanel = panelTitleBeautified;
+
 
         setVisible(true);
+        if(notTesting) panelTitle.enter();
+        else panelTitleBeautified.enter();
 
     }
 
@@ -107,8 +119,9 @@ public class FrameCoral extends JFrame {
 
     }
 
-    public void refresh() {
+    public void refresh(TextureHolder holder) {
 
+        this.currentPanel.applyTexture(holder);
         this.currentPanel.refresh();
 
     }
@@ -137,5 +150,10 @@ public class FrameCoral extends JFrame {
         this.panelGame = new PanelGame(this);
         this.textureHolder.read(Preference.texture);
 
+    }
+
+
+    public void applyTexture(TextureHolder holder) {
+        this.currentPanel.applyTexture(holder);
     }
 }

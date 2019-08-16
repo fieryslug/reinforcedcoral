@@ -3,6 +3,7 @@ package com.fieryslug.reinforcedcoral.panel;
 import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
+import com.fieryslug.reinforcedcoral.util.TextureHolder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +21,7 @@ public abstract class PanelPrime extends JPanel {
 
     }
 
-    public void initialize() {
+    protected void initialize() {
 
     }
 
@@ -41,4 +42,7 @@ public abstract class PanelPrime extends JPanel {
 
     }
 
+    public void applyTexture(TextureHolder holder) {
+
+    }
 }

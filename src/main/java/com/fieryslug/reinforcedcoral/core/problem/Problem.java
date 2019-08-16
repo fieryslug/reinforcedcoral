@@ -1,9 +1,10 @@
-package com.fieryslug.reinforcedcoral.core;
+package com.fieryslug.reinforcedcoral.core.problem;
 
+import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
-import com.fieryslug.reinforcedcoral.widget.ButtonProblem;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -145,6 +146,43 @@ public class Problem {
         }
         //System.out.println("POINTS: " + points1);
         return points1;
+    }
+
+    public JSONObject exportAsJson() {
+
+        JSONObject json = new JSONObject();
+        json.put("name", this.name);
+        json.put("fuzzy", this.fuzzy);
+        json.put("answer", this.answer);
+        json.put("duration", this.duration);
+
+        JSONObject jsonPoints = new JSONObject();
+        for (ArrayList<ControlKey> keys : this.keysPointsMap.keySet()) {
+            jsonPoints.put(ControlKey.stringRepresentation(keys), this.keysPointsMap.get(keys));
+        }
+
+        json.put("points", jsonPoints);
+
+        JSONArray arrayPages = new JSONArray();
+
+        for (Page page : this.pages) {
+            arrayPages.put(page.exportAsJson());
+        }
+
+        json.put("pages", arrayPages);
+
+        json.put("solution", this.pageSolution.exportAsJson());
+
+        if (this.pagesExplanation.size() > 0) {
+            JSONArray arrayExplanation = new JSONArray();
+            for (Page page : this.pagesExplanation) {
+                arrayExplanation.put(page.exportAsJson());
+            }
+            json.put("post_solution", arrayExplanation);
+        }
+
+        return json;
+
     }
 
 

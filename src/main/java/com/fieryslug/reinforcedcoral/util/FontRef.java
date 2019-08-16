@@ -19,6 +19,7 @@ public class FontRef {
     public static final String TAIPEI_BOLD = "Taipei Sans TC Beta Bold";
     public static final String TIMES_NEW_ROMAN = "Times New Roman";
     public static final String LAST_RESORT = "Literate Web LastResort";
+    public static final String NEMESIS = "Nemesis Grant";
 
     static {
         try {
@@ -33,6 +34,7 @@ public class FontRef {
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/DejaVuSans.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/DejaVuSans-Bold.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/Monospace.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/Nemesis Grant.ttf")));
             //ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/arialuni.ttf")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/LastResort.ttf")));
 

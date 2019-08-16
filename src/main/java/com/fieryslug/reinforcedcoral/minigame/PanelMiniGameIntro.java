@@ -5,13 +5,10 @@ import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
-import com.fieryslug.reinforcedcoral.panel.PanelProblem;
-import com.fieryslug.reinforcedcoral.util.FuncBox;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelProblem;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
-import com.fieryslug.reinforcedcoral.widget.ButtonCoral;
+import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

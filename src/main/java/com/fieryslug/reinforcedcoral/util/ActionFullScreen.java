@@ -36,7 +36,7 @@ public class ActionFullScreen extends AbstractAction {
 
         frame.setVisible(true);
 
-        frame.refresh();
+        frame.refresh(TextureHolder.getInstance());
 
         frame.repaint();
         int x = frame.getWidth();

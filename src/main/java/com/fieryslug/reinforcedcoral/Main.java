@@ -6,8 +6,6 @@ import com.fieryslug.reinforcedcoral.core.WorkTable;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
-import com.fieryslug.reinforcedcoral.util.AePlayWave;
-import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
@@ -16,7 +14,6 @@ import com.sun.net.httpserver.HttpServer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-import java.io.InputStream;
 import java.net.InetSocketAddress;
 
 
@@ -29,8 +26,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        start();
         //start();
+        start();
     }
 
     public static void start() {
@@ -39,7 +36,7 @@ public class Main {
 
         Game game = null;
         if (Reference.DEFAULT_GAME == 0)
-            game = WorkTable.getGame();
+            game = WorkTable.getGame0();
         if (Reference.DEFAULT_GAME == 1)
             game = WorkTable.getGame1();
         FrameCoral frame = new FrameCoral(game);

@@ -7,8 +7,13 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_7.1";
+    public static final String VERSION = "gradle_8.0";
+    public static final String UPDATE_DATE = "2019.08.17";
     public static final int DEFAULT_GAME = 1;
+
+    public static final int MAX_TEAMS = 12;
+    public static final int MAX_CATEGORIES = 12;
+    public static final int MAX_PROBLEMS_PER_CATEGORIES = 10;
 
     public static final String[] TEXTURE_PACKS = {"eggplant", "caramel", "classic", "balloon", "ocean", "jungle", "punk"};
     //public static final String

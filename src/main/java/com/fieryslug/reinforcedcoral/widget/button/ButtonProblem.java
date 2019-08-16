@@ -1,10 +1,7 @@
-package com.fieryslug.reinforcedcoral.widget;
+package com.fieryslug.reinforcedcoral.widget.button;
 
 import com.fieryslug.reinforcedcoral.util.FontRef;
-import com.fieryslug.reinforcedcoral.util.FuncBox;
-import com.fieryslug.reinforcedcoral.util.MediaRef;
 
-import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseWheelEvent;

@@ -2,11 +2,11 @@ package com.fieryslug.reinforcedcoral.minigame.snake;
 
 import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.GamePhase;
-import com.fieryslug.reinforcedcoral.core.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
-import com.fieryslug.reinforcedcoral.panel.PanelTeam;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;

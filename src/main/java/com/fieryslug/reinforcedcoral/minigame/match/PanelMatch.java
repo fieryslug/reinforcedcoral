@@ -2,12 +2,13 @@ package com.fieryslug.reinforcedcoral.minigame.match;
 
 import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.GamePhase;
-import com.fieryslug.reinforcedcoral.core.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
-import com.fieryslug.reinforcedcoral.panel.PanelTeam;
+import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.FontRef;
+import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import info.clearthought.layout.TableLayout;
@@ -139,6 +140,8 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
     }
 
     private void recolor() {
+
+        TextureHolder holder = TextureHolder.getInstance();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
                 if (picked[i][j]) {
@@ -154,12 +157,14 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
             }
         }
         grid[nowX][nowY].setBackground(new Color(189, 170, 47, 255));
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < Preference.teams; i++) {
             if (i == playing) {
-                panelGame.teamPanelMap.get(teamOrder[i]).setBackground(TextureHolder.getInstance().getColor("team_privilege"));
+                panelGame.teamPanelMap.get(teamOrder[i]).setBackground(holder.getColor("team_privilege"));
             }
             else {
-                panelGame.teamPanelMap.get(teamOrder[i]).setBackground(TextureHolder.getInstance().getColor("team"+(i+1)));
+                //panelGame.teamPanelMap.get(teamOrder[i]).setBackground(holder.getColor("team"+(i+1)));
+                PanelTeam panelTeam = panelGame.teamPanelMap.get(teamOrder[i]);
+                panelTeam.setBackground(panelTeam.isUp() ? holder.getColor("teamu") : holder.getColor("teamd"));
             }
             //panelGame.teamPanelMap.get(team).setBackground(TextureHolder.getInstance().getColor("team"+(tmp+1)));
         }
@@ -167,6 +172,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
 
     public void start() {
         int tmp = 0;
+        this.teamOrder = new Team[Preference.teams];
         for (Team team : this.panelGame.parent.game.teams) {
             teamOrder[tmp] = team;
             if (team.hasPrivilege) {
@@ -258,7 +264,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                                 }
                                 PanelTeam panelTeam = panelGame.teamPanelMap.get(teamOrder[playing]);
                                 panelTeam.labelScore.setText(String.valueOf(teamOrder[playing].getScore()));
-                                if (!correct) playing = (playing + 1) % 4;
+                                if (!correct) playing = (playing + 1) % Preference.teams;
                                 correct = false;
                                 if (tot >= 24) {
                                     //System.out.println("WTF???");

@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,6 +50,8 @@ public class TextureHolder {
             this.imageKeys.add(arrayImageKeys.getString(i));
         }
 
+        //System.out.println(this.wildcardMap);
+
         instance = this;
     }
 
@@ -74,9 +75,11 @@ public class TextureHolder {
                     if (otherKeys != null) {
                         for (String otherKey : otherKeys) {
                             this.colorMap.put(otherKey, color);
+                            System.out.println(otherKey + " " + color);
                         }
                     }
                 } catch (Exception e) {
+                   // e.printStackTrace();
                 }
             }
 

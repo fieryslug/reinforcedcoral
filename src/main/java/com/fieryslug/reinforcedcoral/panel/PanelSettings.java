@@ -98,7 +98,7 @@ public class PanelSettings extends PanelPrime {
             public void actionPerformed(ActionEvent actionEvent) {
 
                 if(problemSetNumber == 1) {
-                    Game game = WorkTable.getGame();
+                    Game game = WorkTable.getGame0();
                     parent.refreshGame(game);
                 }
                 if (problemSetNumber == 2) {

@@ -84,4 +84,34 @@ public class Page {
     }
 
 
+    public JSONObject exportAsJson() {
+
+        JSONObject json = new JSONObject();
+        json.put("type", this.type);
+
+        if (this.type == Reference.MAGIC_PRIME) {
+
+            json.put("final", this.isFinal);
+            JSONArray arrayWidgets = new JSONArray();
+            for (Widget widget : this.widgets) {
+                arrayWidgets.put(widget.exportAsJson());
+            }
+
+            json.put("elements", arrayWidgets);
+
+        } else {
+
+            JSONArray arrayRes = new JSONArray();
+
+            for (String str : this.res) {
+                arrayRes.put(str);
+            }
+
+            json.put("res", arrayRes);
+
+        }
+
+        return json;
+
+    }
 }

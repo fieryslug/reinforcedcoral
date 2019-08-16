@@ -1,8 +1,9 @@
-package com.fieryslug.reinforcedcoral.widget;
+package com.fieryslug.reinforcedcoral.widget.button;
 
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Pair;
+import com.fieryslug.reinforcedcoral.widget.Direction;
 
 import javax.swing.*;
 import java.awt.*;
@@ -84,6 +85,14 @@ public class ButtonCoral extends JButton {
 
         this.addMouseListener(this.mouseListener);
 
+    }
+
+    public void refreshRendering() {
+        if (this.isMouseInside) {
+            onEntered();
+        } else {
+            toDefault();
+        }
     }
 
     public void setImages(Image imageDefault, Image imageHover, Image imagePress) {
