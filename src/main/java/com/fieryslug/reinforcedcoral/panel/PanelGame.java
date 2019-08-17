@@ -5,16 +5,12 @@ import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelProblem;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
-import com.fieryslug.reinforcedcoral.util.FontRef;
-import com.fieryslug.reinforcedcoral.util.Preference;
-import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonColorized;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 import com.fieryslug.reinforcedcoral.widget.Direction;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
-import com.fieryslug.reinforcedcoral.util.MediaRef;
-import com.fieryslug.reinforcedcoral.util.Reference;
 //import layout.TableLayout;
 import info.clearthought.layout.TableLayout;
 import javax.swing.*;
@@ -221,6 +217,38 @@ public class PanelGame extends PanelPrime {
 
             }
         }
+
+        FuncBox.addKeyBinding(this, "RIGHT", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (phase == GamePhase.IN_PROBLEM || phase == GamePhase.POST_SOLUTION) {
+                    nextPage();
+                }
+            }
+        });
+        FuncBox.addKeyBinding(this, "LEFT", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (phase == GamePhase.IN_PROBLEM || phase == GamePhase.POST_SOLUTION) {
+                    prevPage();
+                }
+            }
+        });
+        FuncBox.addKeyBinding(this, "ENTER", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (phase == GamePhase.INTERMEDIATE || phase == GamePhase.SHOW_ANSWER || phase == GamePhase.SOLUTION) {
+                    confirm();
+                }
+                if (phase == GamePhase.ANSWERING) {
+                    TextureHolder holder = TextureHolder.getInstance();
+                    setPhase(GamePhase.INTERMEDIATE);
+                    labelCountDown.setForeground(holder.getColor("countdown"));
+                    timer.cancel();
+                    parent.switchPanel(PanelGame.this, PanelGame.this);
+                }
+            }
+        });
     }
 
     private void linkButtons() {
@@ -228,125 +256,21 @@ public class PanelGame extends PanelPrime {
         this.buttonNext.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if (phase == GamePhase.IN_PROBLEM) {
-                    if (currentPageNumber + 1 < currentProblem.pages.size()) {
-                        int nextpage = PanelGame.this.currentPageNumber + 1;
-                        if (PanelGame.this.currentProblem.pages.get(nextpage).isFinal()) {
-                            PanelGame.this.setState(2);
-                            setPhase(GamePhase.ANSWERING);
-                        }
-                        PanelGame.this.currentPageNumber = nextpage;
-                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
-
-                    }
-                } else if (phase == GamePhase.POST_SOLUTION) {
-                    if (currentExplanationNumber + 1 < currentProblem.pagesExplanation.size()) {
-                        int nextpage = currentExplanationNumber + 1;
-                        currentExplanationNumber = nextpage;
-                        parent.switchPanel(PanelGame.this, PanelGame.this);
-                    } else {
-                        currentExplanationNumber = 0;
-                        ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
-                        buttonProblem.setState(1);
-                        setPhase(GamePhase.MENU);
-                        panelInteriorPage.clearSounds();
-                        parent.switchPanel(PanelGame.this, PanelGame.this);
-                    }
-                }
+                nextPage();
             }
         });
 
         this.buttonPrev.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
-                if (phase == GamePhase.IN_PROBLEM) {
-
-                    if (currentPageNumber == 0) {
-                        System.out.println("switched");
-                        PanelGame.this.setState(0);
-                        setPhase(GamePhase.MENU);
-                        PanelGame.this.currentProblem = null;
-                        PanelGame.this.currentPageNumber = 0;
-                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
-
-                        System.out.println("ffffffffffffffff");
-                        panelInteriorPage.clearSounds();
-
-                    } else {
-                        PanelGame.this.currentPageNumber--;
-                        PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
-                    }
-
-                } else if (phase == GamePhase.POST_SOLUTION) {
-                    if (currentExplanationNumber <= 0) {
-
-                    }
-                    else {
-                        currentExplanationNumber --;
-                        parent.switchPanel(PanelGame.this, PanelGame.this);
-                    }
-                }
-
+                prevPage();
             }
         });
 
         this.buttonConfirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println(phase);
-
-                if (phase == GamePhase.INTERMEDIATE) {
-                    setPhase(GamePhase.SHOW_ANSWER);
-                    parent.switchPanel(PanelGame.this, PanelGame.this);
-                }
-                else if (phase == GamePhase.SHOW_ANSWER) {
-                    for (Team team : parent.game.teams) {
-                        teamTempScoreMap.put(team, 0);
-                    }
-                    int index = 0;
-                    boolean first = true;
-                    for (Team team : answerSequence) {
-                        int points = currentProblem.getPoints(teamKeysDeprecated.get(team));
-                        points = currentProblem.getPoints(new ArrayList<>(teamKeys.get(team)));
-
-                        if (!first) points /= 2;
-                        if (points > 0 && first) {
-                            parent.game.setPrivilegeTeam(team);
-                            first = false;
-                        }
-                        teamTempScoreMap.put(team, points);
-                        index++;
-                    }
-                    /*
-                    for (Team team : PanelGame.this.parent.game.teams) {
-                        if (teamLockedMap.get(team)) {
-                            System.out.println(teamKeys.get(team));
-                            int points = currentProblem.getPoints(teamKeys.get(team));
-                            System.out.println("BUTTON: " + team.getId() + ": " + points);
-                            teamTempScoreMap.put(team, points);
-                        } else {
-                            teamTempScoreMap.put(team, 0);
-                        }
-                    }
-                    */
-                    PanelGame.this.setState(3);
-                    setPhase(GamePhase.SOLUTION);
-                }
-                else if (phase == GamePhase.SOLUTION) {
-                    if (currentProblem.pagesExplanation.size() > 0) {
-                        setPhase(GamePhase.POST_SOLUTION);
-                        currentExplanationNumber = 0;
-                    }
-                    else {
-                        ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
-                        buttonProblem.setState(1);
-                        setState(0);
-                        setPhase(GamePhase.MENU);
-                        panelInteriorPage.clearSounds();
-                    }
-                }
-                parent.switchPanel(PanelGame.this, PanelGame.this);
+               confirm();
             }
         });
 
@@ -531,6 +455,7 @@ public class PanelGame extends PanelPrime {
             //add(FuncBox.blankLabel(2000, 2));
             add(this.panelBoxes.get(2), "0, 5, 2, 5");
             add(this.panelBoxes.get(3), "3, 5, 5, 5");
+
 
         }
         if (this.phase == GamePhase.ANSWERING) {
@@ -956,6 +881,118 @@ public class PanelGame extends PanelPrime {
             e.printStackTrace();
         }
 
+    }
+
+    private void nextPage() {
+        if (phase == GamePhase.IN_PROBLEM) {
+            if (currentPageNumber + 1 < currentProblem.pages.size()) {
+                int nextpage = PanelGame.this.currentPageNumber + 1;
+                if (PanelGame.this.currentProblem.pages.get(nextpage).isFinal()) {
+                    PanelGame.this.setState(2);
+                    setPhase(GamePhase.ANSWERING);
+                }
+                PanelGame.this.currentPageNumber = nextpage;
+                PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+
+            }
+        } else if (phase == GamePhase.POST_SOLUTION) {
+            if (currentExplanationNumber + 1 < currentProblem.pagesExplanation.size()) {
+                int nextpage = currentExplanationNumber + 1;
+                currentExplanationNumber = nextpage;
+                parent.switchPanel(PanelGame.this, PanelGame.this);
+            } else {
+                currentExplanationNumber = 0;
+                ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
+                buttonProblem.setState(1);
+                setPhase(GamePhase.MENU);
+                panelInteriorPage.clearSounds();
+                parent.switchPanel(PanelGame.this, PanelGame.this);
+            }
+        }
+    }
+
+    private void prevPage() {
+        if (phase == GamePhase.IN_PROBLEM) {
+
+            if (currentPageNumber == 0) {
+                System.out.println("switched");
+                PanelGame.this.setState(0);
+                setPhase(GamePhase.MENU);
+                PanelGame.this.currentProblem = null;
+                PanelGame.this.currentPageNumber = 0;
+                PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+
+                //System.out.println("ffffffffffffffff");
+                panelInteriorPage.clearSounds();
+
+            } else {
+                PanelGame.this.currentPageNumber--;
+                PanelGame.this.parent.switchPanel(PanelGame.this, PanelGame.this);
+            }
+
+        } else if (phase == GamePhase.POST_SOLUTION) {
+            if (currentExplanationNumber <= 0) {
+
+            }
+            else {
+                currentExplanationNumber --;
+                parent.switchPanel(PanelGame.this, PanelGame.this);
+            }
+        }
+    }
+
+    private void confirm() {
+        if (phase == GamePhase.INTERMEDIATE) {
+            setPhase(GamePhase.SHOW_ANSWER);
+            parent.switchPanel(PanelGame.this, PanelGame.this);
+        }
+        else if (phase == GamePhase.SHOW_ANSWER) {
+            for (Team team : parent.game.teams) {
+                teamTempScoreMap.put(team, 0);
+            }
+            int index = 0;
+            boolean first = true;
+            for (Team team : answerSequence) {
+                int points = currentProblem.getPoints(teamKeysDeprecated.get(team));
+                points = currentProblem.getPoints(new ArrayList<>(teamKeys.get(team)));
+
+                if (!first) points /= 2;
+                if (points > 0 && first) {
+                    parent.game.setPrivilegeTeam(team);
+                    first = false;
+                }
+                teamTempScoreMap.put(team, points);
+                index++;
+            }
+                    /*
+                    for (Team team : PanelGame.this.parent.game.teams) {
+                        if (teamLockedMap.get(team)) {
+                            System.out.println(teamKeys.get(team));
+                            int points = currentProblem.getPoints(teamKeys.get(team));
+                            System.out.println("BUTTON: " + team.getId() + ": " + points);
+                            teamTempScoreMap.put(team, points);
+                        } else {
+                            teamTempScoreMap.put(team, 0);
+                        }
+                    }
+                    */
+            PanelGame.this.setState(3);
+            setPhase(GamePhase.SOLUTION);
+        }
+        else if (phase == GamePhase.SOLUTION) {
+            if (currentProblem.pagesExplanation.size() > 0) {
+                setPhase(GamePhase.POST_SOLUTION);
+                currentExplanationNumber = 0;
+            }
+            else {
+                ButtonProblem buttonProblem = problemButtonMap.get(currentProblem);
+                buttonProblem.setState(1);
+                setState(0);
+                setPhase(GamePhase.MENU);
+                panelInteriorPage.clearSounds();
+            }
+        }
+        parent.switchPanel(PanelGame.this, PanelGame.this);
     }
 
 }

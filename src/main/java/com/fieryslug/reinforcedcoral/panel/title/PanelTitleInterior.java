@@ -103,6 +103,7 @@ public class PanelTitleInterior extends PanelInterior {
     @Override
     public void enter() {
 
+        setVisible(false);
         int buttonX = (int) (this.panelTitle.getWidth() / (3));
         int buttonY = (int) (this.panelTitle.getHeight() / (10));
         int buttonSize = Math.min(buttonX, buttonY);
@@ -113,6 +114,7 @@ public class PanelTitleInterior extends PanelInterior {
         this.buttonStart.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonEdit.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonInfo.resizeImageForIcons(buttonSize, buttonSize);
+        setVisible(true);
     }
 
     @Override
