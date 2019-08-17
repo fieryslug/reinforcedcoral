@@ -12,6 +12,7 @@ public class Team {
         this.score = 0;
         this.id = id;
         this.hasPrivilege = false;
+        this.name = "team " + String.valueOf(id) + "  ";
 
     }
 

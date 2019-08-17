@@ -113,7 +113,7 @@ public class PanelGame extends PanelPrime {
         this.teamTempScoreMap = new HashMap<>();
         this.answerSequence = new ArrayList<>();
 
-        double size[][] = {{0.25, 0.25, 0.25, 0.25}, {0.14285d, 0.14285d, 0.14285d, 0.14285d, 0.14285d, 0.14285d, 0.14285d}};
+        double size[][] = {FuncBox.createDivisionArray(4), FuncBox.createDivisionArray(7)};
         this.panelInteriorMenu = new JPanel();
         this.panelInteriorMenu.setLayout(new TableLayout(size));
         //this.panelInteriorMenu.setBackground(Reference.DARKGRAY);
@@ -143,7 +143,7 @@ public class PanelGame extends PanelPrime {
         }
 
         int i = 0, j = 0;
-        for (Category category : this.parent.game.categories) {
+        for (Category category : this.parent.game.getCategories()) {
             JLabel label = new JLabel("", SwingConstants.CENTER);
 
             label.setText(category.name);
@@ -196,7 +196,7 @@ public class PanelGame extends PanelPrime {
             i += 1;
             j = 0;
         }
-        for (Category category : this.parent.game.categories) {
+        for (Category category : this.parent.game.getCategories()) {
             for (Problem problem : category.problems) {
                 ButtonProblem button = this.problemButtonMap.get(problem);
                 if (!this.dependencesSatisfied(button)) button.setState(-1);
@@ -285,7 +285,7 @@ public class PanelGame extends PanelPrime {
             }
         });
 
-        for (Category category : this.parent.game.categories) {
+        for (Category category : this.parent.game.getCategories()) {
 
             for (Problem problem : category.problems) {
 
@@ -328,7 +328,7 @@ public class PanelGame extends PanelPrime {
             //this.teamKeys.put(team, new ArrayList<>());
             //this.teamLockedMap.put(team, false);
             panelTeam.setForeground(Reference.WHITE);
-            panelTeam.labelName.setText("第" + team.getId() + "小隊  ");
+            panelTeam.labelName.setText(team.getName());
 
             /*
             if(this.parent.isFullScreen) {
@@ -385,7 +385,7 @@ public class PanelGame extends PanelPrime {
 
             int i = 0, j = 1;
 
-            for (Category category : this.parent.game.categories) {
+            for (Category category : this.parent.game.getCategories()) {
 
                 String pos = String.valueOf(i) + ", " + String.valueOf(0);
                 JLabel labelCategory = this.categoryLabels.get(i);
@@ -619,7 +619,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.MENU) {
             int i = 0, j = 1;
-            for (Category category : this.parent.game.categories) {
+            for (Category category : this.parent.game.getCategories()) {
                 JLabel labelCategory = this.categoryLabels.get(i);
                 if (this.parent.isFullScreen) {
                     labelCategory.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));

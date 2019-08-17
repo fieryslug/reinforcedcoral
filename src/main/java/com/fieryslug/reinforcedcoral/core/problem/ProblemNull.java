@@ -5,9 +5,9 @@ import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 
 import javax.swing.SwingUtilities;
 
-public class ProblemSlipper extends Problem {
+public class ProblemNull extends Problem {
 
-    public ProblemSlipper(String name) {
+    public ProblemNull(String name) {
 
         super(name, 0);
 

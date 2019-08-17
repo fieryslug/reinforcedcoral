@@ -3,6 +3,7 @@ package com.fieryslug.reinforcedcoral.core.problem;
 import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
+import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 
@@ -25,7 +26,7 @@ public class Problem {
     public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
     public ArrayList<Problem> dependences;
 
-    private ButtonProblem buttonProblem;
+    protected ButtonProblem buttonProblem;
 
     @Deprecated
     public Problem(String name, int points) {
@@ -40,8 +41,71 @@ public class Problem {
 
     }
 
-    public Problem(String path) {
+    public Problem(JSONObject jsonObject) {
+        readFromJson(jsonObject);
+    }
 
+    public Problem(String path, boolean isExternal) {
+
+        JSONObject jsonObject;
+
+        if (isExternal) {
+            final String PATH = DataLoader.EXTERNAL_FOLDER + "/problemsets/";
+            jsonObject = new JSONObject(FuncBox.readExternalFile(PATH + path));
+        }
+        else {
+            final  String PATH = "/res/problems/";
+            jsonObject = new JSONObject(FuncBox.readFile(PATH + path));
+        }
+
+        readFromJson(jsonObject);
+
+        /*
+        try {
+            this.name = jsonObject.getString("name");
+            this.fuzzy = jsonObject.getBoolean("fuzzy");
+            String answerString = jsonObject.getString("answer");
+            this.answer = ControlKey.stringToArray(answerString);
+
+            this.duration = jsonObject.optInt("duration", 15);
+            //System.out.println(this.name + ":" + this.duration);
+
+            JSONObject pointsObj = jsonObject.getJSONObject("points");
+            Set<String> pointsKeys = pointsObj.keySet();
+            for (String s : pointsKeys) {
+                int points = pointsObj.getInt(s);
+                ArrayList<ControlKey> tempKeys = ControlKey.stringToArray(s);
+                this.keysPointsMap.put(tempKeys, points);
+            }
+
+            JSONArray arrayPages = jsonObject.getJSONArray("pages");
+            for (int i = 0; i < arrayPages.length(); ++i) {
+                JSONObject objectPage = arrayPages.getJSONObject(i);
+                this.pages.add(new Page(objectPage));
+            }
+
+            Page page = new Page(jsonObject.getJSONObject("solution"));
+            this.pageSolution = page;
+
+
+            if (jsonObject.has("post_solution")) {
+                JSONArray arraySolutions = jsonObject.getJSONArray("post_solution");
+                for (int i = 0; i < arraySolutions.length(); ++i) {
+                    JSONObject objectSolution = arraySolutions.getJSONObject(i);
+                    this.pagesExplanation.add(new Page(objectSolution));
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error occurred while loading " + path + ":");
+            e.printStackTrace();
+        }
+        */
+    }
+
+    public Problem(String path) {
+        this(path, false);
+
+        /*
         this.pages = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
         this.dependences = new ArrayList<>();
@@ -92,10 +156,16 @@ public class Problem {
             System.out.println("Error occurred while loading " + path + ":");
             e.printStackTrace();
         }
+        */
     }
 
     public void bindButton(ButtonProblem button) {
         this.buttonProblem = button;
+        onButtonBound();
+    }
+
+    protected void onButtonBound() {
+
     }
 
     public boolean onClick(PanelGame panelGame) {
@@ -193,5 +263,54 @@ public class Problem {
 
     public int getDuration() {
         return this.duration;
+    }
+
+    private void readFromJson(JSONObject jsonObject) {
+        this.pages = new ArrayList<>();
+        this.keysPointsMap = new HashMap<>();
+        this.dependences = new ArrayList<>();
+        this.pagesExplanation = new ArrayList<>();
+        try {
+            //this.answer = new ArrayList<>();
+
+            this.name = jsonObject.getString("name");
+            this.fuzzy = jsonObject.getBoolean("fuzzy");
+            String answerString = jsonObject.getString("answer");
+            this.answer = ControlKey.stringToArray(answerString);
+
+            this.duration = jsonObject.optInt("duration", 15);
+            //System.out.println(this.name + ":" + this.duration);
+
+            JSONObject pointsObj = jsonObject.getJSONObject("points");
+            Set<String> pointsKeys = pointsObj.keySet();
+            for (String s : pointsKeys) {
+                int points = pointsObj.getInt(s);
+                ArrayList<ControlKey> tempKeys = ControlKey.stringToArray(s);
+                this.keysPointsMap.put(tempKeys, points);
+            }
+
+            JSONArray arrayPages = jsonObject.getJSONArray("pages");
+            for (int i = 0; i < arrayPages.length(); ++i) {
+                JSONObject objectPage = arrayPages.getJSONObject(i);
+                this.pages.add(new Page(objectPage));
+            }
+
+            Page page = new Page(jsonObject.getJSONObject("solution"));
+            this.pageSolution = page;
+
+
+            if (jsonObject.has("post_solution")) {
+                JSONArray arraySolutions = jsonObject.getJSONArray("post_solution");
+                for (int i = 0; i < arraySolutions.length(); ++i) {
+                    JSONObject objectSolution = arraySolutions.getJSONObject(i);
+                    this.pagesExplanation.add(new Page(objectSolution));
+                }
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Error occurred while parsing json file");
+            e.printStackTrace();
+        }
     }
 }

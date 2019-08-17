@@ -49,7 +49,7 @@ public class PanelTeam extends JPanel {
         this.labelName = new JLabel();
         this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
         this.labelName.setForeground(Reference.BLAZE);
-        this.labelName.setText("第" + this.team.getId() + "小隊  ");
+        this.labelName.setText(this.team.getName());
 
         this.labelScore = new JLabel();
         this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
@@ -124,7 +124,7 @@ public class PanelTeam extends JPanel {
 
     public void applyTexture(TextureHolder holder) {
 
-        System.out.println("hi");
+        //System.out.println("hi");
 
         String side = this.isUp ? "u" : "d";
 

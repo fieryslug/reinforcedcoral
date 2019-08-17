@@ -394,7 +394,6 @@ public class PanelProblem extends JPanel {
 
         }
         this.playingAePlayWaves.clear();
-        System.out.println("eeeeeeeeee");
     }
 
     public void applyTexture() {

@@ -26,6 +26,7 @@ public class ButtonColorized extends ButtonProblem {
 
     @Override
     public void toDefault() {
+        /*
         TextureHolder holder = TextureHolder.getInstance();
         setBackground(holder.getColor("problem"));
         try {
@@ -34,6 +35,12 @@ public class ButtonColorized extends ButtonProblem {
 
         }
         setBorder(BorderFactory.createLineBorder(holder.getColor("problem_border"), 3));
+        */
+        try {
+            refreshState();
+        } catch (Exception e) {
+
+        }
     }
 
     @Override

@@ -39,7 +39,7 @@ public class FontRef {
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, FuncBox.inputStreamFromPath("/res/fonts/LastResort.ttf")));
 
             System.out.println("Fonts loaded");
-            FuncBox.listAllFonts();
+            //FuncBox.listAllFonts();
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }

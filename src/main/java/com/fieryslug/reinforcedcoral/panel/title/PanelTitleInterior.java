@@ -111,7 +111,7 @@ public class PanelTitleInterior extends PanelInterior {
 
         this.buttonThemes.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonSettings.resizeImageForIcons(buttonSize, buttonSize);
-        this.buttonStart.resizeImageForIcons(buttonSize, buttonSize);
+        this.buttonStart.resizeImageForIcons(buttonSize * 5 / 4, buttonSize * 5 / 4);
         this.buttonEdit.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonInfo.resizeImageForIcons(buttonSize, buttonSize);
         setVisible(true);
@@ -154,7 +154,7 @@ public class PanelTitleInterior extends PanelInterior {
 
         this.buttonThemes.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonSettings.resizeImageForIcons(buttonSize, buttonSize);
-        this.buttonStart.resizeImageForIcons(buttonSize, buttonSize);
+        this.buttonStart.resizeImageForIcons(buttonSize * 5 / 4, buttonSize * 5 / 4);
         this.buttonEdit.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonInfo.resizeImageForIcons(buttonSize, buttonSize);
     }
@@ -165,7 +165,6 @@ public class PanelTitleInterior extends PanelInterior {
 
         this.labelThemes.setForeground(holder.getColor("text_light"));
         this.buttonThemes.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
-
 
         this.labelSettings.setForeground(holder.getColor("text_light"));
         this.buttonSettings.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
@@ -179,8 +178,7 @@ public class PanelTitleInterior extends PanelInterior {
         this.labelInfo.setForeground(holder.getColor("text_light"));
         this.buttonInfo.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
 
-
-
+        //repaint();
 
         this.labelTitle.setForeground(holder.getColor("text"));
     }

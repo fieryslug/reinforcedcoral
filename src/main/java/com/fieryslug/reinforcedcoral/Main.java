@@ -1,14 +1,17 @@
 package com.fieryslug.reinforcedcoral;
 
 import com.fieryslug.reinforcedcoral.core.Game;
+import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
+import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
+import com.sun.jna.platform.win32.OaIdl;
 import com.sun.net.httpserver.HttpServer;
 
 import java.awt.*;
@@ -19,6 +22,8 @@ import java.net.InetSocketAddress;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.Set;
 
 
 import javax.swing.*;
@@ -30,12 +35,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         start();
+
     }
 
     public static void start() {
-        System.out.println("fieryslug is back");
+        System.out.println("fieryslug is back\n");
+
+
+        DataLoader.getInstance().checkFiles();
+
+        ProblemSet set = new ProblemSet("oblivion2");
+        set.loadProblemSet();
 
 
         Game game = null;
@@ -43,6 +54,10 @@ public class Main {
             game = WorkTable.getGame0();
         if (Reference.DEFAULT_GAME == 1)
             game = WorkTable.getGame1();
+
+
+        game = new Game(set, game.teams);
+
         FrameCoral frame = new FrameCoral(game);
         Thread serverthread = new Thread(new Runnable() {
             @Override
@@ -52,8 +67,7 @@ public class Main {
                     server.createContext("/test", new RequestHandler(frame));
                     server.start();
                     System.out.println("Server started");
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -73,12 +87,11 @@ public class Main {
                     public void actionPerformed(ActionEvent e) {
                         frame.dispose();
                         GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-                        if(frame.isUndecorated()) {
+                        if (frame.isUndecorated()) {
                             device.setFullScreenWindow(null);
                             frame.setUndecorated(false);
 
-                        }
-                        else {
+                        } else {
                             frame.setUndecorated(true);
                             device.setFullScreenWindow(frame);
 

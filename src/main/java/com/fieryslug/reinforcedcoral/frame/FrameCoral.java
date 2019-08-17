@@ -76,6 +76,7 @@ public class FrameCoral extends JFrame {
                 Preference.texture = Reference.TEXTURE_PACKS[index];
                 TextureHolder holder = TextureHolder.getInstance();
                 holder.read(Preference.texture);
+                //applyTexture(holder);
                 refresh(holder);
             }
         });

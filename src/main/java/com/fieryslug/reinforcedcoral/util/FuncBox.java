@@ -97,6 +97,18 @@ public class FuncBox {
 
     }
 
+    public static String[] listDir(String urlstr) {
+
+        String[] res = {};
+        try {
+            File file = new File(urlstr);
+            res = file.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
 
     public static Image resizeImage(Image image, int x, int y) {
         BufferedImage bimage = MediaRef.toBufferedImage(image);
@@ -125,6 +137,7 @@ public class FuncBox {
 
     }
 
+    /*
     @Deprecated
     public static File fileFromPath(String path) {
 
@@ -135,6 +148,7 @@ public class FuncBox {
         }
         return null;
     }
+    */
 
     public static InputStream inputStreamFromPath(String path) {
         return FuncBox.class.getResourceAsStream(path);

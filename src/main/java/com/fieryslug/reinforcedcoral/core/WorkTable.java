@@ -2,7 +2,7 @@ package com.fieryslug.reinforcedcoral.core;
 
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemMine;
-import com.fieryslug.reinforcedcoral.core.problem.ProblemSlipper;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemNull;
 import com.fieryslug.reinforcedcoral.minigame.match.ProblemMatch;
 import com.fieryslug.reinforcedcoral.minigame.minesweeper.ProblemMineSweeper;
 import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
@@ -63,7 +63,7 @@ public class WorkTable {
         game.addCategory(catSocio);
         game.addCategory(catLit);
 
-        System.out.println(prbPPB.exportAsJson().toString(4));
+        //System.out.println(prbPPB.exportAsJson().toString(4));
 
         return game;
 
@@ -104,7 +104,7 @@ public class WorkTable {
         Problem prbMine = new ProblemMineSweeper("踩地雷");
         Problem prb33 = new Problem("2/avocado/3.json");
         Problem prbMatch = new ProblemMatch("記憶遊戲");
-        Problem prbSlipper = new ProblemSlipper("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
+        Problem prbSlipper = new ProblemNull("<html><font color=3333ff><strong>左腳拖鞋</strong></font></html>");
         Problem prbSnake = new ProblemSnake("貪食蛇");
 
         prb11.addDependence(prb01, prb02, prb03, prb04, prb05, prb06);

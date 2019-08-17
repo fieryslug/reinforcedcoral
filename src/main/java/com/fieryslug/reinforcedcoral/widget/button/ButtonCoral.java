@@ -111,6 +111,38 @@ public class ButtonCoral extends JButton {
 
 
         this.mouseMotionListener = new MouseAdapter() {
+
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+                Rectangle bounds = getImageBounds();
+                boolean inside = bounds.contains(mouseEvent.getPoint());
+
+                if (inside) {
+                    inside = false;
+                    BufferedImage bimage = FuncBox.toBufferedImage(ButtonCoral.this.imageDefault);
+                    int ix = mouseEvent.getX() - bounds.x;
+                    int iy = mouseEvent.getY() - bounds.y;
+                    int[] arr = bimage.getData().getPixel(ix, iy, new int[4]);
+
+                    //System.out.println(arr[0] + ", " + arr[1] + ", " + arr[2] + ", " + arr[3]);
+
+                    if (arr[3] > 0) {
+                        inside = true;
+                    }
+
+                }
+
+                if (inside) {
+                    if (!isMouseInside) {
+                        onPressed();
+                    }
+                } else {
+                    if (isMouseInside) {
+                        onExited();
+                    }
+                }
+            }
+
             @Override
             public void mouseMoved(MouseEvent mouseEvent) {
 
@@ -124,7 +156,7 @@ public class ButtonCoral extends JButton {
                     int iy = mouseEvent.getY() - bounds.y;
                     int[] arr = bimage.getData().getPixel(ix, iy, new int[4]);
 
-                    System.out.println(arr[0] + ", " + arr[1] + ", " + arr[2] + ", " + arr[3]);
+                    //System.out.println(arr[0] + ", " + arr[1] + ", " + arr[2] + ", " + arr[3]);
 
                     if (arr[3] > 0) {
                         inside = true;
@@ -133,7 +165,7 @@ public class ButtonCoral extends JButton {
                 }
 
                 if (inside) {
-                    if (!isMouseInside) {
+                    if (!isMouseInside || true) {
                         onEntered();
                     }
                 } else {
@@ -171,7 +203,7 @@ public class ButtonCoral extends JButton {
     }
 
     public void setImages(Image imageDefault, Image imageHover, Image imagePress) {
-        System.out.println("images set");
+        //System.out.println("images set");
         this.imageDefault = imageDefault;
         this.imageHover = imageHover;
         this.imagePress = imagePress;
@@ -186,7 +218,8 @@ public class ButtonCoral extends JButton {
     }
 
     public void onPressed() {
-        setIcon(ButtonCoral.this.iconPress);
+        this.isMouseInside = true;
+        setIcon(this.iconPress);
     }
 
     public void onHover() {
