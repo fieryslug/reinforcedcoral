@@ -5,12 +5,17 @@ import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Pair;
 import com.fieryslug.reinforcedcoral.widget.Direction;
 
+import org.omg.CORBA.Bounds;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,15 +29,24 @@ public class ButtonCoral extends JButton {
     protected ImageIcon iconDefault;
     private ImageIcon iconHover;
     private ImageIcon iconPress;
-    protected MouseListener mouseListener;
+    protected MouseAdapter mouseClickListener;
+    protected MouseAdapter mouseListener;
+    protected MouseAdapter mouseMotionListener;
+
+    private ArrayList<ActionListener> listeners;
 
     public static Map<Pair<Image, Dimension>, ImageIcon> iconCache = new HashMap<>();
 
     private Map<Direction, ButtonCoral> neighbors;
 
     public ButtonCoral(Image imageDefault, Image imageHover, Image imagePress) {
+        this(imageDefault, imageHover, imagePress, true);
+    }
+
+    public ButtonCoral(Image imageDefault, Image imageHover, Image imagePress, boolean irregularShape) {
 
         setImages(imageDefault, imageHover, imagePress);
+        this.listeners = new ArrayList<ActionListener>();
 
         this.imageDefault = imageDefault;
         this.imageHover = imageHover;
@@ -58,19 +72,30 @@ public class ButtonCoral extends JButton {
         setFocusPainted(false);
         setContentAreaFilled(false);
 
-        this.mouseListener = new MouseAdapter() {
-            @Override
+        this.mouseClickListener = new MouseAdapter() {
             public void mousePressed(MouseEvent mouseEvent) {
-                onPressed();
+                if(isMouseInside) {
+                    onPressed();
+                }
             }
-
             @Override
             public void mouseReleased(MouseEvent mouseEvent) {
-                if (ButtonCoral.this.isMouseInside)
+                if (ButtonCoral.this.isMouseInside) {
                     onHover();
+                    ActionEvent event = new ActionEvent(ButtonCoral.this, ActionEvent.ACTION_PERFORMED, "", mouseEvent.getWhen(), mouseEvent.getModifiers());
+
+                    for (ActionListener listener : listeners) {
+                        listener.actionPerformed(event);
+                    }
+                }
                 else
                     toDefault();
+
             }
+
+        };
+
+        this.mouseListener = new MouseAdapter() {
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
@@ -83,9 +108,59 @@ public class ButtonCoral extends JButton {
             }
         };
 
-        this.addMouseListener(this.mouseListener);
+
+
+        this.mouseMotionListener = new MouseAdapter() {
+            @Override
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+                Rectangle bounds = getImageBounds();
+                boolean inside = bounds.contains(mouseEvent.getPoint());
+
+                if (inside) {
+                    inside = false;
+                    BufferedImage bimage = FuncBox.toBufferedImage(ButtonCoral.this.imageDefault);
+                    int ix = mouseEvent.getX() - bounds.x;
+                    int iy = mouseEvent.getY() - bounds.y;
+                    int[] arr = bimage.getData().getPixel(ix, iy, new int[4]);
+
+                    System.out.println(arr[0] + ", " + arr[1] + ", " + arr[2] + ", " + arr[3]);
+
+                    if (arr[3] > 0) {
+                        inside = true;
+                    }
+
+                }
+
+                if (inside) {
+                    if (!isMouseInside) {
+                        onEntered();
+                    }
+                } else {
+                    if (isMouseInside) {
+                        onExited();
+                    }
+                }
+
+            }
+        };
+
+        addMouseListener(this.mouseClickListener);
+        if(irregularShape)
+            addMouseMotionListener(this.mouseMotionListener);
+        else
+            addMouseListener(this.mouseListener);
+
 
     }
+
+    @Override
+    public void addActionListener(ActionListener actionListener) {
+        //super.addActionListener(actionListener);
+        this.listeners.add(actionListener);
+    }
+
+
 
     public void refreshRendering() {
         if (this.isMouseInside) {
@@ -134,6 +209,10 @@ public class ButtonCoral extends JButton {
 
     public void resizeImageForIcons(int x, int y) {
 
+        this.imageDefault = FuncBox.resizeImage(this.imageDefault, x, y);
+        this.imageHover = FuncBox.resizeImage(this.imageHover, x, y);
+        this.imagePress = FuncBox.resizeImage(this.imagePress, x, y);
+
         this.iconDefault = resizeImage(this.imageDefault, x, y);
         this.iconHover = resizeImage(this.imageHover, x, y);
         this.iconPress = resizeImage(this.imagePress, x, y);
@@ -177,4 +256,15 @@ public class ButtonCoral extends JButton {
     public ButtonCoral getNeighbor(Direction direction) {
         return this.neighbors.get(direction);
     }
+
+    private Rectangle getImageBounds() {
+        // TODO Add in proper handling if component size < image size.
+
+        BufferedImage image = FuncBox.toBufferedImage(this.imageDefault);
+        return new Rectangle((int)((getBounds().width-image.getWidth())/2), (int)((getBounds().height-image.getHeight())/2), image.getWidth(), image.getHeight());
+    }
+
+
+
+
 }

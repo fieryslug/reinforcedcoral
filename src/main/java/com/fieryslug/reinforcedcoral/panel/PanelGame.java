@@ -130,9 +130,9 @@ public class PanelGame extends PanelPrime {
         //this.panelBanner.setLayout(new TableLayout(size1));
         //this.panelBanner.setBorder(Reference.BEVEL1);
 
-        this.buttonNext = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
-        this.buttonPrev = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
-        this.buttonConfirm = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS);
+        this.buttonNext = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS, true);
+        this.buttonPrev = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS, true);
+        this.buttonConfirm = new ButtonCoral(MediaRef.ADD, MediaRef.ADD_HOVER, MediaRef.ADD_PRESS, true);
 
         this.labelCountDown = new JLabel("", SwingConstants.CENTER);
         //this.labelCountDown.setForeground(Reference.YELLOW);

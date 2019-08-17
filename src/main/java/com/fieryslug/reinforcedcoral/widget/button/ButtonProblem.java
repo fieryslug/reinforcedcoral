@@ -33,9 +33,9 @@ public class ButtonProblem extends ButtonCoral {
 
     public JLabel label;
 
-    public ButtonProblem(Image imageDefault, Image imageHover, Image imagePress) {
+    public ButtonProblem(Image imageDefault, Image imageHover, Image imagePress, boolean irregularShape) {
 
-        super(imageDefault, imageHover, imagePress);
+        super(imageDefault, imageHover, imagePress, irregularShape);
         this.enabled = true;
         this.state = 0;
         this.taskAnimation = new TimerTask() {

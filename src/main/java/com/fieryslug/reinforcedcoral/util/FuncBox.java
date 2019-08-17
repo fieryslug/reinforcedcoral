@@ -1,6 +1,8 @@
 package com.fieryslug.reinforcedcoral.util;
 
 
+import org.apache.commons.io.IOUtils;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -8,6 +10,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.Inet6Address;
@@ -27,10 +30,12 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+
 public class FuncBox {
 
-    public static Map<Pair<Image, Dimension>, Image> imageCache = new HashMap<>();
-    public static Map<Pair<Color, Integer>, Border> lineBorderCache = new HashMap<>();
+    private static Map<Pair<Image, Dimension>, Image> imageCache = new HashMap<>();
+    private static Map<Image, BufferedImage> bufferedImageCache = new HashMap<>();
+    private static Map<Pair<Color, Integer>, Border> lineBorderCache = new HashMap<>();
 
     public static JLabel blankLabel(int width, int height) {
         JLabel label = new JLabel();
@@ -69,6 +74,30 @@ public class FuncBox {
 
     }
 
+    public static String readExternalFile(String urlstr) {
+
+        String res = "";
+        try {
+            File file = new File(urlstr);
+            InputStreamReader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
+
+
+            BufferedReader read = new BufferedReader(reader);
+            String i;
+            while ((i = read.readLine()) != null)
+                res = res + i + "\n";
+            read.close();
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return res;
+
+    }
+
+
     public static Image resizeImage(Image image, int x, int y) {
         BufferedImage bimage = MediaRef.toBufferedImage(image);
         return bimage.getScaledInstance(x, y, Image.SCALE_SMOOTH);
@@ -80,7 +109,7 @@ public class FuncBox {
         Pair<Image, Dimension> information = new Pair<>(image, new Dimension(x, y));
 
         Image imageNew = imageCache.get(information);
-        if(imageNew != null) return imageNew;
+        if (imageNew != null) return imageNew;
 
         BufferedImage bimage = MediaRef.toBufferedImage(image);
         int height = bimage.getHeight();
@@ -90,8 +119,8 @@ public class FuncBox {
         double scaley = (double) y / height;
         double scale = Math.min(scalex, scaley);
 
-        imageNew =  bimage.getScaledInstance((int) (scale * width), (int) (scale * height), Image.SCALE_SMOOTH);
-        if(imageNew != null) imageCache.put(new Pair<>(image, new Dimension(x, y)), imageNew);
+        imageNew = bimage.getScaledInstance((int) (scale * width), (int) (scale * height), Image.SCALE_SMOOTH);
+        if (imageNew != null) imageCache.put(new Pair<>(image, new Dimension(x, y)), imageNew);
         return imageNew;
 
     }
@@ -163,7 +192,7 @@ public class FuncBox {
                     continue;
 
                 Enumeration<InetAddress> addresses = iface.getInetAddresses();
-                while(addresses.hasMoreElements()) {
+                while (addresses.hasMoreElements()) {
                     InetAddress addr = addresses.nextElement();
 
                     // *EDIT*
@@ -183,10 +212,35 @@ public class FuncBox {
 
         double[] res = new double[n];
         for (int i = 0; i < n; ++i) {
-            res[i] = 1.0d/n;
+            res[i] = 1.0d / n;
         }
         return res;
 
+    }
+
+    public static BufferedImage toBufferedImage(Image img) {
+
+        BufferedImage bufferedImage = bufferedImageCache.get(img);
+        if(bufferedImage != null) return bufferedImage;
+
+
+        if (img instanceof BufferedImage) {
+            BufferedImage bimg = (BufferedImage) img;
+            bufferedImageCache.put(img, bimg);
+            return bimg;
+        }
+
+        // Create a buffered image with transparency
+        BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
+
+        // Draw the image on to the buffered image
+        Graphics2D bGr = bimage.createGraphics();
+        bGr.drawImage(img, 0, 0, null);
+        bGr.dispose();
+
+        // Return the buffered image
+        bufferedImageCache.put(img, bimage);
+        return bimage;
     }
 
 

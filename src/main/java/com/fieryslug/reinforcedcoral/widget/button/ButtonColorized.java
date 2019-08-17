@@ -12,7 +12,7 @@ public class ButtonColorized extends ButtonProblem {
 
 
     public ButtonColorized() {
-        super(null, null, null);
+        super(null, null, null, false);
 
 
     }

@@ -14,7 +14,11 @@ import com.sun.net.httpserver.HttpServer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+import java.awt.image.BufferedImage;
 import java.net.InetSocketAddress;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.Buffer;
 
 
 import javax.swing.*;
@@ -26,7 +30,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //start();
+
         start();
     }
 
