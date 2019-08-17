@@ -1,5 +1,8 @@
 package com.fieryslug.reinforcedcoral.util;
 
+import com.google.common.base.Charsets;
+import org.apache.commons.io.FileUtils;
+
 import javax.xml.crypto.Data;
 import java.io.File;
 import java.util.ArrayList;
@@ -27,7 +30,7 @@ public class DataLoader {
 
     }
 
-    private void checkFile(String path, boolean isDir) {
+    public void checkFile(String path, boolean isDir) {
         File file = new File(path);
         if (file.exists()) {
             System.out.println(path + " found");
@@ -53,6 +56,18 @@ public class DataLoader {
 
             }
         }
+    }
+
+    public void writeToFile(String path, String data, boolean override) {
+        File file = new File(path);
+        if (file.exists() && !override) return;
+        checkFile(path, false);
+        try {
+            FileUtils.writeStringToFile(file, data, Charsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void readCustomTextures() {

@@ -11,9 +11,12 @@ import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 import jdk.nashorn.api.scripting.JSObject;
+import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.xml.crypto.Data;
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +28,7 @@ public class ProblemSet {
     public ArrayList<Category> categories;
     private BiMap<String, Category> idCatMap;
     private BiMap<String, Problem> idProbMap;
+    private Map<Problem, String> probShortIdMap;
 
     public static Map<Class<? extends Problem>, Class<?>[]> argumentMap = new HashMap<>();
 
@@ -41,12 +45,14 @@ public class ProblemSet {
         this.categories = new ArrayList<>();
         this.idCatMap = HashBiMap.create();
         this.idProbMap = HashBiMap.create();
+        this.probShortIdMap = new HashMap<>();
     }
 
     public void loadProblemSet() {
         this.categories.clear();
         this.idCatMap.clear();
         this.idProbMap.clear();
+        this.probShortIdMap.clear();
 
         String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + this.name;
 
@@ -67,6 +73,7 @@ public class ProblemSet {
             JSONArray arrayProbs = jsonProbs.getJSONArray(catId);
             for (int j = 0; j < arrayProbs.length(); ++j) {
                 String probId = catId + "/" + arrayProbs.getString(j);
+                String probShortId = arrayProbs.getString(j);
 
                 String probPath = path + "/" + probId + ".json";
                 Problem problem = new Problem("null", 0);
@@ -125,6 +132,7 @@ public class ProblemSet {
                 }
                 category.addProblem(problem);
                 this.idProbMap.put(probId, problem);
+                this.probShortIdMap.put(problem, probShortId);
             }
             this.categories.add(category);
         }
@@ -152,4 +160,79 @@ public class ProblemSet {
     public String getName() {
         return name;
     }
+
+    public boolean dumpProblemSet(String name1, boolean override) {
+
+        DataLoader loader = DataLoader.getInstance();
+        String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + name1;
+        File file = new File(path);
+        if (file.exists() && !override) {
+            System.out.println(path + " already exists, unable to dump data");
+            return false;
+        }
+
+        String data = exportMeta().toString(2);
+
+        loader.writeToFile(path + "/meta.json", data, override);
+
+        for (Category category : this.categories) {
+            loader.checkFile(path + "/" + this.idCatMap.inverse().get(category), true);
+            for (Problem problem : category.problems) {
+                String probPath = path + "/" + this.idProbMap.inverse().get(problem) + ".json";
+                String dataProb = problem.exportAsJson().toString(2);
+                loader.writeToFile(probPath, dataProb, override);
+            }
+        }
+
+
+        return true;
+    }
+
+    public JSONObject exportMeta() {
+        JSONObject jsonMeta = new JSONObject();
+        JSONArray arrayCats = new JSONArray();
+        for (Category category : this.categories) {
+            JSONObject jsonCat = new JSONObject();
+            jsonCat.put("name", category.name);
+            jsonCat.put("id", this.idCatMap.inverse().get(category));
+            arrayCats.put(jsonCat);
+        }
+        jsonMeta.put("categories", arrayCats);
+
+        JSONObject jsonProbs = new JSONObject();
+
+        for (Category category : this.categories) {
+            JSONArray arrayProbs = new JSONArray();
+            for (Problem problem : category.problems) {
+
+                String probShortId = this.probShortIdMap.get(problem);
+                arrayProbs.put(probShortId);
+            }
+            jsonProbs.put(this.idCatMap.inverse().get(category), arrayProbs);
+        }
+        jsonMeta.put("problems", jsonProbs);
+
+        JSONObject jsonDepend = new JSONObject();
+
+        for (Category category : this.categories) {
+            for (Problem problem : category.problems) {
+                if (problem.dependences.size() > 0) {
+                    JSONArray arrayDependencies = new JSONArray();
+                    for (Problem other : problem.dependences) {
+                        arrayDependencies.put(this.idProbMap.inverse().get(other));
+                    }
+                    jsonDepend.put(this.idProbMap.inverse().get(problem), arrayDependencies);
+                }
+            }
+        }
+
+        jsonMeta.put("dependencies", jsonDepend);
+        return jsonMeta;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 }

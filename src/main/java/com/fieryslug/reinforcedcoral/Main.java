@@ -4,9 +4,11 @@ import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
+import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
 import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
@@ -36,6 +38,10 @@ public class Main {
     public static void main(String[] args) {
 
         start();
+        //ProblemSet set = new ProblemSet("oblivion2");
+        //set.loadProblemSet();
+        //set.dumpProblemSet("oblivion3", true);
+
 
     }
 
@@ -45,7 +51,7 @@ public class Main {
 
         DataLoader.getInstance().checkFiles();
 
-        ProblemSet set = new ProblemSet("oblivion2");
+        ProblemSet set = new ProblemSet("oblivion3");
         set.loadProblemSet();
 
 
