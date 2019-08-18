@@ -1,6 +1,8 @@
 package com.fieryslug.reinforcedcoral.core;
 
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemDisabled;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemDummy;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemMine;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemNull;
 import com.fieryslug.reinforcedcoral.minigame.match.ProblemMatch;
@@ -23,7 +25,7 @@ public class ProblemSet {
 
     private String id;
     private String name;
-    public ArrayList<Category> categories;
+    private ArrayList<Category> categories;
     private BiMap<String, Category> idCatMap;
     private BiMap<String, Problem> idProbMap;
     private Map<Problem, String> probShortIdMap;
@@ -36,6 +38,8 @@ public class ProblemSet {
         argumentMap.put(ProblemNull.class, new Class<?>[]{String.class});
         argumentMap.put(ProblemMatch.class, new Class<?>[]{String.class});
         argumentMap.put(ProblemSnake.class, new Class<?>[]{String.class});
+        argumentMap.put(ProblemDisabled.class, new Class<?>[]{String.class});
+        argumentMap.put(ProblemDummy.class, new Class<?>[]{String.class});
     }
 
     public ProblemSet(String id) {
@@ -66,7 +70,7 @@ public class ProblemSet {
             JSONObject jsonCat = arrayCats.getJSONObject(i);
             String catName = jsonCat.getString("name");
             String catId = jsonCat.getString("id");
-            Category category = new Category(catName);
+            Category category = new Category(catName, catId);
 
             this.idCatMap.put(catId, category);
 
@@ -130,7 +134,8 @@ public class ProblemSet {
                     System.out.println("creating problem " + probId);
                     problem = new Problem(this.id + "/" + probId + ".json", true);
                 }
-                category.addProblem(problem);
+                problem.setShortId(probShortId);
+                category.addProblems(problem);
                 this.idProbMap.put(probId, problem);
                 this.probShortIdMap.put(problem, probShortId);
             }
@@ -142,7 +147,8 @@ public class ProblemSet {
         for (Category category : this.categories) {
             for (Problem problem : category.problems) {
 
-                String probId = this.idProbMap.inverse().get(problem);
+                //String probId = this.idProbMap.inverse().get(problem);
+                String probId = problem.id;
 
 
                 if (jsonDepend.has(probId)) {
@@ -171,20 +177,28 @@ public class ProblemSet {
             return false;
         }
 
+        loader.deleteDirectory(file);
+
         String data = exportMeta().toString(2);
 
         loader.writeToFile(path + "/meta.json", data, override);
 
         for (Category category : this.categories) {
-            loader.checkFile(path + "/" + this.idCatMap.inverse().get(category), true);
+            //loader.checkFile(path + "/" + this.idCatMap.inverse().get(category), true);
+            loader.checkFile(path + "/" + category.id, true);
             for (Problem problem : category.problems) {
-                String probPath = path + "/" + this.idProbMap.inverse().get(problem) + ".json";
+                //String probPath = path + "/" + this.idProbMap.inverse().get(problem) + ".json";
+                System.out.println(problem.name + ": " + problem.id);
+                String probPath = path + "/" + problem.id + ".json";
                 String dataProb = problem.exportAsJson().toString(2);
                 loader.writeToFile(probPath, dataProb, override);
             }
         }
 
-
+        JSONObject jsonIndex = new JSONObject(FuncBox.readExternalFile(DataLoader.EXTERNAL_FOLDER + "/problemsets/index.json"));
+        JSONArray arrayIndex = jsonIndex.getJSONArray("index");
+        arrayIndex.put(name1);
+        loader.writeToFile(DataLoader.EXTERNAL_FOLDER + "/problemsets/index.json", jsonIndex.toString(2), true);
         return true;
     }
 
@@ -195,7 +209,8 @@ public class ProblemSet {
         for (Category category : this.categories) {
             JSONObject jsonCat = new JSONObject();
             jsonCat.put("name", category.name);
-            jsonCat.put("id", this.idCatMap.inverse().get(category));
+            //jsonCat.put("id", this.idCatMap.inverse().get(category));
+            jsonCat.put("id", category.id);
             arrayCats.put(jsonCat);
         }
         jsonMeta.put("categories", arrayCats);
@@ -209,7 +224,8 @@ public class ProblemSet {
                 String probShortId = this.probShortIdMap.get(problem);
                 arrayProbs.put(probShortId);
             }
-            jsonProbs.put(this.idCatMap.inverse().get(category), arrayProbs);
+            //jsonProbs.put(this.idCatMap.inverse().get(category), arrayProbs);
+            jsonProbs.put(category.id, arrayProbs);
         }
         jsonMeta.put("problems", jsonProbs);
 
@@ -220,9 +236,11 @@ public class ProblemSet {
                 if (problem.dependences.size() > 0) {
                     JSONArray arrayDependencies = new JSONArray();
                     for (Problem other : problem.dependences) {
-                        arrayDependencies.put(this.idProbMap.inverse().get(other));
+                        //arrayDependencies.put(this.idProbMap.inverse().get(other));
+                        arrayDependencies.put(other.id);
                     }
-                    jsonDepend.put(this.idProbMap.inverse().get(problem), arrayDependencies);
+                    //jsonDepend.put(this.idProbMap.inverse().get(problem), arrayDependencies);
+                    jsonDepend.put(problem.id, arrayDependencies);
                 }
             }
         }
@@ -234,6 +252,47 @@ public class ProblemSet {
     public void setId(String id) {
         this.id = id;
     }
+
+    public void setName(String name) {
+
+        this.name = name;
+
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void addCategory(Category category) {
+        this.categories.add(category);
+        this.idCatMap.put(category.id, category);
+        for (Problem problem : category.problems) {
+
+            this.idProbMap.put(problem.id, problem);
+            this.probShortIdMap.put(problem, problem.shortId);
+
+        }
+    }
+
+    ArrayList<Category> getCategories() {
+        return this.categories;
+    }
+
+    public int getCategoriesCount() {
+        return this.categories.size();
+    }
+
+    public int getProblemsPerCategory() {
+
+        int r = this.categories.get(0).problems.size();
+
+        for (Category category : this.categories) {
+            r = Math.max(r, category.problems.size());
+        }
+
+        return r;
+    }
+
 
 
 }

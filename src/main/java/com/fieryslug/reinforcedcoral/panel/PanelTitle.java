@@ -36,12 +36,12 @@ public class PanelTitle extends PanelPrime {
 
         labelTitle = new JLabel();
         labelTitle.setText("Zhī Shì Wáng II");
-        labelTitle.setFont(FontRef.MONOSPACED60BOLD);
+        labelTitle.setFont(FontRef.getFont(FontRef.MONOSPACE, Font.BOLD, 60));
         labelTitle.setForeground(Reference.WHITE);
 
         buttonStart = new JButton();
         buttonStart.setText("Reionize Mitochondrea");
-        buttonStart.setFont(FontRef.MONOSPACED45);
+        buttonStart.setFont(FontRef.getFont(FontRef.MONOSPACE, Font.PLAIN, 45));
         buttonStart.setForeground(Reference.AQUA);
         buttonStart.setBackground(Reference.DARKRED);
         buttonStart.setPreferredSize(new Dimension(650, 50));
@@ -49,7 +49,7 @@ public class PanelTitle extends PanelPrime {
 
         buttonSettings = new JButton();
         buttonSettings.setText("Settings");
-        buttonSettings.setFont(FontRef.MONOSPACED45);
+        buttonSettings.setFont(FontRef.getFont(FontRef.MONOSPACE, Font.PLAIN, 45));
         buttonSettings.setForeground(Reference.BLACK);
         buttonSettings.setBackground(Reference.GRAY);
         buttonSettings.setPreferredSize(new Dimension(350, 50));
@@ -57,7 +57,7 @@ public class PanelTitle extends PanelPrime {
 
         buttonThemes = new JButton();
         buttonThemes.setText("Themes");
-        buttonThemes.setFont(FontRef.MONOSPACED45);
+        buttonThemes.setFont(FontRef.getFont(FontRef.MONOSPACE, Font.PLAIN, 45));
         buttonThemes.setForeground(Reference.WHITE);
         buttonThemes.setBackground(Reference.BLAZE);
         buttonThemes.setPreferredSize(new Dimension(250, 50));

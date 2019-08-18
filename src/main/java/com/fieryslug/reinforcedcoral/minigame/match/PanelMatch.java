@@ -127,7 +127,8 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
                 grid[i][j].setOpaque(true);
                 grid[i][j].setBackground(new Color(0, 0, 0, 0));
                 grid[i][j].setForeground(new Color(31, 31, 31, 255));
-                grid[i][j].setFont(new Font("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 120 : 80));
+                grid[i][j].setFont(FontRef.getFont("DejaVu Sans", Font.PLAIN, panelGame.parent.isFullScreen ? 120 : 80));
+
                 //grid[i][j].setText(new String(Character.toChars(0x1F0A0)));
                 add(grid[i][j], j + ", " + i);
                 //layeredPane.setLayer(grid[i][j], JLayeredPane.DEFAULT_LAYER);

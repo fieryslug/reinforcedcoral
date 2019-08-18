@@ -18,6 +18,10 @@ public class Problem {
     private int duration;
     private boolean fuzzy = true;
     public String name;
+    public String shortId;
+    public String id;
+
+
     private ArrayList<ControlKey> answer;
     public ArrayList<Page> pages;
     public Page pageSolution;
@@ -102,8 +106,9 @@ public class Problem {
         */
     }
 
-    public Problem(String path) {
+    public Problem(String path, String shortId) {
         this(path, false);
+        this.shortId = shortId;
 
         /*
         this.pages = new ArrayList<>();
@@ -223,7 +228,7 @@ public class Problem {
         JSONObject json = new JSONObject();
         json.put("name", this.name);
         json.put("fuzzy", this.fuzzy);
-        json.put("answer", this.answer);
+        json.put("answer", ControlKey.stringRepresentation(this.answer));
         json.put("duration", this.duration);
 
         JSONObject jsonPoints = new JSONObject();
@@ -312,5 +317,9 @@ public class Problem {
             System.out.println("Error occurred while parsing json file");
             e.printStackTrace();
         }
+    }
+
+    public void setShortId(String shortId) {
+        this.shortId = shortId;
     }
 }

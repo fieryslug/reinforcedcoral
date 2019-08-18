@@ -105,7 +105,7 @@ public class Widget {
     public JSONObject exportAsJson() {
 
         JSONObject json = new JSONObject();
-        json.put("widget", this.widgetType);
+        json.put("widget", this.widgetType.getName());
         json.put("constraints", this.constraints);
         json.put("content", this.content);
 
@@ -142,6 +142,10 @@ public class Widget {
         EnumWidget(String name, boolean isAbstract) {
             this.name = name;
             this.isAbstract = isAbstract;
+        }
+
+        public String getName() {
+            return this.name;
         }
 
         public boolean isAbstract() {

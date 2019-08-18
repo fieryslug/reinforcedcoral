@@ -4,6 +4,7 @@
     "interior",
     "text",
     "text_light",
+    "text_light_2",
     "countdown",
     "countdown_5",
 
@@ -68,7 +69,8 @@
   ],
   "wildcard": {
     "text": [
-      "text_light"
+      "text_light",
+      "text_light_2"
     ],
     "problem": [
       "problem_hover",

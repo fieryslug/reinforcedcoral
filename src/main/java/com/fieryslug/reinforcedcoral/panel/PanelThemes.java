@@ -69,7 +69,7 @@ public class PanelThemes extends PanelPrime {
         this.buttonConfirm.setBackground(Reference.BLAZE);
         this.buttonConfirm.setForeground(Reference.WHITE);
         this.buttonConfirm.setAlignmentX(CENTER_ALIGNMENT);
-        this.buttonConfirm.setFont(FontRef.TAIPEI40BOLD);
+        this.buttonConfirm.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
         this.buttonConfirm.setFocusPainted(false);
 
         this.labelImage = new JLabel();

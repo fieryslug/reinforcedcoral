@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.widget.button;
 
 import com.fieryslug.reinforcedcoral.util.FontRef;
+import com.fieryslug.reinforcedcoral.util.Preference;
 
 import javax.swing.*;
 import java.awt.*;
@@ -70,7 +71,7 @@ public class ButtonProblem extends ButtonCoral {
                     }
                 } else if (mouseWheelEvent.isShiftDown()) {
                     Font font = label.getFont();
-                    int size = font.getSize();
+                    int size = (int)(font.getSize() / Preference.fontSizeMultiplier);
                     if (isUp) {
                         size += 5;
                         label.setFont(FontRef.getFont(font.getFontName(), font.getStyle(), size));

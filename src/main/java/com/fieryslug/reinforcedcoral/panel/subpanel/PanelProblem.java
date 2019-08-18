@@ -52,7 +52,7 @@ public class PanelProblem extends JPanel {
         setLayout(this.layout);
 
         this.areaDescription = new FontChangerTextArea();
-        this.areaDescription.setFont(FontRef.TAIPEI30);
+        this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 30));
         this.areaDescription.setBackground(Reference.BLACK);
         this.areaDescription.setForeground(Reference.WHITE);
         this.areaDescription.setLineWrap(true);
@@ -60,7 +60,7 @@ public class PanelProblem extends JPanel {
         this.setBackground(Reference.BLACK);
 
         this.labelTitle = new FontChangerLabel();
-        this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+        this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
         this.labelTitle.setBackground(Reference.BLACK);
         this.labelTitle.setForeground(Reference.WHITE);
 
@@ -269,25 +269,25 @@ public class PanelProblem extends JPanel {
         System.out.println("height: " + this.height + ", width: " + this.width);
         if (isFullScreen) {
             if(this.page.type == 0) {
-                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
             }
             if(this.page.type == 1) {
-                this.labelTitle.setFont(FontRef.TAIPEI120BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 120));
             }
             if(this.page.type == 2) {
-                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
                 Image image = MediaRef.getImage(page.res.get(2));
                 image = FuncBox.resizeImagePreservingRatio(image, this.width * 8/20, this.height * 15/20);
                 this.labelImage.setIcon(new ImageIcon(image));
             }
             if(this.page.type == -1) {
-                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
             }
             if(this.page.type == 4) {
-                this.labelTitle.setFont(FontRef.TAIPEI60BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
             }
             if(this.page.type == Reference.MAGIC_PRIME) {
@@ -314,25 +314,25 @@ public class PanelProblem extends JPanel {
         }
         else {
             if(this.page.type == 0) {
-                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
             }
             if(this.page.type == 1) {
-                this.labelTitle.setFont(FontRef.TAIPEI80BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 80));
             }
             if(this.page.type == 2) {
-                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
                 Image image = MediaRef.getImage(page.res.get(2));
                 image = FuncBox.resizeImagePreservingRatio(image, this.width * 8/20, this.height * 15/20);
                 this.labelImage.setIcon(new ImageIcon(image));
             }
             if(this.page.type == -1) {
-                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
             }
             if (this.page.type == 4) {
-                this.labelTitle.setFont(FontRef.TAIPEI40BOLD);
+                this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
                 this.areaDescription.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
             }
             if(this.page.type == Reference.MAGIC_PRIME) {

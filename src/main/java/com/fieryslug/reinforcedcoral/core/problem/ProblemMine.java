@@ -36,6 +36,7 @@ public class ProblemMine extends Problem {
     public boolean onClick(PanelGame panelGame) {
         Game game = panelGame.parent.game;
         Team team = game.getPrivelgeTeam();
+        System.out.println(team);
 
         if(team != null) {
             this.timer = new Timer();
@@ -44,7 +45,7 @@ public class ProblemMine extends Problem {
             String s = panelTeam.labelScore.getText();
             //MediaRef.playWav(MediaRef.EXPLOSION);
             MediaRef.playSound(MediaRef.EXPLOSION);
-            panelTeam.labelScore.setText("<html>" + s + "<font color=red> -100</font></html>");
+            panelTeam.labelScore.setText("<html>" + s + "<font color=red> "+ this.points +"</font></html>");
             team.addPoints(this.points);
             ButtonProblem buttonProblem = panelGame.problemButtonMap.get(this);
             buttonProblem.state = 1;

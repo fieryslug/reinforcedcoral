@@ -1,6 +1,8 @@
 package com.fieryslug.reinforcedcoral.util;
 
 
+import com.fieryslug.reinforcedcoral.core.Team;
+
 import org.apache.commons.io.IOUtils;
 
 import javax.swing.*;
@@ -29,6 +31,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.Stack;
 
 
 public class FuncBox {
@@ -255,6 +258,45 @@ public class FuncBox {
         // Return the buffered image
         bufferedImageCache.put(img, bimage);
         return bimage;
+    }
+
+    public static String getHtmlRealText(String html) {
+
+
+        char delimL = '<';
+        char delimR = '>';
+        StringBuilder res = new StringBuilder();
+        boolean inTag = false;
+
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : html.toCharArray()) {
+
+            if (c == delimL) {
+                inTag = true;
+            }
+
+            if(!inTag) {
+                res.append(c);
+            }
+
+            if (c == delimR) {
+                inTag = false;
+            }
+        }
+        return res.toString();
+
+    }
+
+    public static ArrayList<Team> generateTeams(int teamNum) {
+
+        ArrayList<Team> teams = new ArrayList<>();
+
+        for (int i = 0; i < teamNum; ++i) {
+            teams.add(new Team(i + 1));
+        }
+        return teams;
+
     }
 
 

@@ -2,20 +2,26 @@ package com.fieryslug.reinforcedcoral;
 
 import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
+import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
 import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
+import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
+import com.fieryslug.reinforcedcoral.web.ServerThread;
+import com.sun.media.rtsp.Server;
 import com.sun.net.httpserver.HttpServer;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+import java.io.File;
 import java.net.InetSocketAddress;
 
 
@@ -39,11 +45,17 @@ public class Main {
     public static void start() {
         System.out.println("fieryslug is back\n");
 
+        DataLoader loader = DataLoader.getInstance();
 
-        DataLoader.getInstance().checkFiles();
 
-        ProblemSet set = new ProblemSet("oblivion1");
-        set.loadProblemSet();
+
+        loader.checkFiles();
+
+        WorkTable.getGame0().getProblemSet().dumpProblemSet("oblivion1", false);
+        WorkTable.getGame1().getProblemSet().dumpProblemSet("oblivion2", false);
+
+        loader.loadAllProblemSets();
+        System.out.println(loader.getProblemSets());
 
 
         Game game = null;
@@ -52,10 +64,14 @@ public class Main {
         if (Reference.DEFAULT_GAME == 1)
             game = WorkTable.getGame1();
 
+        game = new Game(loader.getProblemSets().get(0), FuncBox.generateTeams(Preference.teams));
 
-        game = new Game(set, game.getTeams());
+
 
         FrameCoral frame = new FrameCoral(game);
+
+
+        /*
         Thread serverthread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -69,7 +85,11 @@ public class Main {
                 }
             }
         });
-        serverthread.start();
+        */
+        //serverthread.start();
+        ServerThread serverThread = new ServerThread(frame);
+        serverThread.start();
+
     }
 
     public static void test1() {

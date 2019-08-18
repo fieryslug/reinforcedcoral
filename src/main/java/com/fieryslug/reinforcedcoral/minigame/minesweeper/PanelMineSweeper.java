@@ -108,7 +108,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         this.labelEnd = new JLabel("", SwingConstants.CENTER);
         this.labelEnd.setText("Game Over");
         this.labelEnd.setForeground(Reference.WHITE);
-        this.labelEnd.setFont(FontRef.TAIPEI80BOLD);
+        this.labelEnd.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 80));
         this.labelEnd.setVisible(false);
 
 
@@ -121,7 +121,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         this.buttonBack2.setBackground(Reference.TRANSPARENT_ORANGE);
         this.buttonBack2.setForeground(Reference.WHITE);
         this.buttonBack2.setVisible(false);
-        this.buttonBack2.setFont(FontRef.TAIPEI40BOLD);
+        this.buttonBack2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
         this.buttonBack2.setText("main menu");
 
         int x1, x2, y1, y2;
@@ -504,12 +504,12 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
         updateDisplay();
 
         if (isFullScreen) {
-            this.buttonBack2.setFont(FontRef.TAIPEI60BOLD);
-            this.labelEnd.setFont(FontRef.TAIPEI120BOLD);
+            this.buttonBack2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
+            this.labelEnd.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 120));
 
         } else {
-            this.buttonBack2.setFont(FontRef.TAIPEI40BOLD);
-            this.labelEnd.setFont(FontRef.TAIPEI80BOLD);
+            this.buttonBack2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
+            this.labelEnd.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 80));
         }
 
     }

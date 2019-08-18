@@ -8,6 +8,8 @@ import com.fieryslug.reinforcedcoral.util.Reference;
 import info.clearthought.layout.TableLayout;
 
 import javax.swing.*;
+
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -64,7 +66,7 @@ public class PanelSettings extends PanelPrime {
         this.buttonSet1.setForeground(Reference.WHITE);
         this.buttonSet1.setBackground(Reference.AQUA);
         this.buttonSet1.setText("1");
-        this.buttonSet1.setFont(FontRef.TAIPEI60);
+        this.buttonSet1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
         this.buttonSet1.setFocusPainted(false);
         this.buttonSet1.setBorderPainted(false);
 
@@ -72,7 +74,7 @@ public class PanelSettings extends PanelPrime {
         this.buttonSet2.setForeground(Reference.WHITE);
         this.buttonSet2.setBackground(Reference.DARKBLUE);
         this.buttonSet2.setText("2");
-        this.buttonSet2.setFont(FontRef.TAIPEI60);
+        this.buttonSet2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
         this.buttonSet2.setFocusPainted(false);
         this.buttonSet2.setBorderPainted(false);
 
@@ -134,31 +136,31 @@ public class PanelSettings extends PanelPrime {
     @Override
     public void refresh() {
         if (parent.isFullScreen) {
-            this.fieldTeam1.setFont(FontRef.TAIPEI60);
-            this.fieldTeam2.setFont(FontRef.TAIPEI60);
-            this.fieldTeam3.setFont(FontRef.TAIPEI60);
-            this.fieldTeam4.setFont(FontRef.TAIPEI60);
-            this.labelTeam1.setFont(FontRef.TAIPEI60);
-            this.labelTeam2.setFont(FontRef.TAIPEI60);
-            this.labelTeam3.setFont(FontRef.TAIPEI60);
-            this.labelTeam3.setFont(FontRef.TAIPEI60);
-            this.labelTeam4.setFont(FontRef.TAIPEI60);
-            this.buttonConfirm.setFont(FontRef.TAIPEI60);
-            this.buttonSet1.setFont(FontRef.TAIPEI90);
-            this.buttonSet2.setFont(FontRef.TAIPEI90);
+            this.fieldTeam1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.fieldTeam2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.fieldTeam3.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.fieldTeam4.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.labelTeam1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.labelTeam2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.labelTeam3.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.labelTeam3.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.labelTeam4.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.buttonConfirm.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.buttonSet1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 90));
+            this.buttonSet2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 90));
         } else {
-            this.fieldTeam1.setFont(FontRef.TAIPEI40);
-            this.fieldTeam2.setFont(FontRef.TAIPEI40);
-            this.fieldTeam3.setFont(FontRef.TAIPEI40);
-            this.fieldTeam4.setFont(FontRef.TAIPEI40);
-            this.labelTeam1.setFont(FontRef.TAIPEI40);
-            this.labelTeam2.setFont(FontRef.TAIPEI40);
-            this.labelTeam3.setFont(FontRef.TAIPEI40);
-            this.labelTeam4.setFont(FontRef.TAIPEI40);
-            this.buttonConfirm.setFont(FontRef.TAIPEI40);
+            this.fieldTeam1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.fieldTeam2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.fieldTeam3.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.fieldTeam4.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.labelTeam1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.labelTeam2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.labelTeam3.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.labelTeam4.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
+            this.buttonConfirm.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 40));
 
-            this.buttonSet1.setFont(FontRef.TAIPEI60);
-            this.buttonSet2.setFont(FontRef.TAIPEI60);
+            this.buttonSet1.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
+            this.buttonSet2.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 60));
 
         }
     }

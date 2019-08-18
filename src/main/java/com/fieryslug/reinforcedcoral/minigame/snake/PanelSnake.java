@@ -13,6 +13,7 @@ import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.widget.Direction;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -91,13 +92,13 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
         this.setBackground(Reference.DARKDARKBLUE);
 
         this.labelCountDown = new JLabel(String.valueOf(countDown), SwingConstants.CENTER);
-        this.labelCountDown.setFont(FontRef.MONOSPACED60BOLD);
+        this.labelCountDown.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 60));
         this.labelCountDown.setForeground(Reference.WHITE);
         this.labelCountDown.setOpaque(true);
         this.labelCountDown.setBackground(Reference.DARKDARKBLUE);
 
         this.labelGameOver = new JLabel("", SwingConstants.CENTER);
-        this.labelGameOver.setFont(FontRef.MONOSPACED60BOLD);
+        this.labelGameOver.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 60));
         this.labelGameOver.setForeground(Reference.WHITE);
         this.labelGameOver.setOpaque(true);
         this.labelGameOver.setBackground(new Color(170, 97, 62, 0));
@@ -120,7 +121,7 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
 
         this.buttonBack = new JButton();
         this.buttonBack.setText("main menu");
-        this.buttonBack.setFont(FontRef.JHENGHEI30);
+        this.buttonBack.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 30));
         this.buttonBack.setForeground(Reference.WHITE);
         this.buttonBack.setBackground(Reference.TRANSPARENT_BLUE);
         this.buttonBack.setFocusPainted(false);
@@ -512,6 +513,12 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
 
     @Override
     public void refreshRendering(boolean isFullScreen) {
+
+        if (isFullScreen) {
+
+        } else {
+
+        }
 
     }
 }

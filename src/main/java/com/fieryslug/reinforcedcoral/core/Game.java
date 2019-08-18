@@ -32,12 +32,12 @@ public class Game {
 
     public void addCategory(Category category) {
 
-        this.problemSet.categories.add(category);
+        this.problemSet.addCategory(category);
 
     }
 
     public ArrayList<Category> getCategories() {
-        return this.problemSet.categories;
+        return this.problemSet.getCategories();
     }
 
     public void setPrivilegeTeam(Team team) {
@@ -51,6 +51,10 @@ public class Game {
             team.hasPrivilege = true;
         }
 
+    }
+
+    public ProblemSet getProblemSet() {
+        return this.problemSet;
     }
 
     public Team getPrivelgeTeam() {

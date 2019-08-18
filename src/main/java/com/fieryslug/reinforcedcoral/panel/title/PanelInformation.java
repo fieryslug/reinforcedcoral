@@ -27,7 +27,7 @@ public class PanelInformation extends PanelInterior {
         this.panelTitle = panelTitle;
         TextureHolder holder = TextureHolder.getInstance();
 
-        this.infoRest = "\n\nReinforced Coral\n\nversion:   " + Reference.VERSION + "   updated " + Reference.UPDATE_DATE + "\n\ncredits:\nfieryslug, evan, sarah, jammychiou1,\nyushuanlee, tsengbing";
+        this.infoRest = "\n\nReinforced Coral\n\nversion:   " + Reference.VERSION + "   updated " + Reference.UPDATE_DATE + "\n\ncredits:\nfieryslug, evan, yushuanlee, tsengbing, \nsarah, jammychiou1";
 
 
         double[][] size = {{1.0d/5, 1.0d/5, 1.0d/5, 1.0d/5, 1.0d/5}, {1.0d/6, 1.0d/6, 1.0d/3, 1.0d/6, 1.0d/6}};

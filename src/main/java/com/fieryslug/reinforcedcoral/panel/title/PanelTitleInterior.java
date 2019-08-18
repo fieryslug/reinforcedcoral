@@ -1,11 +1,14 @@
 package com.fieryslug.reinforcedcoral.panel.title;
 
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -14,7 +17,9 @@ import info.clearthought.layout.TableLayout;
 
 public class PanelTitleInterior extends PanelInterior {
 
+    JLabel labelPrev;
     JLabel labelTitle;
+    JLabel labelNext;
 
     JLabel labelSettings;
     JLabel labelStart;
@@ -28,10 +33,22 @@ public class PanelTitleInterior extends PanelInterior {
     ButtonCoral buttonThemes;
     ButtonCoral buttonInfo;
 
+
     private PanelTitleBeautified panelTitle;
+
+    private String prevProblemSet;
+    private String currentProblemSet;
+    private String nextProblemSet;
+    int currInd;
 
 
     public PanelTitleInterior(PanelTitleBeautified panelTitle) {
+
+        DataLoader loader = DataLoader.getInstance();
+        this.prevProblemSet = "";
+        this.currInd = 0;
+        this.currentProblemSet = loader.getProblemSets().get(0).getName();
+        this.nextProblemSet = loader.getProblemSets().get(1).getName();
 
         this.panelTitle = panelTitle;
 
@@ -47,6 +64,14 @@ public class PanelTitleInterior extends PanelInterior {
         this.labelTitle = new JLabel("test", SwingConstants.CENTER);
         this.labelTitle.setForeground(holder.getColor("text"));
         this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 100));
+
+        this.labelPrev = new JLabel("test", SwingConstants.CENTER);
+        this.labelPrev.setForeground(holder.getColor("text_light_2"));
+        this.labelPrev.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
+
+        this.labelNext = new JLabel("test", SwingConstants.CENTER);
+        this.labelNext.setForeground(holder.getColor("text_light_2"));
+        this.labelNext.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
 
         this.labelThemes = new JLabel("themes", SwingConstants.CENTER);
         this.labelThemes.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
@@ -81,7 +106,10 @@ public class PanelTitleInterior extends PanelInterior {
 
 
 
-        add(this.labelTitle, "0, 0, 4, 1");
+
+        add(this.labelTitle, "1, 0, 3, 1");
+        add(this.labelPrev, "0, 0, 0, 1");
+        add(this.labelNext, "4, 0, 4, 1");
 
         add(this.labelThemes, "0, 2");
         add(this.labelSettings, "1, 2");
@@ -96,12 +124,36 @@ public class PanelTitleInterior extends PanelInterior {
         add(this.buttonEdit, "3, 3");
         add(this.buttonInfo, "4, 3");
 
+        this.labelNext.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                if(labelNext.getText().length() > 0) {
+                    currInd++;
+                    exit();
+                    enter();
+                }
+            }
+        });
+
+        this.labelPrev.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                if(labelPrev.getText().length() > 0) {
+                    currInd--;
+                    exit();
+                    enter();
+                }
+            }
+        });
+
 
 
     }
 
     @Override
     public void enter() {
+        DataLoader loader = DataLoader.getInstance();
+
 
         setVisible(false);
         int buttonX = (int) (this.panelTitle.getWidth() / (3));
@@ -114,6 +166,16 @@ public class PanelTitleInterior extends PanelInterior {
         this.buttonStart.resizeImageForIcons(buttonSize * 5 / 4, buttonSize * 5 / 4);
         this.buttonEdit.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonInfo.resizeImageForIcons(buttonSize, buttonSize);
+
+        this.prevProblemSet = this.currInd > 0 ? loader.getProblemSets().get(this.currInd -1).getName() : "";
+        this.currentProblemSet = loader.getProblemSets().get(this.currInd).getName();
+        this.nextProblemSet = this.currInd + 1 < loader.getProblemSets().size() ? loader.getProblemSets().get(this.currInd + 1).getName() : "";
+
+
+        this.labelPrev.setText(this.prevProblemSet);
+        this.labelTitle.setText(this.currentProblemSet);
+        this.labelNext.setText(this.nextProblemSet);
+
         setVisible(true);
     }
 
@@ -127,6 +189,8 @@ public class PanelTitleInterior extends PanelInterior {
         if (isFullScreen) {
 
             this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 150));
+            this.labelPrev.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
+            this.labelNext.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
 
             this.labelThemes.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
             this.labelSettings.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
@@ -138,6 +202,8 @@ public class PanelTitleInterior extends PanelInterior {
         } else {
 
             this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 100));
+            this.labelPrev.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
+            this.labelNext.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
 
             this.labelThemes.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
             this.labelSettings.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
@@ -161,6 +227,7 @@ public class PanelTitleInterior extends PanelInterior {
 
     @Override
     public void applyTexture(TextureHolder holder) {
+        setVisible(false);
         this.setBackground(holder.getColor("interior"));
 
         this.labelThemes.setForeground(holder.getColor("text_light"));
@@ -181,6 +248,9 @@ public class PanelTitleInterior extends PanelInterior {
         //repaint();
 
         this.labelTitle.setForeground(holder.getColor("text"));
+        this.labelPrev.setForeground(holder.getColor("text_light_2"));
+        this.labelNext.setForeground(holder.getColor("text_light_2"));
+        setVisible(true);
     }
 
 }

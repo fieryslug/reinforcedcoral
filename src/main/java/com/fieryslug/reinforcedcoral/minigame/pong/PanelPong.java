@@ -37,7 +37,7 @@ public class PanelPong extends JPanel implements PanelMiniGame {
 
         this.buttonBack = new JButton();
         this.buttonBack.setText("main menu");
-        this.buttonBack.setFont(FontRef.JHENGHEI30);
+        this.buttonBack.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, 30));
         this.buttonBack.setForeground(Reference.WHITE);
         this.buttonBack.setBackground(new Color(72, 91, 146, 64));
         this.buttonBack.setFocusPainted(false);

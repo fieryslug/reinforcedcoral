@@ -52,12 +52,12 @@ public class PanelTeam extends JPanel {
         this.labelName.setText(this.team.getName());
 
         this.labelScore = new JLabel();
-        this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
+        this.labelScore.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 30));
         this.labelScore.setForeground(Reference.BLAZE);
         this.labelScore.setText(String.valueOf(this.team.getScore()));
 
         this.labelState = new JLabel();
-        this.labelState.setFont(FontRef.TAIPEI40BOLD);
+        this.labelState.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
         this.labelState.setForeground(Reference.WHITE);
         this.labelState.setText("");
 
@@ -101,22 +101,22 @@ public class PanelTeam extends JPanel {
     public void enter(boolean isFullScreen) {
 
         if(isFullScreen) {
-            this.labelState.setFont(FontRef.TAIPEI60BOLD);
+            this.labelState.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
         }
         else {
-            this.labelState.setFont(FontRef.TAIPEI40BOLD);
+            this.labelState.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
         }
 
     }
 
     public void refreshFontSize(boolean isFullScreen) {
         if (isFullScreen) {
-            this.labelState.setFont(FontRef.TAIPEI60BOLD);
-            this.labelScore.setFont(FontRef.MONOSPACED45BOLD);
+            this.labelState.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 60));
+            this.labelScore.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 45));
             this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 51));
         } else {
-            this.labelState.setFont(FontRef.TAIPEI40BOLD);
-            this.labelScore.setFont(FontRef.MONOSPACED30BOLD);
+            this.labelState.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 40));
+            this.labelScore.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 30));
             this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
             new Color(110, 170, 131);
         }

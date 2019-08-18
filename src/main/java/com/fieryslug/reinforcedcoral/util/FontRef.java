@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+
 public class FontRef {
 
 
@@ -16,10 +19,12 @@ public class FontRef {
 
     public static final String TAIPEI = "Taipei Sans TC Beta Regular";
     public static final String MONOSPACE = "Monospace Regular";
+    public static final String MONOSPACED = "monospaced";
     public static final String TAIPEI_BOLD = "Taipei Sans TC Beta Bold";
     public static final String TIMES_NEW_ROMAN = "Times New Roman";
     public static final String LAST_RESORT = "Literate Web LastResort";
     public static final String NEMESIS = "Nemesis Grant";
+    public static final String DEJAVU = "DejaVu Sans";
 
     static {
         try {
@@ -51,6 +56,7 @@ public class FontRef {
         BOLD_FONT_MAP.put("DejaVu Sans", "DejaVu Sans Bold");
     }
 
+    /*
     @Deprecated
     public static Font getTaipeiFont(int b, int s) {
 
@@ -63,8 +69,29 @@ public class FontRef {
         return font;
 
     }
+    */
+
+    public static void scaleFont(JLabel label) {
+
+        try {
+
+            String text = FuncBox.getHtmlRealText(label.getText());
+            System.out.println("real text: " + text);
+            Font font = label.getFont();
+
+            int size = label.getFont().getSize();
+            int newSize = size * label.getWidth() / label.getGraphics().getFontMetrics().stringWidth(text) * 19 / 20;
+            newSize = Math.min(size, newSize);
+            label.setFont(FontRef.getFont(font.getFontName(), font.getStyle(), (int) (newSize / Preference.fontSizeMultiplier)));
+        } catch (Exception e) {
+
+        }
+
+    }
 
     public static Font getFont(String fontName, int b, int s) {
+
+        s = (int) Math.round(s * Preference.fontSizeMultiplier);
 
         Pair<String, Pair<Integer, Integer>> info = new Pair<>(fontName, new Pair<>(b, s));
         Font font = fontCache.get(info);
@@ -85,12 +112,20 @@ public class FontRef {
 
     }
 
+    public static int getFontSize(Font font) {
+
+        return (int)Math.round(font.getSize() / Preference.fontSizeMultiplier);
+
+    }
+
+    /*
     public static final Font MONOSPACED30 = new Font("Monospaced", Font.PLAIN, 30);
     public static final Font MONOSPACED30BOLD = new Font("Monospaced", Font.BOLD, 30);
     public static final Font MONOSPACED45 = new Font("Monospaced", Font.PLAIN, 45);
     public static final Font MONOSPACED45BOLD = new Font("Monospaced", Font.BOLD, 45);
     public static final Font MONOSPACED60BOLD = new Font("Monospaced", Font.BOLD, 60);
 
+    /*
     public static final Font JHENGHEI30 = new Font("Microsoft JhengHei", Font.PLAIN, 30);
     public static final Font JHENGHEI40BOLD = new Font("Microsoft JhengHei", Font.BOLD, 40);
     public static final Font JHENGHEI45 = new Font("Microsoft JhengHei", Font.PLAIN, 45);
@@ -110,5 +145,6 @@ public class FontRef {
     public static final Font TAIPEI80BOLD = new Font("Taipei Sans TC Beta Bold", Font.PLAIN, 80);
     public static final Font TAIPEI120 = new Font("Taipei Sans TC Beta Regular", Font.PLAIN, 120);
     public static final Font TAIPEI120BOLD = new Font("Taipei Sans TC Beta Bold", Font.PLAIN, 120);
+    */
 
 }

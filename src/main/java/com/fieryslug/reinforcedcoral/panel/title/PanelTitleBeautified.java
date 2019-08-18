@@ -1,14 +1,21 @@
 package com.fieryslug.reinforcedcoral.panel.title;
 
+import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
+import com.fieryslug.reinforcedcoral.panel.PanelGame;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
+import com.fieryslug.reinforcedcoral.panel.PanelTitle;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
+import com.fieryslug.reinforcedcoral.util.DataLoader;
+import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
 
 import info.clearthought.layout.TableLayout;
 
@@ -16,9 +23,12 @@ public class PanelTitleBeautified extends PanelPrime {
 
     PanelTitleInterior panelInterior;
     PanelInformation panelInformation;
-    private PanelTeam[] panelTeams;
+    PanelOptions panelOptions;
+    PanelTeam[] panelTeams;
     private PanelInterior currentPanelInterior;
     PanelThemesNew panelThemes;
+
+    JPanel panelTemp;
 
     public PanelTitleBeautified(FrameCoral parent) {
 
@@ -37,7 +47,11 @@ public class PanelTitleBeautified extends PanelPrime {
         this.panelInterior.setBackground(holder.getColor("interior"));
         this.panelInformation = new PanelInformation(this);
         this.panelThemes = new PanelThemesNew(this);
+        this.panelOptions = new PanelOptions(this);
 
+        this.panelTemp = new JPanel();
+        this.panelTemp.setBackground(holder.getColor("teamd"));
+        this.panelTemp.setBorder(FuncBox.getLineBorder(holder.getColor("teamd_border"), 3));
         this.currentPanelInterior = this.panelInterior;
 
 
@@ -50,6 +64,13 @@ public class PanelTitleBeautified extends PanelPrime {
         this.panelInterior.buttonStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                DataLoader loader = DataLoader.getInstance();
+                parent.game = new Game(loader.getProblemSets().get(panelInterior.currInd), parent.game.getTeams());
+
+                System.out.println("starting game with " + parent.game.getTeams().size() + " teams");
+                System.out.println("=============================");
+
+                parent.panelGame = new PanelGame(parent);
                 parent.switchPanel(PanelTitleBeautified.this, parent.panelGame);
             }
         });
@@ -72,6 +93,14 @@ public class PanelTitleBeautified extends PanelPrime {
             }
         });
 
+        this.panelInterior.buttonSettings.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                currentPanelInterior = panelOptions;
+                parent.switchPanel(PanelTitleBeautified.this, PanelTitleBeautified.this);
+            }
+        });
+
 
     }
 
@@ -81,15 +110,10 @@ public class PanelTitleBeautified extends PanelPrime {
     public void enter() {
 
         int a = (Preference.teams + 1) / 2;
-        System.out.println(a);
+        System.out.println("DIVISION:" + a);
 
-        this.panelInterior.labelTitle.setText("eee");
 
-        double[][] size = {new double[a], {0.2d, 0.2d, 0.2d, 0.1d, 0.1d, 0.2d}};
-
-        for (int i = 0; i < a; ++i) {
-            size[0][i] = 1.0d / a;
-        }
+        double[][] size = {FuncBox.createDivisionArray(a), {0.2d, 0.2d, 0.2d, 0.1d, 0.1d, 0.2d}};
 
         setLayout(new TableLayout(size));
 
@@ -97,12 +121,21 @@ public class PanelTitleBeautified extends PanelPrime {
 
         for (int t = 0; t < a; ++t) {
             this.panelTeams[t] = new PanelTeam(this.parent.game.getTeams().get(t), t+1);
-            add(this.panelTeams[t], t + ", 0," + t + ", 0");
+            String constraints = t + ", 0";
+            System.out.println(constraints);
+            add(this.panelTeams[t], constraints);
         }
 
         for (int u = 0; u < a && a + u < Preference.teams; ++u) {
             this.panelTeams[a + u] = new PanelTeam(this.parent.game.getTeams().get(a+u), a+u+1);
-            add(this.panelTeams[a + u], u + ", 5," + u + ", 5");
+            String constraints = u + ", 5";
+            System.out.println(constraints);
+            add(this.panelTeams[a + u], constraints);
+        }
+
+        if (Preference.teams % 2 == 1) {
+            String constraints = (a-1) + ", 5";
+            add(this.panelTemp, constraints);
         }
 
 
@@ -210,6 +243,8 @@ public class PanelTitleBeautified extends PanelPrime {
         for (PanelTeam panelTeam : this.panelTeams) {
             panelTeam.applyTexture(holder);
         }
+        this.panelTemp.setBackground(holder.getColor("teamd"));
+        this.panelTemp.setBorder(FuncBox.getLineBorder(holder.getColor("teamd_border"), 3));
 
 
 

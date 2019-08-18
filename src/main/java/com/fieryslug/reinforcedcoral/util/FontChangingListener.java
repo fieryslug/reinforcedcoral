@@ -22,7 +22,7 @@ public class FontChangingListener implements MouseWheelListener {
 
         double amount = mouseWheelEvent.getPreciseWheelRotation();
         Font font = this.component.getFont();
-        int size = font.getSize() + (int)(amount * 5);
+        int size = (int)(font.getSize() / Preference.fontSizeMultiplier ) +  (int)(amount * 5);
         int fontStyle = font.getStyle();
         String fontName = font.getFontName();
         if (size >= 3) {

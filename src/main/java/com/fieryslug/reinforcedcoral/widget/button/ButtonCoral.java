@@ -8,6 +8,7 @@ import com.fieryslug.reinforcedcoral.widget.Direction;
 import org.omg.CORBA.Bounds;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -74,21 +75,22 @@ public class ButtonCoral extends JButton {
 
         this.mouseClickListener = new MouseAdapter() {
             public void mousePressed(MouseEvent mouseEvent) {
-                if(isMouseInside) {
+                if (isMouseInside && isEnabled()) {
                     onPressed();
                 }
             }
+
             @Override
             public void mouseReleased(MouseEvent mouseEvent) {
-                if (ButtonCoral.this.isMouseInside) {
+                if (ButtonCoral.this.isMouseInside && isEnabled()) {
                     onHover();
                     ActionEvent event = new ActionEvent(ButtonCoral.this, ActionEvent.ACTION_PERFORMED, "", mouseEvent.getWhen(), mouseEvent.getModifiers());
 
                     for (ActionListener listener : listeners) {
                         listener.actionPerformed(event);
                     }
-                }
-                else
+
+                } else
                     toDefault();
 
             }
@@ -107,7 +109,6 @@ public class ButtonCoral extends JButton {
                 onExited();
             }
         };
-
 
 
         this.mouseMotionListener = new MouseAdapter() {
@@ -178,7 +179,7 @@ public class ButtonCoral extends JButton {
         };
 
         addMouseListener(this.mouseClickListener);
-        if(irregularShape)
+        if (irregularShape)
             addMouseMotionListener(this.mouseMotionListener);
         else
             addMouseListener(this.mouseListener);
@@ -187,11 +188,20 @@ public class ButtonCoral extends JButton {
     }
 
     @Override
+    public void doClick() {
+        super.doClick();
+        ActionEvent event = new ActionEvent(ButtonCoral.this, ActionEvent.ACTION_PERFORMED, "", System.currentTimeMillis(), 0);
+
+        for (ActionListener listener : listeners) {
+            listener.actionPerformed(event);
+        }
+    }
+
+    @Override
     public void addActionListener(ActionListener actionListener) {
         //super.addActionListener(actionListener);
         this.listeners.add(actionListener);
     }
-
 
 
     public void refreshRendering() {
@@ -272,7 +282,7 @@ public class ButtonCoral extends JButton {
 
         ImageIcon icon = iconCache.get(key);
 
-        if(icon != null) return icon;
+        if (icon != null) return icon;
 
         BufferedImage bimage = MediaRef.toBufferedImage(image);
         Image dimg = bimage.getScaledInstance(x, y, Image.SCALE_SMOOTH);
@@ -294,10 +304,8 @@ public class ButtonCoral extends JButton {
         // TODO Add in proper handling if component size < image size.
 
         BufferedImage image = FuncBox.toBufferedImage(this.imageDefault);
-        return new Rectangle((int)((getBounds().width-image.getWidth())/2), (int)((getBounds().height-image.getHeight())/2), image.getWidth(), image.getHeight());
+        return new Rectangle((int) ((getBounds().width - image.getWidth()) / 2), (int) ((getBounds().height - image.getHeight()) / 2), image.getWidth(), image.getHeight());
     }
-
-
 
 
 }

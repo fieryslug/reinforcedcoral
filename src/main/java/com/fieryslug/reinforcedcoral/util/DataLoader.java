@@ -1,9 +1,14 @@
 package com.fieryslug.reinforcedcoral.util;
 
+import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.google.common.base.Charsets;
+
 import org.apache.commons.io.FileUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.xml.crypto.Data;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,10 +17,15 @@ import java.util.List;
 public class DataLoader {
 
     private static DataLoader dataLoader = new DataLoader();
+    private ArrayList<ProblemSet> problemSets;
     public static final String EXTERNAL_FOLDER = "coral";
 
     public static DataLoader getInstance() {
         return dataLoader;
+    }
+
+    public DataLoader() {
+        this.problemSets = new ArrayList<>();
     }
 
     public void checkFiles() {
@@ -24,9 +34,11 @@ public class DataLoader {
         checkFile(EXTERNAL_FOLDER, true);
         checkFile(EXTERNAL_FOLDER + "/texturepacks", true);
         checkFile(EXTERNAL_FOLDER + "/problemsets", true);
-        checkFile(EXTERNAL_FOLDER + "/problemsets/sets.json", false);
+        checkFile(EXTERNAL_FOLDER + "/problemsets/index.json", false);
         checkFile(EXTERNAL_FOLDER + "/logs", true);
         checkFile(EXTERNAL_FOLDER + "/.tmp", true);
+
+        checkIndex();
 
     }
 
@@ -38,7 +50,7 @@ public class DataLoader {
             System.out.println(path + " does not exist");
 
             boolean b;
-            if(isDir)
+            if (isDir)
                 b = file.mkdir();
             else {
                 try {
@@ -80,4 +92,58 @@ public class DataLoader {
 
     }
 
+    public void loadAllProblemSets() {
+        this.problemSets.clear();
+        System.out.println("\n[loader] loading all available problem sets");
+        System.out.println("==================================");
+        File rootPath = new File(EXTERNAL_FOLDER + "/problemsets");
+
+        JSONObject jsonIndex = new JSONObject(FuncBox.readExternalFile(rootPath + "/index.json"));
+        JSONArray arrayIndex = jsonIndex.getJSONArray("index");
+
+        String[] setIds = new String[arrayIndex.length()];
+        for (int i = 0; i < arrayIndex.length(); ++i) {
+            setIds[i] = arrayIndex.getString(i);
+        }
+
+        for (String setPath : setIds) {
+            File sub = new File(rootPath, setPath);
+
+            System.out.println("\nloading problem set " + setPath);
+            ProblemSet set = new ProblemSet(setPath);
+            set.loadProblemSet();
+
+            this.problemSets.add(set);
+
+        }
+    }
+
+    public ArrayList<ProblemSet> getProblemSets() {
+        return this.problemSets;
+    }
+
+    public boolean deleteDirectory(File file) {
+        if (file.exists()) {
+            File[] allContents = file.listFiles();
+            if (allContents != null) {
+                for (File sub : allContents) {
+                    deleteDirectory(sub);
+                }
+            }
+        }
+        return file.delete();
+    }
+
+    public void checkIndex() {
+
+
+        String res = FuncBox.readExternalFile(EXTERNAL_FOLDER + "/problemsets/index.json");
+        if (res.length() == 0) {
+            JSONObject jsonIndex = new JSONObject();
+            jsonIndex.put("index", new JSONArray());
+            writeToFile(EXTERNAL_FOLDER + "/problemsets/index.json", jsonIndex.toString(2), true);
+        }
+
+
+    }
 }
