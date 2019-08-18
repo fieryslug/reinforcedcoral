@@ -10,12 +10,9 @@ import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
-import jdk.nashorn.api.scripting.JSObject;
-import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.xml.crypto.Data;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -24,6 +21,7 @@ import java.util.Map;
 
 public class ProblemSet {
 
+    private String id;
     private String name;
     public ArrayList<Category> categories;
     private BiMap<String, Category> idCatMap;
@@ -40,8 +38,8 @@ public class ProblemSet {
         argumentMap.put(ProblemSnake.class, new Class<?>[]{String.class});
     }
 
-    public ProblemSet(String name) {
-        this.name = name;
+    public ProblemSet(String id) {
+        this.id = id;
         this.categories = new ArrayList<>();
         this.idCatMap = HashBiMap.create();
         this.idProbMap = HashBiMap.create();
@@ -54,10 +52,12 @@ public class ProblemSet {
         this.idProbMap.clear();
         this.probShortIdMap.clear();
 
-        String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + this.name;
+        String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + this.id;
 
         String metaRes = FuncBox.readExternalFile(path + "/meta.json");
         JSONObject metaJson = new JSONObject(metaRes);
+
+        this.name = metaJson.getString("name");
         //this.name = metaJson.getString("name");
 
         JSONArray arrayCats = metaJson.getJSONArray("categories");
@@ -128,7 +128,7 @@ public class ProblemSet {
                 else {
                     //System.out.println("probpath2: " + probPath);
                     System.out.println("creating problem " + probId);
-                    problem = new Problem(this.name + "/" + probId + ".json", true);
+                    problem = new Problem(this.id + "/" + probId + ".json", true);
                 }
                 category.addProblem(problem);
                 this.idProbMap.put(probId, problem);
@@ -157,8 +157,8 @@ public class ProblemSet {
         }
     }
 
-    public String getName() {
-        return name;
+    public String getId() {
+        return id;
     }
 
     public boolean dumpProblemSet(String name1, boolean override) {
@@ -191,6 +191,7 @@ public class ProblemSet {
     public JSONObject exportMeta() {
         JSONObject jsonMeta = new JSONObject();
         JSONArray arrayCats = new JSONArray();
+        jsonMeta.put("name", this.name);
         for (Category category : this.categories) {
             JSONObject jsonCat = new JSONObject();
             jsonCat.put("name", category.name);
@@ -230,8 +231,8 @@ public class ProblemSet {
         return jsonMeta;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(String id) {
+        this.id = id;
     }
 
 

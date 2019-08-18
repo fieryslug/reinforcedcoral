@@ -477,7 +477,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
     @Override
     public void applyTexture() {
         int index = 0;
-        for (Team team : this.panelGame.parent.game.teams) {
+        for (Team team : this.panelGame.parent.game.getTeams()) {
             PanelTeam panelTeam = this.panelGame.teamPanelMap.get(team);
             panelTeam.labelName.setForeground(FLAG_COLORS[index]);
             panelTeam.labelScore.setForeground(FLAG_COLORS[index]);
@@ -516,7 +516,7 @@ public class PanelMineSweeper extends JPanel implements PanelMiniGame {
 
     void bindPanelGame(PanelGame panelGame) {
         this.panelGame = panelGame;
-        this.teams = this.panelGame.parent.game.teams;
+        this.teams = this.panelGame.parent.game.getTeams();
 
     }
 

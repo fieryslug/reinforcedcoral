@@ -106,10 +106,10 @@ public class PanelSettings extends PanelPrime {
                     parent.refreshGame(game);
                 }
 
-                parent.game.teams.get(0).setId(Integer.parseInt(fieldTeam1.getText()));
-                parent.game.teams.get(1).setId(Integer.parseInt(fieldTeam2.getText()));
-                parent.game.teams.get(2).setId(Integer.parseInt(fieldTeam3.getText()));
-                parent.game.teams.get(3).setId(Integer.parseInt(fieldTeam4.getText()));
+                parent.game.getTeams().get(0).setId(Integer.parseInt(fieldTeam1.getText()));
+                parent.game.getTeams().get(1).setId(Integer.parseInt(fieldTeam2.getText()));
+                parent.game.getTeams().get(2).setId(Integer.parseInt(fieldTeam3.getText()));
+                parent.game.getTeams().get(3).setId(Integer.parseInt(fieldTeam4.getText()));
                 parent.switchPanel(PanelSettings.this, parent.panelTitle);
             }
         });

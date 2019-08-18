@@ -133,8 +133,8 @@ public class FrameCoral extends JFrame {
         String buttonStr = queryMap.get("button");
         Team team = null;
 
-        for (Team team1 : this.game.teams) {
-            if (team1.getId() == Integer.valueOf(teamStr)) {
+        for (Team team1 : this.game.getTeams()) {
+            if (team1.getId() == Integer.parseInt(teamStr)) {
                 team = team1;
             }
         }

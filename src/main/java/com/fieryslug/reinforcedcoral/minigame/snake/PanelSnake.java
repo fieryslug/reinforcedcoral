@@ -196,7 +196,7 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
 
 
         int tempInt = 0;
-        for (Team team : this.panelGame.parent.game.teams) {
+        for (Team team : this.panelGame.parent.game.getTeams()) {
 
             PanelTeam panelTeam = panelGame.teamPanelMap.get(team);
             panelTeam.labelName.setForeground(SNAKE_COLORS[tempInt]);
@@ -429,7 +429,7 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
 
             for (int i = 0; i < 4; ++i) {
                 if (this.snakes[i].isAlive) {
-                    Team team = this.panelGame.parent.game.teams.get(i);
+                    Team team = this.panelGame.parent.game.getTeams().get(i);
                     PanelTeam panelTeam = this.panelGame.teamPanelMap.get(team);
                     panelTeam.labelState.setText("+500");
                     team.addPoints(500);
@@ -501,7 +501,7 @@ public class PanelSnake extends JPanel implements PanelMiniGame {
     @Override
     public void applyTexture() {
         int tempInt = 0;
-        for (Team team : this.panelGame.parent.game.teams) {
+        for (Team team : this.panelGame.parent.game.getTeams()) {
 
             PanelTeam panelTeam = panelGame.teamPanelMap.get(team);
             panelTeam.labelName.setForeground(SNAKE_COLORS[tempInt]);

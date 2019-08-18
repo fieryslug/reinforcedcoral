@@ -173,7 +173,7 @@ public class PanelMatch extends JPanel implements PanelMiniGame {
     public void start() {
         int tmp = 0;
         this.teamOrder = new Team[Preference.teams];
-        for (Team team : this.panelGame.parent.game.teams) {
+        for (Team team : this.panelGame.parent.game.getTeams()) {
             teamOrder[tmp] = team;
             if (team.hasPrivilege) {
                 playing = tmp;

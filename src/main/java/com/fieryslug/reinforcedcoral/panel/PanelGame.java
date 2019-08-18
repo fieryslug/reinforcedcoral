@@ -134,7 +134,7 @@ public class PanelGame extends PanelPrime {
         //this.labelCountDown.setForeground(Reference.YELLOW);
 
         for (int i = 0; i < Preference.teams; ++i) {
-            Team team = this.parent.game.teams.get(i);
+            Team team = this.parent.game.getTeams().get(i);
             teamIndexMap.put(team, i);
             PanelTeam panel = new PanelTeam(team, i+1);
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
@@ -323,7 +323,7 @@ public class PanelGame extends PanelPrime {
 
         //this.teamKeys.clear();
         for (int i = 0; i < Preference.teams; ++i) {
-            Team team = this.parent.game.teams.get(i);
+            Team team = this.parent.game.getTeams().get(i);
             PanelTeam panelTeam = this.panelBoxes.get(i);
             //this.teamKeys.put(team, new ArrayList<>());
             //this.teamLockedMap.put(team, false);
@@ -370,7 +370,7 @@ public class PanelGame extends PanelPrime {
 
         if (this.phase == GamePhase.MENU) {
             reset();
-            for (Team team : this.parent.game.teams) {
+            for (Team team : this.parent.game.getTeams()) {
                 this.teamPanelMap.get(team).labelState.setText("");
                 this.teamLockedMap.put(team, false);
             }
@@ -460,7 +460,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.ANSWERING) {
 
-            for (Team team : this.parent.game.teams) {
+            for (Team team : this.parent.game.getTeams()) {
                 this.teamLockedMap.put(team, false);
             }
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
@@ -525,7 +525,7 @@ public class PanelGame extends PanelPrime {
             this.panelInteriorPage.applyTexture();
 
             for (int i = 0; i < Preference.teams; ++i) {
-                Team team = this.parent.game.teams.get(i);
+                Team team = this.parent.game.getTeams().get(i);
                 PanelTeam panelTeam = this.teamPanelMap.get(team);
                 //System.out.println(team.getId() + ": " + this.teamKeysDeprecated.get(team));
                 panelTeam.labelState.setText(ControlKey.stringRepresentation(this.teamKeysDeprecated.get(team)));
@@ -545,7 +545,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.SOLUTION) {
 
-            for (Team team : this.parent.game.teams) {
+            for (Team team : this.parent.game.getTeams()) {
                 //this.teamLockedMap.put(team, false);
                 PanelTeam panel = this.teamPanelMap.get(team);
                 int tempScore = this.teamTempScoreMap.get(team);
@@ -613,7 +613,7 @@ public class PanelGame extends PanelPrime {
         else
             this.paneHeight = this.frameHeight * 3 / 6 - 5;
         int buttonX = this.paneHeight / 8, buttonY = this.paneHeight / 8;
-        for (Team team : this.parent.game.teams) {
+        for (Team team : this.parent.game.getTeams()) {
             PanelTeam panelTeam = this.teamPanelMap.get(team);
             panelTeam.refreshFontSize(this.parent.isFullScreen);
         }
@@ -659,7 +659,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.INTERMEDIATE) {
             for (int i = 0; i < Preference.teams; ++i) {
-                Team team = this.parent.game.teams.get(i);
+                Team team = this.parent.game.getTeams().get(i);
                 PanelTeam panelTeam = this.teamPanelMap.get(team);
                 if (this.teamLockedMap.get(team)) {
                     panelTeam.setBackground(Reference.DARKAQUA);
@@ -698,7 +698,7 @@ public class PanelGame extends PanelPrime {
     private void reset() {
 
         for (int i = 0; i < Preference.teams; ++i) {
-            Team team = this.parent.game.teams.get(i);
+            Team team = this.parent.game.getTeams().get(i);
             PanelTeam panelTeam = this.panelBoxes.get(i);
             this.teamKeysDeprecated.put(team, new ArrayList<>());
             this.teamKeys.put(team, new LinkedList<>());
@@ -947,7 +947,7 @@ public class PanelGame extends PanelPrime {
             parent.switchPanel(PanelGame.this, PanelGame.this);
         }
         else if (phase == GamePhase.SHOW_ANSWER) {
-            for (Team team : parent.game.teams) {
+            for (Team team : parent.game.getTeams()) {
                 teamTempScoreMap.put(team, 0);
             }
             int index = 0;

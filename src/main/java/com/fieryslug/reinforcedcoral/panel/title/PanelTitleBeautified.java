@@ -3,7 +3,6 @@ package com.fieryslug.reinforcedcoral.panel.title;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
-import com.fieryslug.reinforcedcoral.panel.PanelThemes;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
@@ -97,12 +96,12 @@ public class PanelTitleBeautified extends PanelPrime {
         this.panelTeams = new PanelTeam[Preference.teams];
 
         for (int t = 0; t < a; ++t) {
-            this.panelTeams[t] = new PanelTeam(this.parent.game.teams.get(t), t+1);
+            this.panelTeams[t] = new PanelTeam(this.parent.game.getTeams().get(t), t+1);
             add(this.panelTeams[t], t + ", 0," + t + ", 0");
         }
 
         for (int u = 0; u < a && a + u < Preference.teams; ++u) {
-            this.panelTeams[a + u] = new PanelTeam(this.parent.game.teams.get(a+u), a+u+1);
+            this.panelTeams[a + u] = new PanelTeam(this.parent.game.getTeams().get(a+u), a+u+1);
             add(this.panelTeams[a + u], u + ", 5," + u + ", 5");
         }
 

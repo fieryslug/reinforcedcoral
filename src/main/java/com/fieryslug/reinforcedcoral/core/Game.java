@@ -4,36 +4,35 @@ import java.util.ArrayList;
 
 public class Game {
 
-    public ArrayList<Team> teams;
-    public ArrayList<Category> categories;
+    private ArrayList<Team> teams;
+    //public ArrayList<Category> categories;
     private ProblemSet problemSet;
 
     @Deprecated
     public Game(int t1, int t2, int t3, int t4) {
 
-        this.teams = new ArrayList<>();
+        this.setTeams(new ArrayList<>());
 
-        this.teams.add(new Team(t1));
-        this.teams.add(new Team(t2));
-        this.teams.add(new Team(t3));
-        this.teams.add(new Team(t4));
+        this.getTeams().add(new Team(t1));
+        this.getTeams().add(new Team(t2));
+        this.getTeams().add(new Team(t3));
+        this.getTeams().add(new Team(t4));
 
-        this.categories = new ArrayList<>();
+        //this.categories = new ArrayList<>();
         this.problemSet = new ProblemSet("test");
-        this.problemSet.categories = this.categories;
 
     }
 
     public Game(ProblemSet problemSet, ArrayList<Team> teams) {
 
         this.problemSet = problemSet;
-        this.teams = teams;
+        this.setTeams(teams);
 
     }
 
     public void addCategory(Category category) {
 
-        this.categories.add(category);
+        this.problemSet.categories.add(category);
 
     }
 
@@ -43,9 +42,9 @@ public class Game {
 
     public void setPrivilegeTeam(Team team) {
 
-        if (this.teams.contains(team)) {
+        if (this.getTeams().contains(team)) {
 
-            for (Team team1 : this.teams)
+            for (Team team1 : this.getTeams())
                 team1.hasPrivilege = false;
 
 
@@ -55,11 +54,18 @@ public class Game {
     }
 
     public Team getPrivelgeTeam() {
-        for (Team team1 : this.teams) {
+        for (Team team1 : this.getTeams()) {
             if (team1.hasPrivilege) return team1;
         }
         return null;
     }
 
+    public ArrayList<Team> getTeams() {
+        return this.teams;
+    }
 
+
+    public void setTeams(ArrayList<Team> teams) {
+        this.teams = teams;
+    }
 }

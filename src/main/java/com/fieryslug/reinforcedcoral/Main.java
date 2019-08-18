@@ -4,28 +4,19 @@ import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 
-import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
-import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
 import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.RequestHandler;
-import com.sun.jna.platform.win32.OaIdl;
 import com.sun.net.httpserver.HttpServer;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-import java.awt.image.BufferedImage;
 import java.net.InetSocketAddress;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.Set;
 
 
 import javax.swing.*;
@@ -51,7 +42,7 @@ public class Main {
 
         DataLoader.getInstance().checkFiles();
 
-        ProblemSet set = new ProblemSet("oblivion3");
+        ProblemSet set = new ProblemSet("oblivion1");
         set.loadProblemSet();
 
 
@@ -62,7 +53,7 @@ public class Main {
             game = WorkTable.getGame1();
 
 
-        game = new Game(set, game.teams);
+        game = new Game(set, game.getTeams());
 
         FrameCoral frame = new FrameCoral(game);
         Thread serverthread = new Thread(new Runnable() {
