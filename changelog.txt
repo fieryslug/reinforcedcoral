@@ -4,7 +4,10 @@ visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 -reworked GUI
 -added info page
 -bug fix: button boundary
-
+-new feature: font size multiplier
+-new feature: auto scale text
+-new feature: 3~12 teams
+-added load/dump problem sets mechanism
 
 
 ===gradle_7.3=== 8/15 22pm
