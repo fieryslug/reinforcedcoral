@@ -15,6 +15,8 @@ import com.google.common.collect.HashBiMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.xml.crypto.Data;
+import java.io.DataOutput;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -50,13 +52,125 @@ public class ProblemSet {
         this.probShortIdMap = new HashMap<>();
     }
 
-    public void loadProblemSet() {
+    public String getId() {
+        return id;
+    }
+
+    public void acquireProblemSet() {
+        /*
         this.categories.clear();
         this.idCatMap.clear();
         this.idProbMap.clear();
         this.probShortIdMap.clear();
 
         String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + this.id;
+
+        String metaRes = FuncBox.readExternalFile(path + "/meta.json");
+        JSONObject metaJson = new JSONObject(metaRes);
+
+        this.name = metaJson.getString("name");
+        //this.name = metaJson.getString("name");
+
+        JSONArray arrayCats = metaJson.getJSONArray("categories");
+        JSONObject jsonProbs = metaJson.getJSONObject("problems");
+        for (int i = 0; i < arrayCats.length(); ++i) {
+            JSONObject jsonCat = arrayCats.getJSONObject(i);
+            String catName = jsonCat.getString("name");
+            String catId = jsonCat.getString("id");
+            Category category = new Category(catName, catId);
+
+            this.idCatMap.put(catId, category);
+
+            JSONArray arrayProbs = jsonProbs.getJSONArray(catId);
+            for (int j = 0; j < arrayProbs.length(); ++j) {
+                String probId = catId + "/" + arrayProbs.getString(j);
+                String probShortId = arrayProbs.getString(j);
+
+                String probPath = path + "/" + probId + ".json";
+                Problem problem = new Problem("null", 0);
+
+                JSONObject jsonProb = new JSONObject(FuncBox.readExternalFile(probPath));
+                boolean flag = false;
+                if (jsonProb.has("special")) flag = jsonProb.getBoolean("special");
+                if (flag) {
+
+                    System.out.println("---detected special problem, trying to create using reflection---" + probId);
+                    try {
+
+                        Class<?> clazz = Class.forName(jsonProb.getString("class"));
+                        Class<?>[] argumentClasses = argumentMap.get(clazz);
+                        Constructor<?> cons = clazz.getConstructor(argumentClasses);
+                        JSONArray arrayArgs = jsonProb.getJSONArray("args");
+                        Object[] arguments = new Object[arrayArgs.length()];
+
+                        for (int k = 0; k < arrayArgs.length(); ++k) {
+                            JSONObject jsonArg = arrayArgs.getJSONObject(k);
+                            arguments[k] = argumentClasses[k].cast(jsonArg.get("value"));
+                        }
+
+                        System.out.println("required argument types: ");
+                        for(Class clazz1 : argumentClasses) System.out.print(clazz1.getName() + " ");
+
+                        System.out.println("arguments provided: ");
+                        for(Object obj : arguments) System.out.print(obj.getClass() + ": " + obj + " ");
+                        System.out.println("\n");
+
+                        problem = (Problem)(cons.newInstance(arguments));
+
+                    } catch (Exception e) {
+                        System.out.println("failed to generate problem with " + probId);
+                        e.printStackTrace();
+                    }
+
+
+
+
+
+                }
+                else {
+                    //System.out.println("probpath2: " + probPath);
+                    System.out.println("creating problem " + probId);
+                    problem = new Problem(this.id + "/" + probId + ".json", true);
+                }
+                problem.setShortId(probShortId);
+                category.addProblems(problem);
+                this.idProbMap.put(probId, problem);
+                this.probShortIdMap.put(problem, probShortId);
+            }
+            this.categories.add(category);
+        }
+
+        JSONObject jsonDepend = metaJson.getJSONObject("dependencies");
+
+        for (Category category : this.categories) {
+            for (Problem problem : category.problems) {
+
+                //String probId = this.idProbMap.inverse().get(problem);
+                String probId = problem.id;
+
+
+                if (jsonDepend.has(probId)) {
+                    JSONArray arrayDependencies = jsonDepend.getJSONArray(probId);
+                    for (int p = 0; p < arrayDependencies.length(); ++p) {
+                        String otherId = arrayDependencies.getString(p);
+                        Problem problemOther = this.idProbMap.get(otherId);
+                        problem.addDependence(problemOther);
+                    }
+                }
+            }
+        }
+        */
+        loadProblemSet("problemsets/" + this.id);
+
+    }
+
+    public void loadProblemSet(String path1) {
+
+        String path = DataLoader.EXTERNAL_FOLDER + "/" + path1;
+        this.categories.clear();
+        this.idCatMap.clear();
+        this.idProbMap.clear();
+        this.probShortIdMap.clear();
 
         String metaRes = FuncBox.readExternalFile(path + "/meta.json");
         JSONObject metaJson = new JSONObject(metaRes);
@@ -132,7 +246,9 @@ public class ProblemSet {
                 else {
                     //System.out.println("probpath2: " + probPath);
                     System.out.println("creating problem " + probId);
-                    problem = new Problem(this.id + "/" + probId + ".json", true);
+                    System.out.println(path1);
+                    //problem = new Problem(path1 + "/" + probId + ".json", true);
+                    problem = new Problem(jsonProb);
                 }
                 problem.setShortId(probShortId);
                 category.addProblems(problem);
@@ -161,14 +277,13 @@ public class ProblemSet {
                 }
             }
         }
+
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public boolean dumpProblemSet(String name1, boolean override) {
-
+    public boolean saveProblemSet(String name1, boolean override) {
+        String path = "problemsets/" + name1;
+        /*
         DataLoader loader = DataLoader.getInstance();
         String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + name1;
         File file = new File(path);
@@ -200,7 +315,41 @@ public class ProblemSet {
         arrayIndex.put(name1);
         loader.writeToFile(DataLoader.EXTERNAL_FOLDER + "/problemsets/index.json", jsonIndex.toString(2), true);
         return true;
+        */
+        return dumpProblemSet(path, override);
     }
+
+    public boolean dumpProblemSet(String path, boolean override) {
+        path = DataLoader.EXTERNAL_FOLDER + "/" + path;
+        DataLoader loader = DataLoader.getInstance();
+        File file = new File(path);
+        if (file.exists() && !override) {
+            System.out.println(path + " already exists, unable to dump data");
+            return false;
+        }
+
+        loader.deleteDirectory(file);
+
+        String data = exportMeta().toString(2);
+
+        loader.writeToFile(path + "/meta.json", data, override);
+
+        for (Category category : this.categories) {
+            //loader.checkFile(path + "/" + this.idCatMap.inverse().get(category), true);
+            loader.checkFile(path + "/" + category.id, true);
+            for (Problem problem : category.problems) {
+                //String probPath = path + "/" + this.idProbMap.inverse().get(problem) + ".json";
+                System.out.println(problem.name + ": " + problem.id);
+                String probPath = path + "/" + problem.id + ".json";
+                String dataProb = problem.exportAsJson().toString(2);
+                loader.writeToFile(probPath, dataProb, override);
+            }
+        }
+
+        return true;
+    }
+
+
 
     public JSONObject exportMeta() {
         JSONObject jsonMeta = new JSONObject();
@@ -293,6 +442,16 @@ public class ProblemSet {
         return r;
     }
 
+    public ProblemSet copy() {
 
+        dumpProblemSet(".tmp/" + this.id + "_clone", true);
+        ProblemSet set = new ProblemSet(this.id + "_clone");
 
+        set.loadProblemSet(".tmp/" + this.id + "_clone");
+
+        DataLoader.getInstance().deleteDirectory(new File(DataLoader.EXTERNAL_FOLDER + "/.tmp/" + this.id + "_clone"));
+
+        return set;
+
+    }
 }

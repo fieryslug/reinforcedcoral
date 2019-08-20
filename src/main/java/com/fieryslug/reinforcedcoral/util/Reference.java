@@ -7,8 +7,8 @@ import java.awt.*;
 public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
-    public static final String VERSION = "gradle_8.0a";
-    public static final String UPDATE_DATE = "2019.08.18";
+    public static final String VERSION = "gradle_8.0";
+    public static final String UPDATE_DATE = "2019.08.20";
     public static final int DEFAULT_GAME = 0;
 
     public static final int MAX_TEAMS = 12;
@@ -43,7 +43,7 @@ public class Reference {
     public static final Color DARKERGREEN = new Color(0, 32, 3);
     public static final Color TRANSPARENT_BLUE = new Color(72, 91, 146, 64);
     public static final Color TRANSPARENT_ORANGE = new Color(200, 135, 41, 128);
-
+    public static final Color TRANSPARENT_GRAY = new Color(56, 56, 56, 167);
 
     public static final Border BEVEL1 = BorderFactory.createBevelBorder(0, AQUA, WHITE);
     public static final Border BEVEL2 = BorderFactory.createBevelBorder(1, BLAZE, ORANGE);

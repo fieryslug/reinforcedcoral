@@ -28,6 +28,7 @@ import javax.swing.ScrollPaneConstants;
 
 import info.clearthought.layout.TableLayout;
 
+@Deprecated
 public class PanelThemes extends PanelPrime {
 
     private JScrollPane scrollPane;

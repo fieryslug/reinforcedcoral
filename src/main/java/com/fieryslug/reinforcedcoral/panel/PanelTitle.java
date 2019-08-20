@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 
 //import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 
+@Deprecated
 public class PanelTitle extends PanelPrime {
 
     public JButton buttonStart;

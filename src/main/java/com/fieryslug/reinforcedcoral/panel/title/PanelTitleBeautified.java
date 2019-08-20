@@ -30,6 +30,8 @@ public class PanelTitleBeautified extends PanelPrime {
 
     JPanel panelTemp;
 
+    private boolean lazy = false;
+
     public PanelTitleBeautified(FrameCoral parent) {
 
         super(parent);
@@ -101,6 +103,14 @@ public class PanelTitleBeautified extends PanelPrime {
             }
         });
 
+        this.panelInterior.buttonEdit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                parent.switchPanel(PanelTitleBeautified.this, parent.panelEdit);
+            }
+        });
+
 
     }
 
@@ -112,6 +122,7 @@ public class PanelTitleBeautified extends PanelPrime {
         int a = (Preference.teams + 1) / 2;
         System.out.println("DIVISION:" + a);
 
+        removeAll();
 
         double[][] size = {FuncBox.createDivisionArray(a), {0.2d, 0.2d, 0.2d, 0.1d, 0.1d, 0.2d}};
 
@@ -119,24 +130,28 @@ public class PanelTitleBeautified extends PanelPrime {
 
         this.panelTeams = new PanelTeam[Preference.teams];
 
-        for (int t = 0; t < a; ++t) {
-            this.panelTeams[t] = new PanelTeam(this.parent.game.getTeams().get(t), t+1);
-            String constraints = t + ", 0";
-            System.out.println(constraints);
-            add(this.panelTeams[t], constraints);
-        }
 
-        for (int u = 0; u < a && a + u < Preference.teams; ++u) {
-            this.panelTeams[a + u] = new PanelTeam(this.parent.game.getTeams().get(a+u), a+u+1);
-            String constraints = u + ", 5";
-            System.out.println(constraints);
-            add(this.panelTeams[a + u], constraints);
-        }
+            for (int t = 0; t < a; ++t) {
+                this.panelTeams[t] = new PanelTeam(this.parent.game.getTeams().get(t), t + 1);
+                String constraints = t + ", 0";
+                System.out.println(constraints);
+                add(this.panelTeams[t], constraints);
+            }
 
-        if (Preference.teams % 2 == 1) {
-            String constraints = (a-1) + ", 5";
-            add(this.panelTemp, constraints);
-        }
+            for (int u = 0; u < a && a + u < Preference.teams; ++u) {
+                this.panelTeams[a + u] = new PanelTeam(this.parent.game.getTeams().get(a + u), a + u + 1);
+                String constraints = u + ", 5";
+                System.out.println(constraints);
+                add(this.panelTeams[a + u], constraints);
+            }
+
+            if (Preference.teams % 2 == 1) {
+                String constraints = (a - 1) + ", 5";
+                add(this.panelTemp, constraints);
+            }
+
+        this.lazy = false;
+
 
 
         add(this.currentPanelInterior, "0, 1, " + (a-1) + ", 4");
@@ -256,5 +271,9 @@ public class PanelTitleBeautified extends PanelPrime {
 
     void setCurrentPanelInterior(PanelInterior panelInterior) {
         this.currentPanelInterior = panelInterior;
+    }
+
+    public void setLazy() {
+        this.lazy = true;
     }
 }

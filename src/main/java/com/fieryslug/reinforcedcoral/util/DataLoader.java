@@ -7,12 +7,8 @@ import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.xml.crypto.Data;
-
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class DataLoader {
 
@@ -111,11 +107,45 @@ public class DataLoader {
 
             System.out.println("\nloading problem set " + setPath);
             ProblemSet set = new ProblemSet(setPath);
-            set.loadProblemSet();
+            set.acquireProblemSet();
 
             this.problemSets.add(set);
 
         }
+    }
+
+    public void updateProblemSetIndex() {
+
+        File file = new File(EXTERNAL_FOLDER + "/problemsets");
+        String[] setIds = file.list();
+
+        JSONObject jsonIndex = new JSONObject();
+        JSONArray arrayIndex = new JSONArray();
+
+        for (String setId : setIds) {
+
+            File fileSet = new File(file, setId);
+            if (fileSet.isDirectory()) {
+
+                ProblemSet set = new ProblemSet(setId);
+                boolean b = true;
+                try {
+
+                    set.acquireProblemSet();
+                } catch (Exception e) {
+                    b = false;
+                }
+                if (b) {
+                    arrayIndex.put(setId);
+                }
+
+            }
+
+        }
+
+        jsonIndex.put("index", arrayIndex);
+
+        writeToFile(EXTERNAL_FOLDER + "/problemsets/index.json", jsonIndex.toString(2), true);
     }
 
     public ArrayList<ProblemSet> getProblemSets() {

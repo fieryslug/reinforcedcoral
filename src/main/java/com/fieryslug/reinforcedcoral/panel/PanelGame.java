@@ -45,12 +45,13 @@ public class PanelGame extends PanelPrime {
     public int currentPageNumber = 0;
     public int currentExplanationNumber = 0;
 
-    ArrayList<PanelTeam> panelBoxes;
+    ArrayList<PanelTeam> panelTeams;
     private JPanel panelTemp;
     public JPanel panelInteriorMenu;
     public PanelProblem panelInteriorPage;
     public JPanel panelBanner;
     public JPanel panelCenter;
+    private JPanel panelPause;
 
     public ButtonCoral buttonNext;
     public ButtonCoral buttonPrev;
@@ -92,7 +93,7 @@ public class PanelGame extends PanelPrime {
         this.prevState = 0;
         this.layoutSize = new double[][]{{0.166666, 0.166666, 0.166666, 0.166666, 0.166666, 0.166666}, {0.2, 0.2, 0.2, 0.1, 0.1, 0.2}};
 
-        this.panelBoxes = new ArrayList<>();
+        this.panelTeams = new ArrayList<>();
         this.buttonProblemMap = new HashMap<>();
         this.problemButtonMap = new HashMap<>();
         this.positionButtonMap = new ButtonProblem[4][6];
@@ -125,6 +126,12 @@ public class PanelGame extends PanelPrime {
         this.panelTemp = new JPanel();
 
         this.panelCenter = new JPanel();
+        this.panelPause = new JPanel();
+        this.panelPause.setLayout(new TableLayout(new double[][]{{1}, {1}}));
+
+        this.panelPause.setBackground(Reference.TRANSPARENT_GRAY);
+        //add(this.panelPause, "0, 0, " + (this.partitionNumber - 1) + ", 2");
+        this.panelPause.setVisible(false);
 
         double[][] centerSize = new double[][]{{1.0d/6, 1.0d/6, 2.0d/6, 1.0d/6, 1.0d/6}, {5.0d/6, 1.0d/6}};
 
@@ -136,7 +143,7 @@ public class PanelGame extends PanelPrime {
 
         System.out.println("catCount: " + catCount + ", probsPerCat: " + probsPerCat);
 
-        this.panelBoxes.clear();
+        this.panelTeams.clear();
         this.buttonProblemMap.clear();
         this.problemButtonMap.clear();
         this.positionButtonMap = new ButtonProblem[catCount][probsPerCat];
@@ -174,7 +181,7 @@ public class PanelGame extends PanelPrime {
             teamIndexMap.put(team, i);
             PanelTeam panel = new PanelTeam(team, i+1);
             //panel.setPreferredSize(new Dimension(this.boxWidth, this.boxHeight));
-            this.panelBoxes.add(panel);
+            this.panelTeams.add(panel);
             this.teamPanelMap.put(team, panel);
         }
 
@@ -353,6 +360,8 @@ public class PanelGame extends PanelPrime {
         this.panelInteriorMenu.removeAll();
         removeAll();
 
+        add(this.panelPause, "0, 0, " + (this.partitionNumber - 1) + ", 2");
+
         this.frameWidth = this.parent.getContentPane().getWidth();
         this.frameHeight = this.parent.getContentPane().getHeight();
 
@@ -365,7 +374,7 @@ public class PanelGame extends PanelPrime {
         //this.teamKeys.clear();
         for (int i = 0; i < Preference.teams; ++i) {
             Team team = this.parent.game.getTeams().get(i);
-            PanelTeam panelTeam = this.panelBoxes.get(i);
+            PanelTeam panelTeam = this.panelTeams.get(i);
             //this.teamKeys.put(team, new ArrayList<>());
             //this.teamLockedMap.put(team, false);
             panelTeam.setForeground(Reference.WHITE);
@@ -392,7 +401,7 @@ public class PanelGame extends PanelPrime {
         this.paneHeight = this.frameHeight * 3 / 5 - 5 + 5;
 
         for (int i = 0; i < Preference.teams; ++i) {
-            PanelTeam panel = this.panelBoxes.get(i);
+            PanelTeam panel = this.panelTeams.get(i);
             /*
             Team team = this.parent.game.teams.get(i);
             if (team.hasPrivilege) {
@@ -748,7 +757,7 @@ public class PanelGame extends PanelPrime {
 
         for (int i = 0; i < Preference.teams; ++i) {
             Team team = this.parent.game.getTeams().get(i);
-            PanelTeam panelTeam = this.panelBoxes.get(i);
+            PanelTeam panelTeam = this.panelTeams.get(i);
             this.teamKeysDeprecated.put(team, new ArrayList<>());
             this.teamKeys.put(team, new LinkedList<>());
             this.teamLockedMap.put(team, false);
@@ -888,15 +897,13 @@ public class PanelGame extends PanelPrime {
         for (ButtonProblem button : this.buttonProblemMap.keySet()) {
             button.setIcon(null);
             button.setBackground(holder.getColor("problem"));
-
             button.setBorder(BorderFactory.createLineBorder(holder.getColor("problem_border"), 3));
-
             button.label.setForeground(holder.getColor("problem_text"));
             button.label.setOpaque(false);
 
         }
 
-        for (PanelTeam panelTeam : this.panelBoxes) {
+        for (PanelTeam panelTeam : this.panelTeams) {
             panelTeam.applyTexture(holder);
         }
 
@@ -1055,13 +1062,13 @@ public class PanelGame extends PanelPrime {
         for (int t = 0; t < a; ++t) {
             String constraints = (t) + ", 0, " + (t) + ", 0";
             System.out.println(constraints);
-            add(this.panelBoxes.get(t) , constraints);
+            add(this.panelTeams.get(t) , constraints);
         }
 
         for (int u = 0; u < a && a + u < Preference.teams; ++u) {
             String constraints = (u) + ", 2, " + (u) + ", 2";
             System.out.println(constraints);
-            add(this.panelBoxes.get(a+u), constraints);
+            add(this.panelTeams.get(a+u), constraints);
         }
 
         if (Preference.teams % 2 == 1) {

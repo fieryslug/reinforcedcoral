@@ -1,9 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.title;
 
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
-import com.fieryslug.reinforcedcoral.util.DataLoader;
-import com.fieryslug.reinforcedcoral.util.FontRef;
-import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
 import java.awt.Font;
@@ -56,7 +54,7 @@ public class PanelTitleInterior extends PanelInterior {
 
         double sixth = 1.0d/6;
 
-        double[][] size = {{1.0d/5, 1.0d/5, 1.0d/5, 1.0d/5, 1.0d/5}, {1.0d/3, 1.0d/3, 1.0d/6, 1.0d/6}};
+        double[][] size = {FuncBox.createDivisionArray(5), {1.0d/3, 1.0d/3, 1.0d/6, 1.0d/6}};
         setLayout(new TableLayout(size));
 
 
@@ -131,6 +129,7 @@ public class PanelTitleInterior extends PanelInterior {
                     currInd++;
                     exit();
                     enter();
+                    refresh(panelTitle.parent.isFullScreen);
                 }
             }
         });
@@ -142,6 +141,7 @@ public class PanelTitleInterior extends PanelInterior {
                     currInd--;
                     exit();
                     enter();
+                    refresh(panelTitle.parent.isFullScreen);
                 }
             }
         });
@@ -223,6 +223,17 @@ public class PanelTitleInterior extends PanelInterior {
         this.buttonStart.resizeImageForIcons(buttonSize * 5 / 4, buttonSize * 5 / 4);
         this.buttonEdit.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonInfo.resizeImageForIcons(buttonSize, buttonSize);
+
+        if (Preference.autoScaleFontSize) {
+            FontRef.scaleFont(this.labelTitle);
+            FontRef.scaleFont(this.labelNext);
+            FontRef.scaleFont(this.labelPrev);
+            FontRef.scaleFont(this.labelEdit);
+            FontRef.scaleFont(this.labelStart);
+            FontRef.scaleFont(this.labelInfo);
+            FontRef.scaleFont(this.labelThemes);
+            FontRef.scaleFont(this.labelSettings);
+        }
     }
 
     @Override

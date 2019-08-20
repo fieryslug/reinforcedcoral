@@ -263,6 +263,14 @@ public class ButtonCoral extends JButton {
 
     }
 
+    public void resizeIconToSquare(int buttonX, int buttonY, double scale) {
+
+        int buttonSize = Math.min(buttonX, buttonY);
+        buttonSize = (int) (buttonSize * scale);
+
+        resizeImageForIcons(buttonSize, buttonSize);
+    }
+
     public void resizePreservingRatio(int x, int y) {
         this.imageDefault = FuncBox.resizeImagePreservingRatio(this.imageDefault, x, y);
         this.imageHover = FuncBox.resizeImagePreservingRatio(this.imageHover, x, y);

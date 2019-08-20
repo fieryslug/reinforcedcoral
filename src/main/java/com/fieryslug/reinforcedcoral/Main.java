@@ -2,10 +2,8 @@ package com.fieryslug.reinforcedcoral;
 
 import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
-import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 
-import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
@@ -13,16 +11,10 @@ import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
-import com.fieryslug.reinforcedcoral.web.RequestHandler;
 import com.fieryslug.reinforcedcoral.web.ServerThread;
-import com.sun.media.rtsp.Server;
-import com.sun.net.httpserver.HttpServer;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-
-import java.io.File;
-import java.net.InetSocketAddress;
 
 
 import javax.swing.*;
@@ -36,9 +28,14 @@ public class Main {
 
         start();
 
-        //ProblemSet set = new ProblemSet("oblivion2");
-        //set.loadProblemSet();
-        //set.dumpProblemSet("oblivion3", true);
+        /*
+        ProblemSet set = new ProblemSet("oblivion1");
+        set.acquireProblemSet();
+        ProblemSet set1 = set.copy();
+        set1.setName("Oblivion-1(clone)");
+        set1.saveProblemSet("oblivion1_clone", false);
+        System.out.println(set1);
+        */
 
 
     }
@@ -52,8 +49,10 @@ public class Main {
 
         loader.checkFiles();
 
-        WorkTable.getGame0().getProblemSet().dumpProblemSet("oblivion1", false);
-        WorkTable.getGame1().getProblemSet().dumpProblemSet("oblivion2", false);
+        WorkTable.getGame0().getProblemSet().saveProblemSet("oblivion1", false);
+        WorkTable.getGame1().getProblemSet().saveProblemSet("oblivion2", false);
+
+        loader.updateProblemSetIndex();
 
         loader.loadAllProblemSets();
         System.out.println(loader.getProblemSets());

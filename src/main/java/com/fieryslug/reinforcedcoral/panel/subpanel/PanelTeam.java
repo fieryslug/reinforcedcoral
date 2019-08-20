@@ -6,6 +6,7 @@ import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import info.clearthought.layout.TableLayout;
 
 import java.awt.*;
 import java.awt.event.MouseWheelEvent;
@@ -43,15 +44,18 @@ public class PanelTeam extends JPanel {
 
     public void initialize() {
 
+        double[][] size = new double[][]{{0.15, 0.7, 0.15}, {0.33, 0.25, 0.42}};
+        setLayout(new TableLayout(size));
+
         this.setBorder(Reference.BEVEL1);
         this.setBackground(Reference.BLACK);
 
-        this.labelName = new JLabel();
+        this.labelName = new JLabel("", SwingConstants.CENTER);
         this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
         this.labelName.setForeground(Reference.BLAZE);
         this.labelName.setText(this.team.getName());
 
-        this.labelScore = new JLabel();
+        this.labelScore = new JLabel("", SwingConstants.CENTER);
         this.labelScore.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 30));
         this.labelScore.setForeground(Reference.BLAZE);
         this.labelScore.setText(String.valueOf(this.team.getScore()));
@@ -90,11 +94,12 @@ public class PanelTeam extends JPanel {
             }
         });
 
-        add(this.labelName);
-        add(this.labelScore);
-        add(FuncBox.blankLabel(2000, 10));
-        add(this.labelState);
-
+        add(this.labelName, "1, 0");
+        add(this.labelScore, "1, 1");
+        //add(FuncBox.blankLabel(2000, 10));
+        add(this.labelState, "0, 2, 2, 2");
+        //this.labelScore.setBorder(Reference.BEVEL1);
+        //this.labelName.setBorder(Reference.COMPOUND1);
     }
 
     @Deprecated
@@ -119,6 +124,11 @@ public class PanelTeam extends JPanel {
             this.labelScore.setFont(FontRef.getFont(FontRef.MONOSPACED, Font.BOLD, 30));
             this.labelName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 34));
             new Color(110, 170, 131);
+        }
+        if (Preference.autoScaleFontSize) {
+            FontRef.scaleFont(this.labelName);
+            FontRef.scaleFont(this.labelScore);
+            FontRef.scaleFont(this.labelState);
         }
     }
 

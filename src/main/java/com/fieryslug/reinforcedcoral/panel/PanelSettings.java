@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@Deprecated
 public class PanelSettings extends PanelPrime {
 
     public JTextField fieldTeam1;

@@ -1,14 +1,11 @@
 package com.fieryslug.reinforcedcoral.util;
 
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
+import java.awt.*;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 public class FontRef {
 
@@ -71,16 +68,30 @@ public class FontRef {
     }
     */
 
-    public static void scaleFont(JLabel label) {
+    public static void scaleFont(JComponent label) {
 
         try {
-
-            String text = FuncBox.getHtmlRealText(label.getText());
-            System.out.println("real text: " + text);
+            String text = null;
+            if(label instanceof JLabel)
+                text = FuncBox.getHtmlRealText(((JLabel) label).getText());
+            if(label instanceof JTextField)
+                text = FuncBox.getHtmlRealText(((JTextField) label).getText());
+            if(label instanceof AbstractButton)
+                text = FuncBox.getHtmlRealText(((AbstractButton) label).getText());
+            if(text == null) return;
             Font font = label.getFont();
 
             int size = label.getFont().getSize();
-            int newSize = size * label.getWidth() / label.getGraphics().getFontMetrics().stringWidth(text) * 19 / 20;
+            FontMetrics metrics = label.getGraphics().getFontMetrics();
+            double scaleX = (double)label.getWidth() / metrics.stringWidth(text);
+            double scaleY = (double)label.getHeight() / metrics.getHeight();
+
+            System.out.println(scaleX + " " + scaleY + "scale");
+
+            double scale = Math.min(scaleX, scaleY);
+
+            int newSize = (int)(size * scale * 0.95d);
+
             newSize = Math.min(size, newSize);
             label.setFont(FontRef.getFont(font.getFontName(), font.getStyle(), (int) (newSize / Preference.fontSizeMultiplier)));
         } catch (Exception e) {

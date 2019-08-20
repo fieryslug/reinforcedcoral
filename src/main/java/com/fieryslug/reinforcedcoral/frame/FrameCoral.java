@@ -8,6 +8,7 @@ import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.panel.PanelSettings;
 import com.fieryslug.reinforcedcoral.panel.PanelThemes;
 import com.fieryslug.reinforcedcoral.panel.PanelTitle;
+import com.fieryslug.reinforcedcoral.panel.edit.PanelEdit;
 import com.fieryslug.reinforcedcoral.panel.title.PanelTitleBeautified;
 import com.fieryslug.reinforcedcoral.util.*;
 
@@ -20,17 +21,26 @@ public class FrameCoral extends JFrame {
 
     public int maxHeight, maxWidth;
 
-    public PanelPrime panelTitle;
+
     public PanelPrime panelTitleBeautified;
-    public PanelPrime panelSettings;
     public PanelPrime panelGame;
+    public PanelPrime panelEdit;
+
+    @Deprecated
+    public PanelPrime panelSettings;
+    @Deprecated
+    public PanelPrime panelTitle;
+    @Deprecated
     public PanelPrime panelThemes;
+
 
     public PanelPrime currentPanel;
 
     public boolean isFullScreen = false;
 
     public Game game;
+
+    public static boolean locked = false;
 
     public TextureHolder textureHolder;
 
@@ -59,25 +69,28 @@ public class FrameCoral extends JFrame {
         this.panelSettings = new PanelSettings(this);
         this.panelGame = new PanelGame(this);
         this.panelThemes = new PanelThemes(this);
+        this.panelEdit = new PanelEdit(this);
 
         FuncBox.addKeyBinding(this.getRootPane(), "F11", new ActionFullScreen(this));
         FuncBox.addKeyBinding(this.getRootPane(), "T", new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String texture = Preference.texture;
-                int index = 0;
-                for(int i=0; i<Reference.TEXTURE_PACKS.length; ++i) {
-                    if (texture.equals(Reference.TEXTURE_PACKS[i])) {
-                        index = i;
-                        break;
+                if(!locked) {
+                    String texture = Preference.texture;
+                    int index = 0;
+                    for (int i = 0; i < Reference.TEXTURE_PACKS.length; ++i) {
+                        if (texture.equals(Reference.TEXTURE_PACKS[i])) {
+                            index = i;
+                            break;
+                        }
                     }
+                    index = (index + 1) % Reference.TEXTURE_PACKS.length;
+                    Preference.texture = Reference.TEXTURE_PACKS[index];
+                    TextureHolder holder = TextureHolder.getInstance();
+                    holder.read(Preference.texture);
+                    //applyTexture(holder);
+                    refresh(holder);
                 }
-                index = (index + 1) % Reference.TEXTURE_PACKS.length;
-                Preference.texture = Reference.TEXTURE_PACKS[index];
-                TextureHolder holder = TextureHolder.getInstance();
-                holder.read(Preference.texture);
-                //applyTexture(holder);
-                refresh(holder);
             }
         });
 
@@ -122,7 +135,9 @@ public class FrameCoral extends JFrame {
 
     public void refresh(TextureHolder holder) {
 
+
         this.currentPanel.applyTexture(holder);
+
         this.currentPanel.refresh();
 
     }

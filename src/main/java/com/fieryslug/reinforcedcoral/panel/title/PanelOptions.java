@@ -11,7 +11,6 @@ import com.fieryslug.reinforcedcoral.util.SpinnerLayout;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
@@ -21,7 +20,6 @@ import java.awt.event.ItemListener;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -44,9 +42,9 @@ public class PanelOptions extends PanelInterior {
     ButtonCoral buttonApply;
 
 
-    JLabel label1;
-    JLabel label2;
-    JLabel label3;
+    JLabel labelScale;
+    JLabel labelMultiplier;
+    JLabel labelTeams;
     JLabel label4;
     JLabel label5;
     JLabel label6;
@@ -84,13 +82,13 @@ public class PanelOptions extends PanelInterior {
         this.buttonOk = new ButtonCoral(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
         this.buttonApply = new ButtonCoral(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
 
-        this.label1 = new JLabel("auto scale text", SwingConstants.RIGHT);
-        this.label1.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
-        this.label1.setForeground(holder.getColor("text_light_2"));
+        this.labelScale = new JLabel("auto scale text", SwingConstants.RIGHT);
+        this.labelScale.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
+        this.labelScale.setForeground(holder.getColor("text_light_2"));
 
-        this.label2 = new JLabel("text size multiplier", SwingConstants.RIGHT);
-        this.label2.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
-        this.label2.setForeground(holder.getColor("text_light_2"));
+        this.labelMultiplier = new JLabel("text size multiplier", SwingConstants.RIGHT);
+        this.labelMultiplier.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
+        this.labelMultiplier.setForeground(holder.getColor("text_light_2"));
 
         this.spinnerMultiplier = new JSpinner(new SpinnerNumberModel(1.0d, 0.5d, 2.0d, 0.1d)) {
             @Override
@@ -156,9 +154,9 @@ public class PanelOptions extends PanelInterior {
 
 
 
-        this.label3 = new JLabel("teams", SwingConstants.RIGHT);
-        this.label3.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
-        this.label3.setForeground(holder.getColor("text_light_2"));
+        this.labelTeams = new JLabel("teams", SwingConstants.RIGHT);
+        this.labelTeams.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelTitle.parent.isFullScreen ? 42 : 28));
+        this.labelTeams.setForeground(holder.getColor("text_light_2"));
 
         this.toggleScale = new JToggleButton("off");
         this.toggleScale.setBackground(holder.getColor("problem_preenabled"));
@@ -219,12 +217,12 @@ public class PanelOptions extends PanelInterior {
         add(this.buttonOk, "8, 20, 15, 23");
         //add(this.buttonApply, "3, 5, 4, 5");
 
-        add(this.label1, "0, 4, 7, 7");
+        add(this.labelScale, "0, 4, 7, 7");
         add(this.toggleScale, "9, 5, 10, 6");
 
-        add(this.label2, "0, 8, 7, 11");
+        add(this.labelMultiplier, "0, 8, 7, 11");
         add(this.spinnerMultiplier, "9, 9, 10, 10");
-        add(this.label3, "0, 12, 7, 15");
+        add(this.labelTeams, "0, 12, 7, 15");
         add(this.spinnerTeams, "9, 13, 10, 14");
 
 
@@ -258,10 +256,11 @@ public class PanelOptions extends PanelInterior {
             field.setForeground(panelTeam.labelName.getForeground());
             this.panelFieldMap.put(panelTeam, field);
             panelTeam.removeAll();
-            panelTeam.add(field);
-            panelTeam.add(panelTeam.labelScore);
-            panelTeam.add(FuncBox.blankLabel(2000, 10));
-            panelTeam.add(panelTeam.labelState);
+            panelTeam.add(field, "1, 0");
+            panelTeam.add(panelTeam.labelScore, "1, 1");
+            //panelTeam.add(FuncBox.blankLabel(2000, 10));
+            panelTeam.add(panelTeam.labelState, "0, 2, 2, 2");
+            field.setHorizontalAlignment(SwingConstants.CENTER);
         }
 
 
@@ -283,9 +282,9 @@ public class PanelOptions extends PanelInterior {
         this.buttonOk.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
         this.buttonApply.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
 
-        this.label1.setForeground(holder.getColor("text_light_2"));
-        this.label2.setForeground(holder.getColor("text_light_2"));
-        this.label3.setForeground(holder.getColor("text_light_2"));
+        this.labelScale.setForeground(holder.getColor("text_light_2"));
+        this.labelMultiplier.setForeground(holder.getColor("text_light_2"));
+        this.labelTeams.setForeground(holder.getColor("text_light_2"));
 
         this.fieldMultiplier.setForeground(holder.getColor("text"));
         this.fieldMultiplier.setBackground(holder.getColor("interior"));
@@ -334,9 +333,9 @@ public class PanelOptions extends PanelInterior {
 
             this.labelOk.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
             this.labelApply.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
-            this.label1.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
-            this.label2.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
-            this.label3.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
+            this.labelScale.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
+            this.labelMultiplier.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
+            this.labelTeams.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
             this.fieldTeams.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
             this.fieldMultiplier.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 42));
             this.toggleScale.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 33));
@@ -346,9 +345,9 @@ public class PanelOptions extends PanelInterior {
 
             this.labelOk.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
             this.labelApply.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
-            this.label1.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
-            this.label2.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
-            this.label3.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
+            this.labelScale.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
+            this.labelMultiplier.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
+            this.labelTeams.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
             this.fieldTeams.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
             this.fieldMultiplier.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 28));
             this.toggleScale.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, 22));
@@ -377,5 +376,20 @@ public class PanelOptions extends PanelInterior {
 
         this.buttonOk.resizeImageForIcons(buttonSize, buttonSize);
         this.buttonApply.resizeImageForIcons(buttonSize, buttonSize);
+
+        if (Preference.autoScaleFontSize) {
+            FontRef.scaleFont(this.toggleScale);
+            FontRef.scaleFont(this.labelOk);
+            FontRef.scaleFont(this.labelScale);
+            FontRef.scaleFont(this.labelMultiplier);
+            FontRef.scaleFont(this.labelTeams);
+            FontRef.scaleFont(this.fieldTeams);
+            FontRef.scaleFont(this.fieldMultiplier);
+            for (PanelTeam panelTeam : this.panelTitle.panelTeams) {
+
+                JTextField field = this.panelFieldMap.get(panelTeam);
+                FontRef.scaleFont(field);
+            }
+        }
     }
 }

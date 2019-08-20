@@ -8,8 +8,6 @@ import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JTextArea;
 
@@ -17,29 +15,26 @@ import info.clearthought.layout.TableLayout;
 
 public class PanelInformation extends PanelInterior {
 
-    ButtonCoral button1;
+    private ButtonCoral button1;
 
     private PanelTitleBeautified panelTitle;
     private JTextArea textArea;
     private String infoRest;
 
-    public PanelInformation(PanelTitleBeautified panelTitle) {
+    PanelInformation(PanelTitleBeautified panelTitle) {
         this.panelTitle = panelTitle;
         TextureHolder holder = TextureHolder.getInstance();
 
-        this.infoRest = "\n\nReinforced Coral\n\nversion:   " + Reference.VERSION + "   updated " + Reference.UPDATE_DATE + "\n\ncredits:\nfieryslug, evan, yushuanlee, tsengbing, \nsarah, jammychiou1";
+        this.infoRest = "\n\nReinforced Coral\n\nversion:   " + Reference.VERSION + "   updated " + Reference.UPDATE_DATE + "\n\ncredits:\nfieryslug, evan, tsengbing, yushuanlee\nsarah, jammychiou1";
 
 
         double[][] size = {{1.0d/5, 1.0d/5, 1.0d/5, 1.0d/5, 1.0d/5}, {1.0d/6, 1.0d/6, 1.0d/3, 1.0d/6, 1.0d/6}};
         setLayout(new TableLayout(size));
 
         this.button1 = new ButtonCoral(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
-        this.button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                panelTitle.setCurrentPanelInterior(panelTitle.panelInterior);
-                panelTitle.parent.switchPanel(panelTitle, panelTitle);
-            }
+        this.button1.addActionListener(actionEvent -> {
+            panelTitle.setCurrentPanelInterior(panelTitle.panelInterior);
+            panelTitle.parent.switchPanel(panelTitle, panelTitle);
         });
 
         this.textArea = new JTextArea();
@@ -54,8 +49,8 @@ public class PanelInformation extends PanelInterior {
     @Override
     public void enter() {
 
-        int buttonX = (int) (this.panelTitle.getWidth() / (3));
-        int buttonY = (int) (this.panelTitle.getHeight() / (10));
+        int buttonX =  (this.panelTitle.getWidth() / (3));
+        int buttonY =  (this.panelTitle.getHeight() / (10));
         int buttonSize = Math.min(buttonX, buttonY);
         buttonSize = (int) (buttonSize * 0.6);
 
@@ -90,12 +85,10 @@ public class PanelInformation extends PanelInterior {
 
     @Override
     public void refresh(boolean isFullScreen) {
-        int buttonX = (int) (this.panelTitle.getWidth() / (3));
-        int buttonY = (int) (this.panelTitle.getHeight() / (10));
-        int buttonSize = Math.min(buttonX, buttonY);
-        buttonSize = (int) (buttonSize * 0.6);
+        int buttonX = this.panelTitle.getWidth() / 3;
+        int buttonY = this.panelTitle.getHeight() / 10;
 
-        this.button1.resizeImageForIcons(buttonSize, buttonSize);
+        this.button1.resizeIconToSquare(buttonX, buttonY, 0.6);
 
         if (isFullScreen) {
 
