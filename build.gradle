@@ -23,6 +23,7 @@ sourceSets {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.apache.commons:commons-lang3:3.1'
     compile group: 'info.clearthought', name: 'table-layout', version: '4.3.0'
     compile group: 'org.json', name: 'json', version: '20180813'
     compile group: 'javax.media', name: 'jmf', version: '2.1.1e'

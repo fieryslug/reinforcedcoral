@@ -35,6 +35,7 @@ public class Main {
     public static void main(String[] args) {
 
         start();
+
         //ProblemSet set = new ProblemSet("oblivion2");
         //set.loadProblemSet();
         //set.dumpProblemSet("oblivion3", true);

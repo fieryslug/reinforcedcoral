@@ -4,6 +4,7 @@ package com.fieryslug.reinforcedcoral.util;
 import com.fieryslug.reinforcedcoral.core.Team;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -226,13 +227,29 @@ public class FuncBox {
     }
 
     public static double[] createDivisionArray(int n) {
+        return createDivisionArray(n, 1.0);
+    }
 
-        double[] res = new double[n];
-        for (int i = 0; i < n; ++i) {
-            res[i] = 1.0d / n;
+    public static double[] createDivisionArray(int n, double a) {
+
+        if (n == 1) {
+            return new double[]{round(a, 3)};
         }
-        return res;
 
+        double u = round(a / n, 3);
+        double r = a - u;
+        double[] div = createDivisionArray(n - 1, r);
+        return ArrayUtils.addAll(div, u);
+
+    }
+
+
+
+    public static double round(double a, int b) {
+        double mul = Math.pow(10, b);
+        double aa = a * mul;
+        double k = (double) Math.round(aa);
+        return k / mul;
     }
 
     public static BufferedImage toBufferedImage(Image img) {
