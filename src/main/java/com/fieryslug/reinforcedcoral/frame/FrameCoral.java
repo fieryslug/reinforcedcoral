@@ -15,6 +15,7 @@ import com.fieryslug.reinforcedcoral.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
 import java.util.Map;
 
 public class FrameCoral extends JFrame {
@@ -72,7 +73,7 @@ public class FrameCoral extends JFrame {
         this.panelEdit = new PanelEdit(this);
 
         FuncBox.addKeyBinding(this.getRootPane(), "F11", new ActionFullScreen(this));
-        FuncBox.addKeyBinding(this.getRootPane(), "T", new AbstractAction() {
+        FuncBox.addKeyBinding(this.getRootPane(), KeyStroke.getKeyStroke('T', InputEvent.ALT_DOWN_MASK), new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 if(!locked) {

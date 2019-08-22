@@ -357,6 +357,7 @@ public class PanelGame extends PanelPrime {
     @Override
     public void enter() {
 
+        System.out.println("in panelgame: width " + getWidth());
         this.panelInteriorMenu.removeAll();
         removeAll();
 
@@ -430,7 +431,7 @@ public class PanelGame extends PanelPrime {
             int probsPerCat = this.parent.game.getProblemSet().getProblemsPerCategory();
 
             this.currentPageNumber = 0;
-            double size[][] = {FuncBox.createDivisionArray(catCount), FuncBox.createDivisionArray(probsPerCat+1)};
+            double[][] size = {FuncBox.createDivisionArray(catCount), FuncBox.createDivisionArray(probsPerCat+1)};
             this.panelInteriorMenu.setLayout(new TableLayout(size));
 
             //this.panelInteriorMenu.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
@@ -889,10 +890,7 @@ public class PanelGame extends PanelPrime {
     @Override
     public void applyTexture(TextureHolder holder) {
 
-
         setBackground(holder.getColor("background"));
-
-
 
         for (ButtonProblem button : this.buttonProblemMap.keySet()) {
             button.setIcon(null);

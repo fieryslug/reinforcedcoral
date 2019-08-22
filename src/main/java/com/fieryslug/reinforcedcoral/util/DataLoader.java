@@ -130,9 +130,10 @@ public class DataLoader {
                 ProblemSet set = new ProblemSet(setId);
                 boolean b = true;
                 try {
-
                     set.acquireProblemSet();
                 } catch (Exception e) {
+                    System.out.println("an error occurred while loading " + setId + ": ");
+                    e.printStackTrace();
                     b = false;
                 }
                 if (b) {

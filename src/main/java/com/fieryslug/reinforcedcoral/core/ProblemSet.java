@@ -332,6 +332,7 @@ public class ProblemSet {
 
         String data = exportMeta().toString(2);
 
+        loader.checkFile(path, true);
         loader.writeToFile(path + "/meta.json", data, override);
 
         for (Category category : this.categories) {
@@ -423,7 +424,7 @@ public class ProblemSet {
         }
     }
 
-    ArrayList<Category> getCategories() {
+    public ArrayList<Category> getCategories() {
         return this.categories;
     }
 

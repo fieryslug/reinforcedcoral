@@ -100,6 +100,36 @@ public class FontRef {
 
     }
 
+    public static void scaleFont(JComponent label, int originalSize) {
+        try {
+            String text = null;
+            if(label instanceof JLabel)
+                text = FuncBox.getHtmlRealText(((JLabel) label).getText());
+            if(label instanceof JTextField)
+                text = FuncBox.getHtmlRealText(((JTextField) label).getText());
+            if(label instanceof AbstractButton)
+                text = FuncBox.getHtmlRealText(((AbstractButton) label).getText());
+            if(text == null) return;
+            Font font = label.getFont();
+
+
+            FontMetrics metrics = label.getGraphics().getFontMetrics();
+            double scaleX = (double)label.getWidth() / metrics.stringWidth(text);
+            double scaleY = (double)label.getHeight() / metrics.getHeight();
+
+            System.out.println(scaleX + " " + scaleY + "scale");
+
+            double scale = Math.min(scaleX, scaleY);
+
+            int newSize = (int)(originalSize * scale * 0.95d);
+
+            newSize = Math.min(originalSize, newSize);
+            label.setFont(FontRef.getFont(font.getFontName(), font.getStyle(), (int) (newSize / Preference.fontSizeMultiplier)));
+        } catch (Exception e) {
+
+        }
+    }
+
     public static Font getFont(String fontName, int b, int s) {
 
         s = (int) Math.round(s * Preference.fontSizeMultiplier);

@@ -57,6 +57,12 @@ public class FuncBox {
 
     }
 
+    public static void addKeyBinding(JComponent c, KeyStroke key, final Action action) {
+        c.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(key, key);
+        c.getActionMap().put(key, action);
+        c.setFocusable(true);
+    }
+
     public static String readFile(String urlstr) {
 
         URL url = FuncBox.class.getResource(urlstr);

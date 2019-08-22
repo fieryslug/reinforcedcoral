@@ -7,27 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="351e7919-2d3b-43af-9078-aedc18c98eec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEdit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditTitle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/EditPhase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditDependency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/core/ProblemSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/frame/FrameCoral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelThemes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelThemes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/PanelTitle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/subpanel/PanelTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/subpanel/PanelTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/edit/PanelEditTitle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelTitleBeautified.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelTitleBeautified.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelTitleInterior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/panel/title/PanelTitleInterior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/DataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FontRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/FuncBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/util/Reference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/widget/button/ButtonCoral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fieryslug/reinforcedcoral/widget/button/ButtonCoral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/balloon/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/balloon/colorscheme.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/caramel/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/caramel/colorscheme.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/classic/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/classic/colorscheme.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/eggplant/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/eggplant/colorscheme.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/jungle/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/jungle/colorscheme.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/keys.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/keys.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/ocean/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/ocean/colorscheme.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/res/texturepack/punk/colorscheme.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/texturepack/punk/colorscheme.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,9 +88,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -117,6 +118,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/res/fonts" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.fieryslug.reinforcedcoral.core.problem" />
       <recent name="com.fieryslug.reinforcedcoral.panel.title" />
@@ -130,9 +134,6 @@
       <recent name="$PROJECT_DIR$/coral/problemsets" />
       <recent name="$PROJECT_DIR$/coral/problemsets/oblivion2" />
       <recent name="$PROJECT_DIR$/coral/problemsets/oblivion1" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/res/fonts" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -382,7 +383,22 @@
       <workItem from="1566298190097" duration="632000" />
       <workItem from="1566299830297" duration="5609000" />
       <workItem from="1566306810541" duration="5593000" />
-      <workItem from="1566312537532" duration="3399000" />
+      <workItem from="1566312537532" duration="3549000" />
+      <workItem from="1566343749261" duration="1983000" />
+      <workItem from="1566348111315" duration="196000" />
+      <workItem from="1566351538981" duration="715000" />
+      <workItem from="1566353605212" duration="507000" />
+      <workItem from="1566356996989" duration="115000" />
+      <workItem from="1566357508797" duration="2511000" />
+      <workItem from="1566361092360" duration="2389000" />
+      <workItem from="1566369213071" duration="4025000" />
+      <workItem from="1566374970373" duration="3775000" />
+      <workItem from="1566387398260" duration="5388000" />
+      <workItem from="1566397799490" duration="2240000" />
+      <workItem from="1566403075157" duration="2021000" />
+      <workItem from="1566442252475" duration="573000" />
+      <workItem from="1566458984642" duration="2553000" />
+      <workItem from="1566473594573" duration="4340000" />
     </task>
     <servers />
   </component>

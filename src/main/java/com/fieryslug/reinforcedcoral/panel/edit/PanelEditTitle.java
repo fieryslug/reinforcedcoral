@@ -7,7 +7,6 @@ import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 import info.clearthought.layout.TableLayout;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -102,7 +101,9 @@ public class PanelEditTitle extends PanelInterior {
             public void actionPerformed(ActionEvent actionEvent) {
                 panelEdit.exit();
                 panelEdit.currentPanelInterior = panelEdit.panelEditGame;
+                panelEdit.panelEditGame.setPhase(EditPhase.MENU);
                 panelEdit.enter();
+                panelEdit.refresh();
                 panelEdit.repaint();
             }
         });
@@ -120,6 +121,7 @@ public class PanelEditTitle extends PanelInterior {
     public void enter() {
         setVisible(false);
         DataLoader loader = DataLoader.getInstance();
+        panelEdit.currInd = this.currInd;
 
         String prevProblemSet = this.currInd > 0 ? loader.getProblemSets().get(this.currInd -1).getName() : "";
         String currentProblemSet = loader.getProblemSets().get(this.currInd).getName();
@@ -132,6 +134,8 @@ public class PanelEditTitle extends PanelInterior {
         add(this.labelTitle, "1, 0, 3, 1");
         add(this.labelPrev, "0, 0, 0, 1");
         add(this.labelNext, "4, 0, 4, 1");
+        System.out.println(this.labelTitle.getWidth());
+
 
 
         setVisible(true);
@@ -150,11 +154,19 @@ public class PanelEditTitle extends PanelInterior {
         this.labelTitle.setForeground(holder.getColor("text"));
         this.labelPrev.setForeground(holder.getColor("text_light_2"));
         this.labelNext.setForeground(holder.getColor("text_light_2"));
+
+        this.labelEdit.setForeground(holder.getColor("text_light"));
+        this.labelBack.setForeground(holder.getColor("text_light"));
+        this.labelEdit.setForeground(holder.getColor("text_light"));
+        this.buttonEdit.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
+        this.buttonBack.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
+
     }
 
     @Override
     public void refresh(boolean isFullScreen) {
 
+        System.out.println("in edit title refresh: width " + getWidth());
 
         this.labelTitle.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 150 : 100));
         this.labelPrev.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 60 : 40));

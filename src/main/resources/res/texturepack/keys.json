@@ -13,6 +13,10 @@
     "title_border",
     "title_text",
 
+    "title_dark",
+    "title_dark_border",
+    "title_dark_text",
+
     "problem",
     "problem_border",
     "problem_text",
@@ -71,6 +75,15 @@
     "text": [
       "text_light",
       "text_light_2"
+    ],
+    "title": [
+      "title_dark"
+    ],
+    "title_border": [
+      "title_dark_border"
+    ],
+    "title_text": [
+      "title_dark_text"
     ],
     "problem": [
       "problem_hover",

@@ -118,6 +118,7 @@ public class PanelTitleBeautified extends PanelPrime {
 
     @Override
     public void enter() {
+        System.out.println("in title: width " + getWidth());
 
         int a = (Preference.teams + 1) / 2;
         System.out.println("DIVISION:" + a);

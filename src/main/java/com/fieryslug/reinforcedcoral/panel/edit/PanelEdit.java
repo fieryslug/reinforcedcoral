@@ -13,9 +13,12 @@ public class PanelEdit extends PanelPrime {
 
     JPanel[] panels;
     PanelInterior panelEditTitle;
-    PanelInterior panelEditGame;
+    PanelEditGame panelEditGame;
 
     PanelInterior currentPanelInterior;
+
+    int currInd;
+    boolean dirty = false;
 
 
     public PanelEdit(FrameCoral parent) {
@@ -49,12 +52,13 @@ public class PanelEdit extends PanelPrime {
     }
 
     @Override
-    public void enter()
-    {
-        applyTexture(TextureHolder.getInstance());
-        add(this.currentPanelInterior, "0, 1, 1, 1");
+    public void enter() {
+        this.dirty = false;
         this.currentPanelInterior.enter();
-
+        add(this.currentPanelInterior, "0, 1, 1, 1");
+        System.out.println("in panel edit: width " + getWidth());
+        applyTexture(TextureHolder.getInstance());
+        refresh();
     }
 
     @Override
@@ -66,6 +70,7 @@ public class PanelEdit extends PanelPrime {
 
     @Override
     public void refresh() {
+        System.out.println("in edit refresh: width " + getWidth());
         this.currentPanelInterior.refresh(parent.isFullScreen);
     }
 
@@ -74,7 +79,6 @@ public class PanelEdit extends PanelPrime {
         setBackground(holder.getColor("background"));
 
         for (int i = 0; i < 4; ++i) {
-
             if (i < 2) {
                 this.panels[i].setBorder(FuncBox.getLineBorder(holder.getColor("teamu_border"), 3));
                 this.panels[i].setBackground(holder.getColor("teamu"));
@@ -82,9 +86,7 @@ public class PanelEdit extends PanelPrime {
                 this.panels[i].setBorder(FuncBox.getLineBorder(holder.getColor("teamd_border"), 3));
                 this.panels[i].setBackground(holder.getColor("teamd"));
             }
-
         }
-
         this.currentPanelInterior.applyTexture(holder);
     }
 }
