@@ -20,9 +20,9 @@ public class ProblemMatch extends Problem {
 
         panelGame.parent.switchPanel(panelGame, panelGame);
 
+        int a = panelGame.getPartitionNumber();
 
-
-        panelGame.add(this.panelMatch, "0, 1, 5, 4");
+        panelGame.add(this.panelMatch, "0, 1, " + (a - 1) + ", 1");
         panelGame.currentMinigamePanel = this.panelMatch;
         panelGame.validate();
         panelMatch.start();

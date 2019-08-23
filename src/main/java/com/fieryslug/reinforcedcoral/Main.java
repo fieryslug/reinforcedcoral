@@ -4,6 +4,8 @@ import com.fieryslug.reinforcedcoral.core.Game;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.WorkTable;
 
+import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
@@ -21,23 +23,24 @@ import javax.swing.*;
 
 //import layout.TableLayout;
 import info.clearthought.layout.TableLayout;
+import org.json.JSONObject;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        start();
+        //start();
 
-        /*
-        ProblemSet set = new ProblemSet("oblivion1");
+
+        ProblemSet set = new ProblemSet("oblivion2");
         set.acquireProblemSet();
         ProblemSet set1 = set.copy();
-        set1.setName("Oblivion-1(clone)");
-        set1.saveProblemSet("oblivion1_clone", false);
+        set1.setName("Oblivion-2(clone)");
+        set1.saveProblemSet("oblivion2_clone", true);
         System.out.println(set1);
-        */
 
 
+        start();
     }
 
     public static void start() {

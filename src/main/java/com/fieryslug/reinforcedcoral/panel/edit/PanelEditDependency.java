@@ -35,10 +35,13 @@ public class PanelEditDependency extends PanelInterior {
 
     private EditPhase phase;
 
+    private JLabel labelTitle;
+    private JLabel labelProbName;
     private JLabel labelDependency;
     private ButtonCoral buttonBack;
     private JLabel labelSave;
     private Map<Problem, Set<Problem>> dependTemp;
+    private int dependsCount;
 
     PanelEditDependency(PanelEdit panelEdit, ProblemSet set, Problem problem) {
         TextureHolder holder = TextureHolder.getInstance();
@@ -51,7 +54,10 @@ public class PanelEditDependency extends PanelInterior {
 
         Image[] images = new Image[]{holder.getImage("button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press")};
 
-        this.labelDependency = new JLabel("dependencies", SwingConstants.CENTER);
+        this.labelTitle = new JLabel();
+        this.labelProbName = new JLabel();
+
+        this.labelDependency = new JLabel("    dependencies", SwingConstants.LEFT);
         this.labelDependency.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelEdit.parent.isFullScreen ? 45 : 30));
 
         this.buttonBack = new ButtonCoral(images[0], images[1], images[2]);
@@ -74,6 +80,10 @@ public class PanelEditDependency extends PanelInterior {
 
         double[][] size = new double[][]{FuncBox.createDivisionArray(targetSet.getCategoriesCount()), FuncBox.createDivisionArray(targetSet.getProblemsPerCategory() + 1)};
         setLayout(new TableLayout(size));
+
+        labelDependency.setText("   dependencies  (" + currProblem.dependences.size() + ")");
+        labelTitle.setText("    editting:");
+        labelProbName.setText(currProblem.name);
 
         int i = 0, j = 1;
         for (Category category : this.targetSet.getCategories()) {
@@ -105,6 +115,7 @@ public class PanelEditDependency extends PanelInterior {
                                 currProblem.dependences.add(problem);
                                 button.setState(-1);
                             }
+                            labelDependency.setText("   dependencies  (" + currProblem.dependences.size() + ")");
                         }
                     }
                 });
@@ -132,6 +143,8 @@ public class PanelEditDependency extends PanelInterior {
         panelEdit.panels[0].add(this.labelDependency, "0, 0, 1, 0");
         panelEdit.panels[0].add(this.buttonBack, "0, 2");
         panelEdit.panels[0].add(this.labelSave, "1, 2");
+        panelEdit.panels[1].add(this.labelTitle, "0, 0, 0, 0");
+        panelEdit.panels[1].add(this.labelProbName, "1, 0, 3, 0");
 
         applyTexture(TextureHolder.getInstance());
         SwingUtilities.invokeLater(new Runnable() {
@@ -146,6 +159,7 @@ public class PanelEditDependency extends PanelInterior {
     public void exit() {
         removeAll();
         panelEdit.panels[0].removeAll();
+        panelEdit.panels[1].removeAll();
     }
 
     @Override
@@ -176,6 +190,9 @@ public class PanelEditDependency extends PanelInterior {
             label.setBorder(BorderFactory.createLineBorder(holder.getColor("title_border"), 3));
             label.setForeground(holder.getColor("title_text"));
         }
+        this.labelTitle.setForeground(holder.getColor("teamu_text"));
+        this.labelProbName.setForeground(holder.getColor("teamu_text"));
+
         this.labelDependency.setForeground(holder.getColor("teamu_text"));
         this.labelSave.setForeground(holder.getColor("teamu_score"));
         this.buttonBack.setImages(images[0], images[1], images[2]);
@@ -189,6 +206,10 @@ public class PanelEditDependency extends PanelInterior {
         for (JLabel label : this.labelCategoryMap.keySet()) {
             label.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 45 : 30));
         }
+
+        this.labelTitle.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 45 : 30));
+        this.labelProbName.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 45 : 30));
+
         this.labelDependency.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 45 : 30));
         this.labelSave.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 39 : 26));
 
@@ -198,6 +219,8 @@ public class PanelEditDependency extends PanelInterior {
         this.buttonBack.resizeIconToSquare(buttonX, buttonYs * 3, 0.85);
 
         if (Preference.autoScaleFontSize) {
+            FontRef.scaleFont(this.labelTitle);
+            FontRef.scaleFont(this.labelProbName);
             FontRef.scaleFont(this.labelDependency);
             FontRef.scaleFont(this.labelSave);
         }

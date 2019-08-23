@@ -375,6 +375,16 @@ public class PanelProblem extends JPanel {
                 }
             }
         }
+        if (this.page.type == 2) {
+            Image image = MediaRef.getImage(this.page.res.get(2));
+            Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * 8 / 20, this.height * 15 / 20);
+            this.labelImage.setIcon(new ImageIcon(image1));
+        }
+        if (this.page.type == 4) {
+            Image image = MediaRef.getImage(this.page.res.get(2));
+            Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * 20 / 20, this.height * 10 / 20);
+            this.labelImage.setIcon(new ImageIcon(image1));
+        }
     }
 
     //called when switched back to menu

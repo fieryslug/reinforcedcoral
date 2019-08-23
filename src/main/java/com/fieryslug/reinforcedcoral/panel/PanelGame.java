@@ -1076,4 +1076,8 @@ public class PanelGame extends PanelPrime {
         }
     }
 
+    public int getPartitionNumber() {
+        return this.partitionNumber;
+    }
+
 }

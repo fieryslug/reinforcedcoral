@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.core.page;
 
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import org.json.JSONArray;
@@ -32,7 +33,7 @@ public class Page {
         this.type = object.getInt("type");
         JSONArray array = object.getJSONArray("res");
 
-        for(int i=0; i<array.length(); ++i) {
+        for (int i = 0; i < array.length(); ++i) {
 
             this.res.add(array.getString(i));
 
@@ -44,9 +45,9 @@ public class Page {
         this.res = new ArrayList<>();
         this.type = object.getInt("type");
         this.widgets = null;
-        this.isFinal = this.type==-1;
+        this.isFinal = this.type == -1;
 
-        if(this.type == Reference.MAGIC_PRIME) {
+        if (this.type == Reference.MAGIC_PRIME) {
             boolean b = object.getBoolean("final");
             this.isFinal = b;
             JSONArray elements = object.getJSONArray("elements");
@@ -59,15 +60,14 @@ public class Page {
                 JSONObject properties = objectWidget.getJSONObject("properties");
 
                 Map<String, String> p = new HashMap<>();
-                for(String s : properties.keySet()) {
+                for (String s : properties.keySet()) {
                     p.put(s, properties.getString(s));
                 }
 
                 this.widgets.add(new Widget(name, content, constraints, p));
             }
 
-        }
-        else {
+        } else {
             JSONArray array = object.getJSONArray("res");
 
             for (int i = 0; i < array.length(); ++i) {
@@ -83,7 +83,7 @@ public class Page {
         return this.isFinal;
     }
 
-
+    /*
     public JSONObject exportAsJson() {
 
         JSONObject json = new JSONObject();
@@ -114,4 +114,262 @@ public class Page {
         return json;
 
     }
+    */
+
+    public JSONObject exportAsJson() {
+
+        JSONObject jsonPage = new JSONObject();
+        JSONArray arrayWidgets = new JSONArray();
+        Widget[] widgets = new Widget[]{};
+
+        if(this.type == Reference.MAGIC_PRIME) {
+            jsonPage.put("final", this.isFinal);
+
+            for (Widget widget : this.widgets) {
+                arrayWidgets.put(widget.exportAsJson());
+            }
+        }
+        else if (this.type == -1) {
+            jsonPage.put("final", true);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+            propTitle.put("center", "true");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 5, 18, 19", propArea)
+            };
+
+
+
+        } else if (this.type == 0) {
+
+            jsonPage.put("final", false);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+            propTitle.put("center", "true");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 5, 18, 19", propArea)
+            };
+
+
+        } else if (this.type == 1) {
+
+            jsonPage.put("final", false);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "80");
+            propTitle.put("textsizefull", "120");
+            propTitle.put("center", "true");
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 19", propTitle)
+            };
+
+
+        } else if (this.type == 2) {
+            jsonPage.put("final", false);
+
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+            propTitle.put("center", "true");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            Map<String, String> propImage = new HashMap<>();
+
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 7, 11, 19", propArea),
+                    new Widget("image", this.res.get(2), "12, 5, 19, 19", propImage)
+            };
+
+
+        } else if (this.type == 3) {
+            jsonPage.put("final", false);
+
+            Map<String, String> propImage = new HashMap<>();
+
+            widgets = new Widget[]{
+                    new Widget("image", this.res.get(0), "0, 0, 19, 19", propImage)
+            };
+
+
+        } else if (this.type == 4) {
+            jsonPage.put("final", false);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+            propTitle.put("center", "true");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            Map<String, String> propImage = new HashMap<>();
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 5, 18, 9", propArea),
+                    new Widget("image", this.res.get(2), "0, 10, 19, 19", propImage)
+            };
+
+        }
+
+        for (Widget widget : widgets) {
+            arrayWidgets.put(widget.exportAsJson());
+        }
+        jsonPage.put("type", Reference.MAGIC_PRIME);
+        jsonPage.put("elements", arrayWidgets);
+
+
+        return jsonPage;
+    }
+
+    /*
+    public JSONObject toNormalForm() {
+        if(this.type == Reference.MAGIC_PRIME)
+            return exportAsJson();
+        JSONObject jsonPage = new JSONObject();
+        JSONArray arrayWidgets = new JSONArray();
+        Widget[] widgets = new Widget[]{};
+
+        if (this.type == -1) {
+            jsonPage.put("final", true);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 5, 18, 19", propArea)
+            };
+
+
+
+        } else if (this.type == 0) {
+
+            jsonPage.put("final", false);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 5, 18, 19", propArea)
+            };
+
+
+        } else if (this.type == 1) {
+
+            jsonPage.put("final", false);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "80");
+            propTitle.put("textsizefull", "120");
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 19", propTitle)
+            };
+
+
+        } else if (this.type == 2) {
+            jsonPage.put("final", false);
+
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            Map<String, String> propImage = new HashMap<>();
+
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 7, 11, 19", propArea),
+                    new Widget("image", this.res.get(2), "12, 5, 19, 19", propImage)
+            };
+
+
+        } else if (this.type == 3) {
+            jsonPage.put("final", false);
+
+            Map<String, String> propImage = new HashMap<>();
+
+            widgets = new Widget[]{
+                    new Widget("image", this.res.get(0), "0, 0, 19, 19", propImage)
+            };
+
+
+        } else if (this.type == 4) {
+            jsonPage.put("final", false);
+            Map<String, String> propTitle = new HashMap<>();
+            propTitle.put("textbold", "true");
+            propTitle.put("textsize", "40");
+            propTitle.put("textsizefull", "60");
+
+            Map<String, String> propArea = new HashMap<>();
+            propArea.put("textbold", "true");
+            propArea.put("textsize", "30");
+            propArea.put("textsizefull", "45");
+
+            Map<String, String> propImage = new HashMap<>();
+
+            widgets = new Widget[]{
+                    new Widget("jlabel", this.res.get(0), "0, 0, 19, 4", propTitle),
+                    new Widget("jtextarea", this.res.get(1), "1, 5, 18, 6", propArea),
+                    new Widget("image", this.res.get(2), "0, 10, 19, 19", propImage)
+            };
+
+        }
+
+        for (Widget widget : widgets) {
+            arrayWidgets.put(widget.exportAsJson());
+        }
+        jsonPage.put("type", Reference.MAGIC_PRIME);
+        jsonPage.put("elements", arrayWidgets);
+
+
+        return jsonPage;
+    }
+    */
 }

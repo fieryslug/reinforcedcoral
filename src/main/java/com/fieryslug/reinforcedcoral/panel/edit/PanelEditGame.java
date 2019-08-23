@@ -369,16 +369,16 @@ public class PanelEditGame extends PanelInterior {
         this.buttonBack.setImages(images[0], images[1], images[2]);
         this.buttonSave.setImages(images[0], images[1], images[2]);
 
-        this.labelSlot.setForeground(holder.getColor("teamd_text"));
+        this.labelSlot.setForeground(holder.getColor("teamu_text"));
         this.fieldSlot.setBorder(FuncBox.getLineBorder(holder.getColor("problem"), 3));
         this.fieldSlot.setForeground(holder.getColor("problem_preenabled_text"));
-        this.fieldSlot.setBackground(holder.getColor("teamd"));
-        this.fieldSlot.setCaretColor(holder.getColor("teamd_score"));
+        this.fieldSlot.setBackground(holder.getColor("teamu"));
+        this.fieldSlot.setCaretColor(holder.getColor("teamu_score"));
         this.fieldSlot.setBackground(holder.getColor("problem_preenabled"));
 
         for (int i = 0; i < 4; ++i) {
             this.buttonsProb[i].setImages(images[0], images[1], images[2]);
-            this.labelsProb[i].setForeground(holder.getColor("teamd_text"));
+            this.labelsProb[i].setForeground(holder.getColor("teamu_text"));
         }
     }
 
