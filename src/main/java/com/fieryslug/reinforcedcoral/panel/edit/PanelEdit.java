@@ -14,11 +14,15 @@ public class PanelEdit extends PanelPrime {
     JPanel[] panels;
     PanelInterior panelEditTitle;
     PanelEditGame panelEditGame;
+    PanelEditProblem panelEditProblem;
 
     PanelInterior currentPanelInterior;
+    private PanelInterior prevPanelInterior;
+
 
     int currInd;
     boolean dirty = false;
+
 
 
     public PanelEdit(FrameCoral parent) {
@@ -41,6 +45,7 @@ public class PanelEdit extends PanelPrime {
 
         this.panelEditTitle = new PanelEditTitle(this);
         this.panelEditGame = new PanelEditGame(this);
+        this.panelEditProblem = new PanelEditProblem(this);
 
         this.currentPanelInterior = this.panelEditTitle;
 
@@ -64,8 +69,12 @@ public class PanelEdit extends PanelPrime {
     @Override
     public void exit() {
 
-        remove(this.currentPanelInterior);
-        this.currentPanelInterior.exit();
+
+        //this.currentPanelInterior.exit();
+        if(this.prevPanelInterior != null) {
+            this.prevPanelInterior.exit();
+            remove(this.prevPanelInterior);
+        }
     }
 
     @Override
@@ -88,5 +97,11 @@ public class PanelEdit extends PanelPrime {
             }
         }
         this.currentPanelInterior.applyTexture(holder);
+    }
+
+    void setCurrentPanelInterior(PanelInterior currentPanelInterior) {
+        this.prevPanelInterior = this.currentPanelInterior;
+        this.currentPanelInterior = currentPanelInterior;
+
     }
 }

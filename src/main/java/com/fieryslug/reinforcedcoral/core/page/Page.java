@@ -249,6 +249,10 @@ public class Page {
         return jsonPage;
     }
 
+    public Page toNormalForm() {
+        return new Page(exportAsJson());
+    }
+
     /*
     public JSONObject toNormalForm() {
         if(this.type == Reference.MAGIC_PRIME)

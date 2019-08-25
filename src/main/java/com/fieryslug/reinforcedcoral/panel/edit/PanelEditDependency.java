@@ -4,6 +4,7 @@ import com.fieryslug.reinforcedcoral.core.Category;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
@@ -38,7 +39,7 @@ public class PanelEditDependency extends PanelInterior {
     private JLabel labelTitle;
     private JLabel labelProbName;
     private JLabel labelDependency;
-    private ButtonCoral buttonBack;
+    private ButtonCoral buttonSave;
     private JLabel labelSave;
     private Map<Problem, Set<Problem>> dependTemp;
     private int dependsCount;
@@ -60,17 +61,18 @@ public class PanelEditDependency extends PanelInterior {
         this.labelDependency = new JLabel("    dependencies", SwingConstants.LEFT);
         this.labelDependency.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, panelEdit.parent.isFullScreen ? 45 : 30));
 
-        this.buttonBack = new ButtonCoral(images[0], images[1], images[2]);
+        this.buttonSave = new ButtonCoral(images[0], images[1], images[2]);
         this.labelSave = new JLabel("save", SwingConstants.LEFT);
 
-        this.buttonBack.addActionListener(new ActionListener() {
+        this.buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                panelEdit.exit();
-                panelEdit.currentPanelInterior = panelEdit.panelEditGame;
-                panelEdit.enter();
-                panelEdit.refresh();
-                panelEdit.repaint();
+                //panelEdit.exit();
+                panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                //panelEdit.enter();
+                //panelEdit.refresh();
+                //panelEdit.repaint();
             }
         });
     }
@@ -140,11 +142,11 @@ public class PanelEditDependency extends PanelInterior {
             i++;
             j = 1;
         }
-        panelEdit.panels[0].add(this.labelDependency, "0, 0, 1, 0");
-        panelEdit.panels[0].add(this.buttonBack, "0, 2");
+        panelEdit.panels[1].add(this.labelDependency, "0, 0, 1, 0");
+        panelEdit.panels[0].add(this.buttonSave, "0, 2");
         panelEdit.panels[0].add(this.labelSave, "1, 2");
-        panelEdit.panels[1].add(this.labelTitle, "0, 0, 0, 0");
-        panelEdit.panels[1].add(this.labelProbName, "1, 0, 3, 0");
+        panelEdit.panels[0].add(this.labelTitle, "0, 0, 0, 0");
+        panelEdit.panels[0].add(this.labelProbName, "1, 0, 3, 0");
 
         applyTexture(TextureHolder.getInstance());
         SwingUtilities.invokeLater(new Runnable() {
@@ -195,7 +197,7 @@ public class PanelEditDependency extends PanelInterior {
 
         this.labelDependency.setForeground(holder.getColor("teamu_text"));
         this.labelSave.setForeground(holder.getColor("teamu_score"));
-        this.buttonBack.setImages(images[0], images[1], images[2]);
+        this.buttonSave.setImages(images[0], images[1], images[2]);
     }
 
     @Override
@@ -216,7 +218,7 @@ public class PanelEditDependency extends PanelInterior {
         int buttonX = panelEdit.panels[0].getWidth() / 4;
         int buttonYs = panelEdit.panels[0].getHeight() / 10;
 
-        this.buttonBack.resizeIconToSquare(buttonX, buttonYs * 3, 0.85);
+        this.buttonSave.resizeIconToSquare(buttonX, buttonYs * 3, 0.85);
 
         if (Preference.autoScaleFontSize) {
             FontRef.scaleFont(this.labelTitle);
@@ -224,5 +226,10 @@ public class PanelEditDependency extends PanelInterior {
             FontRef.scaleFont(this.labelDependency);
             FontRef.scaleFont(this.labelSave);
         }
+    }
+
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelEdit;
     }
 }

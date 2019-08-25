@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.title;
 
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Reference;
@@ -97,5 +98,10 @@ public class PanelInformation extends PanelInterior {
         } else {
             this.textArea.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 26));
         }
+    }
+
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelTitle;
     }
 }

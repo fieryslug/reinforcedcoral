@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.title;
 
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
@@ -10,6 +11,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 import info.clearthought.layout.TableLayout;
 
@@ -176,6 +178,12 @@ public class PanelTitleInterior extends PanelInterior {
         this.labelTitle.setText(this.currentProblemSet);
         this.labelNext.setText(this.nextProblemSet);
 
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                refresh(panelTitle.parent.isFullScreen);
+            }
+        });
         setVisible(true);
     }
 
@@ -264,4 +272,8 @@ public class PanelTitleInterior extends PanelInterior {
         setVisible(true);
     }
 
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelTitle;
+    }
 }

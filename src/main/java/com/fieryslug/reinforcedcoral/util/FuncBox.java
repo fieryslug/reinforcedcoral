@@ -8,6 +8,8 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -203,6 +205,12 @@ public class FuncBox {
         lineBorderCache.put(info, border);
         return border;
 
+    }
+
+    public static Border getCompoundLineBorder(Color color, int size) {
+        Border outer = BorderFactory.createLineBorder(color, size);
+        Border inner = new EmptyBorder(-2, -2, -2, -2);
+        return new CompoundBorder(outer, null);
     }
 
     public static String getIp() {

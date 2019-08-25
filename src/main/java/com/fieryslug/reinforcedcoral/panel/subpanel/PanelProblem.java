@@ -27,9 +27,9 @@ public class PanelProblem extends JPanel {
     public JTextArea areaDescription;
     public JLabel labelImage;
 
-    private int height;
-    private int width;
-    private Page page;
+    protected int height;
+    protected int width;
+    protected Page page;
     private TableLayout layout;
     private double[][] layoutSize;
 
@@ -175,7 +175,7 @@ public class PanelProblem extends JPanel {
         }
     }
 
-    private void clearThings() {
+    protected void clearThings() {
 
         this.labelTitle.setText("");
         this.labelTitle.setIcon(null);
@@ -190,7 +190,7 @@ public class PanelProblem extends JPanel {
     public void enter() {
     }
 
-    private void addAndConfigWidget(Widget widget) {
+    protected void addAndConfigWidget(Widget widget) {
 
         if(widget.widgetType == Widget.EnumWidget.JLABEL) {
             JLabel label = new FontChangerLabel();
@@ -228,11 +228,16 @@ public class PanelProblem extends JPanel {
             TableLayoutConstraints constraints = widget.getConstraints();
             int widthBoxes = constraints.col2 - constraints.col1 + 1;
             int heightBoxes = constraints.row2 - constraints.row1 + 1;
-            image = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
 
             label.setIcon(new ImageIcon(image));
             this.widgetInstanceMap.put(widget, label);
             add(label, widget.constraints);
+
+            int imgX = this.width * widthBoxes / 20, imgY = this.height * heightBoxes / 20;
+            if(imgX != 0 && imgY != 0) {
+                image = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
+                label.setIcon(new ImageIcon(image));
+            }
         }
         if (widget.widgetType == Widget.EnumWidget.AUDIO) {
             /*
@@ -417,11 +422,12 @@ public class PanelProblem extends JPanel {
 
         for (Widget widget : this.widgetInstanceMap.keySet()) {
 
-            JComponent component = this.widgetInstanceMap.get(widget);
-            component.setBackground(holder.getColor("interior"));
-            if(!widget.properties.containsKey("textcolor"))
-                component.setForeground(holder.getColor("text"));
-
+            if(!widget.isAbstract()) {
+                JComponent component = this.widgetInstanceMap.get(widget);
+                component.setBackground(holder.getColor("interior"));
+                if (!widget.properties.containsKey("textcolor"))
+                    component.setForeground(holder.getColor("text"));
+            }
         }
 
     }

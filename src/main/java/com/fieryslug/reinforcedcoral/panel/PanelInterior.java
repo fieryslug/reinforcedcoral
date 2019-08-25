@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 public abstract class PanelInterior extends JPanel {
 
 
+
     public void enter() {
 
     }
@@ -21,6 +22,14 @@ public abstract class PanelInterior extends JPanel {
 
     public void refresh(boolean isFullScreen) {
 
+    }
+
+    public PanelPrime getPanelParent() {
+        return null;
+    }
+
+    public boolean isFullScreen() {
+        return getPanelParent().parent.isFullScreen;
     }
 
 }

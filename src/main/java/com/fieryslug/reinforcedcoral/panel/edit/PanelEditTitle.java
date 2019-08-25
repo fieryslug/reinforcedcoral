@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.edit;
 
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.panel.title.PanelTitleBeautified;
 import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
@@ -69,8 +70,9 @@ public class PanelEditTitle extends PanelInterior {
         this.labelNext.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                if(labelNext.getText().length() > 0) {
+                if(labelNext.getText().length() > 0 && currInd < DataLoader.getInstance().getProblemSets().size()) {
                     currInd++;
+                    panelEdit.currInd++;
                     exit();
                     enter();
                     refresh(panelEdit.parent.isFullScreen);
@@ -81,8 +83,9 @@ public class PanelEditTitle extends PanelInterior {
         this.labelPrev.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                if(labelPrev.getText().length() > 0) {
+                if(labelPrev.getText().length() > 0 && currInd >= 0) {
                     currInd--;
+                    panelEdit.currInd--;
                     exit();
                     enter();
                     refresh(panelEdit.parent.isFullScreen);
@@ -99,12 +102,15 @@ public class PanelEditTitle extends PanelInterior {
         this.buttonEdit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                panelEdit.exit();
-                panelEdit.currentPanelInterior = panelEdit.panelEditGame;
+                //panelEdit.exit();
+                System.out.println("currInd: " + currInd + "\ncurrInd2: " + panelEdit.currInd);
+                panelEdit.panelEditGame.targetSet = null;
+                panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
                 panelEdit.panelEditGame.setPhase(EditPhase.MENU);
-                panelEdit.enter();
-                panelEdit.refresh();
-                panelEdit.repaint();
+                //panelEdit.enter();
+                //panelEdit.refresh();
+                //panelEdit.repaint();
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
             }
         });
 
@@ -192,5 +198,10 @@ public class PanelEditTitle extends PanelInterior {
             FontRef.scaleFont(this.labelNext);
             FontRef.scaleFont(this.labelPrev);
         }
+    }
+
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelEdit;
     }
 }

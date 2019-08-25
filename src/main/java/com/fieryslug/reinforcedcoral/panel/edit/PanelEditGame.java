@@ -1,9 +1,12 @@
 package com.fieryslug.reinforcedcoral.panel.edit;
 
 import com.fieryslug.reinforcedcoral.core.Category;
+import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
+import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonColorized;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
@@ -38,7 +41,7 @@ public class PanelEditGame extends PanelInterior {
     private ButtonCoral[] buttonsProb;
 
 
-    private ProblemSet targetSet;
+    ProblemSet targetSet;
 
     private Problem currProblem = null;
     private Category currCat = null;
@@ -81,11 +84,12 @@ public class PanelEditGame extends PanelInterior {
         this.buttonBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                panelEdit.exit();
-                panelEdit.currentPanelInterior = panelEdit.panelEditTitle;
-                panelEdit.enter();
-                panelEdit.refresh();
-                panelEdit.repaint();
+                //panelEdit.exit();
+                panelEdit.setCurrentPanelInterior(panelEdit.panelEditTitle);
+                //panelEdit.enter();
+                //panelEdit.refresh();
+                //panelEdit.repaint();
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
             }
         });
 
@@ -100,11 +104,12 @@ public class PanelEditGame extends PanelInterior {
                 DataLoader.getInstance().loadAllProblemSets();
                 DataLoader.getInstance().updateProblemSetIndex();
 
-                panelEdit.exit();
-                panelEdit.currentPanelInterior = panelEdit.panelEditTitle;
-                panelEdit.enter();
-                panelEdit.refresh();
-                panelEdit.repaint();
+                //panelEdit.exit();
+                panelEdit.setCurrentPanelInterior(panelEdit.panelEditTitle);
+                //panelEdit.enter();
+                //panelEdit.refresh();
+                //panelEdit.repaint();
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
             }
         });
 
@@ -113,11 +118,12 @@ public class PanelEditGame extends PanelInterior {
             public void actionPerformed(ActionEvent actionEvent) {
 
                 PanelEditDependency panel = new PanelEditDependency(panelEdit, targetSet, currProblem);
-                panelEdit.exit();
-                panelEdit.currentPanelInterior = panel;
-                panelEdit.enter();
-                panelEdit.refresh();
-                panelEdit.repaint();
+                //panelEdit.exit();
+                panelEdit.setCurrentPanelInterior(panel);
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                //panelEdit.enter();
+                //panelEdit.refresh();
+                //panelEdit.repaint();
 
                 /*
                 setPhase(EditPhase.DEPENDENCIES);
@@ -132,6 +138,34 @@ public class PanelEditGame extends PanelInterior {
                 panelEdit.revalidate();
                 panelEdit.repaint();
                 */
+            }
+        });
+
+        this.buttonsProb[1].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                //panelEdit.exit();
+
+                for (int i = 0; i < currProblem.pages.size(); ++i) {
+
+                    currProblem.pages.set(i ,currProblem.pages.get(i).toNormalForm());
+                }
+                currProblem.pageSolution = currProblem.pageSolution.toNormalForm();
+                for (int i = 0; i < currProblem.pagesExplanation.size(); ++i) {
+                    currProblem.pages.set(i ,currProblem.pagesExplanation.get(i).toNormalForm());
+                }
+
+
+                panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
+                panelEdit.panelEditProblem.setPhase(GamePhase.IN_PROBLEM);
+                panelEdit.panelEditProblem.setCurrPageNum(0);
+                panelEdit.panelEditProblem.setProblem(currProblem);
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                //panelEdit.enter();
+                //panelEdit.refresh();
+                //panelEdit.repaint();
+
             }
         });
 
@@ -175,6 +209,7 @@ public class PanelEditGame extends PanelInterior {
 
             //Game game = panelEdit.parent.game;
             int ind = panelEdit.currInd;
+
             if(targetSet == null) {
                 ProblemSet set = DataLoader.getInstance().getProblemSets().get(ind);
                 this.targetSet = set.copy();
@@ -265,6 +300,7 @@ public class PanelEditGame extends PanelInterior {
             }
 
         }
+        /*
         if (this.phase == EditPhase.DEPENDENCIES) {
 
             System.out.println(this.currProblem.id);
@@ -299,6 +335,7 @@ public class PanelEditGame extends PanelInterior {
             }
 
         }
+        */
         System.out.println("in edit menu enter:  width " + panelEdit.getWidth());
 
 
@@ -320,9 +357,6 @@ public class PanelEditGame extends PanelInterior {
         for (int i = 0; i < 4; ++i) {
             panelEdit.panels[i].removeAll();
         }
-        //this.currProblem = null;
-        //this.currCat = null;
-
     }
 
     @Override
@@ -457,14 +491,17 @@ public class PanelEditGame extends PanelInterior {
             button.setState(-1);
 
         }
+        if (problem == null) {
+            currProblem = null;
+        }
     }
 
     private void setCurrCat(Category cat) {
         this.currType = 1;
-
+        TextureHolder holder = TextureHolder.getInstance();
         if (this.labelCategoryMap.inverse().keySet().contains(cat)) {
 
-            TextureHolder holder = TextureHolder.getInstance();
+
             if (this.currCat != null) {
                 JLabel label = this.labelCategoryMap.inverse().get(this.currCat);
                 label.setBackground(holder.getColor("title"));
@@ -482,6 +519,10 @@ public class PanelEditGame extends PanelInterior {
             label1.setBackground(holder.getColor("title_dark"));
             label1.setBorder(FuncBox.getLineBorder(holder.getColor("title_dark_border"), 3));
             label1.setForeground(holder.getColor("title_dark_text"));
+        }
+
+        if (cat == null) {
+            currCat = null;
         }
     }
 
@@ -527,5 +568,10 @@ public class PanelEditGame extends PanelInterior {
 
     void setPhase(EditPhase phase) {
         this.phase = phase;
+    }
+
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelEdit;
     }
 }

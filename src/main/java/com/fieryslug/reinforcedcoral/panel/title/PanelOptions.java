@@ -2,6 +2,7 @@ package com.fieryslug.reinforcedcoral.panel.title;
 
 import com.fieryslug.reinforcedcoral.core.Team;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
+import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
@@ -251,7 +252,7 @@ public class PanelOptions extends PanelInterior {
             field.setFont(panelTeam.labelName.getFont());
             field.setAlignmentX(CENTER_ALIGNMENT);
             //field.setBorder(null);
-            field.setBorder(FuncBox.getLineBorder(Reference.WHITE, 3));
+            field.setBorder(FuncBox.getLineBorder(TextureHolder.getInstance().getColor("edit_border"), 3));
             field.setOpaque(false);
             field.setForeground(panelTeam.labelName.getForeground());
             this.panelFieldMap.put(panelTeam, field);
@@ -315,7 +316,7 @@ public class PanelOptions extends PanelInterior {
                     field.setForeground(holder.getColor("teamu_text"));
                 else
                     field.setForeground(holder.getColor("teamd_text"));
-                field.setBorder(FuncBox.getLineBorder(Reference.WHITE, 3));
+                field.setBorder(FuncBox.getLineBorder(holder.getColor("edit_border"), 3));
 
             }
         } catch (Exception e) {
@@ -391,5 +392,10 @@ public class PanelOptions extends PanelInterior {
                 FontRef.scaleFont(field);
             }
         }
+    }
+
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelTitle;
     }
 }

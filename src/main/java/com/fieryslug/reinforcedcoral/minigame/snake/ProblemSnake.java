@@ -36,7 +36,12 @@ public class ProblemSnake extends Problem {
         if(this.panelMiniGameIntro == null)
             this.panelMiniGameIntro = new PanelMiniGameIntro(panelGame.parent);
         panelGame.parent.switchPanel(panelGame, panelGame);
-        panelGame.add(this.panelMiniGameIntro, "0, 1, 5, 3");
+        //panelGame.add(this.panelMiniGameIntro, "0, 1, 5, 3");
+        panelGame.add(panelGame.panelCenter, "0, 1, " + (panelGame.getPartitionNumber() - 1) + ", 1");
+        panelGame.panelCenter.add(this.panelMiniGameIntro, "0, 0, 4, 0");
+        panelGame.panelCenter.add(panelMiniGameIntro.buttonBack, "0, 1");
+        panelGame.panelCenter.add(panelMiniGameIntro.buttonNext, "4, 1");
+        panelGame.panelCenter.add(panelGame.panelBanner, "0, 1, 4, 1");
 
         this.panelMiniGameIntro.inflate2(new Page(new JSONObject(FuncBox.readFile("/res/problems/special/snake.json"))));
         this.panelMiniGameIntro.refreshRendering(panelGame.parent.isFullScreen);
@@ -48,16 +53,16 @@ public class ProblemSnake extends Problem {
                 panelGame.setPhase(GamePhase.SPECIAL);
                 panelGame.parent.switchPanel(panelGame, panelGame);
 
-                panelGame.add(panelSnake, "0, 1, 5, 4");
+                panelGame.add(panelSnake, "0, 1, " + (panelGame.getPartitionNumber() - 1) + ", 1");
                 panelGame.currentMinigamePanel = panelSnake;
                 panelSnake.start();
             }
         });
 
         panelGame.currentMinigamePanel = this.panelMiniGameIntro;
-        panelGame.add(this.panelMiniGameIntro.buttonBack, "0, 4");
-        panelGame.add(this.panelMiniGameIntro.buttonNext, "5, 4");
-        panelGame.add(panelGame.panelBanner, "0, 4, 5, 4");
+        //panelGame.add(this.panelMiniGameIntro.buttonBack, "0, 4");
+        //panelGame.add(this.panelMiniGameIntro.buttonNext, "5, 4");
+        //panelGame.add(panelGame.panelBanner, "0, 4, 5, 4");
 
 
         /*

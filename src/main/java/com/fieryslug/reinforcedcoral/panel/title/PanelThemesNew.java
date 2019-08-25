@@ -243,5 +243,10 @@ public class PanelThemesNew extends PanelInterior {
         this.button1.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
         this.button2.setImages(holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press"));
     }
+
+    @Override
+    public PanelPrime getPanelParent() {
+        return this.panelTitle;
+    }
 }
 

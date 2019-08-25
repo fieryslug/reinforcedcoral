@@ -9,6 +9,7 @@
     "countdown_5",
 
 
+
     "title",
     "title_border",
     "title_text",
@@ -68,8 +69,9 @@
     "teamu_text",
     "teamd_text",
     "teamu_score",
-    "teamd_score"
+    "teamd_score",
 
+    "edit_border"
   ],
   "wildcard": {
     "text": [
@@ -99,7 +101,8 @@
       "problem_disabled_border",
       "problem_selected_disabled_border",
       "problem_preenabled_border",
-      "problem_selected_preenabled_border"
+      "problem_selected_preenabled_border",
+      "edit_border"
     ],
     "problem_text": [
       "problem_hover_text",

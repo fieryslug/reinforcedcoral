@@ -31,15 +31,6 @@ public class Main {
 
         //start();
 
-
-        ProblemSet set = new ProblemSet("oblivion2");
-        set.acquireProblemSet();
-        ProblemSet set1 = set.copy();
-        set1.setName("Oblivion-2(clone)");
-        set1.saveProblemSet("oblivion2_clone", true);
-        System.out.println(set1);
-
-
         start();
     }
 
