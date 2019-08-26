@@ -1,25 +1,25 @@
 package com.fieryslug.reinforcedcoral.util;
 
-import info.clearthought.layout.TableLayout;
 //import sun.audio.AudioPlayer;
 //import sun.audio.AudioStream;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
+        import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+        import java.io.InputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MediaRef {
 
 
-    public static Map<String, Image> pathImageCache = new HashMap<>();
+    private static Map<String, Image> pathImageCache = new HashMap<>();
+    private static Map<String, Image> externalCache = new HashMap<>();
+    private static Map<URL, Image> urlImageCache = new HashMap<>();
 
     public static final Image CHROME = getImage("/res/icon/chrome.png");
     public static final Image CORAL = getImage("/res/icon/coral.png");
@@ -55,7 +55,7 @@ public class MediaRef {
     }
 
 
-    public static Image getImage(String path) {
+    public static Image getImage2(String path) {
 
         Image image = pathImageCache.get(path);
         if (image != null) return image;
@@ -69,6 +69,66 @@ public class MediaRef {
         if (image != null) pathImageCache.put(path, image);
         System.out.println("currently " + pathImageCache.size() + " images in cache.");
         return image;
+    }
+
+    @Deprecated
+    public static Image getImage(String path) {
+
+        if (path.startsWith(Reference.EXTERNAL_PREFIX)) {
+            String path1 = path.substring(Reference.EXTERNAL_PREFIX.length());
+            return getImage(path1, true);
+        }
+        else {
+            return getImage(path, false);
+        }
+
+    }
+
+    public static Image getImage(String path, boolean external) {
+
+        Image image;
+        image = (external ? externalCache : pathImageCache).get(path);
+        if(image != null) return image;
+
+        if (external) {
+
+            try {
+                image = ImageIO.read(new File(path));
+
+            } catch (Exception e) {
+                System.out.println("Error occurred while loading external image: " + path);
+                e.printStackTrace();
+            }
+
+        } else {
+
+            try {
+                image = ImageIO.read(MediaRef.class.getResource(path));
+            } catch (Exception e) {
+                System.out.println("Error occurred while loading image: " + path);
+                e.printStackTrace();
+            }
+
+        }
+
+        if(image != null) (external ? externalCache : pathImageCache).put(path, image);
+        return image;
+
+    }
+
+    public static Image getImage(URL url) {
+
+        Image image = urlImageCache.get(url);
+        if(image != null) return image;
+
+        try {
+            image = ImageIO.read(url);
+            if(image != null) urlImageCache.put(url, image);
+            return image;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static BufferedImage toBufferedImage(Image image) {
@@ -109,8 +169,13 @@ public class MediaRef {
     */
 
     public static AePlayWave playSound(String path) {
-        InputStream inputStream = FuncBox.inputStreamFromPath(path);
         AePlayWave res = new AePlayWave(FuncBox.class.getResource(path));
+        res.start();
+        return res;
+    }
+
+    public static AePlayWave playSound(InputStream inputStream) {
+        AePlayWave res = new AePlayWave(inputStream);
         res.start();
         return res;
     }

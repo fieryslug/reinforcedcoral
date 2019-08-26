@@ -96,7 +96,7 @@ public class PanelEditDependency extends PanelInterior {
             this.labelCategoryMap.put(labelCat, category);
             add(labelCat, i + ", " + 0);
 
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
 
                 ButtonProblem button = new ButtonColorized();
                 String constraints = i + ", " + j;

@@ -1,6 +1,5 @@
 package com.fieryslug.reinforcedcoral.util;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -8,37 +7,48 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
-import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+
 public class AePlayWave extends Thread {
-    private InputStream filename;
+    private AudioInputStream stream;
 
     private final int EXTERNAL_BUFFER_SIZE = 26214; // 6.4Kb
 
     private boolean continuing = true;
     private SourceDataLine audioLine;
-    private URL url;
 
 
     public AePlayWave(InputStream wavfile) {
-        filename = wavfile;
+        try {
+            stream = AudioSystem.getAudioInputStream(wavfile);
+        } catch (Exception e) {
+            System.out.println("Error occurred while loading audio " + wavfile);
+            e.printStackTrace();
+        }
 
     }
 
     public AePlayWave(URL url) {
-        this.url = url;
+        try {
+            stream = AudioSystem.getAudioInputStream(url);
+        } catch (Exception e) {
+            System.out.println("Error occurred while loading audio" + url);
+            e.printStackTrace();
+        }
     }
 
     public void run() {
 
-        AudioInputStream audioInputStream = null;
+        AudioInputStream audioInputStream = this.stream;
 
+        /*
         try {
             //audioInputStream = AudioSystem.getAudioInputStream(filename);
-            audioInputStream = AudioSystem.getAudioInputStream(this.url);
+            audioInputStream = AudioSystem.getAudioInputStream(this.stream);
+            System.out.println(audioInputStream);
         } catch (UnsupportedAudioFileException e) {
 
         } catch (IOException e) {
@@ -46,6 +56,7 @@ public class AePlayWave extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        */
         AudioFormat format = audioInputStream.getFormat();
         SourceDataLine auline = null;
         DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);

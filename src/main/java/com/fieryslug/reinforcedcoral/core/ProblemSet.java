@@ -1,5 +1,7 @@
 package com.fieryslug.reinforcedcoral.core;
 
+import com.fieryslug.reinforcedcoral.core.page.Page;
+import com.fieryslug.reinforcedcoral.core.page.Widget;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemDisabled;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemDummy;
@@ -10,15 +12,19 @@ import com.fieryslug.reinforcedcoral.minigame.minesweeper.ProblemMineSweeper;
 import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
 import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
+
+
+import com.fieryslug.reinforcedcoral.util.Reference;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+
+import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.xml.crypto.Data;
-import java.io.DataOutput;
 import java.io.File;
 import java.lang.reflect.Constructor;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,13 +32,20 @@ import java.util.Map;
 public class ProblemSet {
 
     private String id;
+    private String loadId;
     private String name;
     private ArrayList<Category> categories;
     private BiMap<String, Category> idCatMap;
     private BiMap<String, Problem> idProbMap;
     private Map<Problem, String> probShortIdMap;
 
-    public static Map<Class<? extends Problem>, Class<?>[]> argumentMap = new HashMap<>();
+    private static Map<Class<? extends Problem>, Class<?>[]> argumentMap = new HashMap<>();
+
+
+    private Map<String, URL> imageResources;
+    private Map<String, URL> audioResources;
+
+    private static final String MEDIA_DIR = "_media";
 
     static {
         argumentMap.put(ProblemMine.class, new Class<?>[]{String.class, Integer.class});
@@ -50,6 +63,10 @@ public class ProblemSet {
         this.idCatMap = HashBiMap.create();
         this.idProbMap = HashBiMap.create();
         this.probShortIdMap = new HashMap<>();
+
+        imageResources = new HashMap<>();
+        audioResources = new HashMap<>();
+
     }
 
     public String getId() {
@@ -167,10 +184,15 @@ public class ProblemSet {
     public void loadProblemSet(String path1) {
 
         String path = DataLoader.EXTERNAL_FOLDER + "/" + path1;
+        loadId = path1;
         this.categories.clear();
         this.idCatMap.clear();
         this.idProbMap.clear();
         this.probShortIdMap.clear();
+
+        imageResources.clear();
+        audioResources.clear();
+        System.out.println("loading set");
 
         String metaRes = FuncBox.readExternalFile(path + "/meta.json");
         JSONObject metaJson = new JSONObject(metaRes);
@@ -216,13 +238,15 @@ public class ProblemSet {
                         }
 
                         System.out.println("required argument types: ");
-                        for(Class clazz1 : argumentClasses) System.out.print(clazz1.getName() + " ");
+                        for (Class clazz1 : argumentClasses)
+                            System.out.print(clazz1.getName() + " ");
 
                         System.out.println("arguments provided: ");
-                        for(Object obj : arguments) System.out.print(obj.getClass() + ": " + obj + " ");
+                        for (Object obj : arguments)
+                            System.out.print(obj.getClass() + ": " + obj + " ");
                         System.out.println("\n");
 
-                        problem = (Problem)(cons.newInstance(arguments));
+                        problem = (Problem) (cons.newInstance(arguments));
 
                     } catch (Exception e) {
                         System.out.println("failed to generate problem with " + probId);
@@ -242,8 +266,7 @@ public class ProblemSet {
                     }
                     */
 
-                }
-                else {
+                } else {
                     //System.out.println("probpath2: " + probPath);
                     System.out.println("creating problem " + probId);
                     System.out.println(path1);
@@ -255,13 +278,14 @@ public class ProblemSet {
                 this.idProbMap.put(probId, problem);
                 this.probShortIdMap.put(problem, probShortId);
             }
-            this.categories.add(category);
+            this.addCategory(category);
+
         }
 
         JSONObject jsonDepend = metaJson.getJSONObject("dependencies");
 
         for (Category category : this.categories) {
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
 
                 //String probId = this.idProbMap.inverse().get(problem);
                 String probId = problem.id;
@@ -278,11 +302,15 @@ public class ProblemSet {
             }
         }
 
+        //media
+
+
     }
 
 
     public boolean saveProblemSet(String name1, boolean override) {
         String path = "problemsets/" + name1;
+        return dumpProblemSet(path, override);
         /*
         DataLoader loader = DataLoader.getInstance();
         String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + name1;
@@ -316,7 +344,7 @@ public class ProblemSet {
         loader.writeToFile(DataLoader.EXTERNAL_FOLDER + "/problemsets/index.json", jsonIndex.toString(2), true);
         return true;
         */
-        return dumpProblemSet(path, override);
+
     }
 
     public boolean dumpProblemSet(String path, boolean override) {
@@ -335,21 +363,65 @@ public class ProblemSet {
         loader.checkFile(path, true);
         loader.writeToFile(path + "/meta.json", data, override);
 
+
+
+
         for (Category category : this.categories) {
             //loader.checkFile(path + "/" + this.idCatMap.inverse().get(category), true);
             loader.checkFile(path + "/" + category.id, true);
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
                 //String probPath = path + "/" + this.idProbMap.inverse().get(problem) + ".json";
-                System.out.println(problem.name + ": " + problem.id);
+                //System.out.println(problem.name + ": " + problem.id);
                 String probPath = path + "/" + problem.id + ".json";
                 String dataProb = problem.exportAsJson().toString(2);
                 loader.writeToFile(probPath, dataProb, override);
             }
         }
 
+        //media--------------------------------------------------------------------------------------
+        loader.checkFile(path + "/" + MEDIA_DIR, true);
+        loader.checkFile(path + "/" + MEDIA_DIR + " /image", true);
+        loader.checkFile(path + "/" + MEDIA_DIR + "/audio", true);
+
+
+
+        File fileMedia = new File(path + "/" + MEDIA_DIR);
+        File fileImage = new File(fileMedia, "image");
+        File fileAudio = new File(fileMedia, "audio");
+
+        System.out.println("[DEBUG] " + imageResources.size());
+        for (String imageId : imageResources.keySet()) {
+
+            if (imageId.startsWith(Reference.EXTERNAL_PREFIX)) {
+
+                URL url = imageResources.get(imageId);
+                File dest = new File(fileImage, imageId.substring(Reference.EXTERNAL_PREFIX.length()));
+                try {
+                    FileUtils.copyInputStreamToFile(url.openStream(), dest);
+                } catch (Exception e) {
+                    System.out.println("Error occurred while writing file" + dest.getPath());
+                    e.printStackTrace();
+                }
+
+            }
+
+        }
+        System.out.println("[DEBUG] " + audioResources.size());
+        for (String audioId : audioResources.keySet()) {
+            if (audioId.startsWith(Reference.EXTERNAL_PREFIX)) {
+                URL url = audioResources.get(audioId);
+                File dest = new File(fileAudio, audioId.substring(Reference.EXTERNAL_PREFIX.length()));
+                try {
+                    FileUtils.copyInputStreamToFile(url.openStream(), dest);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
         return true;
     }
-
 
 
     public JSONObject exportMeta() {
@@ -369,7 +441,7 @@ public class ProblemSet {
 
         for (Category category : this.categories) {
             JSONArray arrayProbs = new JSONArray();
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
 
                 String probShortId = this.probShortIdMap.get(problem);
                 arrayProbs.put(probShortId);
@@ -382,7 +454,7 @@ public class ProblemSet {
         JSONObject jsonDepend = new JSONObject();
 
         for (Category category : this.categories) {
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
                 if (problem.dependences.size() > 0) {
                     JSONArray arrayDependencies = new JSONArray();
                     for (Problem other : problem.dependences) {
@@ -414,9 +486,10 @@ public class ProblemSet {
     }
 
     public void addCategory(Category category) {
+        category.setParentSet(this);
         this.categories.add(category);
         this.idCatMap.put(category.id, category);
-        for (Problem problem : category.problems) {
+        for (Problem problem : category.getProblems()) {
 
             this.idProbMap.put(problem.id, problem);
             this.probShortIdMap.put(problem, problem.shortId);
@@ -434,10 +507,10 @@ public class ProblemSet {
 
     public int getProblemsPerCategory() {
 
-        int r = this.categories.get(0).problems.size();
+        int r = this.categories.get(0).getProblems().size();
 
         for (Category category : this.categories) {
-            r = Math.max(r, category.problems.size());
+            r = Math.max(r, category.getProblems().size());
         }
 
         return r;
@@ -446,13 +519,141 @@ public class ProblemSet {
     public ProblemSet copy() {
 
         dumpProblemSet(".tmp/" + this.id + "_clone", true);
+
         ProblemSet set = new ProblemSet(this.id + "_clone");
+
 
         set.loadProblemSet(".tmp/" + this.id + "_clone");
 
         DataLoader.getInstance().deleteDirectory(new File(DataLoader.EXTERNAL_FOLDER + "/.tmp/" + this.id + "_clone"));
 
+
+        set.imageResources = new HashMap<>(imageResources);
+        set.audioResources = new HashMap<>(audioResources);
+
+
         return set;
 
+    }
+
+    public void loadResources() {
+
+        for (Category category : categories) {
+            for (Problem problem : category.getProblems()) {
+
+                if(!problem.isSpecial()) {
+                    for (Page page : problem.getPages()) {
+                        loadResourcesForPage(page);
+                    }
+                    loadResourcesForPage(problem.getPageSolution());
+                    for (Page page : problem.getPagesExplanation()) {
+                        loadResourcesForPage(page);
+                    }
+                }
+            }
+        }
+        System.out.println("[problem set image resources loaded] " + imageResources);
+        System.out.println("[problem set audio resources loaded] " + audioResources);
+    }
+
+    private void loadResourcesForPage(Page page) {
+
+        DataLoader loader = DataLoader.getInstance();
+        String commonPath = DataLoader.EXTERNAL_FOLDER + "/" + loadId + "/" + MEDIA_DIR;
+        loader.checkFile(commonPath + "/image", true);
+        loader.checkFile(commonPath + "/audio", true);
+        if (page.type == Reference.MAGIC_PRIME) {
+            for (Widget widget : page.widgets) {
+                if (widget.widgetType == Widget.EnumWidget.IMAGE) {
+
+                    String imageId = widget.content;
+                    URL url = null;
+                    if (imageId.startsWith(Reference.EXTERNAL_PREFIX)) {
+                        String imageName = imageId.substring(Reference.EXTERNAL_PREFIX.length());
+                        try {
+                            url = new File(commonPath + "/image/" + imageName).toURL();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        url = ProblemSet.class.getResource(imageId);
+                    }
+
+                    imageResources.put(imageId, url);
+                }
+                if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+                    String audioId = widget.content;
+                    URL url = null;
+                    if (audioId.startsWith(Reference.EXTERNAL_PREFIX)) {
+                        String audioName = audioId.substring(Reference.EXTERNAL_PREFIX.length());
+                        try {
+                            url = new File(commonPath + "/audio/" + audioName).toURL();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        url = ProblemSet.class.getResource(audioId);
+                    }
+                    audioResources.put(audioId, url);
+                }
+            }
+        }
+    }
+
+    public void normalize() {
+        for (Category category : categories) {
+            for (Problem problem : category.getProblems()) {
+                problem.normalizePages();
+                if(!problem.isSpecial()) {
+
+                    for (Page page : problem.getPages()) {
+                        normalizePage(page);
+                    }
+                    normalizePage(problem.getPageSolution());
+                    for (Page page : problem.getPagesExplanation()) {
+                        normalizePage(page);
+                    }
+                }
+            }
+        }
+    }
+
+    private void normalizePage(Page page) {
+
+        if (page.type == Reference.MAGIC_PRIME) {
+            for (Widget widget : page.widgets) {
+
+
+                if (widget.widgetType == Widget.EnumWidget.IMAGE) {
+                    if (!widget.content.startsWith(Reference.EXTERNAL_PREFIX)) {
+                        String imageName = FuncBox.getRawFileName(widget.content);
+                        String imageId = Reference.EXTERNAL_PREFIX + imageName;
+                        URL url = FuncBox.class.getResource(widget.content);
+                        widget.content = imageId;
+                        System.out.println(imageId);
+                        imageResources.put(imageId, url);
+                    }
+                }
+                if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+                    if (!widget.content.startsWith(Reference.EXTERNAL_PREFIX)) {
+                        String audioName = FuncBox.getRawFileName(widget.content);
+                        String audioId = Reference.EXTERNAL_PREFIX + audioName;
+                        URL url = FuncBox.class.getResource(widget.content);
+                        widget.content = audioId;
+                        audioResources.put(audioId, url);
+                    }
+                }
+            }
+        }
+    }
+
+
+    public Map<String, URL> getImageResources() {
+        return imageResources;
+    }
+
+    public Map<String, URL> getAudioResources() {
+        return audioResources;
     }
 }

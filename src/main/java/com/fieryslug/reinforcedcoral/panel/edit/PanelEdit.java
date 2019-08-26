@@ -61,7 +61,7 @@ public class PanelEdit extends PanelPrime {
         this.dirty = false;
         this.currentPanelInterior.enter();
         add(this.currentPanelInterior, "0, 1, 1, 1");
-        System.out.println("in panel edit: width " + getWidth());
+        //System.out.println("in panel edit: width " + getWidth());
         applyTexture(TextureHolder.getInstance());
         refresh();
     }

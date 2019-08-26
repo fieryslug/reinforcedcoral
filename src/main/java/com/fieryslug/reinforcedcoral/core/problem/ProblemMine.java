@@ -98,4 +98,9 @@ public class ProblemMine extends Problem {
 
         return jsonMine;
     }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 }

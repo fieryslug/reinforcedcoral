@@ -13,4 +13,9 @@ public class ProblemDummy extends Problem {
     public boolean onClick(PanelGame panelGame) {
         return true;
     }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 }

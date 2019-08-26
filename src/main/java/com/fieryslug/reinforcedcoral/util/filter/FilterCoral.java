@@ -1,12 +1,11 @@
-package com.fieryslug.reinforcedcoral.panel.edit;
+package com.fieryslug.reinforcedcoral.util.filter;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 
-public class IntFilter extends DocumentFilter {
-
+public class FilterCoral extends DocumentFilter {
 
     @Override
     public void insertString(FilterBypass fb, int offset, String string,
@@ -24,18 +23,8 @@ public class IntFilter extends DocumentFilter {
         }
     }
 
-    private boolean test(String text) {
-        if (text.length() == 0) {
-            return  true;
-        }
-        if(text.length() > 2)
-            return false;
-        try {
-            int i = Integer.parseInt(text);
-            return i < 20 && i >= 0;
-        } catch (NumberFormatException e) {
-            return false;
-        }
+    protected boolean test(String text) {
+        return true;
     }
 
     @Override

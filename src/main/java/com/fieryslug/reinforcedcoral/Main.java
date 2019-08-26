@@ -9,14 +9,17 @@ import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 
 
+import com.fieryslug.reinforcedcoral.util.AePlayWave;
 import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
+import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.web.ServerThread;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.InputStream;
 
 
 import javax.swing.*;
@@ -29,9 +32,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //start();
-
         start();
+        /*
+        ProblemSet set = new ProblemSet("oblivion1");
+        set.acquireProblemSet();
+        set.loadResources();
+
+        set.dumpProblemSet(".tmp/oblivion1_tmp", true);
+
+        ProblemSet set1 = new ProblemSet("test");
+        set1.loadProblemSet(".tmp/oblivion1_tmp");
+        set1.loadResources();
+
+
+        set1.saveProblemSet("oblivion1_clone", true);
+
+         */
+
+
+
     }
 
     public static void start() {
@@ -52,11 +71,7 @@ public class Main {
         System.out.println(loader.getProblemSets());
 
 
-        Game game = null;
-        if (Reference.DEFAULT_GAME == 0)
-            game = WorkTable.getGame0();
-        if (Reference.DEFAULT_GAME == 1)
-            game = WorkTable.getGame1();
+        Game game;
 
         game = new Game(loader.getProblemSets().get(0), FuncBox.generateTeams(Preference.teams));
 

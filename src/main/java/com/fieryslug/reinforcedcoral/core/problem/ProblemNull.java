@@ -43,4 +43,9 @@ public class ProblemNull extends Problem {
         jsonMatch.put("args", arrayArgs);
         return jsonMatch;
     }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 }

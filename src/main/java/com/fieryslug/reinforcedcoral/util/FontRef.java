@@ -86,7 +86,7 @@ public class FontRef {
             double scaleX = (double)label.getWidth() / metrics.stringWidth(text);
             double scaleY = (double)label.getHeight() / metrics.getHeight();
 
-            System.out.println(scaleX + " " + scaleY + "scale");
+            //System.out.println(scaleX + " " + scaleY + "scale");
 
             double scale = Math.min(scaleX, scaleY);
 

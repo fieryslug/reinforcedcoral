@@ -1,5 +1,6 @@
 package com.fieryslug.reinforcedcoral.core.problem;
 
+import com.fieryslug.reinforcedcoral.core.Category;
 import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.panel.PanelGame;
@@ -23,25 +24,30 @@ public class Problem {
 
 
     private ArrayList<ControlKey> answer;
-    public ArrayList<Page> pages;
-    public Page pageSolution;
-    public ArrayList<Page> pagesExplanation;
+
+    private ArrayList<Page> pages;
+    private Page pageSolution;
+    private ArrayList<Page> pagesExplanation;
 
     public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
     public ArrayList<Problem> dependences;
 
     protected ButtonProblem buttonProblem;
 
+    private Category parentCat;
+
     @Deprecated
     public Problem(String name, int points) {
 
         this.name = name;
         this.points = points;
+
         this.pages = new ArrayList<>();
+        this.pagesExplanation = new ArrayList<>();
         this.answer = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
         this.dependences = new ArrayList<>();
-        this.pagesExplanation = new ArrayList<>();
+
 
     }
 
@@ -240,7 +246,7 @@ public class Problem {
 
         JSONArray arrayPages = new JSONArray();
 
-        for (Page page : this.pages) {
+        for (Page page : this.getPages()) {
             arrayPages.put(page.exportAsJson());
         }
 
@@ -297,18 +303,23 @@ public class Problem {
             JSONArray arrayPages = jsonObject.getJSONArray("pages");
             for (int i = 0; i < arrayPages.length(); ++i) {
                 JSONObject objectPage = arrayPages.getJSONObject(i);
-                this.pages.add(new Page(objectPage));
+                Page page = new Page(objectPage);
+                this.getPages().add(page);
+                page.setParentProb(this);
             }
 
             Page page = new Page(jsonObject.getJSONObject("solution"));
             this.pageSolution = page;
+            this.pageSolution.setParentProb(this);
 
 
             if (jsonObject.has("post_solution")) {
                 JSONArray arraySolutions = jsonObject.getJSONArray("post_solution");
                 for (int i = 0; i < arraySolutions.length(); ++i) {
                     JSONObject objectSolution = arraySolutions.getJSONObject(i);
-                    this.pagesExplanation.add(new Page(objectSolution));
+                    Page page1 = new Page(objectSolution);
+                    this.pagesExplanation.add(page1);
+                    page1.setParentProb(this);
                 }
             }
 
@@ -321,5 +332,52 @@ public class Problem {
 
     public void setShortId(String shortId) {
         this.shortId = shortId;
+    }
+
+    public Category getParentCat() {
+        return parentCat;
+    }
+
+    public void setParentCat(Category parentCat) {
+        this.parentCat = parentCat;
+    }
+
+    public void normalizePages() {
+
+        if(!isSpecial()) {
+            Page page;
+
+            for (int i = 0; i < getPages().size(); ++i) {
+                page = pages.get(i).toNormalForm();
+                pages.set(i, page);
+                page.setParentProb(this);
+            }
+            page = pageSolution.toNormalForm();
+            pageSolution = page;
+            page.setParentProb(this);
+
+            for (int i = 0; i < pagesExplanation.size(); ++i) {
+                page = pagesExplanation.get(i).toNormalForm();
+                pagesExplanation.set(i, page);
+                page.setParentProb(this);
+            }
+        }
+
+    }
+
+    public ArrayList<Page> getPages() {
+        return pages;
+    }
+
+    public Page getPageSolution() {
+        return pageSolution;
+    }
+
+    public ArrayList<Page> getPagesExplanation() {
+        return pagesExplanation;
+    }
+
+    public boolean isSpecial() {
+        return false;
     }
 }

@@ -8,8 +8,9 @@ public class Reference {
 
     public static final String PROJECT_NAME = "Project Reinforced Coral";
     public static final String VERSION = "gradle_8.0";
-    public static final String UPDATE_DATE = "2019.08.24";
+    public static final String UPDATE_DATE = "2019.08.25";
     public static final int DEFAULT_GAME = 0;
+    public static final String EXTERNAL_PREFIX = "coral::";
 
     public static final int MAX_TEAMS = 12;
     public static final int MAX_CATEGORIES = 12;

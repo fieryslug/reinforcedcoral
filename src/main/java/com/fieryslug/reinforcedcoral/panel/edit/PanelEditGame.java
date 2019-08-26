@@ -3,7 +3,6 @@ package com.fieryslug.reinforcedcoral.panel.edit;
 import com.fieryslug.reinforcedcoral.core.Category;
 import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
-import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
@@ -18,7 +17,6 @@ import info.clearthought.layout.TableLayout;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.concurrent.TimeoutException;
 
 public class PanelEditGame extends PanelInterior {
 
@@ -99,7 +97,13 @@ public class PanelEditGame extends PanelInterior {
 
                 updateChanges();
 
+
+                targetSet.dumpProblemSet(".tmp/" + targetSet.getId(), true);
+                targetSet.loadProblemSet(".tmp/" + targetSet.getId());
+                targetSet.loadResources();
+
                 targetSet.saveProblemSet(targetSet.getId(), true);
+
 
                 DataLoader.getInstance().loadAllProblemSets();
                 DataLoader.getInstance().updateProblemSetIndex();
@@ -147,21 +151,16 @@ public class PanelEditGame extends PanelInterior {
 
                 //panelEdit.exit();
 
-                for (int i = 0; i < currProblem.pages.size(); ++i) {
+                if(!currProblem.isSpecial()) {
+                    currProblem.normalizePages();
 
-                    currProblem.pages.set(i ,currProblem.pages.get(i).toNormalForm());
+
+                    panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
+                    panelEdit.panelEditProblem.setPhase(GamePhase.IN_PROBLEM);
+                    panelEdit.panelEditProblem.setCurrPageNum(0);
+                    panelEdit.panelEditProblem.setProblem(currProblem);
+                    panelEdit.parent.switchPanel(panelEdit, panelEdit);
                 }
-                currProblem.pageSolution = currProblem.pageSolution.toNormalForm();
-                for (int i = 0; i < currProblem.pagesExplanation.size(); ++i) {
-                    currProblem.pages.set(i ,currProblem.pagesExplanation.get(i).toNormalForm());
-                }
-
-
-                panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
-                panelEdit.panelEditProblem.setPhase(GamePhase.IN_PROBLEM);
-                panelEdit.panelEditProblem.setCurrPageNum(0);
-                panelEdit.panelEditProblem.setProblem(currProblem);
-                panelEdit.parent.switchPanel(panelEdit, panelEdit);
                 //panelEdit.enter();
                 //panelEdit.refresh();
                 //panelEdit.repaint();
@@ -174,7 +173,6 @@ public class PanelEditGame extends PanelInterior {
             @Override
             public void keyReleased(KeyEvent keyEvent) {
                 String text = fieldSlot.getText();
-                System.out.println("action");
                 if (currProblem != null) {
                     ButtonProblem button = buttonProblemMap.inverse().get(currProblem);
                     currProblem.name = text;
@@ -238,7 +236,7 @@ public class PanelEditGame extends PanelInterior {
                     }
                 });
 
-                for (Problem problem : category.problems) {
+                for (Problem problem : category.getProblems()) {
 
                     ButtonProblem button = new ButtonColorized();
                     String constraints = i + ", " + j;

@@ -1,7 +1,9 @@
 package com.fieryslug.reinforcedcoral.panel.subpanel;
 
+import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.core.page.Widget;
+import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.frame.FrameCoral;
 import com.fieryslug.reinforcedcoral.util.*;
 import com.fieryslug.reinforcedcoral.widget.FontChangerLabel;
@@ -11,12 +13,18 @@ import com.fieryslug.reinforcedcoral.widget.FontChangerTextArea;
 //import layout.TableLayoutConstraints;
 import info.clearthought.layout.TableLayout;
 import info.clearthought.layout.TableLayoutConstraints;
+
 //import sun.audio.AudioPlayer;
 //import sun.audio.AudioStream;
 
+import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import javax.xml.soap.Text;
 import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -221,10 +229,19 @@ public class PanelProblem extends JPanel {
             add(area, widget.constraints);
         }
         if(widget.widgetType == Widget.EnumWidget.IMAGE) {
+
+            System.out.println(page.getParentProb());
+            System.out.println(page.getParentProb().getParentCat());
+            System.out.println(page.getParentProb().getParentCat().getParentSet());
+            String id = page.getParentProb().getParentCat().getParentSet().getId();
+            System.out.println("inflating image with id " + id);
             JLabel label = new JLabel();
             label.setHorizontalAlignment(SwingConstants.CENTER);
             label.setVerticalAlignment(SwingConstants.CENTER);
-            Image image = MediaRef.getImage(widget.content);
+            //Image image = MediaRef.getImage(widget.content);
+
+            Image image = getImageForWidget(widget);
+
             TableLayoutConstraints constraints = widget.getConstraints();
             int widthBoxes = constraints.col2 - constraints.col1 + 1;
             int heightBoxes = constraints.row2 - constraints.row1 + 1;
@@ -254,7 +271,8 @@ public class PanelProblem extends JPanel {
                 this.playingAePlayWaves.remove(widget.content);
             }
             //AudioStream audioStream = MediaRef.playWav(widget.content);
-            AePlayWave aePlayWave = MediaRef.playSound(widget.content);
+            AePlayWave aePlayWave = getAudioForWidget(widget);
+            aePlayWave.start();
 
             //this.playingAudios.put(widget.content, audioStream);
             this.playingAePlayWaves.put(widget.content, aePlayWave);
@@ -369,11 +387,14 @@ public class PanelProblem extends JPanel {
 
                 if (widget.widgetType == Widget.EnumWidget.IMAGE) {
                     JLabel label = (JLabel) this.widgetInstanceMap.get(widget);
-                    Image image = MediaRef.getImage(widget.content);
+                    //Image image = MediaRef.getImage(widget.content);
+                    Image image = getImageForWidget(widget);
+
                     TableLayoutConstraints constraints = widget.getConstraints();
                     int widthBoxes = constraints.col2 - constraints.col1 + 1;
                     int heightBoxes = constraints.row2 - constraints.row1 + 1;
                     Image image1 = FuncBox.resizeImagePreservingRatio(image, this.width * widthBoxes / 20, this.height * heightBoxes / 20);
+                    System.out.println("panelProb: " + this.width + ", " + this.height);
                     //System.out.println();
                     label.setIcon(new ImageIcon(image1));
 
@@ -430,5 +451,51 @@ public class PanelProblem extends JPanel {
             }
         }
 
+    }
+
+    protected Image getImageForWidget(Widget widget) {
+
+        //return page.getParentProb().getParentCat().getParentSet().driveImage(widget);
+        /*
+        if (widget.widgetType == Widget.EnumWidget.IMAGE) {
+
+            if (widget.content.startsWith(Reference.EXTERNAL_PREFIX)) {
+
+                String filename = widget.content.substring(Reference.EXTERNAL_PREFIX.length());
+
+                String path = DataLoader.EXTERNAL_FOLDER + "/problemsets/" + this.page.getParentProb().getParentCat().getParentSet().getId() + "/.media/" + filename;
+                System.out.println("getting image: " + path);
+                return MediaRef.getImage(path, true);
+
+            }
+            else {
+                return MediaRef.getImage(widget.content);
+            }
+
+        }
+         */
+        if (widget.widgetType == Widget.EnumWidget.IMAGE) {
+
+            ProblemSet set = page.getParentProb().getParentCat().getParentSet();
+            URL url = set.getImageResources().get(widget.content);
+            return MediaRef.getImage(url);
+
+        }
+        return null;
+    }
+
+    protected AePlayWave getAudioForWidget(Widget widget) {
+        if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+
+            ProblemSet set = page.getParentProb().getParentCat().getParentSet();
+            URL url = set.getAudioResources().get(widget.content);
+            return new AePlayWave(url);
+
+        }
+        return null;
+    }
+
+    public Page getPage() {
+        return this.page;
     }
 }

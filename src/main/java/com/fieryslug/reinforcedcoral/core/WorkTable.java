@@ -66,6 +66,8 @@ public class WorkTable {
         game.addCategory(catLit);
 
         game.getProblemSet().setName("Oblivion-1");
+        game.getProblemSet().loadResources();
+        game.getProblemSet().normalize();
 
         //System.out.println(prbPPB.exportAsJson().toString(4));
 
@@ -139,6 +141,8 @@ public class WorkTable {
         game.addCategory(catAvocado);
 
         game.getProblemSet().setName("Oblivion-2");
+        game.getProblemSet().loadResources();
+        game.getProblemSet().normalize();
 
         return game;
     }

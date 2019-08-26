@@ -23,6 +23,8 @@ public class Page {
 
     public ArrayList<Widget> widgets;
 
+    private Problem parentProb;
+
     public Page(String path) {
 
         //this.htmlText = FuncBox.readFile(PATH + path);
@@ -251,6 +253,14 @@ public class Page {
 
     public Page toNormalForm() {
         return new Page(exportAsJson());
+    }
+
+    public Problem getParentProb() {
+        return parentProb;
+    }
+
+    public void setParentProb(Problem parentProb) {
+        this.parentProb = parentProb;
     }
 
     /*

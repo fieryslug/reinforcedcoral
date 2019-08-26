@@ -196,7 +196,7 @@ public class PanelGame extends PanelPrime {
             this.categoryLabels.add(label);
 
 
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
                 /*
                 ButtonProblem button = new ButtonProblem(MediaRef.PROBLEM, MediaRef.PROBLEM_HOVER, MediaRef.PROBLEM_PRESS);
                 button.setImageDisabled(MediaRef.PROBLEM_DISABLED);
@@ -242,7 +242,7 @@ public class PanelGame extends PanelPrime {
             j = 0;
         }
         for (Category category : this.parent.game.getCategories()) {
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
                 ButtonProblem button = this.problemButtonMap.get(problem);
                 if (!this.dependencesSatisfied(button)) button.setState(-1);
             }
@@ -333,7 +333,7 @@ public class PanelGame extends PanelPrime {
 
         for (Category category : this.parent.game.getCategories()) {
 
-            for (Problem problem : category.problems) {
+            for (Problem problem : category.getProblems()) {
 
                 ButtonProblem button = this.problemButtonMap.get(problem);
                 button.addActionListener(new ActionListener() {
@@ -450,7 +450,7 @@ public class PanelGame extends PanelPrime {
                 */
                 this.panelInteriorMenu.add(labelCategory, pos);
 
-                for (Problem problem : category.problems) {
+                for (Problem problem : category.getProblems()) {
                     ButtonProblem button = this.problemButtonMap.get(problem);
 
                     this.panelInteriorMenu.add(button, String.valueOf(i) + ", " + String.valueOf(j));
@@ -496,7 +496,7 @@ public class PanelGame extends PanelPrime {
             //this.buttonPrev.setPreferredSize(new Dimension(buttonX, buttonY));
             //this.buttonPrev.resizeImageForIcons(buttonX, buttonY);
 
-            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.inflate2(this.currentProblem.getPages().get(this.currentPageNumber));
             //this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
 
             add(this.panelCenter, "0, 1, " + (this.partitionNumber - 1) + ",1");
@@ -516,7 +516,7 @@ public class PanelGame extends PanelPrime {
                 this.teamLockedMap.put(team, false);
             }
             this.buttonConfirm.resizeImageForIcons(buttonX, buttonY);
-            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.inflate2(this.currentProblem.getPages().get(this.currentPageNumber));
             this.panelInteriorPage.refreshRendering(this.parent.isFullScreen);
             this.timer = new java.util.Timer();
             this.labelCountDown.setText(String.valueOf(this.countDown));
@@ -554,7 +554,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.INTERMEDIATE) {
 
-            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.inflate2(this.currentProblem.getPages().get(this.currentPageNumber));
 
             add(this.panelCenter, "0, 1, " + (this.partitionNumber - 1) + ",1");
             this.panelCenter.add(this.buttonConfirm, "2, 1");
@@ -566,7 +566,7 @@ public class PanelGame extends PanelPrime {
         }
         if (this.phase == GamePhase.SHOW_ANSWER) {
 
-            this.panelInteriorPage.inflate2(this.currentProblem.pages.get(this.currentPageNumber));
+            this.panelInteriorPage.inflate2(this.currentProblem.getPages().get(this.currentPageNumber));
             this.panelInteriorPage.applyTexture();
 
             for (int i = 0; i < Preference.teams; ++i) {
@@ -606,7 +606,7 @@ public class PanelGame extends PanelPrime {
                 this.teamTempScoreMap.put(team, 0);
             }
 
-            this.panelInteriorPage.inflate2(this.currentProblem.pageSolution);
+            this.panelInteriorPage.inflate2(this.currentProblem.getPageSolution());
             //this.panelInteriorPage.changeFonts(this.parent.isFullScreen);
             //add(this.panelBoxes.get(0), "0, 0, 2, 0");
             //add(this.panelBoxes.get(1), "3, 0, 5, 0");
@@ -619,7 +619,7 @@ public class PanelGame extends PanelPrime {
             addPanelTeams();
         }
         if (this.phase == GamePhase.POST_SOLUTION) {
-            this.panelInteriorPage.inflate2(this.currentProblem.pagesExplanation.get(this.currentExplanationNumber));
+            this.panelInteriorPage.inflate2(this.currentProblem.getPagesExplanation().get(this.currentExplanationNumber));
             add(this.panelCenter, "0, 1, " + (this.partitionNumber - 1) + ",1");
             this.panelCenter.add(this.buttonPrev, "0, 1");
             this.panelCenter.add(this.buttonNext, "4, 1");
@@ -663,15 +663,15 @@ public class PanelGame extends PanelPrime {
             for (Category category : this.parent.game.getCategories()) {
                 JLabel labelCategory = this.categoryLabels.get(i);
 
-                System.out.println("label width: " + labelCategory.getWidth());
-                System.out.println("label height: " + labelCategory.getHeight());
+                //System.out.println("label width: " + labelCategory.getWidth());
+                //System.out.println("label height: " + labelCategory.getHeight());
 
                 if (this.parent.isFullScreen) {
                     labelCategory.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 45));
                 } else {
                     labelCategory.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 30));
                 }
-                for (Problem problem : category.problems) {
+                for (Problem problem : category.getProblems()) {
                     ButtonProblem button = this.problemButtonMap.get(problem);
                     if (this.parent.isFullScreen) {
                         button.label.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, 39));
@@ -746,7 +746,7 @@ public class PanelGame extends PanelPrime {
                 JLabel label = this.categoryLabels.get(i);
                 FontRef.scaleFont(label);
 
-                for (Problem problem : category.problems) {
+                for (Problem problem : category.getProblems()) {
                     JLabel label1 = this.problemButtonMap.get(problem).label;
                     FontRef.scaleFont(label1);
                 }
@@ -796,7 +796,6 @@ public class PanelGame extends PanelPrime {
                         if (button1 != null) {
                             this.buttonSelected.setButtonSelected(false);
                             this.buttonSelected = (ButtonProblem) button1;
-                            System.out.println("playsound");
                             //MediaRef.playWav(MediaRef.APPLE1);
                             MediaRef.playSound(MediaRef.APPLE1);
                         }
@@ -945,9 +944,9 @@ public class PanelGame extends PanelPrime {
 
     private void nextPage() {
         if (phase == GamePhase.IN_PROBLEM) {
-            if (currentPageNumber + 1 < currentProblem.pages.size()) {
+            if (currentPageNumber + 1 < currentProblem.getPages().size()) {
                 int nextpage = PanelGame.this.currentPageNumber + 1;
-                if (PanelGame.this.currentProblem.pages.get(nextpage).isFinal()) {
+                if (PanelGame.this.currentProblem.getPages().get(nextpage).isFinal()) {
                     PanelGame.this.setState(2);
                     setPhase(GamePhase.ANSWERING);
                 }
@@ -956,7 +955,7 @@ public class PanelGame extends PanelPrime {
 
             }
         } else if (phase == GamePhase.POST_SOLUTION) {
-            if (currentExplanationNumber + 1 < currentProblem.pagesExplanation.size()) {
+            if (currentExplanationNumber + 1 < currentProblem.getPagesExplanation().size()) {
                 int nextpage = currentExplanationNumber + 1;
                 currentExplanationNumber = nextpage;
                 parent.switchPanel(PanelGame.this, PanelGame.this);
@@ -1040,7 +1039,7 @@ public class PanelGame extends PanelPrime {
             setPhase(GamePhase.SOLUTION);
         }
         else if (phase == GamePhase.SOLUTION) {
-            if (currentProblem.pagesExplanation.size() > 0) {
+            if (currentProblem.getPagesExplanation().size() > 0) {
                 setPhase(GamePhase.POST_SOLUTION);
                 currentExplanationNumber = 0;
             }

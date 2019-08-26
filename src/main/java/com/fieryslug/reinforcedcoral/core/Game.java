@@ -19,7 +19,7 @@ public class Game {
         this.getTeams().add(new Team(t4));
 
         //this.categories = new ArrayList<>();
-        this.problemSet = new ProblemSet("test");
+        this.problemSet = new ProblemSet("");
 
     }
 

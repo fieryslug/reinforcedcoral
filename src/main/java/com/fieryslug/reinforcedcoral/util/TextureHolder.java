@@ -75,7 +75,7 @@ public class TextureHolder {
                     if (otherKeys != null) {
                         for (String otherKey : otherKeys) {
                             this.colorMap.put(otherKey, color);
-                            System.out.println(otherKey + " " + color);
+                            //System.out.println(otherKey + " " + color);
                         }
                     }
                 } catch (Exception e) {
@@ -85,14 +85,14 @@ public class TextureHolder {
 
             for (String imageKey : this.imageKeys) {
 
-                System.out.println("/res/texturepack/" + textureName + "/" + imageKey + ".png");
+                System.out.println("[texture holder]:/res/texturepack/" + textureName + "/" + imageKey + ".png");
                 Image image = MediaRef.getImage("/res/texturepack/" + textureName + "/" + imageKey + ".png");
                 this.imageMap.put(imageKey, image);
 
             }
-            System.out.println("loaded texturepack " + textureName);
+            System.out.println("[texture holder]:loaded texturepack " + textureName);
         } catch (Exception e) {
-            System.out.println("error occurred while loading texturepack " + textureName + ":");
+            System.out.println("[texture holder]:error occurred while loading texturepack " + textureName + ":");
             e.printStackTrace();
         }
 

@@ -30,4 +30,9 @@ public class ProblemPong extends Problem {
 
         return true;
     }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 }
