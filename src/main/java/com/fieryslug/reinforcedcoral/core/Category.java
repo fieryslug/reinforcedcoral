@@ -30,6 +30,16 @@ public class Category {
 
     }
 
+    public void set(int i, Problem problem) {
+
+        problem.setShortId(ProblemSet.shortIdForProblem(this, problem.shortId));
+
+        problem.id = this.id + "/" + problem.shortId;
+        problem.setParentCat(this);
+        problems.set(i, problem);
+
+    }
+
     public ArrayList<Problem> getProblems() {
         return problems;
     }

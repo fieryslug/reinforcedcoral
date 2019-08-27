@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import info.clearthought.layout.TableLayout;
 
@@ -119,6 +120,7 @@ public class PanelTitleBeautified extends PanelPrime {
     @Override
     public void enter() {
         //System.out.println("in title: width " + getWidth());
+
 
         int a = (Preference.teams + 1) / 2;
         //System.out.println("DIVISION:" + a);

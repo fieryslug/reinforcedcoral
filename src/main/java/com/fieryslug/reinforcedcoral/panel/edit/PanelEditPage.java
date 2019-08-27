@@ -8,7 +8,6 @@ import com.fieryslug.reinforcedcoral.panel.subpanel.PanelProblem;
 import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
-import com.fieryslug.reinforcedcoral.util.MediaRef;
 import com.fieryslug.reinforcedcoral.util.Reference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.google.common.collect.BiMap;
@@ -22,21 +21,18 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
-import javax.swing.JEditorPane;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
@@ -52,12 +48,19 @@ public class PanelEditPage extends PanelProblem {
     private Widget currWidget;
 
     private Border editBorder;
+    private Border normalBorder;
 
     private String tempConstraints = null;
+
+    private LinkedHashSet<Widget> abstractWidgetsSet;
+    private ArrayList<Widget> abstractWidgets;
+    private int scrollNum;
 
     public PanelEditPage(FrameCoral parent, PanelEditProblem panelEditProblem) {
         super(parent);
         this.panelEditProblem = panelEditProblem;
+        abstractWidgetsSet = new LinkedHashSet<>();
+        abstractWidgets = new ArrayList<>();
     }
 
 
@@ -76,6 +79,17 @@ public class PanelEditPage extends PanelProblem {
         for (Widget widget : page.widgets) {
 
             addAndConfigWidget(widget);
+        }
+        updateAbstractWidgets();
+
+        if (abstractWidgets.size() > 0) {
+            panelEditProblem.labelAbstractName.setVisible(true);
+            panelEditProblem.labelAbstract.setVisible(true);
+            panelEditProblem.labelAbstract.setText("extra (" + 1 + "/" + abstractWidgets.size() + ")  ");
+        }
+        else {
+            panelEditProblem.labelAbstractName.setVisible(false);
+            panelEditProblem.labelAbstract.setVisible(false);
         }
     }
 
@@ -204,6 +218,7 @@ public class PanelEditPage extends PanelProblem {
 
         TextureHolder holder = TextureHolder.getInstance();
         editBorder = FuncBox.getLineBorder(holder.getColor("edit_border"), 3);
+        normalBorder = FuncBox.getLineBorder(holder.getColor("text_light_2"), 3);
 
         for (Widget widget : editMap.keySet()) {
 
@@ -234,7 +249,8 @@ public class PanelEditPage extends PanelProblem {
                 }
 
                 remove(editMap.get(currWidget));
-                add(component, currWidget.constraints);
+                if(component != null)
+                    add(component, currWidget.constraints);
 
 
                 if (currWidget.widgetType == Widget.EnumWidget.JLABEL) {
@@ -253,6 +269,12 @@ public class PanelEditPage extends PanelProblem {
                     JLabel label = (JLabel) widgetInstanceMap.get(currWidget);
                     label.setBorder(null);
                 }
+                if (currWidget.widgetType == Widget.EnumWidget.AUDIO) {
+                    panelEditProblem.labelAbstractName.setBorder(normalBorder);
+                }
+
+                System.out.println("widget is null");
+                System.out.println(currWidget.widgetType);
 
 
             }
@@ -264,7 +286,7 @@ public class PanelEditPage extends PanelProblem {
             return;
         }
 
-        if(!widget.isAbstract()) {
+        if(!widget.isAbstract() || true) {
             if (widgetInstanceMap.keySet().contains(currWidget)) {
                 JComponent component = widgetInstanceMap.get(currWidget);
 
@@ -278,9 +300,9 @@ public class PanelEditPage extends PanelProblem {
                 if(editMap.get(currWidget) != null)
                     remove(editMap.get(currWidget));
 
-                add(component, currWidget.constraints);
-
-
+                if(component != null)
+                    add(component, currWidget.constraints);
+                System.out.println(currWidget.widgetType);
                 if (currWidget.widgetType == Widget.EnumWidget.JLABEL) {
                     JLabel label = (JLabel) component;
                     JTextField field0 = (JTextField) (editMap.get(currWidget));
@@ -297,6 +319,10 @@ public class PanelEditPage extends PanelProblem {
                 if (currWidget.widgetType == Widget.EnumWidget.IMAGE) {
                     JLabel label = (JLabel) widgetInstanceMap.get(currWidget);
                     label.setBorder(null);
+                }
+                if (currWidget.widgetType == Widget.EnumWidget.AUDIO) {
+                    panelEditProblem.labelAbstractName.setBorder(normalBorder);
+                    System.out.println("hola!");
                 }
 
             }
@@ -349,6 +375,13 @@ public class PanelEditPage extends PanelProblem {
                 panelEditProblem.buttonImage.setVisible(true);
                 panelEditProblem.labelChooseFile.setVisible(true);
             }
+            if (widget.widgetType == Widget.EnumWidget.AUDIO) {
+
+                panelEditProblem.labelAbstractName.setBorder(editBorder);
+                currWidget = widget;
+
+
+            }
             //----------
             if (flag) {
                 panelEditProblem.labelLayout.setVisible(true);
@@ -383,6 +416,10 @@ public class PanelEditPage extends PanelProblem {
                     panelEditProblem.fieldsAttr[1].setText("-1");
                 }
             }
+        }
+
+        else {
+
         }
 
         repaint();
@@ -520,5 +557,49 @@ public class PanelEditPage extends PanelProblem {
 
         }
 
+    }
+
+    private void updateAbstractWidgets() {
+
+        abstractWidgetsSet.clear();
+        abstractWidgets.clear();
+        scrollNum = 0;
+        if (page.type == Reference.MAGIC_PRIME) {
+
+            for (Widget widget : page.widgets) {
+                if (widget.isAbstract()) {
+                    abstractWidgetsSet.add(widget);
+                }
+            }
+        }
+        abstractWidgets.addAll(abstractWidgetsSet);
+        if(abstractWidgets.size() > 0)
+            panelEditProblem.labelAbstractName.setText(abstractWidgets.get(scrollNum).content);
+
+    }
+
+    void scrollAbstractWidget(MouseWheelEvent event) {
+
+        if(abstractWidgetsSet.size() > 0) {
+            int size = abstractWidgets.size();
+            boolean b = event.getPreciseWheelRotation() > 0;
+            if (b) {
+                scrollNum += 1;
+                scrollNum %= size;
+            } else {
+                scrollNum -= 1;
+                scrollNum %= size;
+            }
+
+            panelEditProblem.labelAbstractName.setText(abstractWidgets.get(scrollNum).content);
+        }
+
+    }
+
+    Widget getCurrAbstractWidget() {
+        if (abstractWidgets.size() > 0) {
+            return abstractWidgets.get(scrollNum);
+        }
+        return null;
     }
 }

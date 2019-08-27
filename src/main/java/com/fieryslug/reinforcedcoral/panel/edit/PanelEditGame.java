@@ -4,6 +4,8 @@ import com.fieryslug.reinforcedcoral.core.Category;
 import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemNull;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemTemp;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.*;
@@ -15,8 +17,12 @@ import com.google.common.collect.HashBiMap;
 import info.clearthought.layout.TableLayout;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class PanelEditGame extends PanelInterior {
 
@@ -28,15 +34,26 @@ public class PanelEditGame extends PanelInterior {
     private JTextField fieldSetName;
 
 
+    //panel 0
     private ButtonCoral buttonBack;
     private JLabel labelBack;
     private ButtonCoral buttonSave;
     private JLabel labelSave;
 
+    //panel 1
     private JLabel labelSlot;
     private JTextField fieldSlot;
     private JLabel[] labelsProb;
     private ButtonCoral[] buttonsProb;
+
+    //panel 2
+    private ButtonCoral[] buttonsMove;
+    private JLabel labelMove;
+    private JPanel panelMove;
+
+    //panel 3
+    private JLabel[] labelsBR;
+    private ButtonCoral[] buttonsBR;
 
 
     ProblemSet targetSet;
@@ -46,6 +63,8 @@ public class PanelEditGame extends PanelInterior {
     private int currType = 0;
     private EditPhase phase;
     boolean needsNewSet = false;
+
+    private MouseListener mouseClickListener;
 
     public PanelEditGame(PanelEdit panelEdit) {
         TextureHolder holder = TextureHolder.getInstance();
@@ -78,6 +97,34 @@ public class PanelEditGame extends PanelInterior {
         }
         this.labelsProb[0].setText(" dependencies");
         this.labelsProb[1].setText("content");
+        labelsProb[3].setText("delete");
+
+
+        labelMove = new JLabel("move", SwingConstants.CENTER);
+        buttonsMove = new ButtonCoral[4];
+        for (int i = 0; i < 4; ++i) {
+            buttonsMove[i] = new ButtonCoral(images[0], images[1], images[2]);
+        }
+
+        panelMove = new JPanel();
+        panelMove.setOpaque(false);
+        panelMove.setLayout(new TableLayout(new double[][]{FuncBox.createDivisionArray(3), FuncBox.createDivisionArray(3)}));
+        panelMove.add(buttonsMove[0], "1, 0");
+        panelMove.add(buttonsMove[1], "1, 2");
+        panelMove.add(buttonsMove[2], "0, 1");
+        panelMove.add(buttonsMove[3], "2, 1");
+
+        labelsBR = new JLabel[4];
+        buttonsBR = new ButtonCoral[4];
+
+        for (int i = 0; i < 4; ++i) {
+            labelsBR[i] = new JLabel("", SwingConstants.CENTER);
+            buttonsBR[i] = new ButtonCoral(images[0], images[1], images[2]);
+        }
+        labelsBR[0].setText(" new category");
+        labelsBR[1].setText(" new row");
+        buttonsBR[2].setVisible(false);
+        labelsBR[3].setText(" delete bottom row");
 
         this.buttonBack.addActionListener(new ActionListener() {
             @Override
@@ -121,27 +168,18 @@ public class PanelEditGame extends PanelInterior {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                PanelEditDependency panel = new PanelEditDependency(panelEdit, targetSet, currProblem);
-                //panelEdit.exit();
-                panelEdit.setCurrentPanelInterior(panel);
-                panelEdit.parent.switchPanel(panelEdit, panelEdit);
-                //panelEdit.enter();
-                //panelEdit.refresh();
-                //panelEdit.repaint();
+                if(currProblem != null) {
+                    if(currProblem instanceof ProblemTemp) {
 
-                /*
-                setPhase(EditPhase.DEPENDENCIES);
-                removeAll();
-                for (int i = 0; i < 4; ++i) {
-                    panelEdit.panels[i].removeAll();
+                    }
+                    else {
+                        PanelEditDependency panel = new PanelEditDependency(panelEdit, targetSet, currProblem);
+
+                        panelEdit.setCurrentPanelInterior(panel);
+                        panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                    }
                 }
-                exit();
-                enter();
-                revalidate();
-                repaint();
-                panelEdit.revalidate();
-                panelEdit.repaint();
-                */
+
             }
         });
 
@@ -168,17 +206,118 @@ public class PanelEditGame extends PanelInterior {
             }
         });
 
-        this.fieldSlot.addKeyListener(new KeyAdapter() {
+        buttonsProb[3].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+
+                if (currProblem != null) {
+                    Problem problem = currProblem;
+                    String top = "<html><strong>Do you really want to delete " + FuncBox.removeHtmlTag(currProblem.name) + " ?</strong></html>";
+                    String bottom = "<html><strong>" + FuncBox.removeHtmlTag(currProblem.name) + " will be lost forever! (a long time!)" + "</strong></html>";
+
+                    panelEdit.setCurrentPanelInterior(panelEdit.panelConfirm);
+                    panelEdit.panelConfirm.prepare(top, bottom, new Runnable() {
+                        @Override
+                        public void run() {
+                            panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                            panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                            setCurrProblem(problem);
+                            inflateEditSlotPanel();
+                        }
+                    }, new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Category category = problem.getParentCat();
+                            int ind = category.getProblems().lastIndexOf(problem);
+                            if (ind >= 0) {
+                                targetSet.getTrash().add(problem);
+                                Problem problemNull = new ProblemTemp();
+
+                                problemNull.setParentCat(category);
+                                //category.getProblems().set(ind, problemNull);
+                                category.set(ind, problemNull);
+                            }
+
+                            panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                            panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                        }
+                    });
+
+                    panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                } else if (currCat != null) {
+
+                    Category category = currCat;
+                    String top = "<html><strong>Do you really want to delete " + FuncBox.removeHtmlTag(currCat.name) + " and its " + category.getProblems().size() + " problems ?</strong></html>";
+                    String bottom = "<html><strong>" + FuncBox.removeHtmlTag(currCat.name) + " will be lost forever! (a long time!)" + "</strong></html>";
+
+                    if (targetSet.getCategories().size() < 3) {
+                        top = "<html><strong>Couldn't delete " + FuncBox.removeHtmlTag(currCat.name) + "!</strong></html>";
+                        bottom = "";
+                        panelEdit.panelConfirm.getButtonConfirm().setEnabled(false);
+                    }
+
+                    panelEdit.setCurrentPanelInterior(panelEdit.panelConfirm);
+                    panelEdit.panelConfirm.prepare(top, bottom, new Runnable() {
+                        @Override
+                        public void run() {
+                            panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                            panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                            setCurrCat(category);
+                            inflateEditSlotPanel();
+                        }
+                    }, new Runnable() {
+                        @Override
+                        public void run() {
+
+                            if(currCat != null && targetSet.getCategories().size() > 2) {
+                                targetSet.getCategories().remove(currCat);
+                                System.out.println("removed " + currCat.name);
+                                for (Problem problem : currCat.getProblems()) {
+
+                                    targetSet.getTrash().add(problem);
+
+                                }
+                            }
+
+                            panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                            panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                        }
+                    });
+                    panelEdit.parent.switchPanel(panelEdit, panelEdit);
+
+                }
+
+            }
+        });
+
+        this.fieldSlot.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent documentEvent) {
+                update();
+            }
 
             @Override
-            public void keyReleased(KeyEvent keyEvent) {
+            public void removeUpdate(DocumentEvent documentEvent) {
+                update();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent documentEvent) {
+                update();
+            }
+
+            private void update() {
                 String text = fieldSlot.getText();
+                System.out.println("keyReleased");
                 if (currProblem != null) {
                     ButtonProblem button = buttonProblemMap.inverse().get(currProblem);
                     currProblem.name = text;
+                    System.out.println("name set" + text);
                     button.label.setText(currProblem.name);
                     if(Preference.autoScaleFontSize) {
-                        button.label.setFont(FontRef.getFont(FontRef.TAIPEI, Font.PLAIN, panelEdit.parent.isFullScreen ? 39 : 26));
+                        button.label.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, panelEdit.parent.isFullScreen ? 39 : 26));
                         FontRef.scaleFont(button.label);
                     }
                 } else if (currCat != null) {
@@ -192,6 +331,208 @@ public class PanelEditGame extends PanelInterior {
                 }
             }
         });
+
+        buttonsMove[2].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                System.out.println(currProblem);
+
+                if(currProblem != null) {
+
+                    ArrayList<Category> categories = targetSet.getCategories();
+                    int catInd = categories.lastIndexOf(currProblem.getParentCat());
+                    int probInd = currProblem.getParentCat().getProblems().lastIndexOf(currProblem);
+
+                    if (catInd > 0 && probInd >= 0) {
+                        Category cat = categories.get(catInd - 1);
+                        Category cat1 = currProblem.getParentCat();
+                        Problem prob = cat.getProblems().get(probInd);
+
+
+
+                        cat.set(probInd, currProblem);
+                        cat1.set(probInd, prob);
+                        currProblem.setParentCat(cat);
+                        prob.setParentCat(cat1);
+                        rearrange();
+                    }
+
+
+                }
+                else if (currCat != null) {
+
+                    int ind = targetSet.getCategories().lastIndexOf(currCat);
+
+                    if (ind > 0) {
+                        Category cat = targetSet.getCategories().get(ind - 1);
+
+                        targetSet.getCategories().set(ind - 1, currCat);
+                        targetSet.getCategories().set(ind, cat);
+                        rearrange();
+                    }
+                }
+
+
+            }
+        });
+        buttonsMove[3].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (currProblem != null) {
+                    ArrayList<Category> categories = targetSet.getCategories();
+                    int catInd = categories.lastIndexOf(currProblem.getParentCat());
+                    int probInd = currProblem.getParentCat().getProblems().indexOf(currProblem);
+
+                    if (catInd >= 0 && catInd < categories.size() - 1 && probInd >= 0) {
+                        Category cat = categories.get(catInd + 1);
+                        Category cat1 = currProblem.getParentCat();
+                        Problem prob = cat.getProblems().get(probInd);
+                        //cat.getProblems().set(probInd, currProblem);
+                        //cat1.getProblems().set(probInd, prob);
+                        cat.set(probInd, currProblem);
+                        cat1.set(probInd, prob);
+                        currProblem.setParentCat(cat);
+                        prob.setParentCat(cat1);
+                        rearrange();
+                    }
+                }
+                else if (currCat != null) {
+                    int ind = targetSet.getCategories().lastIndexOf(currCat);
+
+                    if (ind >= 0 && ind < targetSet.getCategories().size()-1) {
+                        Category cat = targetSet.getCategories().get(ind + 1);
+                        targetSet.getCategories().set(ind + 1, currCat);
+                        targetSet.getCategories().set(ind, cat);
+                        rearrange();
+                    }
+                }
+            }
+        });
+        buttonsMove[0].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (currProblem != null) {
+                    Category cat = currProblem.getParentCat();
+                    ArrayList<Problem> problems = cat.getProblems();
+                    int ind = problems.lastIndexOf(currProblem);
+                    if (ind > 0) {
+                        Problem prob = problems.get(ind - 1);
+
+                        cat.set(ind - 1, currProblem);
+                        cat.set(ind, prob);
+                        rearrange();
+                    }
+                }
+            }
+        });
+        buttonsMove[1].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (currProblem != null) {
+                    Category cat = currProblem.getParentCat();
+                    ArrayList<Problem> problems = cat.getProblems();
+                    int ind = problems.lastIndexOf(currProblem);
+                    if (ind >= 0 && ind < problems.size() - 1) {
+                        Problem prob = problems.get(ind + 1);
+
+                        cat.set(ind + 1, currProblem);
+                        cat.set(ind, prob);
+                        rearrange();
+                    }
+                }
+            }
+        });
+
+        buttonsBR[0].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                Category category = new Category("void", targetSet.idForCategory());
+                int probs = targetSet.getProblemsPerCategory();
+
+                for (int i = 0; i < probs; ++i) {
+                    Problem problem = new ProblemTemp();
+                    problem.shortId = ProblemSet.shortIdForProblem(category, "0");
+                    category.addProblems(problem);
+                }
+                targetSet.addCategory(category);
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+            }
+        });
+
+        buttonsBR[1].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                for (Category category : targetSet.getCategories()) {
+
+                    Problem problem = new ProblemTemp();
+                    problem.setShortId(targetSet.shortIdForProblem(category, "0"));
+                    category.addProblems(problem);
+                }
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+            }
+        });
+
+        buttonsBR[3].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                String top = "Do you really want to delete " + targetSet.getCategories().size() + " problems?";
+                String bottom = "they will be lost forever! (a long time!)";
+
+
+                if (targetSet.getProblemsPerCategory() == 1) {
+                    top = "Couldn't delete " + targetSet.getCategories().size() + " problems!";
+                    bottom = "";
+                    panelEdit.panelConfirm.getButtonConfirm().setEnabled(false);
+                }
+
+                Problem problem = currProblem;
+                Category category = currCat;
+
+                panelEdit.panelConfirm.prepare(top, bottom, new Runnable() {
+                    @Override
+                    public void run() {
+
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                        panelEdit.parent.switchPanel(panelEdit, panelEdit);
+                        if (problem != null) {
+                            setCurrProblem(problem);
+                        } else if (category != null) {
+                            setCurrCat(category);
+                        }
+                    }
+                }, new Runnable() {
+                    @Override
+                    public void run() {
+
+                        int ind = targetSet.getProblemsPerCategory() - 1;
+                        for (Category cat : targetSet.getCategories()) {
+
+                            cat.getProblems().remove(ind);
+
+                        }
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
+                        panelEdit.parent.switchPanel(panelEdit, panelEdit);
+
+                    }
+                });
+
+                panelEdit.setCurrentPanelInterior(panelEdit.panelConfirm);
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+            }
+        });
+
+        mouseClickListener = new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                setCurrCat(null);
+                setCurrProblem(null);
+                inflateEditSlotPanel();
+            }
+        };
     }
 
     @Override
@@ -271,6 +612,7 @@ public class PanelEditGame extends PanelInterior {
             }
 
 
+
             this.fieldSetName.setText(this.targetSet.getName());
             //setCurrProblem(this.targetSet.getCategories().get(0).problems.get(0));
 
@@ -280,6 +622,11 @@ public class PanelEditGame extends PanelInterior {
                 this.labelsProb[k].setVisible(false);
                 this.buttonsProb[k].setVisible(false);
             }
+
+            for (int k = 0; k < 4; ++k) {
+                buttonsMove[k].setVisible(false);
+            }
+            labelMove.setVisible(false);
 
             panelEdit.panels[0].add(this.labelTitle, "0, 0, 0, 0");
             panelEdit.panels[0].add(this.buttonBack, "0, 2");
@@ -292,48 +639,22 @@ public class PanelEditGame extends PanelInterior {
             labelSlot.setText("  problem: ");
             panelEdit.panels[1].add(fieldSlot, "1, 0, 2, 0");
 
+            panelEdit.panels[2].add(panelMove, "3, 0, 3, 2");
+            panelEdit.panels[2].add(labelMove, "2, 1");
+
+
+
             for (int k = 0; k < 4; ++k) {
                 panelEdit.panels[1].add(labelsProb[k], k + ", 1");
                 panelEdit.panels[1].add(buttonsProb[k], k + ", 2");
+                panelEdit.panels[3].add(labelsBR[k], k + ", 1");
+                panelEdit.panels[3].add(buttonsBR[k], k + ", 2");
             }
 
-        }
-        /*
-        if (this.phase == EditPhase.DEPENDENCIES) {
-
-            System.out.println(this.currProblem.id);
-            int i = 0, j = 1;
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    buttonProblemMap.inverse().get(currProblem).setState(0);
-                }
-            });
-
-            for (Category cat : this.targetSet.getCategories()) {
-                JLabel label = this.labelCategoryMap.inverse().get(cat);
-                add(label, i + ", 0");
-                for (Problem prob : cat.problems) {
-                    ButtonProblem button = this.buttonProblemMap.inverse().get(prob);
-                    if (this.currProblem.dependences.contains(prob)) {
-                        System.out.println(prob.name);
-                        SwingUtilities.invokeLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                button.setState(-1);
-                            }
-                        });
-
-                    }
-                    add(button, i + ", " + j);
-                    j += 1;
-                }
-                i += 1;
-                j = 1;
-            }
+            panelEdit.addMouseListener(mouseClickListener);
 
         }
-        */
+
         System.out.println("in edit menu enter:  width " + panelEdit.getWidth());
 
 
@@ -355,6 +676,7 @@ public class PanelEditGame extends PanelInterior {
         for (int i = 0; i < 4; ++i) {
             panelEdit.panels[i].removeAll();
         }
+        panelEdit.removeMouseListener(mouseClickListener);
     }
 
     @Override
@@ -408,9 +730,20 @@ public class PanelEditGame extends PanelInterior {
         this.fieldSlot.setCaretColor(holder.getColor("teamu_score"));
         this.fieldSlot.setBackground(holder.getColor("problem_preenabled"));
 
+        labelMove.setForeground(holder.getColor("teamd_score"));
+
         for (int i = 0; i < 4; ++i) {
             this.buttonsProb[i].setImages(images[0], images[1], images[2]);
             this.labelsProb[i].setForeground(holder.getColor("teamu_text"));
+        }
+
+        for (int i = 0; i < 4; ++i) {
+            buttonsMove[i].setImages(images[0], images[1], images[2]);
+        }
+
+        for (int i = 0; i < 4; ++i) {
+            labelsBR[i].setForeground(holder.getColor("teamd_score"));
+            buttonsBR[i].setImages(images[0], images[1], images[2]);
         }
     }
 
@@ -434,6 +767,9 @@ public class PanelEditGame extends PanelInterior {
         this.labelSlot.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 39 : 26));
         this.fieldSlot.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 42 : 28));
 
+        labelMove.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 39 : 26));
+
+
         int buttonX = panelEdit.panels[0].getWidth() / 4;
         int buttonYs = panelEdit.panels[0].getHeight() / 10;
         this.buttonBack.resizeIconToSquare(buttonX, buttonYs * 3, 0.85);
@@ -441,6 +777,18 @@ public class PanelEditGame extends PanelInterior {
         for (int i = 0; i < 4; ++i) {
             this.labelsProb[i].setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 33 : 22));
             this.buttonsProb[i].resizeIconToSquare(buttonX, buttonYs * 3, 0.85);
+        }
+
+        int boxX = panelEdit.panels[0].getWidth();
+        int boxY = panelEdit.panels[0].getHeight();
+
+        for (int i = 0; i < 4; ++i) {
+            buttonsMove[i].resizeIconToSquare(boxX / 12, boxY / 3, 0.8d);
+        }
+
+        for (int i = 0; i < 4; ++i) {
+            labelsBR[i].setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 33 : 22));
+            buttonsBR[i].resizeIconToSquare(buttonX, buttonYs * 3, 0.85);
         }
 
         if (Preference.autoScaleFontSize) {
@@ -456,8 +804,10 @@ public class PanelEditGame extends PanelInterior {
             FontRef.scaleFont(this.fieldSetName);
             FontRef.scaleFont(this.labelSlot);
             FontRef.scaleFont(this.fieldSlot);
+            FontRef.scaleFont(labelMove);
             for (int i = 0; i < 4; ++i) {
                 FontRef.scaleFont(this.labelsProb[i]);
+                FontRef.scaleFont(labelsBR[i]);
             }
         }
 
@@ -471,10 +821,12 @@ public class PanelEditGame extends PanelInterior {
 
     private void setCurrProblem(Problem problem) {
         this.currType = 0;
-        if (this.buttonProblemMap.inverse().keySet().contains(problem)) {
+        if (this.buttonProblemMap.inverse().keySet().contains(problem) || problem == null) {
 
-            if(this.currProblem != null)
+            if(this.currProblem != null) {
                 this.buttonProblemMap.inverse().get(this.currProblem).setState(0);
+                currProblem = null;
+            }
 
             if (this.currCat != null) {
                 JLabel label = this.labelCategoryMap.inverse().get(this.currCat);
@@ -484,43 +836,47 @@ public class PanelEditGame extends PanelInterior {
                 label.setForeground(holder.getColor("title_text"));
                 this.currCat = null;
             }
-            this.currProblem = problem;
-            ButtonProblem button = this.buttonProblemMap.inverse().get(problem);
-            button.setState(-1);
+            currProblem = problem;
+            if(problem != null) {
+                ButtonProblem button = this.buttonProblemMap.inverse().get(problem);
+                button.setState(-1);
+            }
 
         }
-        if (problem == null) {
-            currProblem = null;
-        }
+
     }
 
     private void setCurrCat(Category cat) {
         this.currType = 1;
         TextureHolder holder = TextureHolder.getInstance();
-        if (this.labelCategoryMap.inverse().keySet().contains(cat)) {
+        if (this.labelCategoryMap.inverse().keySet().contains(cat) || cat == null) {
 
 
             if (this.currCat != null) {
                 JLabel label = this.labelCategoryMap.inverse().get(this.currCat);
-                label.setBackground(holder.getColor("title"));
-                label.setBorder(FuncBox.getLineBorder(holder.getColor("title_border"), 3));
-                label.setForeground(holder.getColor("title_text"));
+                if(label != null) {
+                    label.setBackground(holder.getColor("title"));
+                    label.setBorder(FuncBox.getLineBorder(holder.getColor("title_border"), 3));
+                    label.setForeground(holder.getColor("title_text"));
+                }
+                currCat = null;
             }
             if (this.currProblem != null) {
                 ButtonProblem button = this.buttonProblemMap.inverse().get(this.currProblem);
                 this.currProblem = null;
-                button.setState(0);
+                if(button != null)
+                    button.setState(0);
             }
 
             this.currCat = cat;
-            JLabel label1 = this.labelCategoryMap.inverse().get(cat);
-            label1.setBackground(holder.getColor("title_dark"));
-            label1.setBorder(FuncBox.getLineBorder(holder.getColor("title_dark_border"), 3));
-            label1.setForeground(holder.getColor("title_dark_text"));
-        }
-
-        if (cat == null) {
-            currCat = null;
+            if(cat != null) {
+                JLabel label1 = this.labelCategoryMap.inverse().get(cat);
+                if(label1 != null) {
+                    label1.setBackground(holder.getColor("title_dark"));
+                    label1.setBorder(FuncBox.getLineBorder(holder.getColor("title_dark_border"), 3));
+                    label1.setForeground(holder.getColor("title_dark_text"));
+                }
+            }
         }
     }
 
@@ -528,15 +884,49 @@ public class PanelEditGame extends PanelInterior {
 
         if (this.currProblem != null) {
 
-            labelSlot.setVisible(true);
-            fieldSlot.setVisible(true);
-            labelSlot.setText("  problem: ");
-            fieldSlot.setText(this.currProblem.name);
+            if (currProblem instanceof ProblemTemp) {
 
-            for (int i = 0; i < 4; ++i) {
-                this.labelsProb[i].setVisible(true);
-                this.buttonsProb[i].setVisible(true);
+                for (int i = 0; i < 4; ++i) {
+                    labelsProb[i].setVisible(false);
+                    buttonsProb[i].setVisible(false);
+                }
+
+                labelSlot.setVisible(true);
+                labelSlot.setText("  new problem: ");
+                fieldSlot.setVisible(true);
+                fieldSlot.setText(currProblem.name);
+                labelsProb[0].setVisible(true);
+                buttonsProb[0].setVisible(true);
+                labelsProb[0].setText("create");
+
             }
+            else {
+                labelSlot.setVisible(true);
+                fieldSlot.setVisible(true);
+                labelSlot.setText("  problem: ");
+                fieldSlot.setText(this.currProblem.name);
+
+                for (int i = 0; i < 4; ++i) {
+                    this.labelsProb[i].setVisible(true);
+                    this.buttonsProb[i].setVisible(true);
+                }
+                labelsProb[0].setText("  dependencies");
+
+
+
+                if (currProblem.isSpecial()) {
+                    buttonsProb[1].setEnabled(false);
+                } else {
+                    buttonsProb[1].setEnabled(true);
+                }
+            }
+            for (int i = 0; i < 4; ++i) {
+                buttonsMove[i].setVisible(true);
+            }
+            labelsProb[3].setText("delete");
+            buttonsMove[0].setEnabled(true);
+            buttonsMove[1].setEnabled(true);
+            labelMove.setVisible(true);
 
             if(Preference.autoScaleFontSize) {
                 FontRef.scaleFont(this.labelSlot);
@@ -552,6 +942,15 @@ public class PanelEditGame extends PanelInterior {
                 this.labelsProb[i].setVisible(false);
                 this.buttonsProb[i].setVisible(false);
             }
+            for (int i = 0; i < 4; ++i) {
+                buttonsMove[i].setVisible(true);
+            }
+            labelsProb[3].setText("delete all");
+            labelsProb[3].setVisible(true);
+            buttonsProb[3].setVisible(true);
+            buttonsMove[0].setEnabled(false);
+            buttonsMove[1].setEnabled(false);
+            labelMove.setVisible(true);
         }
         else {
             labelSlot.setVisible(false);
@@ -559,7 +958,10 @@ public class PanelEditGame extends PanelInterior {
             for (int i = 0; i < 4; ++i) {
                 this.labelsProb[i].setVisible(false);
                 this.buttonsProb[i].setVisible(false);
+                buttonsMove[i].setVisible(false);
+
             }
+            labelMove.setVisible(false);
         }
 
     }
@@ -571,5 +973,22 @@ public class PanelEditGame extends PanelInterior {
     @Override
     public PanelPrime getPanelParent() {
         return this.panelEdit;
+    }
+
+    private void rearrange() {
+
+        int i=0, j=1;
+        for (Category category : targetSet.getCategories()) {
+            add(labelCategoryMap.inverse().get(category), i + ", " + 0);
+            for (Problem problem : category.getProblems()) {
+                add(buttonProblemMap.inverse().get(problem), i + ", " + j);
+                j += 1;
+            }
+            i += 1;
+            j = 1;
+        }
+        repaint();
+        revalidate();
+
     }
 }

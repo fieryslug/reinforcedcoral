@@ -54,7 +54,10 @@ public class FrameCoral extends JFrame {
         this.maxHeight = dimension.height;
         this.maxWidth = dimension.width;
 
+
+
         setSize(this.maxWidth *2/3, this.maxHeight *2/3);
+
         setLocationRelativeTo(null);
         setTitle(Reference.PROJECT_NAME + "-" + Reference.VERSION);
         setIconImage(MediaRef.CORAL);
@@ -105,8 +108,13 @@ public class FrameCoral extends JFrame {
 
 
         setVisible(true);
+        System.out.println("uuuuuuuuuuuuuuuuu" + getInsets().top);
+        setSize(this.maxWidth *2/3, this.maxHeight *2/3 + getInsets().top);
         if(notTesting) panelTitle.enter();
         else panelTitleBeautified.enter();
+
+
+
 
     }
 

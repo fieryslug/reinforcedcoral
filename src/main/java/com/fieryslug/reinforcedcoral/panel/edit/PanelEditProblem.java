@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.edit;
 
 import com.fieryslug.reinforcedcoral.core.GamePhase;
+import com.fieryslug.reinforcedcoral.core.page.Widget;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
@@ -350,13 +351,14 @@ public class PanelEditProblem extends PanelInterior {
         labelAbstractName.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                panelInteriorPage.setCurrWidget(null);
+                Widget widget = panelInteriorPage.getCurrAbstractWidget();
+                panelInteriorPage.setCurrWidget(widget);
             }
         });
         labelAbstractName.addMouseWheelListener(new MouseWheelListener() {
             @Override
             public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
-
+                panelInteriorPage.scrollAbstractWidget(mouseWheelEvent);
             }
         });
 
@@ -620,6 +622,9 @@ public class PanelEditProblem extends PanelInterior {
             FontRef.scaleFont(labelChooseFile);
             FontRef.scaleFont(labelLayout);
             FontRef.scaleFont(labelApplyLayout);
+
+            FontRef.scaleFont(labelAbstract);
+            FontRef.scaleFont(labelAbstractName);
 
             for (int i = 0; i < 4; ++i) {
                 FontRef.scaleFont(toggleButtons[i]);

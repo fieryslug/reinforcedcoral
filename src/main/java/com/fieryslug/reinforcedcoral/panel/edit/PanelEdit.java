@@ -5,6 +5,9 @@ import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
+
+import java.awt.Panel;
+
 import info.clearthought.layout.TableLayout;
 
 import javax.swing.*;
@@ -15,6 +18,7 @@ public class PanelEdit extends PanelPrime {
     PanelInterior panelEditTitle;
     PanelEditGame panelEditGame;
     PanelEditProblem panelEditProblem;
+    PanelConfirm panelConfirm;
 
     PanelInterior currentPanelInterior;
     private PanelInterior prevPanelInterior;
@@ -46,6 +50,7 @@ public class PanelEdit extends PanelPrime {
         this.panelEditTitle = new PanelEditTitle(this);
         this.panelEditGame = new PanelEditGame(this);
         this.panelEditProblem = new PanelEditProblem(this);
+        panelConfirm = new PanelConfirm(this);
 
         this.currentPanelInterior = this.panelEditTitle;
 

@@ -7,6 +7,7 @@ import com.fieryslug.reinforcedcoral.core.problem.ProblemDisabled;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemDummy;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemMine;
 import com.fieryslug.reinforcedcoral.core.problem.ProblemNull;
+import com.fieryslug.reinforcedcoral.core.problem.ProblemTemp;
 import com.fieryslug.reinforcedcoral.minigame.match.ProblemMatch;
 import com.fieryslug.reinforcedcoral.minigame.minesweeper.ProblemMineSweeper;
 import com.fieryslug.reinforcedcoral.minigame.snake.ProblemSnake;
@@ -27,9 +28,12 @@ import java.lang.reflect.Constructor;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class ProblemSet {
+
 
     private String id;
     private String loadId;
@@ -39,6 +43,8 @@ public class ProblemSet {
     private BiMap<String, Problem> idProbMap;
     private Map<Problem, String> probShortIdMap;
 
+    private ArrayList<Problem> trash;
+
     private static Map<Class<? extends Problem>, Class<?>[]> argumentMap = new HashMap<>();
 
 
@@ -46,6 +52,7 @@ public class ProblemSet {
     private Map<String, URL> audioResources;
 
     private static final String MEDIA_DIR = "_media";
+    private static final String TRASH_DIR = "_trash";
 
     static {
         argumentMap.put(ProblemMine.class, new Class<?>[]{String.class, Integer.class});
@@ -63,6 +70,7 @@ public class ProblemSet {
         this.idCatMap = HashBiMap.create();
         this.idProbMap = HashBiMap.create();
         this.probShortIdMap = new HashMap<>();
+        trash = new ArrayList<>();
 
         imageResources = new HashMap<>();
         audioResources = new HashMap<>();
@@ -189,6 +197,7 @@ public class ProblemSet {
         this.idCatMap.clear();
         this.idProbMap.clear();
         this.probShortIdMap.clear();
+        trash.clear();
 
         imageResources.clear();
         audioResources.clear();
@@ -303,8 +312,20 @@ public class ProblemSet {
         }
 
         //media
+        //trash
+        File trashDir = new File(path + "/" + TRASH_DIR);
 
+        if (trashDir.exists()) {
 
+            String[] trashPaths = trashDir.list();
+            for (String trashPath : trashPaths) {
+                String res = FuncBox.readExternalFile(path + "/" + TRASH_DIR + "/" + trashPath);
+                JSONObject json = new JSONObject(res);
+                Problem problem = new Problem(json);
+
+                trash.add(problem);
+            }
+        }
     }
 
 
@@ -418,6 +439,15 @@ public class ProblemSet {
                 }
 
             }
+        }
+
+        //trash---------------------------------------------------------------------------------
+        loader.checkFile(path + "/" + TRASH_DIR, true);
+
+        int i=0;
+        for (Problem trashProb : trash) {
+            loader.writeToFile(path + "/" + TRASH_DIR + "/" + i + ".json", trashProb.exportAsJson().toString(2), override);
+            i++;
         }
 
         return true;
@@ -617,6 +647,20 @@ public class ProblemSet {
                 }
             }
         }
+
+        int ideal = getProblemsPerCategory();
+
+
+        for (Category category : categories) {
+
+            ArrayList<Problem> problems = category.getProblems();
+            int lack = ideal - problems.size();
+            for (int i = 0; i < lack; ++i) {
+                Problem problem = new ProblemTemp();
+                problem.setShortId(shortIdForProblem(category, "0"));
+                category.addProblems(problem);
+            }
+        }
     }
 
     private void normalizePage(Page page) {
@@ -656,4 +700,53 @@ public class ProblemSet {
     public Map<String, URL> getAudioResources() {
         return audioResources;
     }
+
+    public ArrayList<Problem> getTrash() {
+        return trash;
+    }
+
+    public String idForCategory() {
+
+        Set<String> occupied = new HashSet<>();
+        for (Category category : categories) {
+            occupied.add(category.id);
+        }
+
+        int i = 0;
+        String id;
+        while (true) {
+            id = "cat" + i;
+            if (!occupied.contains(id)) {
+                break;
+            }
+            i += 1;
+        }
+        return id;
+
+    }
+
+    public static String shortIdForProblem(Category category, String preferred) {
+
+        Set<String> occupied = new HashSet<>();
+        for (Problem problem : category.getProblems()) {
+            occupied.add(problem.shortId);
+        }
+
+        if (!occupied.contains(preferred)) {
+            return preferred;
+        }
+
+        int i = 0;
+        String id;
+        while (true) {
+            id = "" + i;
+            if (!occupied.contains(id)) {
+                break;
+            }
+            i += 1;
+        }
+        return id;
+
+    }
+
 }

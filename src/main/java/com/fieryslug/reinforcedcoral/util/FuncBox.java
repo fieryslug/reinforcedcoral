@@ -394,5 +394,13 @@ public class FuncBox {
 
     }
 
+    public static String removeHtmlTag(String html) {
+
+        if(html.startsWith("<html>") && html.endsWith("</html>"))
+            return html.substring(6, html.length() - 7);
+        return html;
+
+    }
+
 
 }
