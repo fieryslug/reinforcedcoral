@@ -43,7 +43,7 @@ public class ProblemSet {
     private BiMap<String, Problem> idProbMap;
     private Map<Problem, String> probShortIdMap;
 
-    private ArrayList<Problem> trash;
+    private Set<Problem> trash;
 
     private static Map<Class<? extends Problem>, Class<?>[]> argumentMap = new HashMap<>();
 
@@ -62,6 +62,7 @@ public class ProblemSet {
         argumentMap.put(ProblemSnake.class, new Class<?>[]{String.class});
         argumentMap.put(ProblemDisabled.class, new Class<?>[]{String.class});
         argumentMap.put(ProblemDummy.class, new Class<?>[]{String.class});
+        argumentMap.put(ProblemTemp.class, new Class<?>[]{});
     }
 
     public ProblemSet(String id) {
@@ -70,7 +71,7 @@ public class ProblemSet {
         this.idCatMap = HashBiMap.create();
         this.idProbMap = HashBiMap.create();
         this.probShortIdMap = new HashMap<>();
-        trash = new ArrayList<>();
+        trash = new HashSet<>();
 
         imageResources = new HashMap<>();
         audioResources = new HashMap<>();
@@ -321,9 +322,13 @@ public class ProblemSet {
             for (String trashPath : trashPaths) {
                 String res = FuncBox.readExternalFile(path + "/" + TRASH_DIR + "/" + trashPath);
                 JSONObject json = new JSONObject(res);
-                Problem problem = new Problem(json);
+                Problem problem = generateProblem(json);
 
-                trash.add(problem);
+
+                problem.setShortId(trashPath);
+
+                if(problem != null)
+                    trash.add(problem);
             }
         }
     }
@@ -445,7 +450,9 @@ public class ProblemSet {
         loader.checkFile(path + "/" + TRASH_DIR, true);
 
         int i=0;
+
         for (Problem trashProb : trash) {
+            System.out.println(trashProb + ": " + trashProb.name + ": " + trashProb.getClass());
             loader.writeToFile(path + "/" + TRASH_DIR + "/" + i + ".json", trashProb.exportAsJson().toString(2), override);
             i++;
         }
@@ -474,6 +481,8 @@ public class ProblemSet {
             for (Problem problem : category.getProblems()) {
 
                 String probShortId = this.probShortIdMap.get(problem);
+                probShortId = problem.shortId;
+                System.out.println("[DEBUG] " + problem.name + ": " + problem.shortId);
                 arrayProbs.put(probShortId);
             }
             //jsonProbs.put(this.idCatMap.inverse().get(category), arrayProbs);
@@ -485,9 +494,9 @@ public class ProblemSet {
 
         for (Category category : this.categories) {
             for (Problem problem : category.getProblems()) {
-                if (problem.dependences.size() > 0) {
+                if (problem.getDependencies().size() > 0) {
                     JSONArray arrayDependencies = new JSONArray();
-                    for (Problem other : problem.dependences) {
+                    for (Problem other : problem.getDependencies()) {
                         //arrayDependencies.put(this.idProbMap.inverse().get(other));
                         arrayDependencies.put(other.id);
                     }
@@ -575,6 +584,7 @@ public class ProblemSet {
                     for (Page page : problem.getPages()) {
                         loadResourcesForPage(page);
                     }
+                    System.out.println(problem.name);
                     loadResourcesForPage(problem.getPageSolution());
                     for (Page page : problem.getPagesExplanation()) {
                         loadResourcesForPage(page);
@@ -582,6 +592,20 @@ public class ProblemSet {
                 }
             }
         }
+
+        for (Problem problem : trash) {
+            if(!problem.isSpecial()) {
+                for (Page page : problem.getPages()) {
+                    loadResourcesForPage(page);
+                }
+                System.out.println(problem.name);
+                loadResourcesForPage(problem.getPageSolution());
+                for (Page page : problem.getPagesExplanation()) {
+                    loadResourcesForPage(page);
+                }
+            }
+        }
+        imageResources.put("/res/images/tzuyu.jpg", ProblemSet.class.getResource("/res/images/tzuyu.jpg"));
         System.out.println("[problem set image resources loaded] " + imageResources);
         System.out.println("[problem set audio resources loaded] " + audioResources);
     }
@@ -701,10 +725,6 @@ public class ProblemSet {
         return audioResources;
     }
 
-    public ArrayList<Problem> getTrash() {
-        return trash;
-    }
-
     public String idForCategory() {
 
         Set<String> occupied = new HashSet<>();
@@ -747,6 +767,107 @@ public class ProblemSet {
         }
         return id;
 
+    }
+
+    public void deleteProblem(Problem problem) {
+
+        System.out.println("[DEBUG] deleting " + problem.name + ": " + problem.getClass());
+
+        Category category = problem.getParentCat();
+        if (category != null && categories.contains(category)) {
+
+            int ind = category.getProblems().lastIndexOf(problem);
+
+            if(ind >= 0) {
+                if(! (problem instanceof ProblemTemp))
+                    trash.add(problem);
+
+                Problem problemTemp = new ProblemTemp();
+                problemTemp.setShortId(shortIdForProblem(category, problem.shortId));
+                problemTemp.setParentCat(category);
+                category.set(ind, problemTemp);
+
+                for (Problem dependent : problem.getDependents()) {
+                    dependent.getDependencies().remove(problem);
+                }
+            }
+
+        }
+
+    }
+
+    public void deleteCategory(Category category) {
+
+        if (categories.contains(category)) {
+
+            for (Problem problem : category.getProblems()) {
+
+                deleteProblem(problem);
+
+            }
+            categories.remove(category);
+
+        }
+
+    }
+
+    private Problem generateProblem(JSONObject jsonProb) {
+        Problem problem = null;
+        boolean flag = false;
+        if (jsonProb.has("special")) flag = jsonProb.getBoolean("special");
+        if (flag) {
+
+            System.out.println("---detected special problem, trying to create using reflection---");
+            try {
+
+                Class<?> clazz = Class.forName(jsonProb.getString("class"));
+                Class<?>[] argumentClasses = argumentMap.get(clazz);
+                Constructor<?> cons = clazz.getConstructor(argumentClasses);
+                JSONArray arrayArgs = jsonProb.getJSONArray("args");
+                Object[] arguments = new Object[arrayArgs.length()];
+
+                for (int k = 0; k < arrayArgs.length(); ++k) {
+                    JSONObject jsonArg = arrayArgs.getJSONObject(k);
+                    arguments[k] = argumentClasses[k].cast(jsonArg.get("value"));
+                }
+
+                System.out.println("required argument types: ");
+                for (Class clazz1 : argumentClasses)
+                    System.out.print(clazz1.getName() + " ");
+
+                System.out.println("arguments provided: ");
+                for (Object obj : arguments)
+                    System.out.print(obj.getClass() + ": " + obj + " ");
+                System.out.println("\n");
+
+                problem = (Problem) (cons.newInstance(arguments));
+
+            } catch (Exception e) {
+                System.out.println("failed to generate problem");
+                e.printStackTrace();
+            }
+
+
+
+                    /*
+                    String specialName = jsonProb.getString("class");
+                    if (specialName.equals(ProblemMine.class.getName())) {
+                        System.out.println("creating mine!");
+                        JSONArray arrayArgs = jsonProb.getJSONArray("args");
+                        String name = arrayArgs.getJSONObject(0).getString("value");
+                        int points = arrayArgs.getJSONObject(1).getInt("value");
+                        problem = new ProblemMine(name, points);
+                    }
+                    */
+
+        } else {
+            //System.out.println("probpath2: " + probPath);
+            System.out.println("creating problem");
+            //problem = new Problem(path1 + "/" + probId + ".json", true);
+            problem = new Problem(jsonProb);
+        }
+
+        return problem;
     }
 
 }

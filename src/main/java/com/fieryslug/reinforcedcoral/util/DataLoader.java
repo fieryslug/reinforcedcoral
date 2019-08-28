@@ -178,4 +178,14 @@ public class DataLoader {
 
 
     }
+
+    public void deleteTempFiles() {
+
+        File file = new File(EXTERNAL_FOLDER + "/.tmp");
+        if (file.exists()) {
+            deleteDirectory(file);
+        }
+        checkFile(EXTERNAL_FOLDER + "/.tmp", true);
+
+    }
 }

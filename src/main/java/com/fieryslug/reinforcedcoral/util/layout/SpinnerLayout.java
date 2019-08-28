@@ -1,4 +1,4 @@
-package com.fieryslug.reinforcedcoral.util;
+package com.fieryslug.reinforcedcoral.util.layout;
 
 import java.awt.BorderLayout;
 import java.awt.Component;

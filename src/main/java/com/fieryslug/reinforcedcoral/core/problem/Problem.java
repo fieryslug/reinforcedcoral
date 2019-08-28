@@ -30,7 +30,8 @@ public class Problem {
     private ArrayList<Page> pagesExplanation;
 
     public Map<ArrayList<ControlKey>, Integer> keysPointsMap;
-    public ArrayList<Problem> dependences;
+    private ArrayList<Problem> dependencies;
+    private Set<Problem> dependents;
 
     protected ButtonProblem buttonProblem;
 
@@ -46,7 +47,8 @@ public class Problem {
         this.pagesExplanation = new ArrayList<>();
         this.answer = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
-        this.dependences = new ArrayList<>();
+        this.dependencies = new ArrayList<>();
+        dependents = new HashSet<>();
 
 
     }
@@ -268,7 +270,10 @@ public class Problem {
 
 
     public void addDependence(Problem... problems) {
-        this.dependences.addAll(Arrays.asList(problems));
+        this.dependencies.addAll(Arrays.asList(problems));
+        for (Problem problem : problems) {
+            problem.dependents.add(this);
+        }
     }
 
 
@@ -279,7 +284,8 @@ public class Problem {
     private void readFromJson(JSONObject jsonObject) {
         this.pages = new ArrayList<>();
         this.keysPointsMap = new HashMap<>();
-        this.dependences = new ArrayList<>();
+        this.dependencies = new ArrayList<>();
+        dependents = new HashSet<>();
         this.pagesExplanation = new ArrayList<>();
         try {
             //this.answer = new ArrayList<>();
@@ -380,4 +386,27 @@ public class Problem {
     public boolean isSpecial() {
         return false;
     }
+
+    public Set<Problem> getDependents() {
+        return dependents;
+    }
+
+    public ArrayList<Problem> getDependencies() {
+        return dependencies;
+    }
+
+    public static Problem createEmptyProblem(ArrayList<ControlKey> controlKeys, int points, String shortId) {
+
+        Problem problem = new Problem("", 0);
+        problem.name = "new problem";
+        problem.duration = 15;
+        problem.shortId = shortId;
+        problem.fuzzy = false;
+        problem.pages.add(Page.createEmptyPage(true));
+        problem.pageSolution = Page.createEmptyPage(false);
+        problem.answer = controlKeys;
+        problem.keysPointsMap.put(controlKeys, points);
+        return problem;
+    }
+
 }

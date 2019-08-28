@@ -5,6 +5,7 @@ import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.util.layout.ModifiedTableLayout;
 
 import java.awt.Panel;
 
@@ -38,7 +39,7 @@ public class PanelEdit extends PanelPrime {
     @Override
     protected void initialize() {
         double[][] size = new double[][]{{0.5, 0.5}, {0.2, 0.6, 0.2}};
-        setLayout(new TableLayout(size));
+        setLayout(new ModifiedTableLayout(size));
 
         this.panels = new JPanel[4];
         double[][] size1 = new double[][]{FuncBox.createDivisionArray(4), {0.4, 0.3, 0.3}};
@@ -108,5 +109,9 @@ public class PanelEdit extends PanelPrime {
         this.prevPanelInterior = this.currentPanelInterior;
         this.currentPanelInterior = currentPanelInterior;
 
+    }
+
+    void switchSelf() {
+        parent.switchPanel(this, this);
     }
 }

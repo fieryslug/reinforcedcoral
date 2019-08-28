@@ -32,16 +32,16 @@ public class ProblemNull extends Problem {
 
     @Override
     public JSONObject exportAsJson() {
-        JSONObject jsonMatch = new JSONObject();
-        jsonMatch.put("special", true);
-        jsonMatch.put("class", this.getClass().getName());
+        JSONObject jsonNull = new JSONObject();
+        jsonNull.put("special", true);
+        jsonNull.put("class", this.getClass().getName());
         JSONArray arrayArgs = new JSONArray();
         JSONObject jsonArg1 = new JSONObject();
         jsonArg1.put("arg", "name");
         jsonArg1.put("value", this.name);
         arrayArgs.put(jsonArg1);
-        jsonMatch.put("args", arrayArgs);
-        return jsonMatch;
+        jsonNull.put("args", arrayArgs);
+        return jsonNull;
     }
 
     @Override

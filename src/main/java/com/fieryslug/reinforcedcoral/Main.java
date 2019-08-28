@@ -61,8 +61,9 @@ public class Main {
 
 
         loader.checkFiles();
+        loader.deleteTempFiles();
 
-        WorkTable.getGame0().getProblemSet().saveProblemSet("oblivion1", false);
+        WorkTable.getGame0().getProblemSet().saveProblemSet("oblivion1", true);
         WorkTable.getGame1().getProblemSet().saveProblemSet("oblivion2", false);
 
         loader.updateProblemSetIndex();

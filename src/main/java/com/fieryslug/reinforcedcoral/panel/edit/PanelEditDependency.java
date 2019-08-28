@@ -83,7 +83,7 @@ public class PanelEditDependency extends PanelInterior {
         double[][] size = new double[][]{FuncBox.createDivisionArray(targetSet.getCategoriesCount()), FuncBox.createDivisionArray(targetSet.getProblemsPerCategory() + 1)};
         setLayout(new TableLayout(size));
 
-        labelDependency.setText("   dependencies  (" + currProblem.dependences.size() + ")");
+        labelDependency.setText("   dependencies  (" + currProblem.getDependencies().size() + ")");
         labelTitle.setText("    editting:");
         labelProbName.setText(currProblem.name);
 
@@ -110,14 +110,14 @@ public class PanelEditDependency extends PanelInterior {
                     @Override
                     public void mouseClicked(MouseEvent actionEvent) {
                         if(problem != currProblem) {
-                            if (currProblem.dependences.contains(problem)) {
-                                currProblem.dependences.remove(problem);
+                            if (currProblem.getDependencies().contains(problem)) {
+                                currProblem.getDependencies().remove(problem);
                                 button.setState(0);
                             } else {
-                                currProblem.dependences.add(problem);
+                                currProblem.getDependencies().add(problem);
                                 button.setState(-1);
                             }
-                            labelDependency.setText("   dependencies  (" + currProblem.dependences.size() + ")");
+                            labelDependency.setText("   dependencies  (" + currProblem.getDependencies().size() + ")");
                         }
                     }
                 });
@@ -133,7 +133,7 @@ public class PanelEditDependency extends PanelInterior {
                 if (this.currProblem == problem) {
                     button.setState(1);
                 }
-                if (this.currProblem.dependences.contains(problem)) {
+                if (this.currProblem.getDependencies().contains(problem)) {
                     button.setState(-1);
                 }
 
@@ -174,7 +174,7 @@ public class PanelEditDependency extends PanelInterior {
                 button.setBackground(holder.getColor("problem_disabled"));
                 button.setBorder(FuncBox.getLineBorder(holder.getColor("problem_disabled_border"), 3));
                 button.label.setForeground(holder.getColor("problem_disabled_text"));
-            } else if (this.currProblem.dependences.contains(problem)) {
+            } else if (this.currProblem.getDependencies().contains(problem)) {
                 System.out.println(problem.name);
                 button.setBackground(holder.getColor("problem_preenabled"));
                 button.setBorder(FuncBox.getLineBorder(holder.getColor("problem_preenabled_border"), 3));

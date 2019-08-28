@@ -6,6 +6,7 @@ import com.fieryslug.reinforcedcoral.minigame.PanelMiniGame;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelProblem;
 import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.*;
+import com.fieryslug.reinforcedcoral.util.layout.ModifiedTableLayout;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonColorized;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
@@ -121,13 +122,13 @@ public class PanelGame extends PanelPrime {
         this.layoutSize = new double[][]{FuncBox.createDivisionArray(6 * this.partitionNumber), {0.2d, 0.2d, 0.2d, 0.1d, 0.1d, 0.2d}};
         this.layoutSize = new double[][]{FuncBox.createDivisionArray(this.partitionNumber), {0.2d, 0.6d, 0.2d}};
 
-        setLayout(new TableLayout(this.layoutSize));
+        setLayout(new ModifiedTableLayout(this.layoutSize));
 
         this.panelTemp = new JPanel();
 
         this.panelCenter = new JPanel();
         this.panelPause = new JPanel();
-        this.panelPause.setLayout(new TableLayout(new double[][]{{1}, {1}}));
+        this.panelPause.setLayout(new ModifiedTableLayout(new double[][]{{1}, {1}}));
 
         this.panelPause.setBackground(Reference.TRANSPARENT_GRAY);
         //add(this.panelPause, "0, 0, " + (this.partitionNumber - 1) + ", 2");
@@ -136,7 +137,7 @@ public class PanelGame extends PanelPrime {
         double[][] centerSize = new double[][]{{1.0d/6, 1.0d/6, 2.0d/6, 1.0d/6, 1.0d/6}, {5.0d/6, 1.0d/6}};
 
         this.panelCenter.setBorder(null);
-        this.panelCenter.setLayout(new TableLayout(centerSize));
+        this.panelCenter.setLayout(new ModifiedTableLayout(centerSize));
 
         int catCount = this.parent.game.getProblemSet().getCategoriesCount();
         int probsPerCat = this.parent.game.getProblemSet().getProblemsPerCategory();
@@ -158,7 +159,7 @@ public class PanelGame extends PanelPrime {
 
         double size[][] = {FuncBox.createDivisionArray(catCount), FuncBox.createDivisionArray(probsPerCat + 1)};
         this.panelInteriorMenu = new JPanel();
-        this.panelInteriorMenu.setLayout(new TableLayout(size));
+        this.panelInteriorMenu.setLayout(new ModifiedTableLayout(size));
         //this.panelInteriorMenu.setBackground(Reference.DARKGRAY);
         //this.panelInteriorMenu.setBorder(Reference.BEVEL2);
 
@@ -396,6 +397,10 @@ public class PanelGame extends PanelPrime {
             //System.out.println(team.getId() + ": " + team.getScore());
         }
 
+        if (phase == GamePhase.IN_PROBLEM && currentPageNumber == currentProblem.getPages().size() - 1) {
+            phase = GamePhase.ANSWERING;
+        }
+
         this.boxWidth = this.frameWidth / 2 - 10 + 10;
         this.boxHeight = this.frameHeight / 5 - 5 + 5;
         this.paneWidth = this.frameWidth - 10 + 10;
@@ -432,7 +437,7 @@ public class PanelGame extends PanelPrime {
 
             this.currentPageNumber = 0;
             double[][] size = {FuncBox.createDivisionArray(catCount), FuncBox.createDivisionArray(probsPerCat+1)};
-            this.panelInteriorMenu.setLayout(new TableLayout(size));
+            this.panelInteriorMenu.setLayout(new ModifiedTableLayout(size));
 
             //this.panelInteriorMenu.setPreferredSize(new Dimension(this.paneWidth, this.paneHeight));
 
@@ -876,7 +881,7 @@ public class PanelGame extends PanelPrime {
 
         Problem problem = this.buttonProblemMap.get(button);
         boolean flag = true;
-        for (Problem problem1 : problem.dependences) {
+        for (Problem problem1 : problem.getDependencies()) {
 
             if (this.problemButtonMap.get(problem1).state != 1) {
                 flag = false;

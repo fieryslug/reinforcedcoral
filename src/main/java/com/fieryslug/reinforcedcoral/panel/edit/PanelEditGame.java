@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.edit;
 
 import com.fieryslug.reinforcedcoral.core.Category;
+import com.fieryslug.reinforcedcoral.core.ControlKey;
 import com.fieryslug.reinforcedcoral.core.GamePhase;
 import com.fieryslug.reinforcedcoral.core.ProblemSet;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
@@ -9,11 +10,15 @@ import com.fieryslug.reinforcedcoral.core.problem.ProblemTemp;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.*;
+import com.fieryslug.reinforcedcoral.util.layout.ModifiedTableLayout;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonColorized;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+
+import org.json.JSONObject;
+
 import info.clearthought.layout.TableLayout;
 
 import javax.swing.*;
@@ -23,6 +28,7 @@ import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PanelEditGame extends PanelInterior {
 
@@ -54,6 +60,7 @@ public class PanelEditGame extends PanelInterior {
     //panel 3
     private JLabel[] labelsBR;
     private ButtonCoral[] buttonsBR;
+
 
 
     ProblemSet targetSet;
@@ -171,6 +178,27 @@ public class PanelEditGame extends PanelInterior {
                 if(currProblem != null) {
                     if(currProblem instanceof ProblemTemp) {
 
+                        Category category = currProblem.getParentCat();
+                        ArrayList<Problem> problems = category.getProblems();
+                        int ind = problems.lastIndexOf(currProblem);
+
+                        if (ind >= 0) {
+                            JSONObject json = new JSONObject();
+
+
+                            ArrayList<ControlKey> controlKeys = new ArrayList<ControlKey>();
+                            controlKeys.add(ControlKey.A);
+
+                            Problem problem = Problem.createEmptyProblem(controlKeys, 100, currProblem.shortId);
+                            problem.setShortId(ProblemSet.shortIdForProblem(category, currProblem.shortId));
+                            category.set(ind, problem);
+                            panelEdit.switchSelf();
+                            setCurrProblem(category.getProblems().get(ind));
+                            inflateEditSlotPanel();
+                        }
+
+
+
                     }
                     else {
                         PanelEditDependency panel = new PanelEditDependency(panelEdit, targetSet, currProblem);
@@ -229,16 +257,7 @@ public class PanelEditGame extends PanelInterior {
                         @Override
                         public void run() {
 
-                            Category category = problem.getParentCat();
-                            int ind = category.getProblems().lastIndexOf(problem);
-                            if (ind >= 0) {
-                                targetSet.getTrash().add(problem);
-                                Problem problemNull = new ProblemTemp();
-
-                                problemNull.setParentCat(category);
-                                //category.getProblems().set(ind, problemNull);
-                                category.set(ind, problemNull);
-                            }
+                            targetSet.deleteProblem(currProblem);
 
                             panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
                             panelEdit.parent.switchPanel(panelEdit, panelEdit);
@@ -252,7 +271,7 @@ public class PanelEditGame extends PanelInterior {
                     String top = "<html><strong>Do you really want to delete " + FuncBox.removeHtmlTag(currCat.name) + " and its " + category.getProblems().size() + " problems ?</strong></html>";
                     String bottom = "<html><strong>" + FuncBox.removeHtmlTag(currCat.name) + " will be lost forever! (a long time!)" + "</strong></html>";
 
-                    if (targetSet.getCategories().size() < 3) {
+                    if (targetSet.getCategories().size() < 2) {
                         top = "<html><strong>Couldn't delete " + FuncBox.removeHtmlTag(currCat.name) + "!</strong></html>";
                         bottom = "";
                         panelEdit.panelConfirm.getButtonConfirm().setEnabled(false);
@@ -271,15 +290,7 @@ public class PanelEditGame extends PanelInterior {
                         @Override
                         public void run() {
 
-                            if(currCat != null && targetSet.getCategories().size() > 2) {
-                                targetSet.getCategories().remove(currCat);
-                                System.out.println("removed " + currCat.name);
-                                for (Problem problem : currCat.getProblems()) {
-
-                                    targetSet.getTrash().add(problem);
-
-                                }
-                            }
+                            targetSet.deleteCategory(currCat);
 
                             panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
                             panelEdit.parent.switchPanel(panelEdit, panelEdit);
@@ -479,7 +490,14 @@ public class PanelEditGame extends PanelInterior {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                String top = "Do you really want to delete " + targetSet.getCategories().size() + " problems?";
+                int ind = targetSet.getProblemsPerCategory() - 1;
+
+                String probs = "";
+                for (Category category : targetSet.getCategories()) {
+                    probs += category.getProblems().get(ind).name + ", ";
+                }
+                probs = probs.substring(0, probs.length() - 2);
+                String top = "Do you really want to delete " + probs + "?";
                 String bottom = "they will be lost forever! (a long time!)";
 
 
@@ -507,10 +525,10 @@ public class PanelEditGame extends PanelInterior {
                 }, new Runnable() {
                     @Override
                     public void run() {
-
-                        int ind = targetSet.getProblemsPerCategory() - 1;
                         for (Category cat : targetSet.getCategories()) {
 
+                            Problem problem = cat.getProblems().get(ind);
+                            targetSet.deleteProblem(problem);
                             cat.getProblems().remove(ind);
 
                         }
@@ -558,7 +576,7 @@ public class PanelEditGame extends PanelInterior {
 
             int cat = targetSet.getCategoriesCount(), probsPerCat = targetSet.getProblemsPerCategory();
             double[][] size = {FuncBox.createDivisionArray(cat), FuncBox.createDivisionArray(probsPerCat + 1)};
-            setLayout(new TableLayout(size));
+            setLayout(new ModifiedTableLayout(size));
 
             int i = 0, j = 1;
 

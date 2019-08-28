@@ -87,6 +87,8 @@ public enum ControlKey {
 
     public static String stringRepresentation(ArrayList<ControlKey> controlKeys) {
 
+        //if(controlKeys == null) return "";
+
         String s = "";
         for (ControlKey key : controlKeys) {
             s = s + KEY_CHARACTER_MAP.get(key);

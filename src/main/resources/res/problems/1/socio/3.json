@@ -94,7 +94,7 @@
       {
         "widget": "jlabel",
         "constraints": "0, 0, 19, 4",
-        "content": "市場與螃蟹 (600pt)",
+        "content": "經濟學與螃蟹 (600pt)",
         "properties": {
           "textsize": "40",
           "textsizefull": "60",

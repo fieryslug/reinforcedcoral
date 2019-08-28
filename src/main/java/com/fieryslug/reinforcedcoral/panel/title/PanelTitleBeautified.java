@@ -11,6 +11,7 @@ import com.fieryslug.reinforcedcoral.util.DataLoader;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.util.layout.ModifiedTableLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -129,7 +130,7 @@ public class PanelTitleBeautified extends PanelPrime {
 
         double[][] size = {FuncBox.createDivisionArray(a), {0.2d, 0.2d, 0.2d, 0.1d, 0.1d, 0.2d}};
 
-        setLayout(new TableLayout(size));
+        setLayout(new ModifiedTableLayout(size));
 
         this.panelTeams = new PanelTeam[Preference.teams];
 

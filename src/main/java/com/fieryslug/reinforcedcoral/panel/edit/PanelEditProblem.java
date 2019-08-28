@@ -1,6 +1,7 @@
 package com.fieryslug.reinforcedcoral.panel.edit;
 
 import com.fieryslug.reinforcedcoral.core.GamePhase;
+import com.fieryslug.reinforcedcoral.core.page.Page;
 import com.fieryslug.reinforcedcoral.core.page.Widget;
 import com.fieryslug.reinforcedcoral.core.problem.Problem;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
@@ -8,11 +9,15 @@ import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
-import com.fieryslug.reinforcedcoral.util.SpinnerLayout;
+import com.fieryslug.reinforcedcoral.util.Reference;
+import com.fieryslug.reinforcedcoral.util.layout.SpinnerLayout;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.util.filter.ColorFilter;
 import com.fieryslug.reinforcedcoral.util.filter.IntFilter;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.awt.Font;
 import java.awt.Image;
@@ -26,7 +31,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -74,12 +82,25 @@ public class PanelEditProblem extends PanelInterior {
     ButtonCoral buttonImage;
     JLabel labelChooseFile;
 
+    JLabel labelDelWidget;
+    ButtonCoral buttonDelWidget;
+
+    JLabel labelNewWidget;
+    JComboBox<Widget.EnumWidget> comboBox;
+    ButtonCoral buttonNewWidget;
+
     //panel2
     JLabel labelLayout;
     JLabel[] labels;
     JTextField[] fields;
     ButtonCoral buttonApplyLayout;
     JLabel labelApplyLayout;
+
+    //panel3
+    JLabel labelStat;
+    JLabel[] labelsPage;
+    ButtonCoral[] buttonsPage;
+
 
     //banner
     JLabel labelAbstract;
@@ -116,7 +137,7 @@ public class PanelEditProblem extends PanelInterior {
         this.labelTitle = new JLabel("    editting:");
         this.labelProbName = new JLabel();
 
-        this.labelBack = new JLabel("back", SwingConstants.LEFT);
+        this.labelBack = new JLabel("save", SwingConstants.LEFT);
 
         this.buttonBack = new ButtonCoral(images[0], images[1], images[2]);
 
@@ -160,6 +181,17 @@ public class PanelEditProblem extends PanelInterior {
         labelChooseFile.setVisible(false);
 
 
+        labelDelWidget = new JLabel("delete  ", SwingConstants.RIGHT);
+        buttonDelWidget = new ButtonCoral(images[0], images[1], images[2]);
+        labelDelWidget.setVisible(false);
+        buttonDelWidget.setVisible(false);
+
+        labelNewWidget = new JLabel("new:  ", SwingConstants.RIGHT);
+        buttonNewWidget = new ButtonCoral(images[0], images[1], images[2]);
+        labelNewWidget.setVisible(true);
+        buttonNewWidget.setVisible(true);
+        comboBox = new JComboBox<>(new Widget.EnumWidget[]{Widget.EnumWidget.JLABEL, Widget.EnumWidget.JTEXTAREA, Widget.EnumWidget.IMAGE, Widget.EnumWidget.AUDIO, Widget.EnumWidget.AUDIOSTOP});
+        comboBox.setVisible(true);
 
         //panel 2
         this.labelLayout = new JLabel("    layout  (x,y<20)");
@@ -192,12 +224,26 @@ public class PanelEditProblem extends PanelInterior {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
+                panelInteriorPage.setCurrWidget(null);
                 panelInteriorPage.clearSounds();
                 panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
                 panelEdit.parent.switchPanel(panelEdit, panelEdit);
 
             }
         });
+
+        //panel3
+        labelStat = new JLabel("", SwingConstants.RIGHT);
+        labelsPage = new JLabel[4];
+        buttonsPage = new ButtonCoral[4];
+        for (int i = 0; i < 4; ++i) {
+            labelsPage[i] = new JLabel("", SwingConstants.CENTER);
+            buttonsPage[i] = new ButtonCoral(images[0], images[1], images[2]);
+        }
+        labelsPage[0].setText(" new page ");
+        buttonsPage[1].setVisible(false);
+        buttonsPage[2].setVisible(false);
+        labelsPage[3].setText(" delete page ");
 
         //banner
         labelAbstract = new JLabel("extra    ", SwingConstants.RIGHT);
@@ -216,7 +262,7 @@ public class PanelEditProblem extends PanelInterior {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-
+                System.out.println(phase + ": " + currPageNum);
                 if (phase == GamePhase.IN_PROBLEM) {
                     if (currPageNum + 1 >= problem.getPages().size()) {
                         currPageNum = 0;
@@ -334,6 +380,36 @@ public class PanelEditProblem extends PanelInterior {
             }
         });
 
+        buttonDelWidget.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                String top = "Do you really want to delete this widget?";
+                String bottom = "it will be lost forever! (a long time!)";
+                Widget widget = panelInteriorPage.getCurrWidget();
+
+                panelEdit.setCurrentPanelInterior(panelEdit.panelConfirm);
+                panelEdit.panelConfirm.prepare(top, bottom, new Runnable() {
+                    @Override
+                    public void run() {
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
+                        panelEdit.switchSelf();
+                        panelInteriorPage.setCurrWidget(widget);
+                    }
+                }, new Runnable() {
+                    @Override
+                    public void run() {
+
+                        panelInteriorPage.getPage().widgets.remove(widget);
+
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
+                        panelEdit.switchSelf();
+                    }
+                });
+                panelEdit.switchSelf();
+            }
+        });
+
         buttonApplyLayout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -359,6 +435,71 @@ public class PanelEditProblem extends PanelInterior {
             @Override
             public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
                 panelInteriorPage.scrollAbstractWidget(mouseWheelEvent);
+            }
+        });
+
+        buttonsPage[0].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                createNewPage();
+                panelInteriorPage.setCurrWidget(null);
+                panelEdit.switchSelf();
+            }
+        });
+        buttonsPage[3].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                String top = "<html><strong>Do you really want to delete page " + getPageName() + " of " + FuncBox.removeHtmlTag(problem.name) + "?</strong></html>";
+                String bottom = "it will be lost forever! (a long time!)";
+
+                if (phase != GamePhase.IN_PROBLEM && phase != GamePhase.POST_SOLUTION) {
+                    top = "Couldn't delete " + getPageName() + "!";
+                    bottom = "";
+                    panelEdit.panelConfirm.getButtonConfirm().setEnabled(false);
+                }
+
+                panelEdit.setCurrentPanelInterior(panelEdit.panelConfirm);
+                panelEdit.panelConfirm.prepare(top, bottom, new Runnable() {
+                    @Override
+                    public void run() {
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
+                        panelEdit.switchSelf();
+                    }
+                }, new Runnable() {
+                    @Override
+                    public void run() {
+
+                        if(phase == GamePhase.IN_PROBLEM) {
+                            problem.getPages().remove(currPageNum);
+                            if (currPageNum == problem.getPages().size() - 1) {
+                                setPhase(GamePhase.ANSWERING);
+                            }
+                        } else if (phase == GamePhase.POST_SOLUTION) {
+                            problem.getPagesExplanation().remove(currPageNum);
+                            if (currPageNum <= 0) {
+                                setPhase(GamePhase.SOLUTION);
+                            } else {
+                                currPageNum -= 1;
+                            }
+                        }
+
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelEditProblem);
+                        panelEdit.switchSelf();
+                    }
+                });
+                panelInteriorPage.clearSounds();
+                panelEdit.parent.switchPanel(panelEdit, panelEdit);
+
+            }
+        });
+
+        buttonNewWidget.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Widget.EnumWidget type = (Widget.EnumWidget) comboBox.getSelectedItem();
+                createNewWidget(type);
+                panelEdit.switchSelf();
             }
         });
 
@@ -400,14 +541,25 @@ public class PanelEditProblem extends PanelInterior {
         panelEdit.panels[1].add(buttonImage, "4, 3, 5, 3");
         panelEdit.panels[1].add(labelChooseFile, "6, 3, 8, 3");
 
+        panelEdit.panels[1].add(labelDelWidget, "7, 5, 8, 5");
+        panelEdit.panels[1].add(buttonDelWidget, "9, 5");
+
+        panelEdit.panels[1].add(labelNewWidget, "5, 5, 6, 5");
+        panelEdit.panels[1].add(comboBox, "7, 5, 8, 5");
+        panelEdit.panels[1].add(buttonNewWidget, "9, 5");
+
         panelEdit.panels[2].add(labelLayout, "0, 0, 1, 0");
         panelEdit.panels[2].add(buttonApplyLayout, "3, 0");
         panelEdit.panels[2].add(labelApplyLayout, "2, 0");
+
+        panelEdit.panels[3].add(labelStat, "2, 0, 3, 0");
 
 
         for (int i = 0; i < 4; ++i) {
             panelEdit.panels[2].add(labels[i], i + ", 1");
             panelEdit.panels[2].add(fields[i], i + ", 2");
+            panelEdit.panels[3].add(labelsPage[i], i + ", 1");
+            panelEdit.panels[3].add(buttonsPage[i], i + ", 2");
         }
 
 
@@ -418,11 +570,15 @@ public class PanelEditProblem extends PanelInterior {
         add(labelAbstract, "2, 1");
         add(panelMini, "3, 1");
         panelMini.add(labelAbstractName, "1, 1");
+        labelStat.setText("");
+
+        if (currPageNum == problem.getPages().size() - 1 && phase == GamePhase.IN_PROBLEM) {
+            setPhase(GamePhase.ANSWERING);
+        }
 
         if (this.phase == GamePhase.IN_PROBLEM) {
 
             System.out.println("currpagenum: " + currPageNum);
-            System.out.println(problem.getPages().get(currPageNum).widgets.get(0).content);
             panelInteriorPage.inflate2(problem.getPages().get(currPageNum));
 
             add(panelInteriorPage, "0, 0, 4, 0");
@@ -432,6 +588,7 @@ public class PanelEditProblem extends PanelInterior {
             else
                 buttonPrev.setVisible(false);
             buttonNext.setVisible(true);
+            labelStat.setText("  " + (currPageNum + 1) + "/" + problem.getPages().size() + "  ");
         }
         if (this.phase == GamePhase.ANSWERING) {
 
@@ -445,6 +602,7 @@ public class PanelEditProblem extends PanelInterior {
             else
                 buttonPrev.setVisible(false);
             buttonNext.setVisible(true);
+            labelStat.setText(" (final)  " + (currPageNum + 1) + "/" + problem.getPages().size() + "  ");
 
         }
         if (this.phase == GamePhase.SOLUTION) {
@@ -459,7 +617,7 @@ public class PanelEditProblem extends PanelInterior {
             else
                 buttonNext.setVisible(false);
             buttonPrev.setVisible(true);
-
+            labelStat.setText("sol  ");
         }
         if (this.phase == GamePhase.POST_SOLUTION) {
 
@@ -472,7 +630,7 @@ public class PanelEditProblem extends PanelInterior {
                 buttonNext.setVisible(true);
             else
                 buttonNext.setVisible(false);
-
+            labelStat.setText("  post-sol:  " + (currPageNum + 1) + "/" + problem.getPagesExplanation().size() + "  ");
         }
 
 
@@ -495,6 +653,8 @@ public class PanelEditProblem extends PanelInterior {
         panelEdit.panels[0].removeAll();
         panelEdit.panels[1].removeAll();
         panelEdit.panels[2].removeAll();
+        panelEdit.panels[3].removeAll();
+
         panelEdit.panels[1].setLayout(new TableLayout(layout2));
         removeMouseListener(this.mouseAdapter);
         setAllUnvisible();
@@ -503,6 +663,8 @@ public class PanelEditProblem extends PanelInterior {
 
     @Override
     public void applyTexture(TextureHolder holder) {
+
+        Image[] images = new Image[]{holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press")};
 
         setBackground(holder.getColor("interior"));
         panelInteriorPage.setBackground(holder.getColor("interior"));
@@ -531,6 +693,13 @@ public class PanelEditProblem extends PanelInterior {
 
         labelImage.setForeground(holder.getColor("teamu_text"));
         labelChooseFile.setForeground(holder.getColor("teamu_score"));
+        labelDelWidget.setForeground(holder.getColor("teamu_text"));
+        buttonDelWidget.setImages(images[0], images[1], images[2]);
+        labelNewWidget.setForeground(holder.getColor("teamu_text"));
+        buttonNewWidget.setImages(images[0], images[1], images[2]);
+        comboBox.setBackground(holder.getColor("teamu"));
+        comboBox.setForeground(holder.getColor("teamu_text"));
+        comboBox.setFocusable(false);
 
 
         //panel 2
@@ -545,13 +714,19 @@ public class PanelEditProblem extends PanelInterior {
             fields[i].setBorder(null);
         }
 
-        //banner
+        //panel3
+        labelStat.setForeground(holder.getColor("teamd_text"));
+        for (int i = 0; i < 4; ++i) {
+            labelsPage[i].setForeground(holder.getColor("teamu_text"));
+            buttonsPage[i].setImages(images[0], images[1], images[2]);
+        }
+
+        //
         labelAbstract.setForeground(holder.getColor("text"));
         labelAbstractName.setForeground(holder.getColor("text"));
         labelAbstractName.setBorder(FuncBox.getLineBorder(holder.getColor("text_light_2"), 3));
 
 
-        Image[] images = new Image[]{holder.getImage("button/button"), holder.getImage("button/button_hover"), holder.getImage("button/button_press")};
 
 
         buttonBack.setImages(images[0], images[1], images[2]);
@@ -584,6 +759,8 @@ public class PanelEditProblem extends PanelInterior {
 
         labelImage.setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 39 : 26));
         labelChooseFile.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 33 : 22));
+        labelDelWidget.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 33 : 22));
+        labelNewWidget.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 36 : 24));
 
         labelLayout.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 39 : 26));
         labelApplyLayout.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 36 : 24));
@@ -591,6 +768,11 @@ public class PanelEditProblem extends PanelInterior {
         for (int i = 0; i < 4; ++i) {
             labels[i].setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 36 : 24));
             fields[i].setFont(FontRef.getFont(FontRef.TAIPEI, Font.BOLD, isFullScreen ? 36 : 24));
+        }
+
+        labelStat.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 39 : 26));
+        for (int i = 0; i < 4; ++i) {
+            labelsPage[i].setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 39 : 26));
         }
 
         int buttonX = panelEdit.parent.getContentPane().getWidth() / 2 / 8;
@@ -612,7 +794,15 @@ public class PanelEditProblem extends PanelInterior {
 
         buttonImage.resizeIconToSquare(boxX * 33 / 100, boxY * 24 / 100, 0.85);
 
+        buttonDelWidget.resizeIconToSquare(boxX * 33 /100, boxY * 24 / 100, 0.85);
+        buttonNewWidget.resizeIconToSquare(boxX * 33 /100, boxY * 24 / 100, 0.85);
+        comboBox.setFont(FontRef.getFont(FontRef.NEMESIS, Font.PLAIN, isFullScreen ? 27 : 18));
+
         buttonApplyLayout.resizeIconToSquare(buttonXBox, buttonYsBox * 3, 0.85);
+
+        for (int i = 0; i < 4; ++i) {
+            buttonsPage[i].resizeIconToSquare(buttonXBox, buttonYsBox * 3, 0.85);
+        }
 
         if (Preference.autoScaleFontSize) {
             FontRef.scaleFont(this.labelTitle);
@@ -623,12 +813,16 @@ public class PanelEditProblem extends PanelInterior {
             FontRef.scaleFont(labelLayout);
             FontRef.scaleFont(labelApplyLayout);
 
+            FontRef.scaleFont(labelDelWidget);
+            FontRef.scaleFont(labelNewWidget);
+
             FontRef.scaleFont(labelAbstract);
             FontRef.scaleFont(labelAbstractName);
 
             for (int i = 0; i < 4; ++i) {
                 FontRef.scaleFont(toggleButtons[i]);
                 FontRef.scaleFont(labelsAttr[i]);
+                FontRef.scaleFont(labelsPage[i]);
             }
         }
         panelInteriorPage.refreshRendering(isFullScreen);
@@ -670,5 +864,81 @@ public class PanelEditProblem extends PanelInterior {
         labelImage.setVisible(false);
         buttonImage.setVisible(false);
         labelChooseFile.setVisible(false);
+        labelDelWidget.setVisible(false);
+        buttonDelWidget.setVisible(false);
+        labelNewWidget.setVisible(true);
+        buttonNewWidget.setVisible(true);
+        comboBox.setVisible(true);
+    }
+
+    private String getPageName() {
+
+        String r = "page";
+
+        if (phase == GamePhase.IN_PROBLEM) {
+            r = "" + (currPageNum+1) + "/" + problem.getPages().size();
+        }
+        if (phase == GamePhase.ANSWERING) {
+            r = "(final)  " + (currPageNum + 1) + "/" + problem.getPages().size();
+        }
+        if (phase == GamePhase.SOLUTION) {
+            r = "sol";
+        }
+        if (phase == GamePhase.POST_SOLUTION) {
+            r = "post-sol:  " + (currPageNum+1) + "/" + problem.getPagesExplanation().size();
+        }
+
+
+        return r;
+    }
+
+    private void createNewWidget(Widget.EnumWidget type) {
+
+        String content, constraint;
+        Map<String, String> properties = new HashMap<>();
+
+        if (type == Widget.EnumWidget.JLABEL) {
+            content = "new label";
+            constraint = "0, 0, 1, 1";
+            properties.put("textsize", "12");
+            properties.put("textsizefull", "18");
+            Widget widget = new Widget(Widget.EnumWidget.JLABEL.name, content, constraint, properties);
+            panelInteriorPage.getPage().widgets.add(widget);
+        }
+        if (type == Widget.EnumWidget.JTEXTAREA) {
+            content = "new text area";
+            constraint = "0, 0, 1, 1";
+            properties.put("textsize", "12");
+            properties.put("textsizefll", "18");
+            Widget widget = new Widget(Widget.EnumWidget.JTEXTAREA.name, content, constraint, properties);
+            panelInteriorPage.getPage().widgets.add(widget);
+        }
+        if (type == Widget.EnumWidget.IMAGE) {
+            content = "/res/images/tzuyu.jpg";
+            constraint = "0, 0, 2, 2";
+            Widget widget = new Widget(Widget.EnumWidget.IMAGE.name, content, constraint, properties);
+            panelInteriorPage.getPage().widgets.add(widget);
+        }
+    }
+
+    private void createNewPage() {
+        JSONObject json = new JSONObject();
+        json.put("type", Reference.MAGIC_PRIME);
+        json.put("elements", new JSONArray());
+        json.put("final", false);
+
+        Page page = new Page(json);
+        if (phase == GamePhase.IN_PROBLEM) {
+            problem.getPages().add(currPageNum, page);
+        }
+        if (phase == GamePhase.ANSWERING) {
+            problem.getPages().add(problem.getPages().size() - 1, page);
+        }
+        if (phase == GamePhase.SOLUTION) {
+            problem.getPagesExplanation().add(0, page);
+        }
+        if (phase == GamePhase.POST_SOLUTION) {
+            problem.getPagesExplanation().add(currPageNum + 1, page);
+        }
     }
 }

@@ -7,8 +7,7 @@ import com.fieryslug.reinforcedcoral.panel.subpanel.PanelTeam;
 import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
-import com.fieryslug.reinforcedcoral.util.Reference;
-import com.fieryslug.reinforcedcoral.util.SpinnerLayout;
+import com.fieryslug.reinforcedcoral.util.layout.SpinnerLayout;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
@@ -120,7 +119,7 @@ public class PanelOptions extends PanelInterior {
         button1.setDirection(SwingConstants.WEST);
         button1.setBorderPainted(false);
 
-        this.spinnerTeams = new JSpinner(new SpinnerNumberModel(4, 3, 12, 1)) {
+        this.spinnerTeams = new JSpinner(new SpinnerNumberModel(4, 1, 12, 1)) {
             @Override
             public void setLayout(LayoutManager layoutManager) {
                 super.setLayout(new SpinnerLayout());

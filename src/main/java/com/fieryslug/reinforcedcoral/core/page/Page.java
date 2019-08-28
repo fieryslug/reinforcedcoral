@@ -263,6 +263,17 @@ public class Page {
         this.parentProb = parentProb;
     }
 
+    public static Page createEmptyPage(boolean isFinal) {
+
+        JSONObject json = new JSONObject();
+        json.put("type", Reference.MAGIC_PRIME);
+        json.put("elements", new JSONArray());
+        json.put("final", isFinal);
+
+        return new Page(json);
+
+    }
+
     /*
     public JSONObject toNormalForm() {
         if(this.type == Reference.MAGIC_PRIME)

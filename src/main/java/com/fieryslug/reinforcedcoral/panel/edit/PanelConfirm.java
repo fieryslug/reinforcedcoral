@@ -3,6 +3,7 @@ package com.fieryslug.reinforcedcoral.panel.edit;
 import com.fieryslug.reinforcedcoral.panel.PanelInterior;
 import com.fieryslug.reinforcedcoral.panel.PanelPrime;
 import com.fieryslug.reinforcedcoral.util.FontRef;
+import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 
@@ -142,6 +143,15 @@ public class PanelConfirm extends PanelInterior {
 
         for (int i = 0; i < 2; ++i) {
             buttons[i].resizeIconToSquare(panelX / 4, panelY / 6, 0.65);
+        }
+
+        if (Preference.autoScaleFontSize) {
+
+            FontRef.scaleFont(labelTop);
+            FontRef.scaleFont(labelBottom);
+            for (int i = 0; i < 2; ++i) {
+                FontRef.scaleFont(labels[i]);
+            }
         }
 
     }

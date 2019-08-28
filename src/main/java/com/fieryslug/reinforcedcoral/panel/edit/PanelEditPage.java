@@ -337,6 +337,7 @@ public class PanelEditPage extends PanelProblem {
                 //System.out.println(edit);
                 remove(widgetInstanceMap.get(widget));
                 add(edit, widget.constraints);
+                edit.requestFocus();
                 //System.out.println("added");
                 currWidget = widget;
                 flag = true;
@@ -350,6 +351,7 @@ public class PanelEditPage extends PanelProblem {
                 area.setText(widget.content);
                 remove(widgetInstanceMap.get(widget));
                 add(area, widget.constraints);
+                area.requestFocus();
                 currWidget = widget;
                 flag = true;
                 flag2 = true;
@@ -416,6 +418,11 @@ public class PanelEditPage extends PanelProblem {
                     panelEditProblem.fieldsAttr[1].setText("-1");
                 }
             }
+            panelEditProblem.labelDelWidget.setVisible(true);
+            panelEditProblem.buttonDelWidget.setVisible(true);
+            panelEditProblem.labelNewWidget.setVisible(false);
+            panelEditProblem.buttonNewWidget.setVisible(false);
+            panelEditProblem.comboBox.setVisible(false);
         }
 
         else {
@@ -496,7 +503,7 @@ public class PanelEditPage extends PanelProblem {
             try {
                 textSize = Integer.parseInt(panelEditProblem.fieldsAttr[0].getText());
             } catch (NumberFormatException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
 
             String color = currWidget.properties.get("textcolor");
@@ -601,5 +608,9 @@ public class PanelEditPage extends PanelProblem {
             return abstractWidgets.get(scrollNum);
         }
         return null;
+    }
+
+    Widget getCurrWidget() {
+        return currWidget;
     }
 }

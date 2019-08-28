@@ -230,11 +230,6 @@ public class PanelProblem extends JPanel {
         }
         if(widget.widgetType == Widget.EnumWidget.IMAGE) {
 
-            System.out.println(page.getParentProb());
-            System.out.println(page.getParentProb().getParentCat());
-            System.out.println(page.getParentProb().getParentCat().getParentSet());
-            String id = page.getParentProb().getParentCat().getParentSet().getId();
-            System.out.println("inflating image with id " + id);
             JLabel label = new JLabel();
             label.setHorizontalAlignment(SwingConstants.CENTER);
             label.setVerticalAlignment(SwingConstants.CENTER);
@@ -376,8 +371,6 @@ public class PanelProblem extends JPanel {
                     }
                 }
             }
-
-
         }
 
 

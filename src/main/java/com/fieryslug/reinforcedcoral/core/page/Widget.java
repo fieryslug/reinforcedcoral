@@ -12,6 +12,8 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.JLabel;
+
 public class Widget {
 
     public EnumWidget widgetType;
@@ -148,10 +150,30 @@ public class Widget {
             return this.name;
         }
 
+
+
         public boolean isAbstract() {
             return this.isAbstract;
         }
 
+        @Override
+        public String toString() {
+
+            switch (this) {
+                case JLABEL:
+                    return "label";
+                case JTEXTAREA:
+                    return "text area";
+                case IMAGE:
+                    return "image";
+                case AUDIO:
+                    return "audio";
+                case AUDIOSTOP:
+                    return "audiostop";
+            }
+            return "null";
+
+        }
     }
 
     enum EnumWidgetProperty {
