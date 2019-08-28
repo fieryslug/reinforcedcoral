@@ -9,6 +9,7 @@ import com.fieryslug.reinforcedcoral.util.FontRef;
 import com.fieryslug.reinforcedcoral.util.FuncBox;
 import com.fieryslug.reinforcedcoral.util.Preference;
 import com.fieryslug.reinforcedcoral.util.TextureHolder;
+import com.fieryslug.reinforcedcoral.util.layout.ModifiedTableLayout;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonColorized;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonCoral;
 import com.fieryslug.reinforcedcoral.widget.button.ButtonProblem;
@@ -79,7 +80,7 @@ public class PanelEditDependency extends PanelInterior {
     public void enter() {
 
         double[][] size = new double[][]{FuncBox.createDivisionArray(targetSet.getCategoriesCount()), FuncBox.createDivisionArray(targetSet.getProblemsPerCategory() + 1)};
-        setLayout(new TableLayout(size));
+        setLayout(new ModifiedTableLayout(size));
 
         labelDependency.setText("   dependencies  (" + currProblem.getDependencies().size() + ")");
         labelTitle.setText("    editting:");

@@ -1,7 +1,7 @@
 visit https://hackmd.io/5Tg4rqrBQSaoW38Ru8oBFA?view for more info
 
 
-===gradle_8.0b=== 8/28 24pm
+===gradle_8.0c=== 8/28 24pm
 -new feature: add problem sets
 -new feature: add/remove categories, problems, pages
 -new feature: add/remove/configure widgets
