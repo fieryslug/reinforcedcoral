@@ -277,9 +277,7 @@ public class Problem {
     }
 
 
-    public int getDuration() {
-        return this.duration;
-    }
+
 
     private void readFromJson(JSONObject jsonObject) {
         this.pages = new ArrayList<>();
@@ -407,6 +405,41 @@ public class Problem {
         problem.answer = controlKeys;
         problem.keysPointsMap.put(controlKeys, points);
         return problem;
+    }
+
+    public ArrayList<ControlKey> getTrueAnswer() {
+
+        int points = -1;
+        ArrayList<ControlKey> res = null;
+        for (ArrayList<ControlKey> controlKeys : keysPointsMap.keySet()) {
+
+            int points1 = keysPointsMap.get(controlKeys);
+
+            if (points1 > points) {
+                points = points1;
+                res = controlKeys;
+            }
+
+        }
+        return res;
+
+    }
+
+    public int getDuration() {
+        return this.duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setMonoAnswer(ControlKey key, int points) {
+
+        keysPointsMap.clear();
+        ArrayList<ControlKey> keys = new ArrayList<>();
+        keys.add(key);
+        keysPointsMap.put(keys, points);
+
     }
 
 }

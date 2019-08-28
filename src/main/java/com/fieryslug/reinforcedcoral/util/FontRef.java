@@ -78,9 +78,7 @@ public class FontRef {
                 text = FuncBox.getHtmlRealText(((JTextField) label).getText());
             if(label instanceof AbstractButton)
                 text = FuncBox.getHtmlRealText(((AbstractButton) label).getText());
-            if (label instanceof JComboBox<?>) {
-                JComboBox box = (JComboBox) label;
-            }
+
             if(text == null) return;
             Font font = label.getFont();
 

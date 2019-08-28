@@ -104,6 +104,7 @@ public class PanelEditGame extends PanelInterior {
         }
         this.labelsProb[0].setText(" dependencies");
         this.labelsProb[1].setText("content");
+        labelsProb[2].setText("properties");
         labelsProb[3].setText("delete");
 
 
@@ -197,8 +198,6 @@ public class PanelEditGame extends PanelInterior {
                             inflateEditSlotPanel();
                         }
 
-
-
                     }
                     else {
                         PanelEditDependency panel = new PanelEditDependency(panelEdit, targetSet, currProblem);
@@ -231,6 +230,19 @@ public class PanelEditGame extends PanelInterior {
                 //panelEdit.refresh();
                 //panelEdit.repaint();
 
+            }
+        });
+
+        buttonsProb[2].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(currProblem != null) {
+                    if(!currProblem.isSpecial()) {
+                        panelEdit.panelProperties.setProblem(currProblem);
+                        panelEdit.setCurrentPanelInterior(panelEdit.panelProperties);
+                        panelEdit.switchSelf();
+                    }
+                }
             }
         });
 
@@ -837,7 +849,7 @@ public class PanelEditGame extends PanelInterior {
 
     }
 
-    private void setCurrProblem(Problem problem) {
+    void setCurrProblem(Problem problem) {
         this.currType = 0;
         if (this.buttonProblemMap.inverse().keySet().contains(problem) || problem == null) {
 
@@ -864,7 +876,7 @@ public class PanelEditGame extends PanelInterior {
 
     }
 
-    private void setCurrCat(Category cat) {
+    void setCurrCat(Category cat) {
         this.currType = 1;
         TextureHolder holder = TextureHolder.getInstance();
         if (this.labelCategoryMap.inverse().keySet().contains(cat) || cat == null) {
@@ -898,7 +910,7 @@ public class PanelEditGame extends PanelInterior {
         }
     }
 
-    private void inflateEditSlotPanel() {
+    void inflateEditSlotPanel() {
 
         if (this.currProblem != null) {
 
@@ -934,8 +946,10 @@ public class PanelEditGame extends PanelInterior {
 
                 if (currProblem.isSpecial()) {
                     buttonsProb[1].setEnabled(false);
+                    buttonsProb[2].setEnabled(false);
                 } else {
                     buttonsProb[1].setEnabled(true);
+                    buttonsProb[2].setEnabled(true);
                 }
             }
             for (int i = 0; i < 4; ++i) {

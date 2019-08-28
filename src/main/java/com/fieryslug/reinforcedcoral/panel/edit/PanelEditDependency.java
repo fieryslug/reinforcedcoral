@@ -67,12 +67,10 @@ public class PanelEditDependency extends PanelInterior {
         this.buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                //panelEdit.exit();
                 panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
-                panelEdit.parent.switchPanel(panelEdit, panelEdit);
-                //panelEdit.enter();
-                //panelEdit.refresh();
-                //panelEdit.repaint();
+                panelEdit.switchSelf();
+                panelEdit.panelEditGame.setCurrProblem(problem);
+                panelEdit.panelEditGame.inflateEditSlotPanel();
             }
         });
     }

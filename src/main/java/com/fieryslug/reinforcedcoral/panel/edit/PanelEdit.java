@@ -20,6 +20,9 @@ public class PanelEdit extends PanelPrime {
     PanelEditGame panelEditGame;
     PanelEditProblem panelEditProblem;
     PanelConfirm panelConfirm;
+    PanelAdd panelAdd;
+
+    PanelProperties panelProperties;
 
     PanelInterior currentPanelInterior;
     private PanelInterior prevPanelInterior;
@@ -52,6 +55,8 @@ public class PanelEdit extends PanelPrime {
         this.panelEditGame = new PanelEditGame(this);
         this.panelEditProblem = new PanelEditProblem(this);
         panelConfirm = new PanelConfirm(this);
+        panelProperties = new PanelProperties(this);
+        panelAdd = new PanelAdd(this);
 
         this.currentPanelInterior = this.panelEditTitle;
 

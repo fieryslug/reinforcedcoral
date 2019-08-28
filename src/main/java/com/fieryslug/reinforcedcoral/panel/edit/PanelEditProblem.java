@@ -228,7 +228,8 @@ public class PanelEditProblem extends PanelInterior {
                 panelInteriorPage.clearSounds();
                 panelEdit.setCurrentPanelInterior(panelEdit.panelEditGame);
                 panelEdit.parent.switchPanel(panelEdit, panelEdit);
-
+                panelEdit.panelEditGame.setCurrProblem(problem);
+                panelEdit.panelEditGame.inflateEditSlotPanel();
             }
         });
 

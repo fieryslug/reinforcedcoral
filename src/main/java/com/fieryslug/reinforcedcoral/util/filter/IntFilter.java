@@ -17,6 +17,9 @@ public class IntFilter extends FilterCoral {
 
     @Override
     protected boolean test(String text) {
+
+        if (min < 0 && text.equals("-")) return true;
+
         if (text.length() == 0) {
             return  true;
         }

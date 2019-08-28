@@ -32,6 +32,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import javax.xml.crypto.Data;
+
 public class ProblemSet {
 
 
@@ -868,6 +870,57 @@ public class ProblemSet {
         }
 
         return problem;
+    }
+
+    public static ProblemSet generateProblemSet(String name, int cats, int probsPerCat) {
+
+        String id = FuncBox.toValidFileName(name);
+
+        ProblemSet set = new ProblemSet(idForSet(id));
+        set.loadId = set.id;
+
+        set.name = name;
+
+        for (int i = 0; i < cats; ++i) {
+
+            Category category = new Category("void", "" + i);
+            set.idCatMap.put("" + i, category);
+            set.categories.add(category);
+            for (int j = 0; j < probsPerCat; ++j) {
+                Problem problem = new ProblemTemp();
+                problem.setShortId("" + j);
+                category.addProblems(problem);
+                set.idProbMap.put(problem.id, problem);
+                set.probShortIdMap.put(problem, problem.shortId);
+            }
+
+        }
+        return set;
+
+    }
+
+    public static String idForSet(String preferred) {
+
+        ArrayList<ProblemSet> sets = DataLoader.getInstance().getProblemSets();
+        Set<String> occuppied = new HashSet<>();
+
+        for (ProblemSet set : sets) {
+            occuppied.add(set.id);
+        }
+
+        if(occuppied.contains(preferred)) {
+
+            int i=0;
+            while (true) {
+                if (!occuppied.contains("" + i)) {
+                    return ""+i;
+                }
+                i += 1;
+            }
+        }
+
+        return preferred;
+
     }
 
 }

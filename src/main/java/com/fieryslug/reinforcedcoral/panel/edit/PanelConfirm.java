@@ -25,9 +25,9 @@ public class PanelConfirm extends PanelInterior {
     private PanelEdit panelEdit;
 
     private JLabel labelTop;
-    private JLabel labelBottom;
+    protected JLabel labelBottom;
 
-    private JLabel[] labels;
+    protected JLabel[] labels;
     private ButtonCoral[] buttons;
 
     private Runnable taskConfirm;

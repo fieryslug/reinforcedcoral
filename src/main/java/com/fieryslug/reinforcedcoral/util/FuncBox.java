@@ -402,5 +402,17 @@ public class FuncBox {
 
     }
 
+    public static String toValidFileName(String text) {
+
+        String r = text.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
+
+        if (r.length() == 0) {
+            return "0";
+        }
+        else
+            return r;
+
+    }
+
 
 }

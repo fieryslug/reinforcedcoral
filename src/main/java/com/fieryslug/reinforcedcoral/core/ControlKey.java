@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.ComboBoxEditor;
+
 public enum ControlKey {
 
     UP(0), DOWN(1), LEFT(2), RIGHT(3), A(4), B(5), C(6), D(7), E(8), ENTER(9), DEL(10);
@@ -16,6 +18,8 @@ public enum ControlKey {
     public static final Map<String, ControlKey> KEY_MAP = new HashMap<>();
     public static final Map<ControlKey, Character> KEY_CHARACTER_MAP = new HashMap<>();
     public static final Map<Character, ControlKey> CHARACTER_KEY_MAP = new HashMap<>();
+    public static final ControlKey[] NORMAL_KEYS = new ControlKey[]{A, B, C, D, UP, DOWN, LEFT, RIGHT};
+
     static {
 
         KEY_MAP.put("bt_up", UP);
@@ -85,6 +89,8 @@ public enum ControlKey {
 
     }
 
+
+
     public static String stringRepresentation(ArrayList<ControlKey> controlKeys) {
 
         //if(controlKeys == null) return "";
@@ -109,6 +115,8 @@ public enum ControlKey {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return KEY_CHARACTER_MAP.get(this).toString();
+    }
 }
